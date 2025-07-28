@@ -4,6 +4,8 @@ import RnDTaxCreditsPageSchema from './schemas/rndTaxCreditsPageSchema'
 import CapitalAllowancePageSchema from './schemas/capitalAllowancePageSchema'
 import AccountsnFilingPageSchema from './schemas/accountsFilingPageSchema'
 import TermsPageSchema from './schemas/termsPageSchema'
+import PrivacyPageSchema from './schemas/privacyPolicyPageSchema'
+
 
 
 export const schema = {
@@ -12,6 +14,7 @@ export const schema = {
     RnDTaxCreditsPageSchema,
     CapitalAllowancePageSchema,
     AccountsnFilingPageSchema,
-    TermsPageSchema
+    TermsPageSchema,
+    PrivacyPageSchema
   ],
 }
