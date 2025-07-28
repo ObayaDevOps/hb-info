@@ -157,7 +157,7 @@ export default function TermsPage({ pageData }) {
   // Use pageData from Sanity or fallback to default values
   const title = pageData?.title || 'Our Terms and Conditions';
   const subtitle = pageData?.subtitle || 'Our Terms';
-  const metaDescription = pageData?.metaDescription || 'Empowering Innovation and Financial Growth Through Expertise';
+  const metaDescription = pageData?.metaDescription || 'Our Full Terms and Conditions';
   const sections = pageData?.sections || fallbackSections;
   
   const [activeSection, setActiveSection] = useState(sections[0]?.id || '');
