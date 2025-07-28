@@ -268,7 +268,7 @@ export default function TermsPage({ pageData }) {
           {/* Left Sidebar */}
           <Box
             as="nav" // Use nav for semantic sidebar
-            w={['full', 'full', '18.5rem']} // Full width on small screens, fixed width on larger
+            w={['full', 'full', '20.5rem']} // Full width on small screens, fixed width on larger
             display={{base: 'none', lg: 'flex'}}
             position={['relative', 'relative', 'sticky']} // Sticky sidebar on large screens
             top={[0, 0, '2rem']} // Adjust top position as needed

@@ -7,13 +7,13 @@ import {
 // Reusable Vertical Stepper Navigation Component
 const VerticalStepperNav = ({ sections, activeSection, onLinkClick }) => {
     return (
-        <Box as="nav" position="relative">
+        <Box as="nav" position="relative" >
             {sections.map((section, index) => {
                 const isActive = activeSection === section.id;
                 const isLastItem = index === sections.length - 1;
 
                 return (
-                    <Flex key={section.id} align="flex-start" minH="40px" position="relative">
+                    <Flex key={section.id} align="flex-start" minH="50px" position="relative">
                         {/* Line Connector */}
                         {!isLastItem && (
                             <Box

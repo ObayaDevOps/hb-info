@@ -268,7 +268,7 @@ export default function TermsPage({ pageData }) {
           {/* Left Sidebar */}
           <Box
             as="nav" // Use nav for semantic sidebar
-            w={['full', 'full', '18.5rem']} // Full width on small screens, fixed width on larger
+            w={['full', 'full', '23.5rem']} // Full width on small screens, fixed width on larger
             display={{base: 'none', lg: 'flex'}}
             position={['relative', 'relative', 'sticky']} // Sticky sidebar on large screens
             top={[0, 0, '2rem']} // Adjust top position as needed
@@ -276,8 +276,9 @@ export default function TermsPage({ pageData }) {
             p={4}
             borderRadius="md"
             fontFamily='Poppins'
-            maxH={['auto', 'auto', 'calc(100vh - 10rem)']}
+            maxH={['auto', 'auto', '100vh']}
             overflowY="auto"
+            mb={40}
           >
             {/* Use the new VerticalStepperNav component */}
             <VerticalStepperNav

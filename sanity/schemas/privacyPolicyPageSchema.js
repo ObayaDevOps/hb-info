@@ -1,6 +1,6 @@
 export default {
     name: 'privacyPolicyPage',
-    title: 'Privacy olicy Page',
+    title: 'Privacy Policy Page',
     type: 'document',
     fields: [
       {
