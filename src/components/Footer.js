@@ -41,7 +41,7 @@ const Footer = () => {
             </Box>
             <Box>
             <HStack spacing={3}>
-              <Link href="https://linkedin.com" isExternal aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/company/ashton-and-carrington/" isExternal aria-label="LinkedIn">
                 <Icon as={FaLinkedin} boxSize={6} color="white" bg="#202020" p={1} borderRadius="md" />
               </Link>
               {/* Replace with actual link and consider a more specific icon if needed */}

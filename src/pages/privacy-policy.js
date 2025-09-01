@@ -278,7 +278,6 @@ export default function TermsPage({ pageData }) {
             fontFamily='Poppins'
             maxH={['auto', 'auto', '100vh']}
             overflowY="auto"
-            mb={40}
           >
             {/* Use the new VerticalStepperNav component */}
             <VerticalStepperNav
