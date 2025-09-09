@@ -25,7 +25,7 @@ import Footer from '../components/Footer';
 
 export default function ContactPage() {
     return (
-        <Box bg={'#000819'} minH='100vh'>
+        <Box bg={'#f5cb81'} minH='100vh'>
         <Head>
             {/* Use data from Sanity */}
             <title>{'Contact Us' || 'Ashton & Carrington'}</title>
@@ -34,7 +34,7 @@ export default function ContactPage() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar bg={{base: '#000819', lg: 'none'}} />
+        <Navbar bg={{base: '#f5cb81', lg: 'none'}} />
 
         <Box p={10} >
             <Box
@@ -46,7 +46,7 @@ export default function ContactPage() {
           >
               <Box>
                 <Text
-                  fontFamily='Poppins'
+                  fontFamily='var(--font-hanken)'
                   fontSize={'1.25rem'}
                   lineHeight='normal' // 30px
                   fontWeight='500'
@@ -59,7 +59,7 @@ export default function ContactPage() {
               </Box>
             <Box>
               <Text
-                fontFamily='Poppins'
+                fontFamily='var(--font-hanken)'
                 fontSize='0.875rem' // 30px
                 lineHeight='1.875rem' // 30px
                 fontWeight='400'

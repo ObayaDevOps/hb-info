@@ -19,19 +19,19 @@ const NavLink = ({ children, href }) => (
     px={3}
     py={1}
     rounded={'md'}
-    color={'#00DEE3'} // Cyan color
+    color={'#000819'}
     _hover={{
       textDecoration: 'none',
     }}
     href={href}
-    fontFamily="Poppins"
-    fontWeight={500}
+    fontFamily="var(--font-hanken)"
+    fontWeight={600}
   >
     {children}
   </Link>
 );
 
-export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch" }) {
+export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch", triggerColor = '#000819' }) {
   // 1. Create a ref for the Drawer Content
   const contentRef = useRef(null);
 
@@ -50,7 +50,7 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
     >
       <Drawer.Trigger asChild>
         <Menu 
-          color='#00C6CB'
+          color={triggerColor}
           size={'2rem'}
           // Removed mr={-10} as it might be specific styling not needed for the focus fix
         />
@@ -59,17 +59,17 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
         <Drawer.Backdrop />
         <Drawer.Positioner>
           {/* 2. Attach the ref to Drawer.Content */}
-          <Drawer.Content ref={contentRef} bg='#1A2130' color="#00DEE3"> 
+          <Drawer.Content ref={contentRef} bg='#f5cb81' color="#000819"> 
             <Drawer.Body>
               <VStack spacing={12} align="stretch" pt={'6rem'}>
                 {navItems.map((item) => (
                   <NavLink key={item.label} href={item.href}>
                     <Text
                       fontSize={"1.75rem"}
-                      fontFamily="Poppins"
+                      fontFamily="var(--font-hanken)"
                       fontStyle='normal'
-                      fontWeight={500}
-                      color="#00E2E5"
+                      fontWeight={600}
+                      color="#000819"
                       lineHeight={'normal'}
                       letterSpacing="0.14rem"
                       textTransform={'uppercase'}
@@ -82,27 +82,25 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
                 {/* Wrap the Button inside NavLink only if the button itself should navigate */}
                 {/* If the Button triggers an action *within* the app, it shouldn't be wrapped in NavLink */}
                 {/* Assuming it navigates to /contact: */}
-                <NavLink href='/contact'> 
+                <NavLink href='/contact-and-connect'> 
                   <Button
-                    // Removed mt={2} - VStack spacing should handle this
                     px={'0.625rem'}
                     py={'1.25rem'}
-                    variant={'outline'}
-                    bgColor={'#000819'}
-                    borderColor={'#00DEE3'}
-                    borderWidth={'2px'}
+                    variant={'solid'}
+                    bg={'#000819'}
+                    color={'white'}
                     borderRadius={'2px'}
-                    _hover={{ bg: 'rgba(0, 222, 227, 0.1)', color: '#00DEE3' }}
+                    _hover={{ opacity: 0.9 }}
                     fontFamily="Poppins"
                     fontWeight={500}
                     w="full"
                   >
                     <Text
                       fontSize={"1.75rem"}
-                      fontFamily="Poppins"
+                      fontFamily="var(--font-hanken)"
                       fontStyle='normal'
-                      fontWeight={500}
-                      color="#00E2E5"
+                      fontWeight={600}
+                      color={'white'}
                       lineHeight={'normal'}
                       letterSpacing="0.14rem"
                       textTransform={'uppercase'}
@@ -117,7 +115,7 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
             <Drawer.CloseTrigger asChild>
               {/* Position the close button more intentionally, e.g., absolute positioning */}
               <Box position="absolute" top={4} right={4} m={2}> 
-                <X color="#00E2E5" size={'2.75rem'} cursor="pointer" /> 
+                <X color="#000819" size={'2.75rem'} cursor="pointer" /> 
               </Box>
             </Drawer.CloseTrigger>
           </Drawer.Content>

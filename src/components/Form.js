@@ -79,12 +79,12 @@ export default function Form ({ buttonPosition='absolute' }){
         <Field.Root invalid={!!errors.name} width="full"> {/* Added width="full" for consistency */}
           <Field.Label> {/* Removed colour='white', Text component handles color */}
             <Text
-                fontFamily='Poppins'
+                fontFamily='var(--font-hanken)'
                 fontSize='0.75rem'
                 lineHeight='normal'
                 fontWeight='400'
                 fontStyle='normal'
-                color='#CCCED1'
+                color='#000819'
             >
                 Name
             </Text>
@@ -110,12 +110,12 @@ export default function Form ({ buttonPosition='absolute' }){
         <Field.Root invalid={!!errors.email} width="full">
           <Field.Label>
             <Text
-                fontFamily='Poppins'
+                fontFamily='var(--font-hanken)'
                 fontSize='0.75rem'
                 lineHeight='normal'
                 fontWeight='400'
                 fontStyle='normal'
-                color='#CCCED1'
+                color='#000819'
             >
             Email
             </Text>
@@ -145,12 +145,12 @@ export default function Form ({ buttonPosition='absolute' }){
         <Field.Root invalid={!!errors.phoneNumber} width="full">
           <Field.Label>
             <Text
-                fontFamily='Poppins'
+                fontFamily='var(--font-hanken)'
                 fontSize='0.75rem'
                 lineHeight='normal'
                 fontWeight='400'
                 fontStyle='normal'
-                color='#CCCED1'
+                color='#000819'
             >
             Phone Number
             </Text>
@@ -174,12 +174,12 @@ export default function Form ({ buttonPosition='absolute' }){
         <Field.Root invalid={!!errors.userMessage} width="full">
           <Field.Label>
             <Text
-                fontFamily='Poppins'
+                fontFamily='var(--font-hanken)'
                 fontSize='0.75rem'
                 lineHeight='normal'
                 fontWeight='400'
                 fontStyle='normal'
-                color='#CCCED1'
+                color='#000819'
             >
             Message
             </Text>
@@ -230,11 +230,11 @@ export default function Form ({ buttonPosition='absolute' }){
         {/* Note: The button's position might need adjustment relative to the error message */}
         <Button
             type="submit"
-            variant={'outline'}
-            bgColor={'#00DEE3'}
-            borderColor={'#00DEE3'}
-            _hover={{ bg: 'rgba(0, 222, 227, 0.1)', color: '#00DEE3' }}
-            fontFamily="Poppins"
+            variant={'solid'}
+            bg={'#000819'}
+            color={'white'}
+            _hover={{ opacity: 0.9 }}
+            fontFamily="var(--font-hanken)"
             fontWeight={500}
             position={buttonPosition} // Keep the prop for flexibility
             right={0}
@@ -250,4 +250,3 @@ export default function Form ({ buttonPosition='absolute' }){
     </form>
   )
 }
-
