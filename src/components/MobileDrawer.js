@@ -29,7 +29,7 @@ const NavLink = ({ children, href, isExternal }) => (
   </Link>
 );
 
-export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch", triggerColor = '#000819' }) {
+export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch", triggerColor = '#000819', triggerSize = '2rem' }) {
   // 1. Create a ref for the Drawer Content
   const contentRef = useRef(null);
 
@@ -47,11 +47,7 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
         // Assuming default context-based control for simplicity here.
     >
       <Drawer.Trigger asChild>
-        <Menu 
-          color={triggerColor}
-          size={'2rem'}
-          // Removed mr={-10} as it might be specific styling not needed for the focus fix
-        />
+        <Menu color={triggerColor} size={triggerSize} />
       </Drawer.Trigger>
       <Portal>
         <Drawer.Backdrop />
