@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { Box, Container, Heading, Text, VStack, HStack, Button, Input, Textarea, Switch, Link as CLink } from '@chakra-ui/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+// Layout supplies Navbar/Footer
 
 export default function ContactConnectPage() {
   const [isWholesale, setIsWholesale] = useState(false);
@@ -10,10 +9,9 @@ export default function ContactConnectPage() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh">
       <Head>
-        <title>Contact & Connect | The Humble Beeing</title>
+        <title>Contact & Connect | Humble Beeing</title>
         <meta name="description" content="Contact form, social media links, and newsletter signup." />
       </Head>
-      <Navbar bg={{ base: '#f5cb81', lg: 'none' }} />
 
       <Container maxW="container.md" px={{ base: 6, md: 8 }} py={{ base: 10, md: 16 }}>
         <VStack align="start" spacing={6}>
@@ -64,7 +62,6 @@ export default function ContactConnectPage() {
         </VStack>
       </Container>
 
-      <Footer />
     </Box>
   );
 }

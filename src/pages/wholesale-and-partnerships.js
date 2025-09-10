@@ -1,27 +1,24 @@
 import Head from 'next/head';
 import { Box, Container, Heading, Text, VStack, SimpleGrid, HStack, Button, Input, Textarea } from '@chakra-ui/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import HeroSection from '@/components/sections/HeroSection';
+import Section from '@/components/sections/Section';
 
 export default function WholesalePartnershipsPage() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh">
       <Head>
-        <title>Wholesale & Partnerships | The Humble Beeing</title>
+        <title>Wholesale & Partnerships | Humble Beeing</title>
         <meta name="description" content="Bulk orders for chefs and retailers, corporate gifting, and NGO/donor partnerships." />
       </Head>
-      <Navbar bg={{ base: '#f5cb81', lg: 'none' }} />
-
       {/* Hero */}
-      <Box py={{ base: 12, md: 16 }}>
-        <Container maxW="container.xl" px={{ base: 6, md: 8 }}>
-          <Heading as="h1" size="lg">Wholesale & Partnerships</Heading>
-          <Text color="#000819" mt={3} maxW="2xl">Chefs, retailers, events, and corporate gifting — let’s collaborate.</Text>
-        </Container>
-      </Box>
+      <HeroSection
+        title="Wholesale & Partnerships"
+        subtitle="Chefs, retailers, events, and corporate gifting — let’s collaborate."
+        py={{ base: 12, md: 16 }}
+      />
 
       {/* Use Cases + Product Range */}
-      <Container maxW="container.xl" px={{ base: 6, md: 8 }} pb={{ base: 10, md: 16 }}>
+      <Section pb={{ base: 10, md: 16 }}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} pb={10}>
           <VStack align="start" spacing={3}>
             <Heading as="h2" size="md">Use Cases</Heading>
@@ -55,12 +52,11 @@ export default function WholesalePartnershipsPage() {
           <Textarea placeholder="Tell us about your needs…" />
           <HStack>
             <Button bg="#000819" color="white" _hover={{ opacity: 0.9 }}>Submit Inquiry</Button>
-            <Button variant="outline" as="a" href="/our-honey/luxury-gift-boxes" borderColor="#000819" color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}>See Gift Boxes</Button>
+            <Button variant="outline" as="a" href="https://shop.humble-beeing.com" target="_blank" rel="noopener noreferrer" borderColor="#000819" color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}>See Gift Boxes</Button>
           </HStack>
         </VStack>
-      </Container>
+      </Section>
 
-      <Footer />
     </Box>
   );
 }

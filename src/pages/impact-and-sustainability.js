@@ -1,26 +1,22 @@
 import Head from 'next/head';
 import { Box, Container, Heading, Text, VStack, SimpleGrid, HStack, Badge, Button, Image } from '@chakra-ui/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import HeroSection from '@/components/sections/HeroSection';
+import Section from '@/components/sections/Section';
 
 export default function ImpactPage() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh">
       <Head>
-        <title>Impact & Sustainability | The Humble Beeing</title>
+        <title>Impact & Sustainability | Humble Beeing</title>
         <meta name="description" content="Poverty alleviation, biodiversity, traceability, gender inclusion, and UN SDG alignment." />
       </Head>
-      <Navbar bg={{ base: '#f5cb81', lg: 'none' }} />
-
       {/* Hero */}
-      <Box bgImage="url('')" bgPos="center" bgSize="cover" py={{ base: 12, md: 20 }}>
-        <Container maxW="container.xl" px={{ base: 6, md: 8 }}>
-          <Heading as="h1" size="lg">Impact & Sustainability</Heading>
-          <Text color="#000819" mt={3} maxW="2xl">Traceable quality and measurable outcomes across people and planet.</Text>
-        </Container>
-      </Box>
+      <HeroSection
+        title="Impact & Sustainability"
+        subtitle="Traceable quality and measurable outcomes across people and planet."
+      />
 
-      <Container maxW="container.xl" px={{ base: 6, md: 8 }} py={{ base: 10, md: 16 }}>
+      <Section py={{ base: 10, md: 16 }}>
         {/* Impact pillars */}
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} pb={8}>
           <VStack align="start" spacing={3} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
@@ -59,9 +55,8 @@ export default function ImpactPage() {
           <Button as="a" href="#" target="_blank" bg="#000819" color="white" _hover={{ opacity: 0.9 }}>Download our Impact Deck</Button>
           <Button variant="outline" as="a" href="/wholesale-and-partnerships" borderColor="#000819" color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}>Partner with us</Button>
         </HStack>
-      </Container>
+      </Section>
 
-      <Footer />
     </Box>
   );
 }

@@ -34,7 +34,7 @@ const Footer = () => {
             <Box>
               <Image
                 src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'}
-                alt="The Humble Beeing Logo"
+                alt="Humble Beeing Logo"
                 height={{ base: '80px', md: '80px' }} // Adjust size as needed
                 objectFit="contain"
               />
@@ -72,7 +72,7 @@ const Footer = () => {
             pt={2}
             display={{base:'none', lg:'flex'}}
             >
-              © {currentYear} The Humble Beeing. All rights reserved
+              © {currentYear} Humble Beeing. All rights reserved
             </Text>
             </Box>
             </Stack>
@@ -117,7 +117,7 @@ const Footer = () => {
               pt={2}
               display={{base:'flex', lg:'none'}}
               >
-              © {currentYear} The Humble Beeing. All rights reserved
+              © {currentYear} Humble Beeing. All rights reserved
             </Text>
           </VStack>
         </Flex>

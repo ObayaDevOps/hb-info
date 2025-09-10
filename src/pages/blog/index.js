@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Box, Container, Heading, Text, VStack, SimpleGrid, Badge, Input } from '@chakra-ui/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+// Layout supplies Navbar/Footer
 import StyledCard from '@/components/StyledCard';
 
 const categories = [
@@ -17,18 +16,17 @@ const posts = [
   { slug: 'citrus-honey-madeleines', title: 'Citrus Honey Madeleines', category: 'recipes' },
 ];
 
-export default function JournalPage() {
+export default function BlogPage() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh">
       <Head>
-        <title>Journal | The Humble Beeing</title>
+        <title>Blog | Humble Beeing</title>
         <meta name="description" content="Beekeeping knowledge, recipes, impact stories, and sustainability insights." />
       </Head>
-      <Navbar bg={{ base: '#f5cb81', lg: 'none' }} />
 
       <Container maxW="container.xl" px={{ base: 6, md: 8 }} py={{ base: 10, md: 16 }}>
         <VStack align="start" spacing={6}>
-          <Heading as="h1" size="lg">Journal</Heading>
+          <Heading as="h1" size="lg">Blog</Heading>
           <Text color="#000819">Thought leadership, field notes, and recipes.</Text>
 
           {/* Category Filter (UI only) */}
@@ -50,7 +48,7 @@ export default function JournalPage() {
                   <Badge variant="outline" borderColor="#000819" color="#000819">
                     {categories.find((c) => c.slug === p.category)?.name}
                   </Badge>
-                  <Link href={`/journal/${p.slug}`}><Text fontWeight="600">{p.title}</Text></Link>
+                  <Link href={`/blog/${p.slug}`}><Text fontWeight="600">{p.title}</Text></Link>
                   <Text color="#000819" fontSize="sm">SEO-optimized snippet with keywords like African luxury honey, sustainable beeswax candles, traceable honey Uganda.</Text>
                 </VStack>
               </StyledCard>
@@ -59,7 +57,6 @@ export default function JournalPage() {
         </VStack>
       </Container>
 
-      <Footer />
     </Box>
   );
 }

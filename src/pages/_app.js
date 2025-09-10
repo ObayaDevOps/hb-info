@@ -4,6 +4,7 @@ import { Provider } from "@/components/ui/provider"
 import theme, { hankenGrotesk, poppins, geistSans, geistMono, spaceMono, unbounded } from '../styles/theme'
 
 import { Global, css } from '@emotion/react'
+import PageLayout from '@/components/layouts/PageLayout'
 
 //https://medium.com/@keeganfamouss/accessibility-on-demand-with-chakra-ui-and-focus-visible-19413b1bc6f9
 const GlobalStyles = css`
@@ -32,19 +33,20 @@ const GlobalStyles = css`
 `;
 
 function App({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => <PageLayout>{page}</PageLayout>)
   return (
     <Provider theme={theme}>
-        <Global styles={GlobalStyles} />
-        <div className={`${hankenGrotesk.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} ${unbounded.variable}`}>
-          {/* Global glass distortion filter */}
-          <svg style={{ display: 'none' }}>
-            <filter id="glass-distortion">
-              <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
-            </filter>
-          </svg>
-          <Component {...pageProps} />
-        </div>
+      <Global styles={GlobalStyles} />
+      <div className={`${hankenGrotesk.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} ${unbounded.variable}`}>
+        {/* Global glass distortion filter */}
+        <svg style={{ display: 'none' }}>
+          <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+          </filter>
+        </svg>
+        {getLayout(<Component {...pageProps} />)}
+      </div>
     </Provider>
   )
 }

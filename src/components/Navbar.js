@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
 import Form from '@/components/Form'
 import MobileDrawer from './MobileDrawer'; // Import the new component
 
-const NavLink = ({ children, href, color }) => (
+const NavLink = ({ children, href, color, isExternal, ...rest }) => (
   <Link
     px={3}
     py={1}
@@ -28,6 +28,8 @@ const NavLink = ({ children, href, color }) => (
       // bg: useColorModeValue('gray.200', 'gray.700'),
     }}
     href={href}
+    isExternal={isExternal}
+    {...rest}
     fontFamily="var(--font-hanken)"
     fontWeight={600}
   >
@@ -52,14 +54,16 @@ export default function Navbar(props) {
   const isOverlay = overlayOnHero && !scrolled;
   const navBg = isOverlay ? 'transparent' : (props.bg || '#f5cb81');
   const linkColor = isOverlay ? 'white' : '#000819';
+  const blackLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
+  const whiteLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495029/WhiteLogo_of0ehe.png'
+  const logoSrc = isOverlay ? whiteLogo : blackLogo
 
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Our Story', href: '/our-story' },
-    { label: 'Our Honey', href: '/our-honey' },
-    { label: 'Our Candles', href: '/our-candles' },
+    { label: 'Shop', href: 'https://shop.humble-beeing.com', external: true },
     { label: 'Impact', href: '/impact-and-sustainability' },
-    { label: 'Journal', href: '/journal' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Wholesale', href: '/wholesale-and-partnerships' },
     { label: 'Contact', href: '/contact-and-connect' },
   ];
@@ -86,13 +90,14 @@ export default function Navbar(props) {
       mx="auto"
       display={{base: 'none', lg: 'flex'}}
       >
-        {/* Logo - Using Image component like in index.js */}
+        {/* Logo switches: white on overlay hero, black otherwise */}
         <Link href="/" _hover={{ textDecoration: 'none' }}>
              <Image
-                src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'}
+                src={logoSrc}
                 alt="The Humble Beeing Logo"
-                height={'40px'} // Adjust height as needed
+                height={'55px'}
                 width={'auto'} // Maintain aspect ratio
+                mt={0}
              />
         </Link>
 
@@ -102,7 +107,9 @@ export default function Navbar(props) {
             <HStack spacing={'1.5rem'} alignItems={'left'}>
               <HStack as={'nav'} spacing={'1.5rem'}>
                 {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href} color={linkColor}>{item.label}</NavLink>
+                  <NavLink key={item.label} href={item.href} color={linkColor} isExternal={item.external}>
+                    {item.label}
+                  </NavLink>
                 ))}
               </HStack>
 
@@ -131,9 +138,9 @@ export default function Navbar(props) {
           <Box flex="1" textAlign="center">
             <Link href="/" _hover={{ textDecoration: 'none' }}>
               <Image
-                src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'}
+                src={logoSrc}
                 alt="The Humble Beeing Logo"
-                height={'40px'}
+                height={'50px'}
                 width={'auto'}
               />
             </Link>

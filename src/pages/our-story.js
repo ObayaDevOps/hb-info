@@ -1,24 +1,21 @@
 import Head from 'next/head';
 import { Box, Container, Heading, Text, SimpleGrid, VStack, HStack, Avatar, Badge } from '@chakra-ui/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export default function AboutPage() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh">
       <Head>
-        <title>Our Story | The Humble Beeing</title>
-        <meta name="description" content="Our story, mission & vision, team, and milestones at The Humble Beeing." />
+        <title>Our Story | Humble Beeing</title>
+        <meta name="description" content="Our story, mission & vision, team, and milestones at Humble Beeing." />
       </Head>
-
-      <Navbar bg={{ base: '#f5cb81', lg: 'none' }} />
+      
 
       <Container maxW="container.xl" px={{ base: 6, md: 8 }} py={{ base: 10, md: 16 }}>
         {/* Our Story */}
         <VStack align="start" spacing={6} pb={12}>
           <Heading as="h1" size="lg">Our Story</Heading>
           <Text fontSize="md" color="#000819">
-            From London finance to Uganda’s wild landscapes — our founder set out to build a luxury brand that regenerates nature and livelihoods. The Humble Beeing pairs elevated taste with measurable impact, working directly with beekeepers across biodiverse regions to bring you single-origin and infused honeys, and pure beeswax candles.
+            From London finance to Uganda’s wild landscapes — our founder set out to build a luxury brand that regenerates nature and livelihoods. Humble Beeing pairs elevated taste with measurable impact, working directly with beekeepers across biodiverse regions to bring you single-origin and infused honeys, and pure beeswax candles.
           </Text>
         </VStack>
 
@@ -74,8 +71,7 @@ export default function AboutPage() {
           </VStack>
         </VStack>
       </Container>
-
-      <Footer />
+      
     </Box>
   );
 }

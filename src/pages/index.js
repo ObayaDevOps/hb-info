@@ -1,4 +1,4 @@
-// Switch homepage to The Humble Beeing layout
+// Switch homepage to Humble Beeing layout
 import HBHome from './hb-home';
 
 export default HBHome;

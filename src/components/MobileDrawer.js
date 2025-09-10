@@ -14,7 +14,7 @@ import { Menu, X } from 'lucide-react';
 import { useRef } from "react"; // Keep useRef
 
 // Reusable NavLink component
-const NavLink = ({ children, href }) => (
+const NavLink = ({ children, href, isExternal }) => (
   <Link
     px={3}
     py={1}
@@ -24,6 +24,7 @@ const NavLink = ({ children, href }) => (
       textDecoration: 'none',
     }}
     href={href}
+    isExternal={isExternal}
     fontFamily="var(--font-hanken)"
     fontWeight={600}
   >
@@ -63,7 +64,7 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
             <Drawer.Body>
               <VStack spacing={12} align="stretch" pt={'6rem'}>
                 {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href}>
+                  <NavLink key={item.label} href={item.href} isExternal={item.external}>
                     <Text
                       fontSize={"1.75rem"}
                       fontFamily="var(--font-hanken)"

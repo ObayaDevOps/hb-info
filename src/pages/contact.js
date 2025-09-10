@@ -13,14 +13,10 @@ import {
     Portal,
   } from '@chakra-ui/react';
 
-  import ContactModal from '../components/ContactModal';
-  import Form from '@/components/Form'
+import Form from '@/components/Form'
   import Head from "next/head";
 
-  import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
-
+// Layout supplies Navbar/Footer
 
 
 export default function ContactPage() {
@@ -33,8 +29,6 @@ export default function ContactPage() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <Navbar bg={{base: '#f5cb81', lg: 'none'}} />
 
         <Box p={10} >
             <Box
@@ -83,7 +77,6 @@ export default function ContactPage() {
           </Box>          
         </Box>
 
-        <Footer />
         </Box>
     );
 }
