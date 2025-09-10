@@ -7,10 +7,11 @@ export default function StyledCard({ children, ...props }) {
       borderColor="black"
       borderWidth={'2px'}
       borderRadius="lg"
-      boxShadow="4px 4px 0px 0px rgba(0, 0, 0, 1)"
+      // boxShadow="4px 4px 0px 0px rgba(0, 0, 0, 1)"
       overflow="hidden"
       _hover={{ transform: 'translateY(-4px)', transition: 'transform 0.2s' }}
       h="100%"
+      mx={2}
       display="flex"
       flexDirection="column"
       {...props}

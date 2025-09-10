@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Box, Container, Heading, Text, VStack, HStack, Button, SimpleGrid, Image, Badge } from '@chakra-ui/react';
 import PageLayout from '@/components/layouts/PageLayout';
+import StockistsCarousel from '@/components/home/StockistsCarousel';
 import StyledCard from '@/components/StyledCard';
 // Marquee handled inside HeroCarousel
 import HeroCarousel from '@/components/home/HeroCarousel';
@@ -154,6 +155,9 @@ export default function HBHome() {
           ))}
         </HStack>
       </Container>
+
+      {/* Where You Can Buy Us */}
+      <StockistsCarousel />
 
       {/* Testimonials and Social Proof */}
       <Container maxW="container.xl" px={{ base: 6, md: 8 }} pb={{ base: 16, md: 20 }}>

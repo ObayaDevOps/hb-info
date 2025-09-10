@@ -44,8 +44,8 @@ export default function ContactConnectPage() {
           <VStack align="start" spacing={2}>
             <Heading as="h2" size="sm">Connect</Heading>
             <HStack spacing={4}>
-              <CLink href="#" isExternal>Instagram</CLink>
-              <CLink href="#" isExternal>LinkedIn</CLink>
+              <CLink href="https://www.instagram.com/humble_beeing_ug/" isExternal>Instagram</CLink>
+              <CLink href="https://www.linkedin.com/company/humble-beeing" isExternal>LinkedIn</CLink>
               <CLink href="#" isExternal>TikTok</CLink>
             </HStack>
           </VStack>
