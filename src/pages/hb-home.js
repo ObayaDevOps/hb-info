@@ -41,6 +41,7 @@ export default function HBHome() {
       <Head>
         <title>Humble Beeing | Luxury Honey, Sustainable Impact</title>
         <meta name="description" content="Luxury African honey and beeswax candles. Shop now and support traceable, regenerative impact." />
+        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
       </Head>
 
       {/* Hero */}
@@ -81,6 +82,39 @@ export default function HBHome() {
           </HStack>
         </VStack>
       </HeroCarousel>
+
+
+      <Container maxW="container.xl"  mt={{ base: 0, md: 24 }} px={{ base: 12, md: 20 }} py={{ base: 16, md: 20 }} minH={{ base: 'auto', md: '70vh' }} bg='#FFF2D7' rounded={{base: 'none', lg:'3xl'}}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8, lg: 10 }} alignItems="stretch">
+          <VStack align="start" spacing={4}>
+            <Heading as="h2" size={{ base: '2xl', md: '5xl' }}>What We Do</Heading>
+            <Text fontSize={{ base: 'md', md: '3xl' }} pt={6}>
+              Humble Beeing was born from a passion for sustainable beekeeping and a desire to share the incredible bounty of African honey with the world. We work directly with small-holder farmers in Uganda, ensuring fair wages and ethical practices.
+            </Text>
+            <Button as={Link} href="/our-story" 
+            variant="outline" borderColor="#000819" 
+            color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}
+            mt={6}
+            >
+              <Text fontSize={{ base: 'sm', md: 'xl' }} pt={0} >
+                Read Our Full Story
+              </Text>
+              </Button>
+          </VStack>
+          <VStack>
+            <Image
+              src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" // Replace with your image URL
+              alt="Humble Beeing Story"
+              borderRadius="lg"
+              objectFit="cover"
+              width="100%"
+              height="auto"
+            />
+          </VStack>
+        </SimpleGrid>
+      </Container>
+
+
 
       {/* 3 Core Blocks */}
       <Container maxW="container.xl" px={{ base: 4, md: 8 }} py={{ base: 10, md: 16 }}>

@@ -218,7 +218,7 @@ export default function TermsPage({ pageData }) {
         <title>{title} | Ashton & Carrington</title>
         <meta name="description" content={metaDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/Vector.svg" />
+        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
       </Head>
       
       {/* Navbar provided by PageLayout */}

@@ -27,7 +27,7 @@ export default function ContactPage() {
             <title>{'Contact Us' || 'Ashton & Carrington'}</title>
             <meta name="description" content={'Empowering Innovation and Financial Growth Through Expertise'} />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
         </Head>
 
         <Box p={10} >
