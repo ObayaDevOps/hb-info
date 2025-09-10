@@ -1,10 +1,9 @@
 import {
   Box,
-  Flex, // Keep Flex if used elsewhere, otherwise remove if unused
-  HStack, // Keep HStack if used elsewhere, otherwise remove if unused
+  Flex,
+  HStack,
   Link,
-  IconButton, // Keep IconButton if used elsewhere, otherwise remove if unused
-  Button,
+  IconButton,
   Drawer,
   VStack,
   Text,
@@ -13,16 +12,14 @@ import {
 import { Menu, X } from 'lucide-react';
 import { useRef } from "react"; // Keep useRef
 
-// Reusable NavLink component
+// Reusable NavLink component with icon support
 const NavLink = ({ children, href, isExternal }) => (
   <Link
     px={3}
-    py={1}
+    py={2}
     rounded={'md'}
     color={'#000819'}
-    _hover={{
-      textDecoration: 'none',
-    }}
+    _hover={{ textDecoration: 'none', opacity: 0.9 }}
     href={href}
     isExternal={isExternal}
     fontFamily="var(--font-hanken)"
@@ -60,56 +57,36 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
         <Drawer.Backdrop />
         <Drawer.Positioner>
           {/* 2. Attach the ref to Drawer.Content */}
-          <Drawer.Content ref={contentRef} bg='#f5cb81' color="#000819"> 
+          <Drawer.Content
+            ref={contentRef}
+            bg='rgba(255, 255, 255, 0.8)'
+            color="#000819"
+            style={{ backdropFilter: 'blur(10px)' }}
+          > 
             <Drawer.Body>
-              <VStack spacing={12} align="stretch" pt={'6rem'}>
+              <VStack spacing={8} align="stretch" pt={'6rem'}>
                 {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href} isExternal={item.external}>
-                    <Text
-                      fontSize={"1.75rem"}
-                      fontFamily="var(--font-hanken)"
-                      fontStyle='normal'
-                      fontWeight={600}
-                      color="#000819"
-                      lineHeight={'normal'}
-                      letterSpacing="0.14rem"
-                      textTransform={'uppercase'}
-                      mb={4} // mb={4} might be better on NavLink or VStack item
-                    >
-                      {item.label}
-                    </Text>
+                  <NavLink key={item.label} href={item.href} isExternal={item.isExternal}>
+                    <HStack spacing={3.6} align="center">
+                      {item.icon ? (
+                        <Box as={item.icon} boxSize={9} color="#000819" />
+                      ) : null}
+                      <Text
+                        fontSize="1.6875rem"
+                        fontFamily="var(--font-hanken)"
+                        fontStyle='normal'
+                        fontWeight={600}
+                        color="#000819"
+                        lineHeight='normal'
+                        letterSpacing="0.02rem"
+                        textTransform='none'
+                      >
+                        {item.label}
+                      </Text>
+                    </HStack>
                   </NavLink>
                 ))}
-                {/* Wrap the Button inside NavLink only if the button itself should navigate */}
-                {/* If the Button triggers an action *within* the app, it shouldn't be wrapped in NavLink */}
-                {/* Assuming it navigates to /contact: */}
-                <NavLink href='/contact-and-connect'> 
-                  <Button
-                    px={'0.625rem'}
-                    py={'1.25rem'}
-                    variant={'solid'}
-                    bg={'#000819'}
-                    color={'white'}
-                    borderRadius={'2px'}
-                    _hover={{ opacity: 0.9 }}
-                    fontFamily="Poppins"
-                    fontWeight={500}
-                    w="full"
-                  >
-                    <Text
-                      fontSize={"1.75rem"}
-                      fontFamily="var(--font-hanken)"
-                      fontStyle='normal'
-                      fontWeight={600}
-                      color={'white'}
-                      lineHeight={'normal'}
-                      letterSpacing="0.14rem"
-                      textTransform={'uppercase'}
-                    >
-                      {getInTouchText}
-                    </Text>
-                  </Button>
-                </NavLink>
+                {/* Removed Get in Touch button per request */}
               </VStack>
             </Drawer.Body>
 

@@ -3,18 +3,23 @@ import {
   Flex,
   HStack,
   Link,
-  Button,
   useDisclosure,
   useBreakpointValue,
-  VStack,
   Image,
-  Dialog,
-  Text,
-  Portal,
-} from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
-import Form from '@/components/Form'
-import MobileDrawer from './MobileDrawer'; // Import the new component
+} from '@chakra-ui/react'
+import { useEffect, useMemo, useState } from 'react'
+import MobileDrawer from './MobileDrawer'
+import { useRouter } from 'next/router'
+// Dark mode removed from navbar
+import {
+  Home as HomeIcon,
+  BookOpen as BookOpenIcon,
+  ShoppingBag as ShoppingBagIcon,
+  Leaf as LeafIcon,
+  Newspaper as NewspaperIcon,
+  Package as PackageIcon,
+  Phone as PhoneIcon,
+} from 'lucide-react'
 
 const NavLink = ({ children, href, color, isExternal, ...rest }) => (
   <Link
@@ -22,11 +27,7 @@ const NavLink = ({ children, href, color, isExternal, ...rest }) => (
     py={1}
     rounded={'md'}
     color={color}
-    _hover={{
-      textDecoration: 'none',
-      // Add a subtle hover effect if desired
-      // bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
+    _hover={{ textDecoration: 'none' }}
     href={href}
     isExternal={isExternal}
     {...rest}
@@ -35,121 +36,182 @@ const NavLink = ({ children, href, color, isExternal, ...rest }) => (
   >
     {children}
   </Link>
-);
+)
 
-export default function Navbar(props) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  // Use 'lg' breakpoint to switch between desktop and mobile nav
-  const isDesktop = useBreakpointValue({ base: false, lg: true });
-  const [scrolled, setScrolled] = useState(false);
-  const overlayOnHero = props.overlayOnHero || false;
-  useEffect(() => {
-    if (!overlayOnHero) return;
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [overlayOnHero]);
-
-  const isOverlay = overlayOnHero && !scrolled;
-  const navBg = isOverlay ? 'transparent' : (props.bg || '#f5cb81');
-  const linkColor = isOverlay ? 'white' : '#000819';
-  const blackLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
-  const whiteLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495029/WhiteLogo_of0ehe.png'
-  const logoSrc = isOverlay ? whiteLogo : blackLogo
-
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Our Story', href: '/our-story' },
-    { label: 'Shop', href: 'https://shop.humble-beeing.com', external: true },
-    { label: 'Impact', href: '/impact-and-sustainability' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Wholesale', href: '/wholesale-and-partnerships' },
-    { label: 'Contact', href: '/contact-and-connect' },
-  ];
+function FloatingPill({ items }) {
+  const containerBg = 'rgba(255, 255, 255, 0.6)'
+  const pillLogoSrc = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
 
   return (
-    <Box 
-    px={{base: '2rem', lg: '5.5rem'}} 
-    py={{base: '1rem', lg: '1rem'}} 
-    position={overlayOnHero ? 'fixed' : 'sticky'} 
-    top={0} 
-    left={0}
-    right={0}
-    zIndex={1000}
-    bg={navBg}
-    // bgGradient={{base:"to-b", lg: 'none'}}
-    // gradientFrom={{base: props.bg ,lg: 'none'}}
-    // gradientTo={{base:'transparent', lg: 'none'}}
-    >
-     <Flex 
-      h={16} 
-      alignItems={'center'} 
-      justifyContent={'space-between'} 
-      maxW="container.xl" 
-      mx="auto"
-      display={{base: 'none', lg: 'flex'}}
+    <Box position="fixed" top={8} left={0} right={0} zIndex={1050} display="flex" justifyContent="center">
+      <HStack
+        spacing={{ base: 1.5, sm: 2.5 }}
+        bg={containerBg}
+        borderWidth="2px"
+        borderColor="black"
+        px={{ base: 3, sm: 4 }}
+        py={{ base: 2, sm: 3 }}
+        rounded="full"
+        boxShadow="md"
+        align="center"
+        style={{ backdropFilter: 'blur(10px)' }}
       >
-        {/* Logo switches: white on overlay hero, black otherwise */}
-        <Link href="/" _hover={{ textDecoration: 'none' }}>
-             <Image
-                src={logoSrc}
-                alt="The Humble Beeing Logo"
-                height={'55px'}
-                width={'auto'} // Maintain aspect ratio
-                mt={0}
-             />
+        <Link
+          href="/"
+          _hover={{ textDecoration: 'none' }}
+          display="inline-flex"
+          alignItems="center"
+          px={{ base: 3.5, sm: 5 }}
+          py={1}
+          rounded="full"
+          mr={{ base: 8, sm: 10, md: 14, lg: 16 }}
+        >
+          <Image src={pillLogoSrc} alt="Humble Beeing Logo" height={{ base: '50px', sm: '40px' }} width="auto" />
         </Link>
+        <HStack as="nav" align="center" spacing={{ base: 1.5, sm: 2 }}>
+          {items.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              isExternal={item.isExternal}
+              role="group"
+              position="relative"
+              px={{ base: 4, sm: 5, md: 8 }}
+              py={3}
+              rounded="full"
+              fontWeight={600}
+              fontFamily="var(--font-hanken)"
+              color={'black'}
+              _hover={{ color: 'black', textDecoration: 'none' }}
+              transition="color 200ms ease, transform 150ms ease"
+            >
+              <Box as="span" position="relative" zIndex={1} fontSize="lg">
+                {item.label}
+              </Box>
+              {!item.active ? (
+                <Box
+                  aria-hidden
+                  position="absolute"
+                  inset={0}
+                  rounded="full"
+                  bg={'rgba(128, 128, 128, 0.12)'}
+                  borderWidth="1px"
+                  borderColor={'gray.300'}
+                  zIndex={0}
+                  opacity={0}
+                  transition="opacity 150ms ease"
+                  _groupHover={{ opacity: 1 }}
+                />
+              ) : null}
+              {item.active ? (
+                <Box
+                  aria-hidden
+                  position="absolute"
+                  inset={0}
+                  rounded="full"
+                  bg={'rgba(128, 128, 128, 0.16)'}
+                  borderWidth="1px"
+                  borderColor={'gray.400'}
+                  zIndex={0}
+                />
+              ) : null}
+            </Link>
+          ))}
+        </HStack>
+      </HStack>
+    </Box>
+  )
+}
 
+export default function Navbar(props) {
+  const { isOpen, onClose } = useDisclosure()
+  const isDesktop = useBreakpointValue({ base: false, lg: true })
+  const [overlayScrolled, setOverlayScrolled] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+  const overlayOnHero = props.overlayOnHero || false
+  const router = useRouter()
 
-          <Flex display={{base: 'none', lg: 'flex'}}>
-            {/* Desktop Navigation Links */}
-            <HStack spacing={'1.5rem'} alignItems={'left'}>
-              <HStack as={'nav'} spacing={'1.5rem'}>
-                {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href} color={linkColor} isExternal={item.external}>
-                    {item.label}
-                  </NavLink>
-                ))}
-              </HStack>
+  // Desktop navbar is hidden; no need to track scroll to toggle it
+  useEffect(() => {
+    const onScroll = () => setHasScrolled(window.scrollY > 10)
+    onScroll()
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
-              {/* Contact modal removed; using Contact link in nav */}
+  useEffect(() => {
+    if (!overlayOnHero) return
+    const onScroll = () => setOverlayScrolled(window.scrollY > 10)
+    onScroll()
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [overlayOnHero])
 
-            </HStack>
-          </Flex>
+  const isOverlay = overlayOnHero && !overlayScrolled
+  const navBg = isOverlay ? 'transparent' : props.bg || '#f5cb81'
+  const linkColor = isOverlay ? 'white' : '#000819'
+  const blackLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
+  const whiteLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495029/WhiteLogo_of0ehe.png'
+  const mobileLogoSrc = hasScrolled ? blackLogo : whiteLogo
 
-      </Flex>
+  const navItems = useMemo(
+    () => [
+      { label: 'Home', href: '/', icon: HomeIcon },
+      { label: 'Our Story', href: '/our-story', icon: BookOpenIcon },
+      { label: 'Shop', href: 'https://shop.humble-beeing.com', isExternal: true, icon: ShoppingBagIcon },
+      { label: 'Impact', href: '/impact-and-sustainability', icon: LeafIcon },
+      { label: 'Blog', href: '/blog', icon: NewspaperIcon },
+      { label: 'Wholesale', href: '/wholesale-and-partnerships', icon: PackageIcon },
+      { label: 'Contact', href: '/contact-and-connect', icon: PhoneIcon },
+    ],
+    [],
+  )
 
-      {/* Mobile Drawer */}
+  const itemsWithActive = useMemo(() => {
+    const asPath = router?.asPath || '/'
+    const isActive = (href) => {
+      if (!href || href.startsWith('http')) return false
+      if (href === '/') return asPath === '/'
+      return asPath.startsWith(href)
+    }
+    return navItems.map((i) => ({ ...i, active: isActive(i.href) }))
+  }, [router?.asPath, navItems])
+
+  return (
+    <Box
+      px={{ base: '2rem', lg: '5.5rem' }}
+      py={{ base: '1rem', lg: 0 }}
+      position={overlayOnHero ? 'fixed' : 'sticky'}
+      top={0}
+      left={0}
+      right={0}
+      zIndex={1000}
+      bg={{ base: navBg, lg: 'transparent' }}
+    >
+      {/* Desktop navbar hidden intentionally; pill is always visible on desktop */}
+
       <Box>
-        <Flex display={{ base: 'flex', lg: 'none' }} alignItems="center" justifyContent="space-between" w="100%">
-          {/* Left: Drawer trigger with fixed width to balance center */}
+        <Flex
+          display={{ base: 'flex', lg: 'none' }}
+          alignItems="center"
+          justifyContent="space-between"
+          w="100%"
+        >
           <Box w="2.5rem" display="flex" justifyContent="flex-start">
-            <MobileDrawer
-              isOpen={isOpen}
-              onClose={onClose}
-              navItems={navItems}
-              getInTouchText="Get in Touch"
-              triggerColor={linkColor}
-            />
+            <MobileDrawer isOpen={isOpen} onClose={onClose} navItems={navItems} getInTouchText="Get in Touch" triggerColor={linkColor} />
           </Box>
 
-          {/* Center: Logo */}
           <Box flex="1" textAlign="center">
             <Link href="/" _hover={{ textDecoration: 'none' }}>
-              <Image
-                src={logoSrc}
-                alt="The Humble Beeing Logo"
-                height={'50px'}
-                width={'auto'}
-              />
+              <Image src={mobileLogoSrc} alt="The Humble Beeing Logo" height={'50px'} width={'auto'} />
             </Link>
           </Box>
 
-          {/* Right: Empty box to keep logo centered */}
           <Box w="2.5rem" />
         </Flex>
       </Box>
+
+      {isDesktop ? <FloatingPill items={itemsWithActive} /> : null}
     </Box>
-  );
+  )
 }
