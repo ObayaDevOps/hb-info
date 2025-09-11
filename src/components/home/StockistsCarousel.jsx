@@ -1,18 +1,23 @@
 import { Box, Container, Heading, HStack, Image, Link } from '@chakra-ui/react'
 import Marquee from '@/components/Marquee'
 
-export default function StockistsCarousel({ title = 'Trusuted Supplier To', logos, speed = 25, gap = 48 }) {
+export default function StockistsCarousel({ title = 'Trusted Supplier To', logos, speed = 25, gap = 48, containerProps = {} }) {
   const items = logos && logos.length ? logos : [
-    { alt: 'Partner 1', src: '/file.svg' },
-    { alt: 'Partner 2', src: '/next.svg' },
-    { alt: 'Partner 3', src: '/vercel.svg' },
-    { alt: 'Partner 4', src: '/Vector.svg' },
-    { alt: 'Partner 5', src: '/globe.svg' },
+    { alt: 'Latitude 0 Hotel', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png' },
+    { alt: 'Le Gourmet Delicatessen', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622577/legourmetlogo_jwnh4y.png' },
+    { alt: 'Yujo Izakaya', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622621/yujo_logo_saqrhi.png' },
+    { alt: 'Karuna Yoga Studio', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622662/karuanyogologo_btlwvf.png' },
+    // { alt: 'Entebbe Duty Free', src: '/Vector.svg' },
+    { alt: 'Coffee At Last', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622662/karuanyogologo_btlwvf.png' },
+    { alt: '32 Degree East', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622961/32east_hvuk3u.jpg' },
+    { alt: 'Farm to Table', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622734/farmtotable_ilqbss.jpg' },
+    { alt: 'Afrotide Crafts', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622805/afrotide_g6egnn.jpg' },
+
   ]
 
   return (
     <Box py={{ base: 10, md: 16 }}>
-      <Container maxW="container.xl" px={{ base: 4, md: 8 }}>
+      <Container maxW="container.xl" px={{ base: 4, md: 8 }} {...containerProps}>
         <Heading as="h2" size="md" mb={{ base: 4, md: 6 }}>
           {title}
         </Heading>
@@ -54,4 +59,3 @@ export default function StockistsCarousel({ title = 'Trusuted Supplier To', logo
     </Box>
   )
 }
-

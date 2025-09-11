@@ -6,6 +6,7 @@ import {
   useDisclosure,
   useBreakpointValue,
   Image,
+  VisuallyHidden,
 } from '@chakra-ui/react'
 import { useEffect, useMemo, useState } from 'react'
 import MobileDrawer from './MobileDrawer'
@@ -218,7 +219,7 @@ export default function Navbar(props) {
   const linkColor = isOverlay ? 'white' : '#000819'
   const blackLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
   const whiteLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495029/WhiteLogo_of0ehe.png'
-  const mobileLogoSrc = hasScrolled ? blackLogo : whiteLogo
+  const mobileLogoSrc = blackLogo
 
   const navItems = useMemo(
     () => [
@@ -300,9 +301,7 @@ export default function Navbar(props) {
               justifySelf="end"
             >
               <Box as={ShoppingBagIcon} boxSize={4} />
-              <Box as="span" fontSize="md">
-                Shop
-              </Box>
+              <VisuallyHidden>Shop</VisuallyHidden>
             </Link>
           </Box>
         </Box>

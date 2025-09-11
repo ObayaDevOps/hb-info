@@ -1,4 +1,6 @@
 // import '@/styles/globals.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 // import { ChakraProvider } from '@chakra-ui/react'
 import { Provider } from "@/components/ui/provider"
 import theme, { hankenGrotesk, poppins, geistSans, geistMono, spaceMono, unbounded } from '../styles/theme'
@@ -30,6 +32,8 @@ const GlobalStyles = css`
     opacity: 0.05;
     mix-blend-mode: multiply;
   }
+  /* Hide default slick arrow pseudo-elements when using custom arrows */
+  .slick-prev:before, .slick-next:before { content: ''; }
 `;
 
 function App({ Component, pageProps }) {
