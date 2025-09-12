@@ -382,11 +382,11 @@ export default function HBHome() {
 
 
       {/* Did you know - adulteration */}
-      <Container maxW="container.md"  mt={{base: 6, lg: 24}}  mb={{base: 6, lg: 16}} pb={{md: 0}}>
+      <Container maxW="container.md"  mt={{base: 16, lg: 24}}  mb={{base: 6, lg: 16}} pb={{md: 0}}>
         <MotionVStack spacing={4} align="center" {...fadeUp}>
-          <MotionHeading as="h2" size={{ base: '3xl', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
+          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
           <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>46% of the collected honey samples in Europe were suspected of being adulterated</MotionHeading>
-          <MotionHeading as="h2" size={{ base: '3xl', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - EU's Joint Research Centre, 2023</MotionHeading>
+          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - EU's Joint Research Centre, 2023</MotionHeading>
         </MotionVStack>
       </Container>
 
@@ -455,11 +455,11 @@ export default function HBHome() {
 
 
       {/* Did you know - uganda harvest */}
-      <Container maxW="container.md"  my={{base: 6, lg: 16}} pb={{md: 0}}>
+      <Container maxW="container.md"  my={{base: 12, lg: 16}} pb={{md: 0}}>
         <MotionVStack spacing={4} align="center" {...fadeUp}>
-          <MotionHeading as="h2" size={{ base: '3xl', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
+          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
           <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>Uganda currently harvests only 1% of a potential 500,000 tonnes of honey per year</MotionHeading>
-          <MotionHeading as="h2" size={{ base: '3xl', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - Dr. Deborah Ruth Amulen</MotionHeading>
+          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - Dr. Deborah Ruth Amulen</MotionHeading>
         </MotionVStack>
       </Container>
 

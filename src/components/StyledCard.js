@@ -4,8 +4,8 @@ export default function StyledCard({ children, ...props }) {
   return (
     <Box
       bg="brand.red"
-      // borderColor="black"
-      // borderWidth={'2px'}
+      borderColor="#000819"
+      borderWidth={'2px'}
       borderRadius="lg"
       // boxShadow="4px 4px 0px 0px rgba(0, 0, 0, 1)"
       overflow="hidden"
@@ -14,10 +14,10 @@ export default function StyledCard({ children, ...props }) {
       mx={2}
       display="flex"
       flexDirection="column"
+      fontFamily='var(--font-hanken)'
       {...props}
     >
       {children}
     </Box>
   )
 }
-

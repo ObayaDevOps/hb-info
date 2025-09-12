@@ -13,17 +13,21 @@ import { Menu, X } from 'lucide-react';
 import { useRef } from "react"; // Keep useRef
 
 // Reusable NavLink component with icon support
-const NavLink = ({ children, href, isExternal }) => (
+const NavLink = ({ children, href, isExternal, active }) => (
   <Link
     px={3}
     py={2}
-    rounded={'md'}
+    rounded={active ? '4xl' : 'md'}
+    bg={active ? 'rgba(0, 8, 25, 0.08)' : 'transparent'}
     color={'#000819'}
     _hover={{ textDecoration: 'none', opacity: 0.9 }}
     href={href}
     isExternal={isExternal}
     fontFamily="var(--font-hanken)"
     fontWeight={600}
+    borderWidth={active ? '2px' : '0px'}
+    borderColor={active ? '#000819' : 'transparent'}
+    aria-current={active ? 'page' : undefined}
   >
     {children}
   </Link>
@@ -62,7 +66,7 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
             <Drawer.Body>
               <VStack spacing={8} align="stretch" pt={'6rem'}>
                 {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href} isExternal={item.isExternal}>
+                  <NavLink key={item.label} href={item.href} isExternal={item.isExternal} active={item.active}>
                     <HStack spacing={3.6} align="center">
                       {item.icon ? (
                         <Box as={item.icon} boxSize={9} color="#000819" />
@@ -79,8 +83,8 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
                       >
                         {item.label}
                       </Text>
-                    </HStack>
-                  </NavLink>
+                  </HStack>
+                 </NavLink>
                 ))}
                 {/* Removed Get in Touch button per request */}
               </VStack>

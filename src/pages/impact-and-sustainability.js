@@ -2,10 +2,11 @@ import Head from 'next/head';
 import { Box, Container, Heading, Text, VStack, SimpleGrid, HStack, Badge, Button, Image } from '@chakra-ui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import Section from '@/components/sections/Section';
+import PageLayout from '@/components/layouts/PageLayout';
 
 export default function ImpactPage() {
   return (
-    <Box bg={'#f5cb81'} color={'#000819'} minH="100vh">
+    <Box bg={'#FFF2D7'}color={'#000819'} minH="100vh">
       <Head>
         <title>Impact & Sustainability | Humble Beeing</title>
         <meta name="description" content="Poverty alleviation, biodiversity, traceability, gender inclusion, and UN SDG alignment." />
@@ -14,9 +15,22 @@ export default function ImpactPage() {
       <HeroSection
         title="Impact & Sustainability"
         subtitle="Traceable quality and measurable outcomes across people and planet."
-      />
+        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg'}
+        overlay
+        py={{ base: 16, md: 24 }}
+      >
+        <Text mt={4} maxW="2xl" color="white">
+          From beekeeper training to biodiversity corridors, every jar you enjoy funds lasting change.
+        </Text>
+      </HeroSection>
 
-      <Section py={{ base: 10, md: 16 }}>
+      <Section
+        py={{ base: 10, md: 16 }}
+        bg={'#FFF2D7'}
+        rounded={{ base: 'none', lg: '4xl' }}
+        // shadow={{ base: 'none', lg: 'xl' }}
+        px={{ base: 12, md: 20 }}
+      >
         {/* Impact pillars */}
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} pb={8}>
           <VStack align="start" spacing={3} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
@@ -52,11 +66,17 @@ export default function ImpactPage() {
 
         {/* CTA */}
         <HStack spacing={4}>
-          <Button as="a" href="#" target="_blank" bg="#000819" color="white" _hover={{ opacity: 0.9 }}>Download our Impact Deck</Button>
-          <Button variant="outline" as="a" href="/wholesale-and-partnerships" borderColor="#000819" color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}>Partner with us</Button>
+          <Button as="a" href="#" size={{base: 'xs', md: 'lg'}} target="_blank" bg="#000819" color="white" _hover={{ opacity: 0.9 }}>Download our Impact Deck</Button>
+          <Button variant="outline" size={{base: 'xs', md: 'lg'}} as="a" href="/wholesale-and-partnerships" borderColor="#000819" color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}>Partner with us</Button>
         </HStack>
       </Section>
 
     </Box>
   );
 }
+
+ImpactPage.getLayout = (page) => (
+  <PageLayout navbarProps={{ overlayOnHero: true }}>
+    {page}
+  </PageLayout>
+)

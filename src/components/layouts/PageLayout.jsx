@@ -4,10 +4,12 @@ import Footer from '@/components/Footer'
 import { toaster } from '@/lib/toaster'
 
 export default function PageLayout({ children, navbarProps }) {
+  const overlayOnHero = navbarProps?.overlayOnHero || false
   return (
-    <Box>
+    <Box bg={'#FFF2D7'}>
       <Navbar {...(navbarProps || {})} />
-      <Box as="main">{children}</Box>
+      {/* Prevent floating nav pill from overlapping non-hero content on desktop */}
+      <Box as="main" pt={{ base: 0, lg: overlayOnHero ? 0 : 28 }}>{children}</Box>
       <Footer />
       <Toaster toaster={toaster}>
         {(toast) => (

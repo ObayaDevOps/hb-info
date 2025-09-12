@@ -291,7 +291,7 @@ export default function Navbar(props) {
               py={2}
               rounded="full"
               fontWeight={700}
-              fontFamily="var(--font-hanken)"
+              fontFamily="var(--font-poppins)"
               bg="black"
               color="#f5cb81"
               borderWidth="1px"

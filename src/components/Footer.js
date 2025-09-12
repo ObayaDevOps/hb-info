@@ -59,8 +59,8 @@ const Footer = () => {
   }
 
   return (
-    <Box as="footer" color="#f5cb81" bg="#000819" px={0} fontFamily={'var(--font-hanken)'}>
-      <Flex minH={{ base: '80vh', md: '80vh' }} align="center" justify="center" px={{ base: '1.5rem', md: '5.5rem' }} py={{ base: 10, md: 16 }}>
+    <Box as="footer" color="#f5cb81" bg="#000819" px={0} fontFamily={'var(--font-hanken)'} borderTopRadius="4xl" >
+      <Flex minH={{ base: '80vh', md: '80vh' }} align="center" justify="center" px={{ base: '1.5rem', md: '5.5rem' }} py={{ base: 10, md: 0 }} >
         <Flex
           w="full"
           maxW="1200px"
@@ -68,9 +68,10 @@ const Footer = () => {
           align={{ base: 'stretch', lg: 'center' }}
           justify="space-between"
           gap={{ base: 10, md: 12, lg: 16 }}
+          
         >
           {/* Brand + Info */}
-          <Stack flex={1} spacing={{ base: 6, md: 8 }}>
+          <Stack flex={1} spacing={{ base: 6, md: 8 }} >
             <MotionBox {...fadeUp}>
               <HStack align="center" spacing={4}>
                 <Image
@@ -152,7 +153,8 @@ const Footer = () => {
                     type="email"
                     placeholder="Enter your email"
                     variant="unstyled"
-                    bg='black'
+                    // bg='black'
+                    bg='#000819'
                     color={'#f5cb81'}
                     _placeholder={{ color: 'rgba(245, 203, 129, 0.9)' }}
                     px={{ base: 3, sm: 4 }}

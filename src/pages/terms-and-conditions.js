@@ -374,7 +374,7 @@ export default function TermsPage({ pageData }) {
 }
 
 TermsPage.getLayout = (page) => (
-  <PageLayout navbarProps={{ bg: '#000819' }}>
+  <PageLayout navbarProps={{ overlayOnHero: true, bg: '#000819' }}>
     {page}
   </PageLayout>
 )
