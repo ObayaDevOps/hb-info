@@ -64,30 +64,91 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
             style={{ backdropFilter: 'blur(10px)' }}
           > 
             <Drawer.Body>
-              <VStack spacing={8} align="stretch" pt={'6rem'}>
-                {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href} isExternal={item.isExternal} active={item.active}>
-                    <HStack spacing={3.6} align="center">
-                      {item.icon ? (
-                        <Box as={item.icon} boxSize={9} color="#000819" />
-                      ) : null}
-                      <Text
-                        fontSize="1.6875rem"
-                        fontFamily="var(--font-hanken)"
-                        fontStyle='normal'
-                        fontWeight={600}
-                        color="#000819"
-                        lineHeight='normal'
-                        letterSpacing="0.02rem"
-                        textTransform='none'
-                      >
-                        {item.label}
-                      </Text>
-                  </HStack>
-                 </NavLink>
-                ))}
-                {/* Removed Get in Touch button per request */}
-              </VStack>
+              {(() => {
+                const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Shop')
+                const trace = navItems.find((it) => it.label === 'Trace')
+                const shop = navItems.find((it) => it.label === 'Shop')
+                return (
+                  <VStack spacing={8} align="stretch" pt={'6rem'} minH="85vh" justify="space-between">
+                    <VStack spacing={8} align="stretch">
+                      {primary.map((item) => (
+                        <NavLink key={item.label} href={item.href} isExternal={item.isExternal} active={item.active}>
+                          <HStack spacing={3.6} align="center">
+                            {item.icon ? (
+                              <Box as={item.icon} boxSize={9} color="#000819" />
+                            ) : null}
+                            <Text
+                              fontSize="1.6875rem"
+                              fontFamily="var(--font-hanken)"
+                              fontStyle='normal'
+                              fontWeight={600}
+                              color="#000819"
+                              lineHeight='normal'
+                              letterSpacing="0.02rem"
+                              textTransform='none'
+                            >
+                              {item.label}
+                            </Text>
+                          </HStack>
+                        </NavLink>
+                      ))}
+                    </VStack>
+                    <VStack spacing={3} align="stretch" pb={4}>
+                      {trace && (
+                        <Link
+                          key={trace.label}
+                          href={trace.href}
+                          isExternal={trace.isExternal}
+                          px={4}
+                          py={3}
+                          rounded='4xl'
+                          bg='black'
+                          color='#f5cb81'
+                          borderWidth='1px'
+                          borderColor='black'
+                          _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
+                          fontFamily='var(--font-hanken)'
+                          fontWeight={700}
+                          display='flex'
+                          alignItems='center'
+                          gap={3}
+                        >
+                          {trace.icon ? <Box as={trace.icon} boxSize={9} /> : null}
+                          <Text fontSize='1.6875rem' lineHeight='normal' letterSpacing='0.02rem' textTransform='none'>
+                            {trace.label}
+                          </Text>
+                        </Link>
+                      )}
+                      {shop && (
+                        <Link
+                          key={shop.label}
+                          href={shop.href}
+                          isExternal={shop.isExternal}
+                          px={4}
+                          py={3}
+                          rounded='4xl'
+                          bg='black'
+                          color='#f5cb81'
+                          borderWidth='1px'
+                          borderColor='black'
+                          _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
+                          fontFamily='var(--font-hanken)'
+                          fontWeight={700}
+                          display='flex'
+                          alignItems='center'
+                          gap={3}
+                        >
+                          {shop.icon ? <Box as={shop.icon} boxSize={9} /> : null}
+                          <Text fontSize='1.6875rem' lineHeight='normal' letterSpacing='0.02rem' textTransform='none'>
+                            {shop.label}
+                          </Text>
+                        </Link>
+                      )}
+                    </VStack>
+                  </VStack>
+                )
+              })()}
+              {/* Removed Get in Touch button per request */}
             </Drawer.Body>
 
             <Drawer.CloseTrigger asChild>

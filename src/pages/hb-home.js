@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion';
 const Slider = dynamic(() => import('react-slick'), { ssr: false })
 import PageLayout from '@/components/layouts/PageLayout';
-import StockistsCarousel from '@/components/home/StockistsCarousel';
+import Marquee from 'react-fast-marquee';
 import StyledCard from '@/components/StyledCard';
 // Marquee handled inside HeroCarousel
 import HeroCarousel from '@/components/home/HeroCarousel';
@@ -16,6 +16,19 @@ import HeroCarousel from '@/components/home/HeroCarousel';
 const featured = [
   { name: 'Gift Boxes', href: 'https://shop.humble-beeing.com', external: true },
   { name: 'Wholesale Inquiries', href: '/wholesale-and-partnerships' },
+];
+
+// Logos for the small marquee under "Uganda's Finest Honey"
+const trustedLogos = [
+  { alt: 'Latitude 0 Hotel', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png' },
+  { alt: 'Le Gourmet Delicatessen', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622577/legourmetlogo_jwnh4y.png' },
+  { alt: 'Yujo Izakaya', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757684190/yujo_icon_ckqdqq.svg' },
+  { alt: 'Karuna Yoga Studio', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622662/karuanyogologo_btlwvf.png' },
+  // { alt: 'Entebbe Duty Free', src: '/Vector.svg' },
+  { alt: 'Coffee At Last', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622699/coffeatlastlgog_lsat63.png' },
+  { alt: '32 Degree East', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622961/32east_hvuk3u.jpg' },
+  { alt: 'Farm to Table', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622734/farmtotable_ilqbss.jpg' },
+  { alt: 'Afrotide Crafts', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622805/afrotide_g6egnn.jpg' },
 ];
 
 const carousel = [
@@ -266,7 +279,7 @@ export default function HBHome() {
       >
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8, lg: 10 }} alignItems="stretch">
           <VStack align="start" spacing={4} pr={{base: 'none', md:20}}>
-            <Heading as="h2" size={{ base: '3xl', md: '5xl' }}>Uganda's Finest Honey</Heading>
+            <Heading as="h2" size={{ base: '3xl', md: '6xl' }}>Uganda's Finest Honey</Heading>
 
 
             <Text fontSize={{ base: 'lg', md: '2xl' }} pt={0}>
@@ -288,11 +301,45 @@ export default function HBHome() {
             Indulge further with our special, 1-month minimum, Infusions, each natural and local ingredient specifically paired to compliment the taste of the honey.
             </Text>
 
-            <Button as={Link} href="/our-story" mt={6} mb={{base: 6, md: 0}} {...pillButtonProps}>
+            {/* <Button as={Link} href="/our-story" mt={6} mb={{base: 6, md: 0}} {...pillButtonProps}>
               <Text fontSize={{ base: 'sm', md: 'xl' }} py={{base: 6, md: 0}} >
                 Shop our Full Range
               </Text>
-              </Button>
+              </Button> */}
+
+            {/* Small marquee: Trusted Supplier To */}
+            <Box w="100%" pt={{ base: 2, md: 16 }}>
+              <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight={600} mb={{ base: 4, md: 3 }} textAlign={{base:'none', md: 'none'}}>
+                Trusted Supplier To
+              </Text>
+              <Box pb={8}>
+                <Marquee gradient={false} speed={25} pauseOnHover>
+                  {trustedLogos.map((item, idx) => (
+                    <HStack
+                      key={idx}
+                      title={item.alt}
+                      // bg={'rgba(255, 255, 255, 0.6)'}
+                      bg={'#FFF2D7'}
+                      rounded="full"
+                      style={{ backdropFilter: 'blur(8px)' }}
+                      px={{ base: 3, md: 4 }}
+                      py={{ base: 1, md: 2 }}
+                      mr={{ base: 3, md: 6 }}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        height={{ base: '64px', md: '86px' }}
+                        width="auto"
+                        objectFit="contain"
+                        opacity={0.9}
+                        sx={{ filter: 'grayscale(1)' }}
+                      />
+                    </HStack>
+                  ))}
+                </Marquee>
+              </Box>
+            </Box>
           </VStack>
           <VStack>
             <Image
@@ -486,7 +533,7 @@ export default function HBHome() {
         >
           <MotionVStack align="start" spacing={2} {...fadeUp}>
             <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              Our Mission
+              Our Mission & Vision
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
               5,000 farmers.
@@ -579,33 +626,118 @@ export default function HBHome() {
 
 
 
+      {/* Recipes */}
+      <Box py={{ base: 12, md: 16 }}>
+        <Container
+          maxW="container.xl"
+          mt={{ base: 6, lg: 20 }}
+          h="95vh"
+          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585366/HB_Tasting_Latitude2_qh91nd.png')"}
+          bgSize="cover"
+          bgPos="center"
+          bgRepeat="no-repeat"
+          rounded={{ base: 'none', lg: '3xl' }}
+          shadow={{ base: 'none', lg: 'xl' }}
+          px={{ base: 12, md: 20 }}
+          py={{ base: 16, md: 20 }}
+          color="white"
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-end"
+          alignItems="flex-start"
+        >
+          <MotionVStack align="start" spacing={2} {...fadeUp}>
+            <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+              For the Foodies
+            </MotionHeading>
+            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
+              Got a Recipe Idea ?
+            </MotionHeading>
+            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
+              New Honey - Food Pairing ?
+            </MotionHeading>
+            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+              We'd Love to Hear it !
+            </MotionHeading>
+
+            <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+              Unleash your inner chef! Our exquisite honeys are not just for your tea; they are a secret ingredient waiting to transform your culinary creations. From delectable glazes to gourmet desserts, explore a world of flavors.
+              If your recipe is featured on our website or Instagram we'll send you a free jar of the honey used in the recipe!
+            </MotionText>
+            <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
+              <Button
+                as={Link}
+                href="/impact-and-sustainability"
+                {...pillButtonProps}
+                bg="#f5cb81"
+                color="black"
+                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
+                fontSize={{base: 'sm', md: "lg"}}
+              >
+                See more Recipes
+              </Button>
+                            <Button
+                as={Link}
+                href="/impact-and-sustainability"
+                {...pillButtonProps}
+                bg="#f5cb81"
+                color="black"
+                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
+                fontSize={{base: 'sm', md: "lg"}}
+              >
+                Submit a Recipe
+              </Button>
+            </MotionHStack>
+          </MotionVStack>
+        </Container>
+      </Box>
 
 
-
-
-      
-
-     
-
-      {/* Where You Can Buy Us */}
-      <StockistsCarousel containerProps={{...panelContainerProps, mt: {base: 6, lg: 20}}} />
 
       {/* Testimonials and Social Proof */}
-      <Container maxW="container.xl" {...panelContainerProps} mt={{base: 6, lg: 20}}>
+      <Container maxW="container.xl" {...panelContainerProps}  pt={{base: 6, lg: 12}} pb={{base: 6, lg: 20}} mb={{ base: 12, lg: 24 }}>
+                <MotionHeading
+          as="h2"
+          size={{ base: 'md', md: 'lg' }}
+          mb={{ base: 4, md: 0 }}
+          fontFamily={'var(--font-hanken)'}
+          {...fadeUp}
+        >
+          Testimonials
+        </MotionHeading>
+        <MotionHeading
+          as="h2"
+          size={{ base: 'lg', md: '2xl' }}
+          mb={{ base: 4, md: 8 }}
+          fontFamily={'var(--font-hanken)'}
+          {...fadeUp}
+        >
+          Don't just take our word for it!
+        </MotionHeading>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
           {[{q: '“The most nuanced honey on our menu.”', a: 'Chef A.'}, {q: '“Silky, clean, and unforgettable.”', a: 'Chef B.'}, {q: '“Our guests ask for it by name.”', a: 'Restaurateur C.'}].map((t, idx) => (
-            <VStack key={idx} align="start" spacing={2} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
-              <Text> {t.q} </Text>
-              <Badge variant="outline" borderColor="#000819" color="#000819">{t.a}</Badge>
-            </VStack>
+            <StyledCard key={idx} borderRadius="2xl" shadow="md" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }}>
+              <VStack align="start" spacing={4} p={6}>
+                <Text fontSize={{ base: 'lg', md: 'xl' }}> {t.q} </Text>
+                <Badge
+                  variant="solid"
+                  bg="black"
+                  color="#f5cb81"
+                  borderColor="black"
+                  rounded="full"
+                  px={3}
+                  py={1}
+                >
+                  {t.a}
+                </Badge>
+              </VStack>
+            </StyledCard>
           ))}
         </SimpleGrid>
-        {/* <HStack spacing={6} pt={10} opacity={0.8}>
-          <Image src={'/vercel.svg'} alt="Press" height="24" width="64" />
-          <Image src={'/next.svg'} alt="Certification" height="24" width="64" />
-          <Image src={'/Vector.svg'} alt="Partner" height="24" width="64" />
-        </HStack> */}
       </Container>
+
+      {/* Spacer above footer with brand background */}
+      <Box bg="#f5cb81" h={{ base: 12, lg: 24 }} />
 
     </Box>
   );
