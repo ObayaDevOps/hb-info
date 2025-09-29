@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Box, Container, Heading, Text, VStack, HStack, Button, SimpleGrid, Image, Badge, IconButton } from '@chakra-ui/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion';
@@ -577,9 +576,7 @@ export default function HBHome() {
               <Box pt={{base: 'none', md: 4}}>
               <Heading as="h2" size={{ base: 'md', md: 'xl' }}>About Us</Heading>
 
-              {/* <RoughNotation type="highlight" show={true} animationDelay={1000} color="#f5cb81"> */}
                 <Heading as="h2" size={{ base: '3xl', md: '6xl' }}>Meet the Family</Heading>
-              {/* </RoughNotation> */}
               <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
                 Humble Beeing is a 100% Ugandan-Family Owned company, led by Obaya who quit his job in London working as a Trading Systems Software Developer at Credit Suisse Investment Bank to move back home to Uganda to start a beekeeping social enterprise, to (hopefully) give his life some more meaning and change the world for the better.
               </Text>
