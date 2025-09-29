@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import SEO from '@/components/SEO';
 import Link from 'next/link';
 import { Box, Container, Heading, Text, VStack, HStack, Button, SimpleGrid, Image, Badge, IconButton } from '@chakra-ui/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -187,11 +188,17 @@ export default function HBHome() {
   ];
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
-      <Head>
-        <title>Humble Beeing | Luxury Honey, Sustainable Impact</title>
-        <meta name="description" content="Luxury African honey and beeswax candles. Shop now and support traceable, regenerative impact." />
-        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
-      </Head>
+      <SEO
+        title="Luxury Honey, Beeswax Candles, and Sustainable Impact"
+        description="Luxury Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale."
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Humble Beeing',
+          url: undefined,
+          logo: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png',
+        }}
+      />
 
       {/* Hero */}
       <HeroCarousel

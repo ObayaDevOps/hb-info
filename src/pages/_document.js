@@ -5,6 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
         <link rel="icon" href={favicon} />
         <link rel="shortcut icon" href={favicon} />
         <meta name="theme-color" content="#000819" />
@@ -16,4 +18,3 @@ export default function Document() {
     </Html>
   )
 }
-
