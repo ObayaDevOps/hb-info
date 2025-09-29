@@ -18,8 +18,7 @@ import {
   Button
   } from '@chakra-ui/react';
 
-  import Navbar from '../components/Navbar';
-  import Footer from '../components/Footer';
+  import PageLayout from '@/components/layouts/PageLayout';
   import VerticalStepperNav from '../components/VerticalStepperNav';
 
 // GROQ query to fetch R&D Tax Credits page data
@@ -219,17 +218,10 @@ export default function TermsPage({ pageData }) {
         <title>{title} | Ashton & Carrington</title>
         <meta name="description" content={metaDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/Vector.svg" />
+        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
       </Head>
       
-      {/* Keep Navbar above overlay */}
-      <Box 
-      position="sticky"
-      top={0}
-      zIndex={3}
-      >
-        <Navbar bg={{base: '#000819', lg: 'none'}} />
-      </Box>
+      {/* Navbar provided by PageLayout */}
 
       {/* Container fills space, contains children, uses flex column */}
       <Box
@@ -376,10 +368,13 @@ export default function TermsPage({ pageData }) {
         </Flex>
       </Box>
 
-      {/* Keep Footer above overlay */}
-      <Box position="relative" zIndex={2}>
-        <Footer />
-      </Box>
+      {/* Footer provided by PageLayout */}
       </Box>
   );
 }
+
+TermsPage.getLayout = (page) => (
+  <PageLayout navbarProps={{ overlayOnHero: true, bg: '#000819' }}>
+    {page}
+  </PageLayout>
+)

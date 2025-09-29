@@ -1,10 +1,9 @@
 import {
   Box,
-  Flex, // Keep Flex if used elsewhere, otherwise remove if unused
-  HStack, // Keep HStack if used elsewhere, otherwise remove if unused
+  Flex,
+  HStack,
   Link,
-  IconButton, // Keep IconButton if used elsewhere, otherwise remove if unused
-  Button,
+  IconButton,
   Drawer,
   VStack,
   Text,
@@ -13,25 +12,28 @@ import {
 import { Menu, X } from 'lucide-react';
 import { useRef } from "react"; // Keep useRef
 
-// Reusable NavLink component
-const NavLink = ({ children, href }) => (
+// Reusable NavLink component with icon support
+const NavLink = ({ children, href, isExternal, active }) => (
   <Link
     px={3}
-    py={1}
-    rounded={'md'}
-    color={'#00DEE3'} // Cyan color
-    _hover={{
-      textDecoration: 'none',
-    }}
+    py={2}
+    rounded={active ? '4xl' : 'md'}
+    bg={active ? 'rgba(0, 8, 25, 0.08)' : 'transparent'}
+    color={'#000819'}
+    _hover={{ textDecoration: 'none', opacity: 0.9 }}
     href={href}
-    fontFamily="Poppins"
-    fontWeight={500}
+    isExternal={isExternal}
+    fontFamily="var(--font-hanken)"
+    fontWeight={600}
+    borderWidth={active ? '2px' : '0px'}
+    borderColor={active ? '#000819' : 'transparent'}
+    aria-current={active ? 'page' : undefined}
   >
     {children}
   </Link>
 );
 
-export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch" }) {
+export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch", triggerColor = '#000819', triggerSize = '2rem' }) {
   // 1. Create a ref for the Drawer Content
   const contentRef = useRef(null);
 
@@ -49,75 +51,110 @@ export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText
         // Assuming default context-based control for simplicity here.
     >
       <Drawer.Trigger asChild>
-        <Menu 
-          color='#00C6CB'
-          size={'2rem'}
-          // Removed mr={-10} as it might be specific styling not needed for the focus fix
-        />
+        <Menu color={triggerColor} size={triggerSize} />
       </Drawer.Trigger>
       <Portal>
         <Drawer.Backdrop />
         <Drawer.Positioner>
           {/* 2. Attach the ref to Drawer.Content */}
-          <Drawer.Content ref={contentRef} bg='#1A2130' color="#00DEE3"> 
+          <Drawer.Content
+            ref={contentRef}
+            bg='rgba(255, 255, 255, 0.8)'
+            color="#000819"
+            style={{ backdropFilter: 'blur(10px)' }}
+          > 
             <Drawer.Body>
-              <VStack spacing={12} align="stretch" pt={'6rem'}>
-                {navItems.map((item) => (
-                  <NavLink key={item.label} href={item.href}>
-                    <Text
-                      fontSize={"1.75rem"}
-                      fontFamily="Poppins"
-                      fontStyle='normal'
-                      fontWeight={500}
-                      color="#00E2E5"
-                      lineHeight={'normal'}
-                      letterSpacing="0.14rem"
-                      textTransform={'uppercase'}
-                      mb={4} // mb={4} might be better on NavLink or VStack item
-                    >
-                      {item.label}
-                    </Text>
-                  </NavLink>
-                ))}
-                {/* Wrap the Button inside NavLink only if the button itself should navigate */}
-                {/* If the Button triggers an action *within* the app, it shouldn't be wrapped in NavLink */}
-                {/* Assuming it navigates to /contact: */}
-                <NavLink href='/contact'> 
-                  <Button
-                    // Removed mt={2} - VStack spacing should handle this
-                    px={'0.625rem'}
-                    py={'1.25rem'}
-                    variant={'outline'}
-                    bgColor={'#000819'}
-                    borderColor={'#00DEE3'}
-                    borderWidth={'2px'}
-                    borderRadius={'2px'}
-                    _hover={{ bg: 'rgba(0, 222, 227, 0.1)', color: '#00DEE3' }}
-                    fontFamily="Poppins"
-                    fontWeight={500}
-                    w="full"
-                  >
-                    <Text
-                      fontSize={"1.75rem"}
-                      fontFamily="Poppins"
-                      fontStyle='normal'
-                      fontWeight={500}
-                      color="#00E2E5"
-                      lineHeight={'normal'}
-                      letterSpacing="0.14rem"
-                      textTransform={'uppercase'}
-                    >
-                      {getInTouchText}
-                    </Text>
-                  </Button>
-                </NavLink>
-              </VStack>
+              {(() => {
+                const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Shop')
+                const trace = navItems.find((it) => it.label === 'Trace')
+                const shop = navItems.find((it) => it.label === 'Shop')
+                return (
+                  <VStack spacing={8} align="stretch" pt={'6rem'} minH="85vh" justify="space-between">
+                    <VStack spacing={8} align="stretch">
+                      {primary.map((item) => (
+                        <NavLink key={item.label} href={item.href} isExternal={item.isExternal} active={item.active}>
+                          <HStack spacing={3.6} align="center">
+                            {item.icon ? (
+                              <Box as={item.icon} boxSize={9} color="#000819" />
+                            ) : null}
+                            <Text
+                              fontSize="1.6875rem"
+                              fontFamily="var(--font-hanken)"
+                              fontStyle='normal'
+                              fontWeight={600}
+                              color="#000819"
+                              lineHeight='normal'
+                              letterSpacing="0.02rem"
+                              textTransform='none'
+                            >
+                              {item.label}
+                            </Text>
+                          </HStack>
+                        </NavLink>
+                      ))}
+                    </VStack>
+                    <VStack spacing={3} align="stretch" pb={4}>
+                      {trace && (
+                        <Link
+                          key={trace.label}
+                          href={trace.href}
+                          isExternal={trace.isExternal}
+                          px={4}
+                          py={3}
+                          rounded='4xl'
+                          bg='black'
+                          color='#f5cb81'
+                          borderWidth='1px'
+                          borderColor='black'
+                          _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
+                          fontFamily='var(--font-hanken)'
+                          fontWeight={700}
+                          display='flex'
+                          alignItems='center'
+                          gap={3}
+                        >
+                          {trace.icon ? <Box as={trace.icon} boxSize={9} /> : null}
+                          <Text fontSize='1.6875rem' lineHeight='normal' letterSpacing='0.02rem' textTransform='none'>
+                            {trace.label}
+                          </Text>
+                        </Link>
+                      )}
+                      {shop && (
+                        <Link
+                          key={shop.label}
+                          href={shop.href}
+                          isExternal={shop.isExternal}
+                          px={4}
+                          py={3}
+                          rounded='4xl'
+                          bg='black'
+                          color='#f5cb81'
+                          borderWidth='1px'
+                          borderColor='black'
+                          _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
+                          fontFamily='var(--font-hanken)'
+                          fontWeight={700}
+                          display='flex'
+                          alignItems='center'
+                          gap={3}
+                        >
+                          {shop.icon ? <Box as={shop.icon} boxSize={9} /> : null}
+                          <Text fontSize='1.6875rem' lineHeight='normal' letterSpacing='0.02rem' textTransform='none'>
+                            {shop.label}
+                          </Text>
+                        </Link>
+                      )}
+                    </VStack>
+                  </VStack>
+                )
+              })()}
+              {/* Removed Get in Touch button per request */}
             </Drawer.Body>
 
             <Drawer.CloseTrigger asChild>
               {/* Position the close button more intentionally, e.g., absolute positioning */}
               <Box position="absolute" top={4} right={4} m={2}> 
-                <X color="#00E2E5" size={'2.75rem'} cursor="pointer" /> 
+                <X color="#000819" size={'2.75rem'} cursor="pointer" /> 
               </Box>
             </Drawer.CloseTrigger>
           </Drawer.Content>
