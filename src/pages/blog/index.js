@@ -15,18 +15,18 @@ const categories = [
 ];
 
 const posts = [
-  { slug: 'best-honey-in-kampala-buyers-guide-2025', title: 'Best Honey in Kampala (2025 Buyer’s Guide)', category: 'beekeeping' },
-  { slug: 'where-to-buy-honey-in-kampala-stockists-and-delivery', title: 'Where to Buy Honey in Kampala: Stockists and Delivery', category: 'beekeeping' },
-  { slug: 'raw-honey-uganda-benefits-and-buying-guide', title: 'Raw Honey in Uganda: Benefits and Buying Guide', category: 'beekeeping' },
-  { slug: 'how-to-store-honey-in-kampala-heat-and-humidity-tips', title: 'How to Store Honey in Kampala: Heat and Humidity Tips', category: 'beekeeping' },
-  { slug: 'premium-honey-uganda-what-makes-it-worth-it', title: 'Premium Honey in Uganda: What Makes It Worth It?', category: 'beekeeping' },
-  { slug: 'how-we-test-honey-purity-in-uganda-lab-and-field', title: 'How We Test Honey Purity in Uganda: Lab and Field', category: 'sustainability' },
+  { slug: 'best-honey-in-kampala-buyers-guide-2025', title: 'Which Honey in Kampala Should You Trust in 2025?', category: 'beekeeping' },
+  { slug: 'where-to-buy-honey-in-kampala-stockists-and-delivery', title: 'Where Can You Buy Trustworthy Honey in Kampala Today?', category: 'beekeeping' },
+  { slug: 'raw-honey-uganda-benefits-and-buying-guide', title: 'Why Do Serious Food Lovers in Uganda Seek Out Raw Honey Instead of the Squeeze Bottle?', category: 'beekeeping' },
+  { slug: 'how-to-store-honey-in-kampala-heat-and-humidity-tips', title: 'How Should You Store Honey in Kampala’s Heat Without Losing Its Magic?', category: 'beekeeping' },
+  { slug: 'premium-honey-uganda-what-makes-it-worth-it', title: 'What Makes Premium Ugandan Honey Worth the Splurge?', category: 'beekeeping' },
+  { slug: 'how-we-test-honey-purity-in-uganda-lab-and-field', title: 'How Do We Prove Ugandan Honey Is Pure Before It Reaches Your Table?', category: 'sustainability' },
   { slug: 'organic-honey-in-uganda-what-it-really-means', title: 'Organic Honey in Uganda: What It Really Means', category: 'sustainability' },
-  { slug: 'specialist-honey-for-chefs-in-kampala-pairings-and-uses', title: 'Specialist Honey for Chefs in Kampala: Pairings and Uses', category: 'beekeeping' },
-  { slug: 'wholesale-honey-kampala-suppliers-guide', title: 'Wholesale Honey in Kampala: Supplier’s Guide', category: 'wholesale' },
-  { slug: 'ugandan-gift-ideas-honey-and-candle-gift-sets', title: 'Ugandan Gift Ideas: Honey and Candle Gift Sets', category: 'gifts' },
-  { slug: 'beeswax-candles-uganda-clean-burn-guide', title: 'Beeswax Candles in Uganda: Clean Burn Guide', category: 'candles' },
-  { slug: 'scented-candles-uganda-fragrance-guide-and-room-pairings', title: 'Scented Candles in Uganda: Fragrance Guide and Room Pairings', category: 'candles' },
+  { slug: 'specialist-honey-for-chefs-in-kampala-pairings-and-uses', title: 'Which Specialist Ugandan Honey Elevates Restaurant Menus in Kampala?', category: 'beekeeping' },
+  { slug: 'wholesale-honey-kampala-suppliers-guide', title: 'Where Can Kampala Businesses Source Reliable Wholesale Honey?', category: 'wholesale' },
+  { slug: 'ugandan-gift-ideas-honey-and-candle-gift-sets', title: 'What Are the Best Ugandan Honey and Candle Gifts for People Who Have Everything?', category: 'gifts' },
+  { slug: 'beeswax-candles-uganda-clean-burn-guide', title: 'Are Beeswax Candles in Uganda Really Cleaner Than Paraffin Pillars?', category: 'candles' },
+  { slug: 'scented-candles-uganda-fragrance-guide-and-room-pairings', title: 'Which Scented Candle Should You Light for Each Room in Kampala?', category: 'candles' },
 ];
 
 export default function BlogPage() {
