@@ -6,13 +6,13 @@ import SEO from '@/components/SEO'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function StoreHoneyKampala() {
-  const title = 'How to Store Honey in Kampala: Heat and Humidity Tips'
-  const description = 'Practical tips for storing honey in Kampala’s heat and humidity. Prevent fermentation, manage crystallisation, and keep flavour vibrant.'
+  const title = 'How Should You Store Honey in Kampala’s Heat Without Losing Its Magic?'
+  const description = 'Real-world storage tactics from Humble Beeing’s beekeepers to protect flavour, prevent fermentation, and manage crystallisation in Uganda’s humid climate.'
   const faqs = [
-    { q: 'Does heat ruin honey?', a: 'Prolonged high heat dulls aromas and can darken honey. Keep jars away from direct sunlight and stoves.' },
-    { q: 'Is crystallised honey spoiled?', a: 'No. Crystallisation is natural. Re‑liquefy by placing the jar in warm water and stirring gently.' },
-    { q: 'Should I refrigerate honey?', a: 'No. Room temperature storage is best. Refrigeration accelerates crystallisation and can trap moisture.' },
-    { q: 'How do I avoid moisture contamination?', a: 'Keep lids closed, use clean dry spoons, and avoid leaving jars uncapped in humid rooms.' },
+    { q: 'Does Kampala heat ruin honey?', a: 'Only if jars sit in direct sun or near stoves. Keep them between 18–25°C and aromas stay vibrant for years.' },
+    { q: 'Is crystallised honey a sign of spoilage?', a: 'No. It is a badge of minimal processing. Re-liquefy slowly in a 40–45°C water bath and the crystals melt back into silk.' },
+    { q: 'Should honey ever be refrigerated?', a: 'Skip the fridge. Cold accelerates crystallisation and humidity affects texture. Room temperature storage is ideal.' },
+    { q: 'How do I avoid moisture contamination?', a: 'Use dry utensils, seal jars promptly, and keep them away from boiling kettles or dishwashers that fog the air.' },
   ]
 
   const faqJsonLd = {
@@ -40,7 +40,7 @@ export default function StoreHoneyKampala() {
 
       <HeroSection
         title={title}
-        subtitle="Keep your honey fresh, aromatic, and safe"
+        subtitle="Storage habits we swear by from Hoima harvests to Kampala kitchens"
         bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495003/IMG_0291_pkvi7q.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
@@ -48,18 +48,21 @@ export default function StoreHoneyKampala() {
 
       <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
         <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">Storage fundamentals</Heading>
+          <Heading as="h2" size="lg">Why climate control matters here</Heading>
+          <Text>Our Kampala kitchens flirt with 30°C afternoons and humidity north of 70%. Honey is hygroscopic, meaning it pulls moisture the way journalists pull late nights. Too much water invites fermentation, so we rotate jars off the counter during service hours and keep them tucked into a cool cupboard—ideally on the wall opposite your cooker.</Text>
+
+          <Heading as="h2" size="lg">Daily habits that protect flavour</Heading>
           <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '8px' } }}>
-            <Box as="li">Store at room temperature away from direct sunlight.</Box>
-            <Box as="li">Keep the lid closed; avoid moisture from humid kitchens.</Box>
-            <Box as="li">Use a clean, dry spoon to prevent introducing water.</Box>
+            <Box as="li">Use dry utensils only. We keep a dedicated honey spoon hanging beside the jar like a tiny security guard.</Box>
+            <Box as="li">Close lids immediately after serving; Kampala’s evening humidity is relentless.</Box>
+            <Box as="li">Store jars between 18–25°C. A pantry or shaded shelf beats a sunny breakfast nook every time.</Box>
           </Box>
 
-          <Heading as="h2" size="lg">Managing crystallisation</Heading>
-          <Text>Crystallisation depends on floral source and temperature. To re‑liquefy, use a warm water bath (~40°C), stirring occasionally. Do not microwave.</Text>
+          <Heading as="h2" size="lg">Managing crystallisation without panic</Heading>
+          <Text>Crystals signal that your honey retains its natural glucose ratio. To return it to velvet, place the jar in a 40–45°C water bath and stir every few minutes. We use sous-vide sticks at the honey house, but a kettle and patient hand works just as well. Skip the microwave; it overheats the outer layer, flattens aromas, and makes bees everywhere shake their heads.</Text>
 
-          <Heading as="h2" size="lg">Preventing fermentation</Heading>
-          <Text>Properly ripened honey with low moisture rarely ferments. Keep jars sealed and avoid adding water or wet spoons.</Text>
+          <Heading as="h2" size="lg">Fermentation red flags (and fixes)</Heading>
+          <Text>True fermentation smells slightly sour and foams around the lid. If that happens, the jar either absorbed moisture or was bottled with too-high water content. Contact us—we’ll troubleshoot, replace your jar, and adjust future handling. For extra insurance, we bottle at 17–18% moisture and include the reading on your batch card.</Text>
 
           <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
           <Heading as="h2" size="lg">FAQs</Heading>
