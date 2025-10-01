@@ -6,12 +6,12 @@ import SEO from '@/components/SEO'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function HowWeTestHoneyUganda() {
-  const title = 'How We Test Honey Purity in Uganda: Lab and Field'
-  const description = 'Our approach to honey purity: from apiary handling and batch traceability to independent lab tests for adulteration, moisture, and residues.'
+  const title = 'How Do We Prove Ugandan Honey Is Pure Before It Reaches Your Table?'
+  const description = 'Step-by-step quality control from hive to accredited lab—including sampling, chain of custody, and analytics—that keeps Humble Beeing honey honest.'
   const faqs = [
-    { q: 'Which tests matter most?', a: 'Adulteration screening, moisture content, and targeted residue tests establish purity and shelf stability.' },
-    { q: 'Do you publish results?', a: 'We summarise findings by batch and can share documentation with B2B buyers and partners.' },
-    { q: 'Why does moisture matter?', a: 'Moisture under ~18.5% helps prevent fermentation and preserves flavour over time.' },
+    { q: 'Which purity tests do you run on every batch?', a: 'Baseline panels cover moisture, electrical conductivity, diastase activity, HMF, and LC-IRMS adulteration screens. We add pesticide or antibiotic checks when apiary conditions demand it.' },
+    { q: 'Do you share laboratory certificates?', a: 'We provide summaries to home customers and full certificates to wholesale partners and regulators under NDA.' },
+    { q: 'Who handles the laboratory work?', a: 'ISO/IEC 17025 accredited labs in Kampala and Nairobi run the heavy analyses; we handle field testing with calibrated refractometers and spectrophotometers.' },
   ]
 
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
@@ -28,18 +28,23 @@ export default function HowWeTestHoneyUganda() {
       <HeroSection title={title} subtitle="Transparency, traceability, and rigorous quality checks" bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg'} overlay py={{ base: 16, md: 24 }} />
       <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
         <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">From apiary to jar</Heading>
-          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '8px' } }}>
-            <Box as="li">Batch‑level traceability: location, season, and harvesting practices.</Box>
-            <Box as="li">Raw handling: gentle filtration and temperature control.</Box>
-            <Box as="li">Sealed, food‑safe storage until packing.</Box>
+          <Heading as="h2" size="lg">Step 1: disciplined harvesting</Heading>
+          <Text>Every apiary visit is logged—GPS coordinates, dominant nectar flow, weather notes. Frames are removed at 80% capping, uncapped with food-grade knives, and spun once. We filter through stainless mesh at ambient temperature so enzymes and pollen remain intact. Storage drums are sanitised between batches because a trusted product starts with neurotic cleanliness.</Text>
+
+          <Heading as="h2" size="lg">Step 2: field testing and chain of custody</Heading>
+          <Text>Before leaving Hoima or Kibaale, we record moisture readings using calibrated Atago refractometers. Anything above 18.5% is set aside for additional ripening. Samples are sealed in tamper-evident vials, labelled with QR-coded batch IDs, and transported to Kampala in insulated crates. The chain-of-custody paperwork isn’t glamorous, but it ensures nobody can sneak dilution into the journey.</Text>
+
+          <Heading as="h2" size="lg">Step 3: accredited laboratory analytics</Heading>
+          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '10px' } }}>
+            <Box as="li"><b>LC-IRMS adulteration screening:</b> confirms sugars originate from nectar—not imported syrups.</Box>
+            <Box as="li"><b>Diastase activity and HMF:</b> reveal whether heat ever mistreated the batch.</Box>
+            <Box as="li"><b>Electrical conductivity and pollen microscopy:</b> double-check floral origin against field notes.</Box>
+            <Box as="li"><b>Targeted residue tests:</b> pesticides, antibiotics, or heavy metals when apiary neighbours spray or medicate.</Box>
           </Box>
-          <Heading as="h2" size="lg">Independent lab testing</Heading>
-          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '8px' } }}>
-            <Box as="li">Adulteration screening and sugar profile checks.</Box>
-            <Box as="li">Moisture content to ensure shelf stability.</Box>
-            <Box as="li">Residue testing where risk factors are identified.</Box>
-          </Box>
+
+          <Heading as="h2" size="lg">Step 4: reporting back to you</Heading>
+          <Text>We compile results into batch cards with harvest region, moisture, diastase, flavour descriptors, and best-use suggestions. Wholesale buyers receive the full certificates and auditors are welcome to review five years of archived data. Home subscribers get a succinct summary and direct access to our quality team—because transparency should be as accessible as your breakfast toast.</Text>
+
           <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
           <Heading as="h2" size="lg">FAQs</Heading>
           <FaqAccordion items={faqs} />
