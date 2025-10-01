@@ -10,10 +10,10 @@ export default function StudioPage() {
   return (
     <Box minHeight={'120vh'} position="fixed" top="0" minWidth={'100vw'} zIndex={9999}>
         <Head>
-            <title>Editor Studio | Ashton & Carrington </title>
-            <meta name="description" content="Ashton & Carrington Webpage" />
-            <link rel="icon" href="/cat-face.svg" />
-
+            <title>Editor Studio | Humble Beeing</title>
+            <meta name="description" content="Humble Beeing Content Studio" />
+            <meta name="robots" content="noindex,nofollow,noarchive" />
+        
         </Head>
         
         <NextStudio config={config} />

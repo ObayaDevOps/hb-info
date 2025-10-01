@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import SEO from '@/components/SEO';
 import Link from 'next/link';
 import { Box, Container, Heading, Text, VStack, SimpleGrid, Badge, Input } from '@chakra-ui/react';
 import HeroSection from '@/components/sections/HeroSection';
@@ -14,17 +15,32 @@ const categories = [
 ];
 
 const posts = [
-  { slug: 'welcome-to-the-hive', title: 'Welcome to the Hive', category: 'beekeeping' },
-  { slug: 'citrus-honey-madeleines', title: 'Citrus Honey Madeleines', category: 'recipes' },
+  { slug: 'best-honey-in-kampala-buyers-guide-2025', title: 'Best Honey in Kampala (2025 Buyer’s Guide)', category: 'beekeeping' },
+  { slug: 'where-to-buy-honey-in-kampala-stockists-and-delivery', title: 'Where to Buy Honey in Kampala: Stockists and Delivery', category: 'beekeeping' },
+  { slug: 'raw-honey-uganda-benefits-and-buying-guide', title: 'Raw Honey in Uganda: Benefits and Buying Guide', category: 'beekeeping' },
+  { slug: 'how-to-store-honey-in-kampala-heat-and-humidity-tips', title: 'How to Store Honey in Kampala: Heat and Humidity Tips', category: 'beekeeping' },
+  { slug: 'premium-honey-uganda-what-makes-it-worth-it', title: 'Premium Honey in Uganda: What Makes It Worth It?', category: 'beekeeping' },
+  { slug: 'how-we-test-honey-purity-in-uganda-lab-and-field', title: 'How We Test Honey Purity in Uganda: Lab and Field', category: 'sustainability' },
+  { slug: 'organic-honey-in-uganda-what-it-really-means', title: 'Organic Honey in Uganda: What It Really Means', category: 'sustainability' },
+  { slug: 'specialist-honey-for-chefs-in-kampala-pairings-and-uses', title: 'Specialist Honey for Chefs in Kampala: Pairings and Uses', category: 'beekeeping' },
+  { slug: 'wholesale-honey-kampala-suppliers-guide', title: 'Wholesale Honey in Kampala: Supplier’s Guide', category: 'wholesale' },
+  { slug: 'ugandan-gift-ideas-honey-and-candle-gift-sets', title: 'Ugandan Gift Ideas: Honey and Candle Gift Sets', category: 'gifts' },
+  { slug: 'beeswax-candles-uganda-clean-burn-guide', title: 'Beeswax Candles in Uganda: Clean Burn Guide', category: 'candles' },
+  { slug: 'scented-candles-uganda-fragrance-guide-and-room-pairings', title: 'Scented Candles in Uganda: Fragrance Guide and Room Pairings', category: 'candles' },
 ];
 
 export default function BlogPage() {
   return (
     <Box bg={'#FFF2D7'}color={'#000819'} minH="100vh">
-      <Head>
-        <title>Blog | Humble Beeing</title>
-        <meta name="description" content="Beekeeping knowledge, recipes, impact stories, and sustainability insights." />
-      </Head>
+      <SEO
+        title="Blog"
+        description="Beekeeping knowledge, buyer guides, Kampala stockists, candle care, gifting ideas, and sustainability insights."
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          name: 'The Hive Journal',
+        }}
+      />
 
       {/* Hero */}
       <HeroSection
