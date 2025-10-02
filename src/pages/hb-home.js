@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import SEO from '@/components/SEO';
 import Link from 'next/link';
-import { Box, Container, Heading, Text, VStack, HStack, Button, SimpleGrid, Image, Badge, IconButton } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, HStack, Button, SimpleGrid, Image, Badge, IconButton, Link as ChakraLink } from '@chakra-ui/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import dynamic from 'next/dynamic'
@@ -189,8 +189,8 @@ export default function HBHome() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
       <SEO
-        title="Luxury Honey, Beeswax Candles, and Sustainable Impact"
-        description="Luxury Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale."
+        title="Gourmet Honey, Beeswax Candles, and Sustainable Impact"
+        description="Gourmet Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale."
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Organization',
@@ -230,15 +230,32 @@ export default function HBHome() {
         )}
       >
         <MotionVStack align="start" spacing={4} {...fadeUp}>
-          <MotionHeading as="h1" size={{base:"4xl", md:"6xl"}}
+          <MotionHeading as="h1" 
+            size={{base:"3xl", md:"6xl"}}
+            fontFamily="var(--font-hanken)"
+            {...fadeUp} 
+            transition={{ ...fadeUp.transition, delay: 0.1 }}>
+              Uganda's Finest Honey
+          </MotionHeading>
+          {/* <MotionHeading as="h2" 
+            size={{base:"lg", md:"2xl"}}
+            fontFamily="var(--font-hanken)"
+            {...fadeUp} 
+          transition={{ ...fadeUp.transition, delay: 0.1 }}>
+            Gourmet Raw Honey, Traceable from Hive to Jar with a Sustainable Impact
+          </MotionHeading> */}
+          <MotionText maxW={{base: 'md', md:"2xl"}}
           fontFamily="var(--font-hanken)"
-          {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Luxury honey, sustainable impact.</MotionHeading>
-          <MotionText maxW="2xl"
-          fontFamily="var(--font-hanken)"
-          fontSize={{base:"lgg", md:"2xl"}}
+          fontSize={{base:"md", md:"xl"}}
           {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}
           >
-            Single-Origin Raw and Infused Ugandan Honey, Traceable from Hive to Table. Supporting Small-holder farmers </MotionText>
+            Gourmet Raw Honey From Uganda's Pristine Biodiverse Landscapes. </MotionText>
+            <MotionText maxW={{base: 'md', md:"2xl"}}
+          fontFamily="var(--font-hanken)"
+          fontSize={{base:"md", md:"xl"}}
+          {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}
+          >
+          Traceable from Hive to Jar with a Sustainable Impact. </MotionText>
           <MotionHStack spacing={4} pt={2} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
             <Button
               as={Link}
@@ -279,7 +296,7 @@ export default function HBHome() {
       </HeroCarousel>
 
 
-      <Container maxW="container.xl" mt={{ base: 0, md: 24 }}
+      {/* <Container maxW="container.xl" mt={{ base: 0, md: 24 }}
         minH={{ base: 'auto', md: '70vh' }}
         {...panelContainerProps}
       >
@@ -307,45 +324,7 @@ export default function HBHome() {
             Indulge further with our special, 1-month minimum, Infusions, each natural and local ingredient specifically paired to compliment the taste of the honey.
             </Text>
 
-            {/* <Button as={Link} href="/our-story" mt={6} mb={{base: 6, md: 0}} {...pillButtonProps}>
-              <Text fontSize={{ base: 'sm', md: 'xl' }} py={{base: 6, md: 0}} >
-                Shop our Full Range
-              </Text>
-              </Button> */}
 
-            {/* Small marquee: Trusted Supplier To */}
-            <Box w="100%" pt={{ base: 2, md: 16 }}>
-              <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight={600} mb={{ base: 4, md: 3 }} textAlign={{base:'none', md: 'none'}}>
-                Trusted Supplier To
-              </Text>
-              <Box pb={8}>
-                <Marquee gradient={false} speed={25} pauseOnHover>
-                  {trustedLogos.map((item, idx) => (
-                    <HStack
-                      key={idx}
-                      title={item.alt}
-                      // bg={'rgba(255, 255, 255, 0.6)'}
-                      bg={'#FFF2D7'}
-                      rounded="full"
-                      style={{ backdropFilter: 'blur(8px)' }}
-                      px={{ base: 3, md: 4 }}
-                      py={{ base: 1, md: 2 }}
-                      mr={{ base: 3, md: 6 }}
-                    >
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        height={{ base: '64px', md: '86px' }}
-                        width="auto"
-                        objectFit="contain"
-                        opacity={0.9}
-                        sx={{ filter: 'grayscale(1)' }}
-                      />
-                    </HStack>
-                  ))}
-                </Marquee>
-              </Box>
-            </Box>
           </VStack>
           <VStack>
             <Image
@@ -358,18 +337,16 @@ export default function HBHome() {
             />
           </VStack>
         </SimpleGrid>
-      </Container>
-
-
+      </Container> */}
        {/* Product Slider (react-slick) */}
-      <Container maxW="container.xl" 
+      <Container maxW="full" 
       
       bg='black'
-      rounded={{ base: 'none', lg: '3xl' }}
+      // rounded={{ base: 'none', lg: '3xl' }}
       shadow= {{ base: 'none', lg: 'xl' }}
       px={{ base: 12, md: 20 }}
       py={{ base: 16, md: 16 }}
-      mt={{base: 6, lg: 32}}
+      mt={{base: 6, lg: 0}}
       display={{ base: 'none', md: 'block' }} // Hide on mobile, show on desktop
       >
         <Box p={2}>
@@ -434,14 +411,70 @@ export default function HBHome() {
       </Container>
 
 
-      {/* Did you know - adulteration */}
-      <Container maxW="container.md"  mt={{base: 16, lg: 24}}  mb={{base: 6, lg: 16}} pb={{md: 0}}>
-        <MotionVStack spacing={4} align="center" {...fadeUp}>
-          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
-          <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>46% of the collected honey samples in Europe were suspected of being adulterated</MotionHeading>
-          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - EU's Joint Research Centre, 2023</MotionHeading>
-        </MotionVStack>
+      {/* Trusted Supplier marquee section */}
+      <Container
+        maxW="container.xl"
+        mt={{ base: 12, md: 20 }}
+        {...panelContainerProps}
+        py={{ base: 10, md: 20 }}
+      >
+        <VStack spacing={{ base: 4, md: 6 }} align="stretch">
+          <Text fontSize={{ base: 'lg', lg: '2xl' }} mb={{ base: 3, md: 4 }} mt={{base: 3, md: -8}} fontWeight={600} textAlign={{ base: 'center', md: 'center' }}>
+            Trusted Supplier To
+          </Text>
+          <Box>
+            <Marquee gradient={false} speed={25} pauseOnHover>
+              {trustedLogos.map((item, idx) => {
+                const logo = (
+                  <HStack
+                    title={item.alt}
+                    bg={'#FFF2D7'}
+                    rounded="full"
+                    style={{ backdropFilter: 'blur(8px)' }}
+                    px={{ base: 3, md: 4 }}
+                    py={{ base: 1, md: 2 }}
+                    mr={{ base: 3, md: 6 }}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      height={{ base: '64px', md: '86px' }}
+                      width="auto"
+                      objectFit="contain"
+                      opacity={0.9}
+                      filter="grayscale(100%)"
+                    />
+                  </HStack>
+                )
+
+                if (item.href) {
+                  return (
+                    <ChakraLink
+                      key={idx}
+                      href={item.href}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
+                      display="inline-block"
+                      _hover={{ textDecoration: 'none' }}
+                    >
+                      {logo}
+                    </ChakraLink>
+                  )
+                }
+
+                return (
+                  <Box key={idx} display="inline-block">
+                    {logo}
+                  </Box>
+                )
+              })}
+            </Marquee>
+          </Box>
+        </VStack>
       </Container>
+
+
+
 
 
        {/* Honey Statement */}
@@ -465,25 +498,25 @@ export default function HBHome() {
           alignItems="flex-start"
         >
           <MotionVStack align="start" spacing={2} {...fadeUp}>
-            <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+            <MotionHeading as="h3" size={{base: 'lg', md: "2xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
               Our Ugandan Honey
             </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
+            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
               Traceable.
             </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
               Pesticide Free.
             </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
+            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
               Single-Origin.
             </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
+            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
               Ethically Sourced.
             </MotionHeading>
-            <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+            {/* <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
               We hand select the finest Grade-A honeycombs and hand press them to preserve the natural aromas, flavours and 'Terroir'.  This fine, Raw, cold pressed honey is loaded with immune-boosting trace vitamins, minerals and gut friendly live probiotics, prebiotics and enzymes. All gifts from the abundant Bio-diversity of Uganda's Landscapes.
               Our honey is 'Single-Origin', we never blend our Honeys. This means our honey is different from one apiary location to another and one harvest to another. We want it that way ! Each batch has a unique identifying 'Harvest Number', and once a Harvest is sold out, it's gone! 
-            </MotionText>
+            </MotionText> */}
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
               <Button
                 as={Link}
@@ -494,7 +527,7 @@ export default function HBHome() {
                 _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
                 fontSize={{base: 'sm', md: "lg"}}
               >
-                Explore our Honey Range
+                Find out more about our Honey Range
               </Button>
             </MotionHStack>
           </MotionVStack>
@@ -542,16 +575,16 @@ export default function HBHome() {
               Our Mission & Vision
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              5,000 farmers.
+              2,000 farmers.
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              1,500 tons of Organic Honey.
+              400 tons of Organic Honey.
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
               Certified luxury.
             </MotionHeading>
             <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
-              Our mission is to improve the livelihood of 5000 farmers by providing knowledge, fair market-access and building inclusive, resilient, and sustainable beehive product value chains. 
+              Our mission is to improve the livelihood of 2000 farmers by providing knowledge, fair market-access and building inclusive, resilient, and sustainable beehive product value chains. 
               We aim to become Africa's largest producer and exporter to EU of certified organic honey and beeswax. While promoting the planting and conservation of the native Shea Tree.
             </MotionText>
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
@@ -626,6 +659,16 @@ export default function HBHome() {
             </Box>
           </VStack>
         </SimpleGrid>
+      </Container>
+
+
+      {/* Did you know - adulteration */}
+      <Container maxW="container.md"  mt={{base: 16, lg: 24}}  mb={{base: 6, lg: 16}} pb={{md: 0}}>
+        <MotionVStack spacing={4} align="center" {...fadeUp}>
+          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
+          <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>46% of the collected honey samples in Europe were suspected of being adulterated</MotionHeading>
+          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - EU's Joint Research Centre, 2023</MotionHeading>
+        </MotionVStack>
       </Container>
 
 
