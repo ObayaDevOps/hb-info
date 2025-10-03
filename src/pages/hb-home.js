@@ -20,33 +20,23 @@ const featured = [
 
 // Logos for the small marquee under "Uganda's Finest Honey"
 const trustedLogos = [
-  { alt: 'Latitude 0 Hotel', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png' },
-  { alt: 'Le Gourmet Delicatessen', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622577/legourmetlogo_jwnh4y.png' },
-  { alt: 'Yujo Izakaya', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757684190/yujo_icon_ckqdqq.svg' },
-  { alt: 'Karuna Yoga Studio', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622662/karuanyogologo_btlwvf.png' },
+  { alt: 'Latitude 0 Hotel', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png'},
+  { alt: 'Le Gourmet Delicatessen', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499163/Logo-Black_e2b52c60-8cb6-4ed1-81ff-c0a86bb0795f_acagzq.svg' },
+  { alt: 'Yujo Izakaya', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499225/yujo-removebg-preview_cjol1f.png' },
+  { alt: 'Karuna Yoga Studio', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499097/karuna-brand_cgruz0.png' },
   // { alt: 'Entebbe Duty Free', src: '/Vector.svg' },
-  { alt: 'Coffee At Last', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622699/coffeatlastlgog_lsat63.png' },
+  { alt: 'Coffee At Last', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499290/coffeatlastlgog_lsat63-removebg-preview_k5vfbh.png' },
   { alt: '32 Degree East', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622961/32east_hvuk3u.jpg' },
   { alt: 'Farm to Table', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622734/farmtotable_ilqbss.jpg' },
   { alt: 'Afrotide Crafts', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622805/afrotide_g6egnn.jpg' },
 ];
 
 const carousel = [
-  { name: 'Pine & Coffee Blossom', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
-  { name: 'Shea Blossom', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
-  { name: 'Orange Infused', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Zesty and sweet, our orange infused honey is a vibrant treat.' },
-  { name: 'Chili Infused Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'A fiery kick meets golden sweetness in our chili infused raw honey.' },
-  { name: 'Vanilla & Chamomile Candle', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Relax with the soothing aroma of vanilla and chamomile in our pure beeswax candle.' },
-  { name: 'Lemon Infused Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Bright and refreshing, our lemon infused honey adds a citrusy twist to any dish.' },
-  { name: 'Ginger Infused Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Warm and spicy, this ginger infused honey is perfect for a cozy drink or glaze.' },
-  { name: 'Cinnamon Infused Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Sweet and aromatic, our cinnamon infused honey is a delightful addition to your pantry.' },
-  { name: 'Vanilla Infused Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Rich and fragrant, our vanilla infused honey offers a touch of elegance.' },
-  { name: 'Cacao Nib Infused Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Indulge in the deep, chocolatey notes of our cacao nib infused honey.' },
-  { name: 'Bee Pollen', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Boost your wellness with our natural and nutritious bee pollen.' },
-  { name: 'Propolis Tincture', href: 'https://humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Harness the natural power of propolis with our potent tincture.' },
-  { name: 'Pure Beeswax Blocks', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Versatile and natural, our pure beeswax blocks are perfect for DIY projects.' },
-  { name: 'Tea Pairing Set', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Elevate your tea experience with our thoughtfully curated tea pairing set.' },
-  { name: 'Chef’s Selection', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Discover unique flavors hand-picked for culinary excellence in our Chef’s Selection.' },
+  { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
+  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
+  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Zesty and sweet, our orange infused honey is a vibrant treat.' },
+  { name: 'Premium GIft Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'A fiery kick meets golden sweetness in our chili infused raw honey.' },
+
 ];
 
 const MotionBox = motion.create ? motion.create(Box) : motion(Box)
@@ -726,14 +716,59 @@ export default function HBHome() {
       </Container> */}
 
 
-      {/* Did you know - adulteration */}
-      <Container maxW="container.md"  mt={{base: 16, lg: 24}}  mb={{base: 6, lg: 16}} pb={{md: 0}}>
-        <MotionVStack spacing={4} align="center" {...fadeUp}>
-          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
-          <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>46% of the collected honey samples in Europe were suspected of being adulterated</MotionHeading>
-          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - EU's Joint Research Centre, 2023</MotionHeading>
-        </MotionVStack>
-      </Container>
+      {/* Did you know */}
+      <Box
+        w="full"
+        minH='85vh'
+        mt={{ base: 16, lg: 24 }}
+        mb={{ base: 6, lg: 16 }}
+        py={{ base: 12, md: 20 }}
+        px={{ base: 6, md: 12 }}
+        bgImage={
+          "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497169/random-institute-zXu9RsYKgHA-unsplash_qcpgiy.jpg')"
+        }
+        bgSize="cover"
+        bgPos="center"
+        bgRepeat="no-repeat"
+      >
+        <Container maxW="container.lg" color="white">
+          <MotionVStack spacing={4} align="center" {...fadeUp}>
+            <MotionHeading
+              as="h2"
+              size={{ base: 'lg', md: 'xl' }}
+              pt={6}
+              textAlign="center"
+              fontFamily={'var(--font-hanken)'}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+            >
+              Our Guarantee
+            </MotionHeading>
+            <MotionHeading
+              as="h1"
+              size={{ base: '3xl', md: '6xl' }}
+              maxW="4xl"
+              textAlign="center"
+              fontFamily={'var(--font-hanken)'}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.2 }}
+            >
+              Only the very best Grade-A honeycomb from pesticide-free areas makes it into our jars and our farmers are given a fair price
+            </MotionHeading>
+            <MotionHeading
+              as="h2"
+              size={{ base: 'lg', md: 'xl' }}
+              pt={6}
+              textAlign="center"
+              fontFamily={'var(--font-hanken)'}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.3 }}
+            >
+              - Humble Beeing Promise, 2023
+            </MotionHeading>
+          </MotionVStack>
+        </Container>
+      </Box>
 
 
 
@@ -827,7 +862,7 @@ export default function HBHome() {
         </MotionHeading>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
           {[{q: '“The most nuanced honey on our menu.”', a: 'Chef A.'}, {q: '“Silky, clean, and unforgettable.”', a: 'Chef B.'}, {q: '“Our guests ask for it by name.”', a: 'Restaurateur C.'}].map((t, idx) => (
-            <StyledCard key={idx} borderRadius="2xl" shadow="md" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }}>
+            <StyledCard key={idx} borderRadius="2xl" shadow="md" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }} py={{base: 4, md: 'none'}}>
               <VStack align="start" spacing={4} p={6}>
                 <Text fontSize={{ base: 'lg', md: 'xl' }}> {t.q} </Text>
                 <Badge
@@ -845,6 +880,74 @@ export default function HBHome() {
             </StyledCard>
           ))}
         </SimpleGrid>
+      </Container>
+
+      {/* Certifications & Standards */}
+      <Container
+        maxW="container.md"
+        py={{ base: 12, md: 16 }}
+        mb={{ base: 12, md: 10 }}
+        display="flex"
+        justifyContent="center"
+        bg="transparent"
+      >
+        <MotionVStack spacing={{ base: 6, md: 8 }} align="center" textAlign="center" {...fadeUp}>
+          <MotionHeading
+            as="h2"
+            size={{ base: '2xl', md: '5xl' }}
+            fontFamily={'var(--font-hanken)'}
+            {...fadeUp}
+            color={'gray.500'}
+          >
+            Quality Assured
+          </MotionHeading>
+          <MotionText fontSize={{ base: 'md', md: 'lg' }} color={'gray.600'} maxW="3xl" fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+            Proud partners and certified producers meeting the highest standards for Ugandan honey and beeswax
+          </MotionText>
+          <MotionHStack
+            spacing={{ base: 16, md: 24 }}
+            flexWrap="wrap"
+            justify="center"
+            rowGap={{ base: 10, md: 12 }}
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.2 }}
+          >
+            <VStack spacing={3} align="center" bg="transparent">
+              <ChakraLink
+                href="https://tunadobees.org/"
+                isExternal
+                _hover={{ textDecoration: 'none', opacity: 0.85 }}
+              >
+                <Image
+                  src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497155/TUNADO_logo_ssjqo4.png"
+                  alt="TUNADO Membership"
+                  maxW={{ base: '140px', md: '180px' }}
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              </ChakraLink>
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontFamily={'var(--font-hanken)'}>
+                Member of TUNADO
+              </Text>
+            </VStack>
+            <VStack spacing={3} align="center" bg="transparent">
+              <ChakraLink
+                href="https://unbs.go.ug/content.php?src=product-certification&pg=content"
+                isExternal
+                _hover={{ textDecoration: 'none', opacity: 0.85 }}
+              >
+                <Image
+                  src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497151/UNBS_QMark_Logo_v8hbbz.png"
+                  alt="Uganda National Bureau of Standards"
+                  maxW={{ base: '140px', md: '180px' }}
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              </ChakraLink>
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontFamily={'var(--font-hanken)'}>
+                Meets Uganda Standard for quality
+              </Text>
+            </VStack>
+          </MotionHStack>
+        </MotionVStack>
       </Container>
 
       {/* Spacer above footer with brand background */}
