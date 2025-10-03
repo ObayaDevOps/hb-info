@@ -340,16 +340,16 @@ export default function HBHome() {
       </Container> */}
        {/* Product Slider (react-slick) */}
       <Container maxW="full" 
-      
       bg='black'
+      minH='100vh'
       // rounded={{ base: 'none', lg: '3xl' }}
       shadow= {{ base: 'none', lg: 'xl' }}
       px={{ base: 12, md: 20 }}
-      py={{ base: 16, md: 16 }}
-      mt={{base: 6, lg: 0}}
+      py={{ base: 0, md: 16 }}
+      mt={{base: 0, lg: 0}}
       display={{ base: 'none', md: 'block' }} // Hide on mobile, show on desktop
       >
-        <Box p={2}>
+        <Box p={2} mt={{ base: 16, md: 16 }}>
           <MotionHeading as="h2" size={{ base: 'sm', lg: 'xl' }} mb={{ base: 3, md: 0 }} color='#FFF2D7' {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Explore Selections</MotionHeading>
           <MotionHeading as="h2" size={{ base: 'lg', lg: '3xl' }} mb={{ base: 3, md: 4 }} color='#FFF2D7' {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>Our Product Range</MotionHeading>
         </Box>
@@ -414,16 +414,21 @@ export default function HBHome() {
       {/* Trusted Supplier marquee section */}
       <Container
         maxW="container.xl"
-        mt={{ base: 12, md: 20 }}
+        mt={{ base: 0, md: 20 }}
         {...panelContainerProps}
         py={{ base: 10, md: 20 }}
       >
         <VStack spacing={{ base: 4, md: 6 }} align="stretch">
-          <Text fontSize={{ base: 'lg', lg: '2xl' }} mb={{ base: 3, md: 4 }} mt={{base: 3, md: -8}} fontWeight={600} textAlign={{ base: 'center', md: 'center' }}>
+          <Text fontSize={{ base: 'lg', lg: '2xl' }} 
+          mb={{ base: 3, md: 4 }} 
+          mt={{base: 3, md: -8}} 
+          fontWeight={600} 
+          color='gray.600'
+          textAlign={{ base: 'center', md: 'center' }}>
             Trusted Supplier To
           </Text>
-          <Box>
-            <Marquee gradient={false} speed={25} pauseOnHover>
+          <Box maxW='full'>
+            <Marquee gradient={false} speed={40} pauseOnHover>
               {trustedLogos.map((item, idx) => {
                 const logo = (
                   <HStack
@@ -499,7 +504,7 @@ export default function HBHome() {
         >
           <MotionVStack align="start" spacing={2} {...fadeUp}>
             <MotionHeading as="h3" size={{base: 'lg', md: "2xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              Our Ugandan Honey
+              Gourmet Raw Ugandan Honey
             </MotionHeading>
             <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
               Traceable.
@@ -556,7 +561,10 @@ export default function HBHome() {
           maxW="container.xl"
           mt={{ base: 6, lg: 20 }}
           h="95vh"
+          // bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757589584/AMW_Cropped_zguxn7.png')"}
           bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757589584/AMW_Cropped_zguxn7.png')"}
+
+          
           bgSize="cover"
           bgPos="center"
           bgRepeat="no-repeat"
@@ -605,9 +613,65 @@ export default function HBHome() {
       </Box>
 
 
+      {/* Impact Statement */}
+      <Box py={{ base: 12, md: 16 }}>
+        <Container
+          maxW="container.xl"
+          mt={{ base: 6, lg: 20 }}
+          h="95vh"
+          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757598800/Obaya_honey_week_m4wiae.png')"}
+          bgSize="cover"
+          bgPos="center"
+          bgRepeat="no-repeat"
+          rounded={{ base: 'none', lg: '3xl' }}
+          shadow={{ base: 'none', lg: 'xl' }}
+          px={{ base: 12, md: 20 }}
+          py={{ base: 16, md: 20 }}
+          color="white"
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-end"
+          alignItems="flex-start"
+        >
+          <MotionVStack align="start" spacing={2} {...fadeUp}>
+            <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+             A Family Business
+            </MotionHeading>
+            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
+              Built By Ugandans.
+            </MotionHeading>
+            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+              For Ugandans.
+            </MotionHeading>
+
+            <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+            Humble Beeing is a 100% Ugandan-Family Owned company, led by Obaya who quit his job in London working as a Trading Systems Software Developer at an Investment Bank 
+            to move back home to Uganda (where he grew up) to start a beekeeping social enterprise, to (hopefully) give his life some more meaning and change the world for the better.
+
+            Now the aim is to transform  family village in Yumbe into an economic hub and allow everyone the opportunity to benefit from domestic and international markets.
+
+            </MotionText>
+            <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
+              <Button
+                as={Link}
+                href="/impact-and-sustainability"
+                {...pillButtonProps}
+                bg="#f5cb81"
+                color="black"
+                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
+                fontSize={{base: 'sm', md: "lg"}}
+              >
+                Explore our Impact
+              </Button>
+            </MotionHStack>
+          </MotionVStack>
+        </Container>
+      </Box>
+
+
 
       {/* Meet the Family  */}
-      <Container maxW="container.xl" mt={{ base: 0, md: 24 }}
+      {/* <Container maxW="container.xl" mt={{ base: 0, md: 24 }}
         minH={{ base: 'auto', md: '70vh' }}
         {...panelContainerProps}
       >
@@ -659,7 +723,7 @@ export default function HBHome() {
             </Box>
           </VStack>
         </SimpleGrid>
-      </Container>
+      </Container> */}
 
 
       {/* Did you know - adulteration */}

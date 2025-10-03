@@ -21,16 +21,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/our-honey',
-        destination: 'https://shop.humble-beeing.com',
-        permanent: true,
-      },
-      {
-        source: '/our-honey/:path*',
-        destination: 'https://shop.humble-beeing.com',
-        permanent: true,
-      },
-      {
         source: '/our-candles',
         destination: 'https://shop.humble-beeing.com',
         permanent: true,

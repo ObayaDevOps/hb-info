@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 import {
   Home as HomeIcon,
   BookOpen as BookOpenIcon,
+  Droplet as DropletIcon,
   ShoppingBag as ShoppingBagIcon,
   Leaf as LeafIcon,
   Newspaper as NewspaperIcon,
@@ -225,6 +226,7 @@ export default function Navbar(props) {
     () => [
       { label: 'Home', href: '/', icon: HomeIcon },
       { label: 'Our Story', href: '/our-story', icon: BookOpenIcon },
+      { label: 'Our Process', href: '/our-process', icon: DropletIcon },
       { label: 'Trace', href: 'https://trace.humble-beeing.com', isExternal: true, icon: RouteIcon },
       { label: 'Shop', href: 'https://shop.humble-beeing.com', isExternal: true, icon: ShoppingBagIcon },
       { label: 'Impact', href: '/impact-and-sustainability', icon: LeafIcon },
