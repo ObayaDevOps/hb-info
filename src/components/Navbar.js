@@ -46,7 +46,7 @@ function FloatingPill({ items }) {
   const pillLogoSrc = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
 
   return (
-    <Box position="fixed" top={8} left={0} right={0} zIndex={1050} display="flex" justifyContent="center">
+    <Box position="fixed" top={8} left={0} right={0} zIndex={1050} display={{base: 'none', md: "flex"}} justifyContent="center">
       <HStack
         spacing={{ base: 1.5, sm: 2.5 }}
         bg={containerBg}
@@ -200,20 +200,20 @@ export default function Navbar(props) {
   const router = useRouter()
 
   // Desktop navbar is hidden; no need to track scroll to toggle it
-  useEffect(() => {
-    const onScroll = () => setHasScrolled(window.scrollY > 10)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  // useEffect(() => {
+  //   const onScroll = () => setHasScrolled(window.scrollY > 10)
+  //   onScroll()
+  //   window.addEventListener('scroll', onScroll)
+  //   return () => window.removeEventListener('scroll', onScroll)
+  // }, [])
 
-  useEffect(() => {
-    if (!overlayOnHero) return
-    const onScroll = () => setOverlayScrolled(window.scrollY > 10)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [overlayOnHero])
+  // useEffect(() => {
+  //   if (!overlayOnHero) return
+  //   const onScroll = () => setOverlayScrolled(window.scrollY > 10)
+  //   onScroll()
+  //   window.addEventListener('scroll', onScroll)
+  //   return () => window.removeEventListener('scroll', onScroll)
+  // }, [overlayOnHero])
 
   const isOverlay = overlayOnHero && !overlayScrolled
   const navBg = isOverlay ? 'transparent' : props.bg || '#f5cb81'
@@ -256,7 +256,7 @@ export default function Navbar(props) {
       left={0}
       right={0}
       zIndex={1000}
-      bg={{ base: hasScrolled ? 'transparent' : navBg, lg: 'transparent' }}
+      bg={'transparent' }
     >
       {/* Desktop navbar hidden intentionally; pill is always visible on desktop */}
 

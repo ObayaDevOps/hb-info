@@ -179,8 +179,8 @@ export default function HBHome() {
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
       <SEO
-        title="Gourmet Honey, Beeswax Candles, and Sustainable Impact"
-        description="Gourmet Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale."
+        title="Gourmet Raw Honey, Beeswax Candles, and Sustainable Impact - Pure Ugandan Honey"
+        description="Gourmet Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale. Pure Ugandan Honey"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Organization',
@@ -476,6 +476,7 @@ export default function HBHome() {
  <Box py={{ base: 12, md: 16 }}>
         <Container
           maxW="container.xl"
+
           mt={{ base: 6, lg: 20 }}
           h="95vh"
           bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497786/IMG_0185_c83zq7.jpg')"}
@@ -536,13 +537,13 @@ export default function HBHome() {
 
 
       {/* Did you know - uganda harvest */}
-      <Container maxW="container.md"  my={{base: 12, lg: 16}} pb={{md: 0}}>
+      {/* <Container maxW="container.md"  my={{base: 12, lg: 16}} pb={{md: 0}}>
         <MotionVStack spacing={4} align="center" {...fadeUp}>
           <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
           <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>Uganda currently harvests only 1% of a potential 500,000 tonnes of honey per year</MotionHeading>
           <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - Dr. Deborah Ruth Amulen</MotionHeading>
         </MotionVStack>
-      </Container>
+      </Container> */}
 
 
       {/* Impact Statement */}
@@ -886,7 +887,7 @@ export default function HBHome() {
       <Container
         maxW="container.md"
         py={{ base: 12, md: 16 }}
-        mb={{ base: 12, md: 10 }}
+        mb={{ base: 12, md: 6 }}
         display="flex"
         justifyContent="center"
         bg="transparent"
@@ -897,11 +898,11 @@ export default function HBHome() {
             size={{ base: '2xl', md: '5xl' }}
             fontFamily={'var(--font-hanken)'}
             {...fadeUp}
-            color={'gray.500'}
+            color={'gray.900'}
           >
             Quality Assured
           </MotionHeading>
-          <MotionText fontSize={{ base: 'md', md: 'lg' }} color={'gray.600'} maxW="3xl" fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+          <MotionText fontSize={{ base: 'md', md: 'lg' }} color={'gray.900'} maxW="3xl" fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
             Proud partners and certified producers meeting the highest standards for Ugandan honey and beeswax
           </MotionText>
           <MotionHStack
