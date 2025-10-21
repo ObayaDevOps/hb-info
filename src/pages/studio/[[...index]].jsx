@@ -20,3 +20,5 @@ export default function StudioPage() {
       </Box>
   )
 }
+
+StudioPage.getLayout = (page) => page
