@@ -1,172 +1,137 @@
+import { DocumentTextIcon } from '@sanity/icons'
+
 export default {
-    name: 'termsPage',
-    title: 'Terms Page',
-    type: 'document',
-    fields: [
-      {
-        name: 'title',
-        title: 'Page Title',
-        type: 'string',
-        description: 'Main title for the Terms and Conditions page',
-        validation: Rule => Rule.required()
-      },
-      {
-        name: 'subtitle',
-        title: 'Page Subtitle',
-        type: 'string',
-        description: 'Subtitle or tagline for the Terms and Conditions page'
-      },
-      {
-        name: 'backgroundImage',
-        title: 'Background Image',
-        type: 'image',
-        description: 'Background image for the page (optional)',
-        options: {
-          hotspot: true
-        }
-      },
-      {
-        name: 'metaDescription',
-        title: 'Meta Description',
-        type: 'text',
-        description: 'Description for search engines'
-      },
-      {
-        name: 'sections',
-        title: 'Page Sections',
-        type: 'array',
-        of: [
-          {
-            type: 'object',
-            name: 'section',
-            fields: [
-              {
-                name: 'id',
-                title: 'Section ID',
-                type: 'string',
-                description: 'Unique identifier for section (used for navigation)',
-                validation: Rule => Rule.required()
-              },
-              {
-                name: 'title',
-                title: 'Section Title',
-                type: 'string',
-                description: 'Title of the section',
-                validation: Rule => Rule.required()
-              },
-              {
-                name: 'content',
-                title: 'Section Content',
-                type: 'array',
-                of: [
-                  {
-                    type: 'block',
-                    styles: [
-                      {title: 'Normal', value: 'normal'},
-                      {title: 'H3', value: 'h3'},
-                      {title: 'H4', value: 'h4'}
-                    ],
-                    lists: [
-                      {title: 'Bullet', value: 'bullet'},
-                      {title: 'Numbered', value: 'number'}
-                    ],
-                    marks: {
-                      decorators: [
-                        {title: 'Strong', value: 'strong'},
-                        {title: 'Emphasis', value: 'em'}
-                      ]
-                    }
-                  }
-                ],
-                description: 'Main content for this section with support for bullet points'
-              },
-              {
-                name: 'accordionItems',
-                title: 'Accordion Items',
-                type: 'array',
-                description: 'Nested content displayed in accordions',
-                of: [
-                  {
-                    type: 'object',
-                    name: 'accordionItem',
-                    fields: [
-                      {
-                        name: 'title',
-                        title: 'Accordion Title',
-                        type: 'string',
-                        description: 'Title of the accordion item',
-                        validation: Rule => Rule.required()
-                      },
-                      {
-                        name: 'text',
-                        title: 'Accordion Content',
-                        type: 'array',
-                        of: [
-                          {
-                            type: 'block',
-                            styles: [
-                              {title: 'Normal', value: 'normal'},
-                              {title: 'H3', value: 'h3'},
-                              {title: 'H4', value: 'h4'}
-                            ],
-                            lists: [
-                              {title: 'Bullet', value: 'bullet'},
-                              {title: 'Numbered', value: 'number'}
-                            ],
-                            marks: {
-                              decorators: [
-                                {title: 'Strong', value: 'strong'},
-                                {title: 'Emphasis', value: 'em'}
-                              ]
-                            }
-                          }
-                        ],
-                        description: 'Content inside the accordion with support for bullet points'
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                  name: 'postContent',
-                  title: 'End Section Content',
-                  type: 'array',
-                  of: [
+  name: 'termsPage',
+  title: 'Terms & Conditions Page',
+  type: 'document',
+  icon: DocumentTextIcon,
+  __experimental_actions: [/* 'create', */ 'update', 'publish', /* 'delete' */],
+  fields: [
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'metaDescription',
+          title: 'Meta Description',
+          type: 'text',
+          rows: 3,
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: 'hero',
+      title: 'Hero',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        },
+        {
+          name: 'backgroundImage',
+          title: 'Background Image',
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alternative text',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'sections',
+      title: 'Sections',
+      type: 'array',
+      of: [
+        {
+          name: 'section',
+          title: 'Section',
+          type: 'object',
+          fields: [
+            {
+              name: 'id',
+              title: 'Section ID',
+              type: 'string',
+              description: 'Used for navigation anchors (e.g., termsAndConditions1).',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'content',
+              title: 'Content',
+              type: 'portableText',
+            },
+            {
+              name: 'accordionItems',
+              title: 'Accordion Items',
+              type: 'array',
+              of: [
+                {
+                  name: 'accordionItem',
+                  title: 'Accordion Item',
+                  type: 'object',
+                  fields: [
                     {
-                      type: 'block',
-                      styles: [
-                        {title: 'Normal', value: 'normal'},
-                        {title: 'H3', value: 'h3'},
-                        {title: 'H4', value: 'h4'}
-                      ],
-                      lists: [
-                        {title: 'Bullet', value: 'bullet'},
-                        {title: 'Numbered', value: 'number'}
-                      ],
-                      marks: {
-                        decorators: [
-                          {title: 'Strong', value: 'strong'},
-                          {title: 'Emphasis', value: 'em'}
-                        ]
-                      }
-                    }
+                      name: 'title',
+                      title: 'Title',
+                      type: 'string',
+                      validation: (Rule) => Rule.required(),
+                    },
+                    {
+                      name: 'body',
+                      title: 'Body',
+                      type: 'portableText',
+                    },
                   ],
-                  description: 'Optional post-accordion content for this section with support for bullet points'
+                  preview: {
+                    select: {
+                      title: 'title',
+                    },
+                  },
                 },
-            ]
-          }
-        ]
-      }
-    ],
-    preview: {
-      select: {
-        title: 'title'
-      },
-      prepare({ title }) {
-        return {
-          title: title || 'Terms and Conditions Page'
-        }
-      }
-    }
-  }
-  
+              ],
+            },
+            {
+              name: 'postContent',
+              title: 'Post Content',
+              type: 'portableText',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'id',
+            },
+          },
+        },
+      ],
+    },
+  ],
+}
