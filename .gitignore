@@ -20,6 +20,7 @@
 # production
 /build
 /scripts
+/sanity-content
 
 # misc
 .DS_Store
