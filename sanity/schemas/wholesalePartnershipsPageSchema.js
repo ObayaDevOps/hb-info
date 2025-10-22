@@ -8,6 +8,12 @@ export default {
   __experimental_actions: [/* 'create', */ 'update', 'publish', /* 'delete' */],
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'seo',
       title: 'SEO',
       type: 'object',
