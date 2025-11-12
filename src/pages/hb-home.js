@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import SEO from '@/components/SEO';
 import Link from 'next/link';
-import { Box, Container, Heading, Text, VStack, HStack, Button, SimpleGrid, Image, Badge, IconButton, Link as ChakraLink } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, HStack, Flex, Button, SimpleGrid, Image, Badge, IconButton, Link as ChakraLink } from '@chakra-ui/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import dynamic from 'next/dynamic'
@@ -29,13 +29,15 @@ const trustedLogos = [
   { alt: '32 Degree East', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622961/32east_hvuk3u.jpg' },
   { alt: 'Farm to Table', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622734/farmtotable_ilqbss.jpg' },
   { alt: 'Afrotide Crafts', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622805/afrotide_g6egnn.jpg' },
+  { alt: 'Tierra Tours', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762986376/Tierra-Full-Logo-Green_gxnaj6.webp' },
+  
 ];
 
 const carousel = [
   { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
-  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
-  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Zesty and sweet, our orange infused honey is a vibrant treat.' },
-  { name: 'Premium GIft Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'A fiery kick meets golden sweetness in our chili infused raw honey.' },
+  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984519/IMG_0145_aswkq8.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
+  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984637/IMG_0203_ekodw2.jpg', description: 'Zesty and sweet, our orange infused honey is a vibrant treat.' },
+  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984754/IMG_0227_mrfdsc.jpg', description: 'A fiery kick meets golden sweetness in our chili infused raw honey.' },
 
 ];
 
@@ -632,14 +634,14 @@ export default function HBHome() {
               Built By Ugandans.
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              For Ugandans.
+              For The World.
             </MotionHeading>
 
             <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
             Humble Beeing is a 100% Ugandan-Family Owned company, led by Obaya who quit his job in London working as a Trading Systems Software Developer at an Investment Bank 
             to move back home to Uganda (where he grew up) to start a beekeeping social enterprise, to (hopefully) give his life some more meaning and change the world for the better.
 
-            Now the aim is to transform  family village in Yumbe into an economic hub and allow everyone the opportunity to benefit from domestic and international markets.
+            Now the aim is to transform the family village in Yumbe into an economic hub and allow everyone the opportunity to benefit from domestic and international markets.
 
             </MotionText>
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
@@ -798,18 +800,15 @@ export default function HBHome() {
               For the Foodies
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              Got a Recipe Idea ?
+              A Gourmet World Awaits!
             </MotionHeading>
             <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              New Honey - Food Pairing ?
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              We'd Love to Hear it !
+              Hand-Picked Infusion Pairings
             </MotionHeading>
 
             <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
               Unleash your inner chef! Our exquisite honeys are not just for your tea; they are a secret ingredient waiting to transform your culinary creations. From delectable glazes to gourmet desserts, explore a world of flavors.
-              If your recipe is featured on our website or Instagram we'll send you a free jar of the honey used in the recipe!
+              Have a look at our recipes for inspiration!
             </MotionText>
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
               <Button
@@ -822,17 +821,6 @@ export default function HBHome() {
                 fontSize={{base: 'sm', md: "lg"}}
               >
                 See more Recipes
-              </Button>
-                            <Button
-                as={Link}
-                href="/impact-and-sustainability"
-                {...pillButtonProps}
-                bg="#f5cb81"
-                color="black"
-                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
-                fontSize={{base: 'sm', md: "lg"}}
-              >
-                Submit a Recipe
               </Button>
             </MotionHStack>
           </MotionVStack>
@@ -862,7 +850,7 @@ export default function HBHome() {
           Don't just take our word for it!
         </MotionHeading>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
-          {[{q: '“The most nuanced honey on our menu.”', a: 'Chef A.'}, {q: '“Silky, clean, and unforgettable.”', a: 'Chef B.'}, {q: '“Our guests ask for it by name.”', a: 'Restaurateur C.'}].map((t, idx) => (
+          {[{q: '“The Garlic and chilli infused honey flavors go really well with fried chicken wings🥰❤️ 100% recommend!”', a: 'Sheillah R. - Food Reviewer'}, {q: '“Without a doubt, this is the best honey in Uganda. I’ve been in the country for years, and this is by far the best souvenir I’ve found here. Everyone I’ve gifted it to has loved it! My personal favorite is the rosemary-infused honey. My dad, a cheese lover, enjoys it drizzled over cheese, especially the garlic-infused variety. My mom uses them in her Asian cooking, and it elevates the flavors like nothing else!”', a: 'Minori - Japan'}, {q: '“The best honey I’ve had! Love their raw honey, so luxurious and delicious and I’m not even normally the biggest fan of honey. Definitely the best honey you can find in Uganda, my family loved them as gifts.”', a: 'Lina A.'}].map((t, idx) => (
             <StyledCard key={idx} borderRadius="2xl" shadow="md" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }} py={{base: 4, md: 'none'}}>
               <VStack align="start" spacing={4} p={6}>
                 <Text fontSize={{ base: 'lg', md: 'xl' }}> {t.q} </Text>
@@ -883,73 +871,104 @@ export default function HBHome() {
         </SimpleGrid>
       </Container>
 
-      {/* Certifications & Standards */}
-      <Container
-        maxW="container.md"
-        py={{ base: 12, md: 16 }}
-        mb={{ base: 12, md: 6 }}
-        display="flex"
-        justifyContent="center"
-        bg="transparent"
-      >
-        <MotionVStack spacing={{ base: 6, md: 8 }} align="center" textAlign="center" {...fadeUp}>
-          <MotionHeading
-            as="h2"
-            size={{ base: '2xl', md: '5xl' }}
-            fontFamily={'var(--font-hanken)'}
+      {/* Quality Assured */}
+      <Box py={{ base: 12, md: 16 }}>
+        <Container
+          maxW="container.xl"
+          mt={{ base: 6, lg: 20 }}
+          h="95vh"
+          bgImage={"linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.85)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762985462/HB_tasting_letaru_f0sh9o.png')"}
+          bgSize="cover"
+          bgPos="center"
+          bgRepeat="no-repeat"
+          rounded={{ base: 'none', lg: '3xl' }}
+          shadow={{ base: 'none', lg: 'xl' }}
+          px={{ base: 12, md: 20 }}
+          py={{ base: 16, md: 20 }}
+          color="white"
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-end"
+        >
+          <MotionBox
+            // as={Flex}
+            direction={{ base: 'column', lg: 'row' }}
+            align={{ base: 'flex-start', lg: 'flex-end' }}
+            justify="space-between"
+            w="full"
+            gap={{ base: 10, lg: 16 }}
             {...fadeUp}
-            color={'gray.900'}
           >
-            Quality Assured
-          </MotionHeading>
-          <MotionText fontSize={{ base: 'md', md: 'lg' }} color={'gray.900'} maxW="3xl" fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-            Proud partners and certified producers meeting the highest standards for Ugandan honey and beeswax
-          </MotionText>
-          <MotionHStack
-            spacing={{ base: 16, md: 24 }}
-            flexWrap="wrap"
-            justify="center"
-            rowGap={{ base: 10, md: 12 }}
-            {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.2 }}
-          >
-            <VStack spacing={3} align="center" bg="transparent">
-              <ChakraLink
-                href="https://tunadobees.org/"
-                isExternal
-                _hover={{ textDecoration: 'none', opacity: 0.85 }}
-              >
-                <Image
-                  src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497155/TUNADO_logo_ssjqo4.png"
-                  alt="TUNADO Membership"
-                  maxW={{ base: '140px', md: '180px' }}
-                  style={{ filter: 'grayscale(100%)' }}
-                />
-              </ChakraLink>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontFamily={'var(--font-hanken)'}>
-                Member of TUNADO
-              </Text>
-            </VStack>
-            <VStack spacing={3} align="center" bg="transparent">
-              <ChakraLink
-                href="https://unbs.go.ug/content.php?src=product-certification&pg=content"
-                isExternal
-                _hover={{ textDecoration: 'none', opacity: 0.85 }}
-              >
-                <Image
-                  src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497151/UNBS_QMark_Logo_v8hbbz.png"
-                  alt="Uganda National Bureau of Standards"
-                  maxW={{ base: '140px', md: '180px' }}
-                  style={{ filter: 'grayscale(100%)' }}
-                />
-              </ChakraLink>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontFamily={'var(--font-hanken)'}>
-                Meets Uganda Standard for quality
-              </Text>
-            </VStack>
-          </MotionHStack>
-        </MotionVStack>
-      </Container>
+            <MotionVStack align="start" spacing={2} flex="1" maxW="4xl" w="full" {...fadeUp}>
+              <MotionHeading as="h3" size={{ base: 'md', md: 'lg' }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+                Quality Assured
+              </MotionHeading>
+              <MotionHeading as="h2" size={{ base: 'xl', md: '4xl' }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
+                Certified. Traceable. Trusted.
+              </MotionHeading>
+              <MotionText maxW="full" pt={6} fontSize={{ base: 'md', md: 'xl' }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
+                Proud partners and certified producers meeting the highest standards for Ugandan honey and beeswax. Every jar carries lab-grade moisture readings, batch provenance, and Uganda National Bureau of Standards compliance.
+              </MotionText>
+              <MotionText maxW="full" fontSize={{ base: 'md', md: 'xl' }} color="gray.100" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+                Each harvest is tested in independent food laboratories for moisture, acidity, antibiotic residue, and HMF levels—and we consistently exceed European export benchmarks.
+              </MotionText>
+              <MotionText maxW="full" fontSize={{ base: 'md', md: 'xl' }} color="gray.100" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.33 }}>
+                We invest in rigorous third-party audits so chefs, retailers, and families can trust that what is on the label is exactly what is inside the jar.
+              </MotionText>
+              <MotionBox pt={8} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
+                <Button
+                  as={Link}
+                  href="/lab-tests"
+                  {...pillButtonProps}
+                  bg="#f5cb81"
+                  color="black"
+                  _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
+                  fontSize={{ base: 'sm', md: 'lg' }}
+                >
+                  View Lab Test Results
+                </Button>
+              </MotionBox>
+            </MotionVStack>
+            <MotionBox
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-end"
+              alignItems={{ base: 'flex-start', lg: 'flex-end' }}
+              minW={{ base: 'auto', lg: '320px' }}
+              w="full"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.35 }}
+            >
+              <MotionHStack spacing={{ base: 6, md: 8 }} flexWrap="wrap" justify={{ base: 'flex-start', lg: 'flex-end' }}>
+                <VStack spacing={3} align="center">
+                  <ChakraLink href="https://tunadobees.org/" isExternal _hover={{ textDecoration: 'none', opacity: 0.85 }}>
+                    <Image
+                      src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497155/TUNADO_logo_ssjqo4.png"
+                      alt="TUNADO Membership"
+                      maxW={{ base: '120px', md: '160px' }}
+                      bg="white"
+                      rounded="lg"
+                      p={4}
+                    />
+                  </ChakraLink>
+                </VStack>
+                <VStack spacing={3} align="center">
+                  <ChakraLink href="https://unbs.go.ug/content.php?src=product-certification&pg=content" isExternal _hover={{ textDecoration: 'none', opacity: 0.85 }}>
+                    <Image
+                      src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497151/UNBS_QMark_Logo_v8hbbz.png"
+                      alt="Uganda National Bureau of Standards"
+                      maxW={{ base: '120px', md: '160px' }}
+                      bg="white"
+                      rounded="lg"
+                      p={4}
+                    />
+                  </ChakraLink>
+                </VStack>
+              </MotionHStack>
+            </MotionBox>
+          </MotionBox>
+        </Container>
+      </Box>
 
       {/* Spacer above footer with brand background */}
       <Box bg="#f5cb81" h={{ base: 12, lg: 24 }} />
