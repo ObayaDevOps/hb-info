@@ -75,7 +75,7 @@ export default function AboutPage() {
         <VStack align="start" spacing={6} pb={12}>
           <Heading as="h2" size={{base:"lg", md: "xl"}}>Meet the Team</Heading>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8} w="full">
-            {[1, 2, 3].map((i) => (
+            
               <HStack key={i} spacing={4} align="flex-start" borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={4} mr={4} mt={{base:4, md: 'none'}}>
                 <Avatar.Root>
                   <Avatar.Fallback>TM</Avatar.Fallback>
@@ -86,7 +86,6 @@ export default function AboutPage() {
                   <Text fontSize={{base:"lg", md: "lg"}} color="#000819">Short bio highlighting background in beekeeping, operations, or product development.</Text>
                 </VStack>
               </HStack>
-            ))}
           </SimpleGrid>
         </VStack>
 

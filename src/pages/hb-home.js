@@ -518,14 +518,14 @@ export default function HBHome() {
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
               <Button
                 as={Link}
-                href="/impact-and-sustainability"
+                href="/our-process"
                 {...pillButtonProps}
                 bg="#f5cb81"
                 color="black"
                 _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
                 fontSize={{base: 'sm', md: "lg"}}
               >
-                Find out more about our Honey Range
+                Find Out More About Our Honey
               </Button>
             </MotionHStack>
           </MotionVStack>
@@ -647,14 +647,14 @@ export default function HBHome() {
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
               <Button
                 as={Link}
-                href="/impact-and-sustainability"
+                href="/our-story"
                 {...pillButtonProps}
                 bg="#f5cb81"
                 color="black"
                 _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
                 fontSize={{base: 'sm', md: "lg"}}
               >
-                Explore our Impact
+                Read our Story
               </Button>
             </MotionHStack>
           </MotionVStack>
@@ -813,7 +813,7 @@ export default function HBHome() {
             <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
               <Button
                 as={Link}
-                href="/impact-and-sustainability"
+                href="/blog"
                 {...pillButtonProps}
                 bg="#f5cb81"
                 color="black"
