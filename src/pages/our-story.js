@@ -37,7 +37,7 @@ export default function AboutPage() {
           {/* <Heading as="h1" size="lg">Our Story</Heading> */}
 
           <Text fontSize={{base:"lg", md: "xl"}} color="#000819">
-            From London finance to Uganda’s wild landscapes — our founder set out to build a luxury brand that regenerates nature and livelihoods. Humble Beeing pairs elevated taste with measurable impact, working directly with beekeepers across biodiverse regions to bring you single-origin and infused honeys, and pure beeswax candles.
+            From London finance to Uganda’s wild landscapes: our founder set out to build a luxury brand that regenerates nature and livelihoods. Humble Beeing pairs elevated taste with measurable impact, working directly with beekeepers across biodiverse regions to bring you single-origin and infused honeys, and pure beeswax candles.
           </Text>
           <Text fontSize={{base:"lg", md: "xl"}} color="#000819">
             Today, we’re proud to remain 100% Ugandan-owned, championing traceability, fair pricing, and long-term partnerships with smallholder farmers.
@@ -76,14 +76,48 @@ export default function AboutPage() {
           <Heading as="h2" size={{base:"lg", md: "xl"}}>Meet the Team</Heading>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8} w="full">
             
-              <HStack key={i} spacing={4} align="flex-start" borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={4} mr={4} mt={{base:4, md: 'none'}}>
+              <HStack spacing={4} align="flex-start" borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={4} mr={4} mt={{base:4, md: 'none'}}>
                 <Avatar.Root>
-                  <Avatar.Fallback>TM</Avatar.Fallback>
+                  <Avatar.Fallback>OD</Avatar.Fallback>
                 </Avatar.Root>
                 <VStack align="start" spacing={1}>
-                  <Text fontWeight="600">Team Member {i}</Text>
-                  <Badge variant="outline" borderColor="#000819" color="#000819">Role</Badge>
-                  <Text fontSize={{base:"lg", md: "lg"}} color="#000819">Short bio highlighting background in beekeeping, operations, or product development.</Text>
+                  <Text fontWeight="600">Obaya</Text>
+                  <Badge variant="outline" borderColor="#000819" color="#000819">CEO</Badge>
+                  {/* <Text fontSize={{base:"lg", md: "lg"}} color="#000819">Short bio highlighting background in beekeeping, operations, or product development.</Text> */}
+                </VStack>
+              </HStack>
+                          
+              <HStack spacing={4} align="flex-start" borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={4} mr={4} mt={{base:4, md: 'none'}}>
+                <Avatar.Root>
+                  <Avatar.Fallback>LD</Avatar.Fallback>
+                </Avatar.Root>
+                <VStack align="start" spacing={1}>
+                  <Text fontWeight="600">Letaru</Text>
+                  <Badge variant="outline" borderColor="#000819" color="#000819">Business Development</Badge>
+                  {/* <Text fontSize={{base:"lg", md: "lg"}} color="#000819">Short bio highlighting background in beekeeping, operations, or product development.</Text> */}
+                </VStack>
+              </HStack>
+                          
+              <HStack spacing={4} align="flex-start" borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={4} mr={4} mt={{base:4, md: 'none'}}>
+                <Avatar.Root>
+                  <Avatar.Fallback>AD</Avatar.Fallback>
+                </Avatar.Root>
+                <VStack align="start" spacing={1}>
+                  <Text fontWeight="600">Anguyo</Text>
+                  <Badge variant="outline" borderColor="#000819" color="#000819">Strategic Advisor</Badge>
+                  {/* <Text fontSize={{base:"lg", md: "lg"}} color="#000819">Short bio highlighting background in beekeeping, operations, or product development.</Text> */}
+                </VStack>
+              </HStack>
+
+                                        
+              <HStack spacing={4} align="flex-start" borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={4} mr={4} mt={{base:4, md: 'none'}}>
+                <Avatar.Root>
+                  <Avatar.Fallback>RO</Avatar.Fallback>
+                </Avatar.Root>
+                <VStack align="start" spacing={1}>
+                  <Text fontWeight="600">Rogers</Text>
+                  <Badge variant="outline" borderColor="#000819" color="#000819">Production Assistant</Badge>
+                  {/* <Text fontSize={{base:"lg", md: "lg"}} color="#000819">Short bio highlighting background in beekeeping, operations, or product development.</Text> */}
                 </VStack>
               </HStack>
           </SimpleGrid>
@@ -94,9 +128,11 @@ export default function AboutPage() {
           <Heading as="h2" size="lg">Timeline of Milestones</Heading>
           <VStack align="start" spacing={4}>
             {[
-              { year: '2019', text: 'Founded in Uganda; first beekeeper trainings launched.' },
-              { year: '2021', text: 'Introduced single-origin range with full traceability.' },
-              { year: '2023', text: 'Scaled to 5,000 farmers; expanded biodiversity corridors.' },
+              { year: '2019', text: 'Obaya quit his job in London and moved back to Uganda during covid lockdowns, set up his first beehives and got started.' },
+              { year: '2021', text: 'Introduced single-origin range with full traceability and infused ranges' },
+              { year: '2023', text: 'Officially Registered the company and started selling in larger stores and got our first Hotel contract' },
+              { year: '2025', text: 'Got UNBS Q-Mark to enable us to sell in supermarkets and export internationally' },
+
             ].map((item) => (
               <HStack key={item.year} spacing={4}>
                 <Badge colorScheme="purple">{item.year}</Badge>

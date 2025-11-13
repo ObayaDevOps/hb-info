@@ -36,8 +36,8 @@ const trustedLogos = [
 const carousel = [
   { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
   { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984519/IMG_0145_aswkq8.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
-  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984637/IMG_0203_ekodw2.jpg', description: 'Zesty and sweet, our orange infused honey is a vibrant treat.' },
-  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984754/IMG_0227_mrfdsc.jpg', description: 'A fiery kick meets golden sweetness in our chili infused raw honey.' },
+  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984637/IMG_0203_ekodw2.jpg', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
+  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984754/IMG_0227_mrfdsc.jpg', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
 
 ];
 
@@ -353,7 +353,7 @@ export default function HBHome() {
                 <StyledCard borderRadius="2xl" shadow="md">
                   <Box>
                     <VStack align="start" spacing={4} p={{ base: 6, md: 8 }}>
-                      <Image src={c.image} alt={c.name} boxSize={{ base: '200px', md: '350px' }} alignSelf="center" rounded="xl" />
+                      <Image src={c.image} alt={c.name} boxSize={{ base: '200px', md: 'full' }} alignSelf="center" rounded="xl" />
                       <Text fontWeight={700} fontSize={{ base: 'lg', md: 'xl' }}>{c.name}</Text>
                       <Text fontWeight={400} fontSize={{ base: 'md', md: 'lg' }}>{c.description}</Text>
                       <Button as={Link} href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noopener noreferrer' : undefined} size="md" {...pillButtonProps}>Shop</Button>
@@ -869,6 +869,16 @@ export default function HBHome() {
             </StyledCard>
           ))}
         </SimpleGrid>
+        <MotionBox textAlign="center" pt={{ base: 8, md: 12 }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.6 }}>
+          <Button
+            as={ChakraLink}
+            href="https://g.page/r/CXO3cDknQeegEBM/review"
+            isExternal
+            {...pillButtonProps}
+          >
+            Leave Us a Review!
+          </Button>
+        </MotionBox>
       </Container>
 
       {/* Quality Assured */}
