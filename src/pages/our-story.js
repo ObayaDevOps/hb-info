@@ -14,7 +14,7 @@ export default function AboutPage() {
       <HeroSection
         title="Our Story"
         subtitle="A Ugandan family brand crafting luxury honey with purpose."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495003/IMG_0291_pkvi7q.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       >
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
       <Box pb={8}>
         <Image
-            src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585367/HB_Tasting_Letaru_2_axwfee.png"
+            src="https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png"
             alt="Honey tasting at Humble Beeing HQ"
             borderRadius="3xl"
             objectFit="cover"

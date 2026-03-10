@@ -19,13 +19,13 @@ export default function PremiumHoneyUganda() {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
     datePublished: '2025-01-15', dateModified: '2025-01-15',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497733/IMG_0151_wrxcit.jpg', mainEntityOfPage: { '@type': 'WebPage' },
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
 
   return (
     <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
-      <HeroSection title={title} subtitle="Taste, texture, and trusted provenance" bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg'} overlay py={{ base: 16, md: 24 }} />
+      <HeroSection title={title} subtitle="Taste, texture, and trusted provenance" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
         <VStack align="start" spacing={6}>
           <Heading as="h2" size="lg">Where premium begins</Heading>

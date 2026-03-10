@@ -1,0 +1,882 @@
+{
+  "generatedAt": "2026-03-10T21:30:26.646Z",
+  "dryRun": false,
+  "force": false,
+  "inputCsv": "docs/cloudinary_url_to_local_match.csv",
+  "downloadRoot": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026",
+  "sanity": {
+    "projectId": "wf5e366r",
+    "dataset": "production",
+    "apiVersion": "2025-03-27"
+  },
+  "summary": {
+    "totalRowsInCsv": 50,
+    "matchedRowsInCsv": 45,
+    "processedRows": 45,
+    "uploaded": 45,
+    "reusedFromManifestByUrl": 0,
+    "reusedFromManifestByLocalPath": 0,
+    "dryRunRows": 0,
+    "skippedPermissionBlocked": 0,
+    "errors": 0
+  },
+  "entries": [
+    {
+      "index": 1,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1744286028/Graphic_waves_qtvac7.svg",
+      "selectedCandidate": "Graphic_waves_qtvac7.svg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Graphic_waves_qtvac7.svg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Graphic_waves_qtvac7.svg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/terms-and-conditions.js:165"
+      ],
+      "assetType": "file",
+      "sanityAssetId": "file-a85b19a75d625e4ccd0c5c469dc046888df5f017-svg",
+      "sanityAssetUrl": "https://cdn.sanity.io/files/wf5e366r/production/a85b19a75d625e4ccd0c5c469dc046888df5f017.svg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 2,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1745050251/Graphic-1-Transparent_1_y95aqf.svg",
+      "selectedCandidate": "Graphic-1-Transparent_1_y95aqf.svg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Graphic-1-Transparent_1_y95aqf.svg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Graphic-1-Transparent_1_y95aqf.svg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/components/WhoWeAreSection.js:119"
+      ],
+      "assetType": "file",
+      "sanityAssetId": "file-8b1fcddeb158c2d6913fc590aabdf46c390e76c2-svg",
+      "sanityAssetUrl": "https://cdn.sanity.io/files/wf5e366r/production/8b1fcddeb158c2d6913fc590aabdf46c390e76c2.svg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 3,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg",
+      "selectedCandidate": "Humble_Beeing_Black_Logo_with_text.svg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Humble_Beeing_Black_Logo_with_text.svg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Humble_Beeing_Black_Logo_with_text.svg",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/components/Navbar.js:46",
+        "src/components/Navbar.js:221"
+      ],
+      "assetType": "file",
+      "sanityAssetId": "file-abe3713a984fec694f2bc5e23a9f8173a94985a3-svg",
+      "sanityAssetUrl": "https://cdn.sanity.io/files/wf5e366r/production/abe3713a984fec694f2bc5e23a9f8173a94985a3.svg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 4,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451427/20210206_125023_wdecoo.jpg",
+      "selectedCandidate": "20210206_125023_wdecoo.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "20210206_125023_wdecoo.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/20210206_125023_wdecoo.jpg",
+      "occurrenceCount": 3,
+      "repoReferences": [
+        "src/pages/blog/how-to-store-honey-in-kampala-heat-and-humidity-tips.js:33",
+        "src/pages/contact.js:25",
+        "src/pages/hb-home.js:70"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 5,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451431/20210731_172431_1_v5vw1y.jpg",
+      "selectedCandidate": "20210731_172431_1_v5vw1y.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "20210731_172431_1_v5vw1y.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/20210731_172431_1_v5vw1y.jpg",
+      "occurrenceCount": 4,
+      "repoReferences": [
+        "src/pages/blog/beeswax-candles-uganda-clean-burn-guide.js:21",
+        "src/pages/blog/how-we-test-honey-purity-in-uganda-lab-and-field.js:22",
+        "src/pages/blog/scented-candles-uganda-fragrance-guide-and-room-pairings.js:26",
+        "src/pages/hb-home.js:59"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 6,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451447/IMG_0203_s6bliw.jpg",
+      "selectedCandidate": "IMG_0203_s6bliw.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0203_s6bliw.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0203_s6bliw.jpg",
+      "occurrenceCount": 5,
+      "repoReferences": [
+        "src/pages/blog/[slug].js:26",
+        "src/pages/blog/[slug].js:51",
+        "src/pages/blog/best-honey-in-kampala-buyers-guide-2025.js:60",
+        "src/pages/blog/ugandan-gift-ideas-honey-and-candle-gift-sets.js:21",
+        "src/pages/hb-home.js:69"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 7,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495003/IMG_0291_pkvi7q.jpg",
+      "selectedCandidate": "IMG_0291_pkvi7q.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0291_pkvi7q.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0291_pkvi7q.jpg",
+      "occurrenceCount": 4,
+      "repoReferences": [
+        "src/pages/blog/how-to-store-honey-in-kampala-heat-and-humidity-tips.js:44",
+        "src/pages/hb-home.js:62",
+        "src/pages/lab-tests.js:46",
+        "src/pages/our-story.js:17"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 8,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495029/WhiteLogo_of0ehe.png",
+      "selectedCandidate": "WhiteLogo_of0ehe.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "WhiteLogo_of0ehe.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/WhiteLogo_of0ehe.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/components/Navbar.js:222"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-35206c00d9aa9c8bb7000bf6c38b95a157470649-1090x647-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/35206c00d9aa9c8bb7000bf6c38b95a157470649-1090x647.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 9,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg",
+      "selectedCandidate": "IMG_0214_ma3gau.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0214_ma3gau.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0214_ma3gau.jpg",
+      "occurrenceCount": 5,
+      "repoReferences": [
+        "src/pages/blog/how-we-test-honey-purity-in-uganda-lab-and-field.js:28",
+        "src/pages/blog/scented-candles-uganda-fragrance-guide-and-room-pairings.js:21",
+        "src/pages/blog/where-to-buy-honey-in-kampala-stockists-and-delivery.js:44",
+        "src/pages/hb-home.js:61",
+        "src/pages/impact-and-sustainability.js:18"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 10,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497299/IMG_0111_m68vis.jpg",
+      "selectedCandidate": "IMG_0111_m68vis.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0111_m68vis.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0111_m68vis.jpg",
+      "occurrenceCount": 5,
+      "repoReferences": [
+        "src/pages/blog/organic-honey-in-uganda-what-it-really-means.js:27",
+        "src/pages/blog/where-to-buy-honey-in-kampala-stockists-and-delivery.js:33",
+        "src/pages/contact-and-connect.js:23",
+        "src/pages/contact-and-connect.js:44",
+        "src/pages/hb-home.js:66"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-536a0d144a6196619310c04ede39ee01395494cf-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 11,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497310/IMG_0100_nb3zq6.jpg",
+      "selectedCandidate": "IMG_0100_nb3zq6.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0100_nb3zq6.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0100_nb3zq6.jpg",
+      "occurrenceCount": 3,
+      "repoReferences": [
+        "src/pages/blog/raw-honey-uganda-benefits-and-buying-guide.js:43",
+        "src/pages/blog/specialist-honey-for-chefs-in-kampala-pairings-and-uses.js:27",
+        "src/pages/hb-home.js:68"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 12,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497640/IMG_0095_zdx7pv.jpg",
+      "selectedCandidate": "IMG_0095_zdx7pv.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0095_zdx7pv.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0095_zdx7pv.jpg",
+      "occurrenceCount": 6,
+      "repoReferences": [
+        "src/pages/blog/[slug].js:32",
+        "src/pages/blog/best-honey-in-kampala-buyers-guide-2025.js:49",
+        "src/pages/blog/index.js:109",
+        "src/pages/blog/organic-honey-in-uganda-what-it-really-means.js:21",
+        "src/pages/blog/ugandan-gift-ideas-honey-and-candle-gift-sets.js:26",
+        "src/pages/hb-home.js:64"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 13,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497733/IMG_0151_wrxcit.jpg",
+      "selectedCandidate": "IMG_0151_wrxcit.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0151_wrxcit.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0151_wrxcit.jpg",
+      "occurrenceCount": 3,
+      "repoReferences": [
+        "src/pages/blog/beeswax-candles-uganda-clean-burn-guide.js:26",
+        "src/pages/blog/premium-honey-uganda-what-makes-it-worth-it.js:22",
+        "src/pages/hb-home.js:63"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 14,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg",
+      "selectedCandidate": "IMG_0072_n3ab2i.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0072_n3ab2i.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0072_n3ab2i.jpg",
+      "occurrenceCount": 4,
+      "repoReferences": [
+        "src/components/SEO.jsx:6",
+        "src/pages/blog/premium-honey-uganda-what-makes-it-worth-it.js:28",
+        "src/pages/hb-home.js:37",
+        "src/pages/hb-home.js:67"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 15,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497786/IMG_0185_c83zq7.jpg",
+      "selectedCandidate": "IMG_0185_c83zq7.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0185_c83zq7.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0185_c83zq7.jpg",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/pages/hb-home.js:60",
+        "src/pages/hb-home.js:484"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-289a82281b2afc47c22bda041c9be198359c905a-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 16,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757498617/IMG_0231_jpk3oz.jpg",
+      "selectedCandidate": "IMG_0231_jpk3oz.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0231_jpk3oz.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0231_jpk3oz.jpg",
+      "occurrenceCount": 4,
+      "repoReferences": [
+        "src/pages/blog/raw-honey-uganda-benefits-and-buying-guide.js:33",
+        "src/pages/blog/wholesale-honey-kampala-suppliers-guide.js:26",
+        "src/pages/hb-home.js:65",
+        "src/pages/wholesale-and-partnerships.js:18"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 17,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757512779/Logo-with-words-TRANSPARENT_us7dmd.png",
+      "selectedCandidate": "Logo-with-words-TRANSPARENT_us7dmd.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Logo-with-words-TRANSPARENT_us7dmd.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Logo-with-words-TRANSPARENT_us7dmd.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/components/Footer.js:78"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-31804bbe067efeb8f270cc0f9205ea7ca34d6149-652x394-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/31804bbe067efeb8f270cc0f9205ea7ca34d6149-652x394.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 18,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png",
+      "selectedCandidate": "lOGO-LARGE-transparent_gl7jrn.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "lOGO-LARGE-transparent_gl7jrn.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/lOGO-LARGE-transparent_gl7jrn.png",
+      "occurrenceCount": 4,
+      "repoReferences": [
+        "src/pages/_document.js:12",
+        "src/pages/contact.js:18",
+        "src/pages/hb-home.js:191",
+        "src/pages/terms-and-conditions.js:221"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 19,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585366/HB_Tasting_Latitude2_qh91nd.png",
+      "selectedCandidate": "HB_Tasting_Latitude2_qh91nd.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "HB_Tasting_Latitude2_qh91nd.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/HB_Tasting_Latitude2_qh91nd.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:784"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-4dfb5556eba5a09ad920ebc2c6a70b2a083c2daa-1200x911-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/4dfb5556eba5a09ad920ebc2c6a70b2a083c2daa-1200x911.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 20,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585367/HB_Tasting_Letaru_2_axwfee.png",
+      "selectedCandidate": "HB_Tasting_Letaru_2_axwfee.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "HB_Tasting_Letaru_2_axwfee.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/HB_Tasting_Letaru_2_axwfee.png",
+      "occurrenceCount": 3,
+      "repoReferences": [
+        "src/pages/hb-home.js:323",
+        "src/pages/our-story.js:49",
+        "src/pages/wholesale-and-partnerships.js:42"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 21,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757589584/AMW_Cropped_zguxn7.png",
+      "selectedCandidate": "AMW_Cropped_zguxn7.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "AMW_Cropped_zguxn7.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/AMW_Cropped_zguxn7.png",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/pages/hb-home.js:557",
+        "src/pages/hb-home.js:558"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 22,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757598212/ObayaPFP.26bfbd84_puexik.jpg",
+      "selectedCandidate": "ObayaPFP.26bfbd84_puexik.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "ObayaPFP.26bfbd84_puexik.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/ObayaPFP.26bfbd84_puexik.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:179"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-774e06c1dd8e49fd7b59bba04a30e2b0ba3dbb5a-2263x2767-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/774e06c1dd8e49fd7b59bba04a30e2b0ba3dbb5a-2263x2767.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 23,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757598800/Obaya_honey_week_m4wiae.png",
+      "selectedCandidate": "Obaya_honey_week_m4wiae.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Obaya_honey_week_m4wiae.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Obaya_honey_week_m4wiae.png",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/pages/hb-home.js:175",
+        "src/pages/hb-home.js:615"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 24,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757599416/HB_tasting_letaru_aopu57.png",
+      "selectedCandidate": "HB_tasting_letaru_aopu57.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "HB_tasting_letaru_aopu57.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/HB_tasting_letaru_aopu57.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:176"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-d09a5fcb8fd674a3e5f27f789faf2664c3b96e09-904x1087-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/d09a5fcb8fd674a3e5f27f789faf2664c3b96e09-904x1087.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 25,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757599558/AnguyoPFP.d8c042b3_1_ub5ssi.jpg",
+      "selectedCandidate": "AnguyoPFP.d8c042b3_1_ub5ssi.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "AnguyoPFP.d8c042b3_1_ub5ssi.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/AnguyoPFP.d8c042b3_1_ub5ssi.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:177"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-278e6a05cad70266d83b4251d64a507d59b35ca3-2263x2656-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/278e6a05cad70266d83b4251d64a507d59b35ca3-2263x2656.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 26,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757599679/LetaruPFP.3d162952_kvvv1k.png",
+      "selectedCandidate": "LetaruPFP.3d162952_kvvv1k.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "LetaruPFP.3d162952_kvvv1k.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/LetaruPFP.3d162952_kvvv1k.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:178"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-780ba0424065cce0adc69c82102747f66088122f-2263x2762-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/780ba0424065cce0adc69c82102747f66088122f-2263x2762.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 27,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png",
+      "selectedCandidate": "latitude-logo-black_vswv88.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "latitude-logo-black_vswv88.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/latitude-logo-black_vswv88.png",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/pages/blog/specialist-honey-for-chefs-in-kampala-pairings-and-uses.js:21",
+        "src/pages/hb-home.js:23"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-ddf580905739f82cb20bef3648f54eaaa7ef3056-198x180-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/ddf580905739f82cb20bef3648f54eaaa7ef3056-198x180.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 28,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622699/coffeatlastlgog_lsat63.png",
+      "selectedCandidate": "coffeatlastlgog_lsat63.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "coffeatlastlgog_lsat63.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/coffeatlastlgog_lsat63.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/blog/wholesale-honey-kampala-suppliers-guide.js:21"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-b1b8152aeed20473991a459a0f062eb50aa4d810-125x125-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/b1b8152aeed20473991a459a0f062eb50aa4d810-125x125.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 29,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622734/farmtotable_ilqbss.jpg",
+      "selectedCandidate": "farmtotable_ilqbss.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "farmtotable_ilqbss.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/farmtotable_ilqbss.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:30"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-19f1d85a8b5634f1686c7d093158680d9dd5f222-225x225-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/19f1d85a8b5634f1686c7d093158680d9dd5f222-225x225.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 30,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622805/afrotide_g6egnn.jpg",
+      "selectedCandidate": "afrotide_g6egnn.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "afrotide_g6egnn.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/afrotide_g6egnn.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:31"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-f90c865b8ffdb1de3878efbd3cd71f03469657dd-225x225-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/f90c865b8ffdb1de3878efbd3cd71f03469657dd-225x225.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 31,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622961/32east_hvuk3u.jpg",
+      "selectedCandidate": "32east_hvuk3u.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "32east_hvuk3u.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/32east_hvuk3u.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:29"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-5f4529c5e5fbe869d6eb2b7f5c25a2c35595815a-299x168-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/5f4529c5e5fbe869d6eb2b7f5c25a2c35595815a-299x168.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 32,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497151/UNBS_QMark_Logo_v8hbbz.png",
+      "selectedCandidate": "UNBS_QMark_Logo_v8hbbz.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "UNBS_QMark_Logo_v8hbbz.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/UNBS_QMark_Logo_v8hbbz.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:968"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-8d19ad6abb9cf3d307255c19a5420cc38f446d75-226x278-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/8d19ad6abb9cf3d307255c19a5420cc38f446d75-226x278.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 33,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497155/TUNADO_logo_ssjqo4.png",
+      "selectedCandidate": "TUNADO_logo_ssjqo4.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "TUNADO_logo_ssjqo4.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/TUNADO_logo_ssjqo4.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:956"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-5d7e7c96941067625b03a2237d453997ee15ddde-200x241-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/5d7e7c96941067625b03a2237d453997ee15ddde-200x241.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 34,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497169/random-institute-zXu9RsYKgHA-unsplash_qcpgiy.jpg",
+      "selectedCandidate": "random-institute-zXu9RsYKgHA-unsplash_qcpgiy.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "random-institute-zXu9RsYKgHA-unsplash_qcpgiy.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/random-institute-zXu9RsYKgHA-unsplash_qcpgiy.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:731"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-9484a86c3200f89d7c0558d1bd1238cc28de7b01-3000x2000-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/9484a86c3200f89d7c0558d1bd1238cc28de7b01-3000x2000.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 35,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499097/karuna-brand_cgruz0.png",
+      "selectedCandidate": "karuna-brand_cgruz0.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "karuna-brand_cgruz0.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/karuna-brand_cgruz0.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:26"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-69a883cd9c0228b6fa2bb347631a300c0eaf448f-384x150-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/69a883cd9c0228b6fa2bb347631a300c0eaf448f-384x150.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 36,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499163/Logo-Black_e2b52c60-8cb6-4ed1-81ff-c0a86bb0795f_acagzq.svg",
+      "selectedCandidate": "Logo-Black_e2b52c60-8cb6-4ed1-81ff-c0a86bb0795f_acagzq.svg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Logo-Black_e2b52c60-8cb6-4ed1-81ff-c0a86bb0795f_acagzq.svg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Logo-Black_e2b52c60-8cb6-4ed1-81ff-c0a86bb0795f_acagzq.svg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:24"
+      ],
+      "assetType": "file",
+      "sanityAssetId": "file-fff846c85549f356e03908c96e86fe74cc50e1cc-svg",
+      "sanityAssetUrl": "https://cdn.sanity.io/files/wf5e366r/production/fff846c85549f356e03908c96e86fe74cc50e1cc.svg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 37,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499225/yujo-removebg-preview_cjol1f.png",
+      "selectedCandidate": "yujo-removebg-preview_cjol1f.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "yujo-removebg-preview_cjol1f.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/yujo-removebg-preview_cjol1f.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:25"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-f2231cd129038eb65672eb11d3c54d7f003b38e9-236x214-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/f2231cd129038eb65672eb11d3c54d7f003b38e9-236x214.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 38,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499290/coffeatlastlgog_lsat63-removebg-preview_k5vfbh.png",
+      "selectedCandidate": "coffeatlastlgog_lsat63-removebg-preview_k5vfbh.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "coffeatlastlgog_lsat63-removebg-preview_k5vfbh.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/coffeatlastlgog_lsat63-removebg-preview_k5vfbh.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:28"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-4299c07e010cf4d76f512a24ee6faecf43694bdc-125x125-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/4299c07e010cf4d76f512a24ee6faecf43694bdc-125x125.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 39,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984519/IMG_0145_aswkq8.jpg",
+      "selectedCandidate": "IMG_0145_aswkq8.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0145_aswkq8.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0145_aswkq8.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:38"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 40,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984637/IMG_0203_ekodw2.jpg",
+      "selectedCandidate": "IMG_0203_ekodw2.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0203_ekodw2.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0203_ekodw2.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:39"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 41,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984754/IMG_0227_mrfdsc.jpg",
+      "selectedCandidate": "IMG_0227_mrfdsc.jpg",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "IMG_0227_mrfdsc.jpg",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/IMG_0227_mrfdsc.jpg",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:40"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456-jpg",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 42,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762985462/HB_tasting_letaru_f0sh9o.png",
+      "selectedCandidate": "HB_tasting_letaru_f0sh9o.png",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "HB_tasting_letaru_f0sh9o.png",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/HB_tasting_letaru_f0sh9o.png",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:890"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-bd61c8b1a8ed936847ac22805b9201884f74c35d-905x1200-png",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/bd61c8b1a8ed936847ac22805b9201884f74c35d-905x1200.png",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 43,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762986376/Tierra-Full-Logo-Green_gxnaj6.webp",
+      "selectedCandidate": "Tierra-Full-Logo-Green_gxnaj6.webp",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Tierra-Full-Logo-Green_gxnaj6.webp",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Tierra-Full-Logo-Green_gxnaj6.webp",
+      "occurrenceCount": 1,
+      "repoReferences": [
+        "src/pages/hb-home.js:32"
+      ],
+      "assetType": "image",
+      "sanityAssetId": "image-c63cb736e2b83848d2ec2dec5bbb721e8f035217-2290x1969-webp",
+      "sanityAssetUrl": "https://cdn.sanity.io/images/wf5e366r/production/c63cb736e2b83848d2ec2dec5bbb721e8f035217-2290x1969.webp",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 44,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762987942/Lab-Test-Results-ML-2025-06446_ovreug.pdf",
+      "selectedCandidate": "Lab-Test-Results-ML-2025-06446_ovreug.pdf",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Lab-Test-Results-ML-2025-06446_ovreug.pdf",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Lab-Test-Results-ML-2025-06446_ovreug.pdf",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/pages/lab-tests.js:22",
+        "src/pages/lab-tests.js:23"
+      ],
+      "assetType": "file",
+      "sanityAssetId": "file-4caa04aabdd97d93eae66ca925a50c3c1916a700-pdf",
+      "sanityAssetUrl": "https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf",
+      "action": "uploaded",
+      "error": ""
+    },
+    {
+      "index": 45,
+      "cloudinaryUrl": "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762987943/Lab-Test-FA-2025-10664_copy_of2v1k.pdf",
+      "selectedCandidate": "Lab-Test-FA-2025-10664_copy_of2v1k.pdf",
+      "matchType": "exact_filename",
+      "matchedFileCount": 1,
+      "localFileRelative": "Lab-Test-FA-2025-10664_copy_of2v1k.pdf",
+      "localFileAbsolute": "/media/obi/Seagate/Cloudinary_Bulk_Download_March_4_2026/Lab-Test-FA-2025-10664_copy_of2v1k.pdf",
+      "occurrenceCount": 2,
+      "repoReferences": [
+        "src/pages/lab-tests.js:11",
+        "src/pages/lab-tests.js:12"
+      ],
+      "assetType": "file",
+      "sanityAssetId": "file-0beee6c148ffc7f7843e84ddbc820d1c7436c3e2-pdf",
+      "sanityAssetUrl": "https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf",
+      "action": "uploaded",
+      "error": ""
+    }
+  ]
+}

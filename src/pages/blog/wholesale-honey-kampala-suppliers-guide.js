@@ -18,12 +18,12 @@ export default function WholesaleHoneyKampalaGuide() {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
     datePublished: '2025-01-20', dateModified: '2025-01-20',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622699/coffeatlastlgog_lsat63.png', mainEntityOfPage: { '@type': 'WebPage' },
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/b1b8152aeed20473991a459a0f062eb50aa4d810-125x125.png', mainEntityOfPage: { '@type': 'WebPage' },
   }
   return (
     <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
-      <HeroSection title={title} subtitle="MOQ, logistics, documentation, and formats" bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757498617/IMG_0231_jpk3oz.jpg'} overlay py={{ base: 16, md: 24 }} />
+      <HeroSection title={title} subtitle="MOQ, logistics, documentation, and formats" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
         <VStack align="start" spacing={6}>
           <Heading as="h2" size="lg">How we serve procurement teams</Heading>

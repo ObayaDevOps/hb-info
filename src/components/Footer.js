@@ -75,7 +75,7 @@ const Footer = () => {
             <MotionBox {...fadeUp}>
               <HStack align="center" spacing={4}>
                 <Image
-                  src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757512779/Logo-with-words-TRANSPARENT_us7dmd.png'}
+                  src={'https://cdn.sanity.io/images/wf5e366r/production/31804bbe067efeb8f270cc0f9205ea7ca34d6149-652x394.png'}
                   alt="Humble Beeing Logo"
                   height={{ base: '216px', md: '240px' }}
                   width="auto"
@@ -196,6 +196,8 @@ const Footer = () => {
               <HStack spacing={{ base: 3, md: 4 }} flexWrap="wrap">
                 <Button
                   leftIcon={<GiBeehive size={18} />}
+                  as={Link}
+                  href='https://store.pesapal.com/humblebeeinghoneypayments'
                   bg="black"
                   color="#f5cb81"
                   borderWidth="1px"
@@ -210,6 +212,8 @@ const Footer = () => {
                 </Button>
                 <Button
                   leftIcon={<TbShirt size={18} />}
+                  as={Link}
+                  href='https://store.pesapal.com/humblebeeinghoneypayments'
                   bg="black"
                   color="#f5cb81"
                   borderWidth="1px"
@@ -224,6 +228,8 @@ const Footer = () => {
                 </Button>
                 <Button
                   leftIcon={<FaTree size={18} />}
+                  as={Link}
+                  href='https://store.pesapal.com/humblebeeinghoneypayments'
                   bg="black"
                   color="#f5cb81"
                   borderWidth="1px"

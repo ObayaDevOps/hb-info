@@ -15,7 +15,7 @@ export default function ImpactPage() {
       <HeroSection
         title="Impact & Sustainability"
         subtitle="Traceable quality and measurable outcomes across people and planet."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       >

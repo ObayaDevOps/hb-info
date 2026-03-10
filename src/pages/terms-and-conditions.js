@@ -162,7 +162,7 @@ export default function TermsPage({ pageData }) {
   const [activeSection, setActiveSection] = useState(sections[0]?.id || '');
 
   // Use Sanity image URL or fallback to default
-  const backgroundImageUrl = pageData?.backgroundImageUrl || 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1744286028/Graphic_waves_qtvac7.svg';
+  const backgroundImageUrl = pageData?.backgroundImageUrl || 'https://cdn.sanity.io/files/wf5e366r/production/a85b19a75d625e4ccd0c5c469dc046888df5f017.svg';
 
   const handleLinkClick = (id) => {
     setActiveSection(id);
@@ -218,7 +218,7 @@ export default function TermsPage({ pageData }) {
         <title>{title} | Ashton & Carrington</title>
         <meta name="description" content={metaDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
+        <link rel="icon" href="https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png" />
       </Head>
       
       {/* Navbar provided by PageLayout */}

@@ -19,13 +19,13 @@ export default function HowWeTestHoneyUganda() {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
     datePublished: '2025-01-16', dateModified: '2025-01-16',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451431/20210731_172431_1_v5vw1y.jpg', mainEntityOfPage: { '@type': 'WebPage' },
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
 
   return (
     <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
-      <HeroSection title={title} subtitle="Transparency, traceability, and rigorous quality checks" bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg'} overlay py={{ base: 16, md: 24 }} />
+      <HeroSection title={title} subtitle="Transparency, traceability, and rigorous quality checks" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
         <VStack align="start" spacing={6}>
           <Heading as="h2" size="lg">Step 1: disciplined harvesting</Heading>

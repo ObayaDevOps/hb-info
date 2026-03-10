@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 const SITE_NAME = 'Humble Beeing'
 const DEFAULT_DESCRIPTION = 'Luxury Ugandan honey and beeswax candles from traceable, regenerative beekeeping. Available in Kampala with delivery and wholesale.'
-const DEFAULT_OG_IMAGE = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg'
+const DEFAULT_OG_IMAGE = 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg'
 
 function fullUrl(asPath, reqHost) {
   if (typeof window !== 'undefined') {

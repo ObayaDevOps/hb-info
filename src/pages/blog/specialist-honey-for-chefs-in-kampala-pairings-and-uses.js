@@ -18,13 +18,13 @@ export default function SpecialistHoneyChefsKampala() {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
     datePublished: '2025-01-19', dateModified: '2025-01-19',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png', mainEntityOfPage: { '@type': 'WebPage' },
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/ddf580905739f82cb20bef3648f54eaaa7ef3056-198x180.png', mainEntityOfPage: { '@type': 'WebPage' },
   }
 
   return (
     <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
-      <HeroSection title={title} subtitle="Field-sourced nectar with chef-approved consistency" bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497310/IMG_0100_nb3zq6.jpg'} overlay py={{ base: 16, md: 24 }} />
+      <HeroSection title={title} subtitle="Field-sourced nectar with chef-approved consistency" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
         <VStack align="start" spacing={6}>
           <Heading as="h2" size="lg">Honey flights built with chefs</Heading>

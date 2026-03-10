@@ -116,7 +116,7 @@ const WhoWeAreSection = ({ sectionData }) => {
                 right="0"
                 width="100%"
                 height="120%"
-                backgroundImage="url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1745050251/Graphic-1-Transparent_1_y95aqf.svg')"
+                backgroundImage="url('https://cdn.sanity.io/files/wf5e366r/production/8b1fcddeb158c2d6913fc590aabdf46c390e76c2.svg')"
                 backgroundSize="contain"
                 backgroundPosition="right center"
                 backgroundRepeat="no-repeat"

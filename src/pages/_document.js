@@ -9,7 +9,7 @@ const GA_INLINE_SCRIPT = `
 `
 
 export default function Document() {
-  const favicon = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png'
+  const favicon = 'https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png'
   return (
     <Html lang="en">
       <Head>

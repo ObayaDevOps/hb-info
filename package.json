@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cloudinary:audit": "python3 scripts/cloudinary_usage_audit.py",
+    "cloudinary:upload:dry": "node scripts/uploadCloudinaryMatchesToSanity.js --dry-run",
+    "cloudinary:upload": "node scripts/uploadCloudinaryMatchesToSanity.js",
+    "cloudinary:replace:dry": "node scripts/replaceCloudinaryUrlsWithSanity.js",
+    "cloudinary:replace": "node scripts/replaceCloudinaryUrlsWithSanity.js --write"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",

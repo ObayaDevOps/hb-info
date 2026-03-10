@@ -106,7 +106,7 @@ export default function BlogPage() {
       <HeroSection
         title="The Hive Journal"
         subtitle="Thought leadership, field notes, and chef-worthy recipes."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497640/IMG_0095_zdx7pv.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />

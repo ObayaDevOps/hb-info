@@ -46,7 +46,7 @@ export default function BestHoneyKampala() {
     dateModified: '2025-01-10',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497640/IMG_0095_zdx7pv.jpg',
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg',
     mainEntityOfPage: { '@type': 'WebPage' },
   }
 
@@ -57,7 +57,7 @@ export default function BestHoneyKampala() {
       <HeroSection
         title={title}
         subtitle="A beekeeper’s scorecard for purity, provenance, and flavour"
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451447/IMG_0203_s6bliw.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />

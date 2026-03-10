@@ -30,7 +30,7 @@ export default function RawHoneyUgandaGuide() {
     dateModified: '2025-01-12',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757498617/IMG_0231_jpk3oz.jpg',
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg',
     mainEntityOfPage: { '@type': 'WebPage' },
   }
 
@@ -40,7 +40,7 @@ export default function RawHoneyUgandaGuide() {
       <HeroSection
         title={title}
         subtitle="Field-tested advice from Hoima apiaries to Kampala kitchens"
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497310/IMG_0100_nb3zq6.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />
