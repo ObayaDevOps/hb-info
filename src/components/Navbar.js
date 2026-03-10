@@ -249,8 +249,8 @@ export default function Navbar(props) {
 
   return (
     <Box
-      px={{ base: '2rem', lg: '5.5rem' }}
-      py={{ base: '1rem', lg: 0 }}
+      px={{ base: '1rem', sm: '2rem', lg: '5.5rem' }}
+      py={{ base: '0.625rem', sm: '1rem', lg: 0 }}
       position={overlayOnHero ? 'fixed' : 'sticky'}
       top={0}
       left={0}
@@ -266,8 +266,8 @@ export default function Navbar(props) {
             bg={'rgba(255, 255, 255, 0.6)'}
             borderWidth="2px"
             borderColor="black"
-            px={3}
-            py={2}
+            px={{ base: 2, sm: 3 }}
+            py={{ base: 1.5, sm: 2 }}
             rounded="full"
             boxShadow="md"
             style={{ backdropFilter: 'blur(10px)' }}
@@ -275,22 +275,22 @@ export default function Navbar(props) {
             display="grid"
             gridTemplateColumns="1fr auto 1fr"
             alignItems="center"
-            columnGap={3}
+            columnGap={{ base: 2, sm: 3 }}
           >
-            <Box justifySelf="start" ml={{ base: 2, sm: 3 }}>
-              <MobileDrawer navItems={itemsWithActive} triggerColor={'black'} triggerSize={'1.5rem'} />
+            <Box justifySelf="start" ml={{ base: 1, sm: 3 }}>
+              <MobileDrawer navItems={itemsWithActive} triggerColor={'black'} triggerSize={'1.25rem'} />
             </Box>
             <Link href="/" _hover={{ textDecoration: 'none' }} justifySelf="center">
-              <Image src={mobileLogoSrc} alt="The Humble Beeing Logo" height={'36px'} width="auto" />
+              <Image src={mobileLogoSrc} alt="The Humble Beeing Logo" height={{ base: '30px', sm: '36px' }} width="auto" />
             </Link>
             <Link
               href="https://shop.humble-beeing.com"
               isExternal
               display="inline-flex"
               alignItems="center"
-              gap={1.5}
-              px={4}
-              py={2}
+              gap={{ base: 1, sm: 1.5 }}
+              px={{ base: 3, sm: 4 }}
+              py={{ base: 1.5, sm: 2 }}
               rounded="full"
               fontWeight={700}
               fontFamily="var(--font-poppins)"
@@ -302,7 +302,7 @@ export default function Navbar(props) {
               transition="all 150ms ease"
               justifySelf="end"
             >
-              <Box as={ShoppingBagIcon} boxSize={4} />
+              <Box as={ShoppingBagIcon} boxSize={{ base: 3.5, sm: 4 }} />
               <VisuallyHidden>Shop</VisuallyHidden>
             </Link>
           </Box>
