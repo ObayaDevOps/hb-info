@@ -19,7 +19,13 @@
 
 # production
 /build
-/scripts
+/scripts/*
+!/scripts/cloudinary_usage_audit.py
+!/scripts/uploadCloudinaryMatchesToSanity.js
+!/scripts/replaceCloudinaryUrlsWithSanity.js
+/docs/.~lock.*
+/docs/cloudinary_to_sanity_manifest.dry-run.csv
+/docs/cloudinary_to_sanity_manifest.dry-run.json
 /sanity-content
 
 # misc

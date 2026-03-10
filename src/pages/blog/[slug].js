@@ -23,13 +23,13 @@ export default function BlogPostPage() {
       slug: 'welcome-to-the-hive',
       title: 'Welcome to the Hive',
       category: 'beekeeping',
-      image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451447/IMG_0203_s6bliw.jpg',
+      image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg',
     },
     {
       slug: 'citrus-honey-madeleines',
       title: 'Citrus Honey Madeleines',
       category: 'recipes',
-      image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497640/IMG_0095_zdx7pv.jpg',
+      image: 'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg',
     },
   ];
 
@@ -48,7 +48,7 @@ export default function BlogPostPage() {
       <HeroSection
         title={pageTitle}
         subtitle={tagName || 'Insights from the field and the kitchen.'}
-        bgImage={post?.image || 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451447/IMG_0203_s6bliw.jpg'}
+        bgImage={post?.image || 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />

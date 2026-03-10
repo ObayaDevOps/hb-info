@@ -20,7 +20,7 @@ export default function ContactConnectPage() {
       <HeroSection
         title="Contact & Connect"
         subtitle="We’d love to hear from you — drop us a note."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497299/IMG_0111_m68vis.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />
@@ -41,7 +41,7 @@ export default function ContactConnectPage() {
           {/* Feature image for visual consistency */}
           <Box pb={4} w="full">
             <Image
-              src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497299/IMG_0111_m68vis.jpg"
+              src="https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg"
               alt="Humble Beeing contact and tasting"
               borderRadius="3xl"
               objectFit="cover"

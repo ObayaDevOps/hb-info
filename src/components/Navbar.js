@@ -43,7 +43,7 @@ const NavLink = ({ children, href, color, isExternal, ...rest }) => (
 
 function FloatingPill({ items }) {
   const containerBg = 'rgba(255, 255, 255, 0.6)'
-  const pillLogoSrc = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
+  const pillLogoSrc = 'https://cdn.sanity.io/files/wf5e366r/production/abe3713a984fec694f2bc5e23a9f8173a94985a3.svg'
 
   return (
     <Box position="fixed" top={8} left={0} right={0} zIndex={1050} display={{base: 'none', md: "flex"}} justifyContent="center">
@@ -218,8 +218,8 @@ export default function Navbar(props) {
   const isOverlay = overlayOnHero && !overlayScrolled
   const navBg = isOverlay ? 'transparent' : props.bg || '#f5cb81'
   const linkColor = isOverlay ? 'white' : '#000819'
-  const blackLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1752839793/Humble_Beeing_Black_Logo_with_text.svg'
-  const whiteLogo = 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495029/WhiteLogo_of0ehe.png'
+  const blackLogo = 'https://cdn.sanity.io/files/wf5e366r/production/abe3713a984fec694f2bc5e23a9f8173a94985a3.svg'
+  const whiteLogo = 'https://cdn.sanity.io/images/wf5e366r/production/35206c00d9aa9c8bb7000bf6c38b95a157470649-1090x647.png'
   const mobileLogoSrc = blackLogo
 
   const navItems = useMemo(

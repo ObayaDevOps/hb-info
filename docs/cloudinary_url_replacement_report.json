@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-03-10T21:30:39.159Z",
+  "write": true,
+  "root": "/home/obi/dev/hb-info/src",
+  "manifest": "/home/obi/dev/hb-info/docs/cloudinary_to_sanity_manifest.json",
+  "totalFilesScanned": 57,
+  "totalFilesChanged": 27,
+  "totalReplacements": 92,
+  "files": [
+    {
+      "file": "src/components/Footer.js",
+      "replacements": 1
+    },
+    {
+      "file": "src/components/Navbar.js",
+      "replacements": 3
+    },
+    {
+      "file": "src/components/SEO.jsx",
+      "replacements": 1
+    },
+    {
+      "file": "src/components/WhoWeAreSection.js",
+      "replacements": 1
+    },
+    {
+      "file": "src/pages/_document.js",
+      "replacements": 1
+    },
+    {
+      "file": "src/pages/blog/[slug].js",
+      "replacements": 3
+    },
+    {
+      "file": "src/pages/blog/beeswax-candles-uganda-clean-burn-guide.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/best-honey-in-kampala-buyers-guide-2025.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/how-to-store-honey-in-kampala-heat-and-humidity-tips.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/how-we-test-honey-purity-in-uganda-lab-and-field.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/index.js",
+      "replacements": 1
+    },
+    {
+      "file": "src/pages/blog/organic-honey-in-uganda-what-it-really-means.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/premium-honey-uganda-what-makes-it-worth-it.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/raw-honey-uganda-benefits-and-buying-guide.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/scented-candles-uganda-fragrance-guide-and-room-pairings.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/specialist-honey-for-chefs-in-kampala-pairings-and-uses.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/ugandan-gift-ideas-honey-and-candle-gift-sets.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/where-to-buy-honey-in-kampala-stockists-and-delivery.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/blog/wholesale-honey-kampala-suppliers-guide.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/contact-and-connect.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/contact.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/hb-home.js",
+      "replacements": 41
+    },
+    {
+      "file": "src/pages/impact-and-sustainability.js",
+      "replacements": 1
+    },
+    {
+      "file": "src/pages/lab-tests.js",
+      "replacements": 5
+    },
+    {
+      "file": "src/pages/our-story.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/terms-and-conditions.js",
+      "replacements": 2
+    },
+    {
+      "file": "src/pages/wholesale-and-partnerships.js",
+      "replacements": 2
+    }
+  ]
+}

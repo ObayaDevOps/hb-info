@@ -30,7 +30,7 @@ export default function StoreHoneyKampala() {
     dateModified: '2025-01-14',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451427/20210206_125023_wdecoo.jpg',
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg',
     mainEntityOfPage: { '@type': 'WebPage' },
   }
 
@@ -41,7 +41,7 @@ export default function StoreHoneyKampala() {
       <HeroSection
         title={title}
         subtitle="Storage habits we swear by from Hoima harvests to Kampala kitchens"
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495003/IMG_0291_pkvi7q.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />

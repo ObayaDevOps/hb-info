@@ -30,7 +30,7 @@ export default function WhereToBuyHoneyKampala() {
     dateModified: '2025-01-10',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
-    image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497299/IMG_0111_m68vis.jpg',
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg',
     mainEntityOfPage: { '@type': 'WebPage' },
   }
 
@@ -41,7 +41,7 @@ export default function WhereToBuyHoneyKampala() {
       <HeroSection
         title={title}
         subtitle="Neighborhood stockists, pick-up points, and our own delivery vans"
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />

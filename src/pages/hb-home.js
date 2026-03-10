@@ -20,24 +20,24 @@ const featured = [
 
 // Logos for the small marquee under "Uganda's Finest Honey"
 const trustedLogos = [
-  { alt: 'Latitude 0 Hotel', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622463/latitude-logo-black_vswv88.png'},
-  { alt: 'Le Gourmet Delicatessen', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499163/Logo-Black_e2b52c60-8cb6-4ed1-81ff-c0a86bb0795f_acagzq.svg' },
-  { alt: 'Yujo Izakaya', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499225/yujo-removebg-preview_cjol1f.png' },
-  { alt: 'Karuna Yoga Studio', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499097/karuna-brand_cgruz0.png' },
+  { alt: 'Latitude 0 Hotel', src: 'https://cdn.sanity.io/images/wf5e366r/production/ddf580905739f82cb20bef3648f54eaaa7ef3056-198x180.png'},
+  { alt: 'Le Gourmet Delicatessen', src: 'https://cdn.sanity.io/files/wf5e366r/production/fff846c85549f356e03908c96e86fe74cc50e1cc.svg' },
+  { alt: 'Yujo Izakaya', src: 'https://cdn.sanity.io/images/wf5e366r/production/f2231cd129038eb65672eb11d3c54d7f003b38e9-236x214.png' },
+  { alt: 'Karuna Yoga Studio', src: 'https://cdn.sanity.io/images/wf5e366r/production/69a883cd9c0228b6fa2bb347631a300c0eaf448f-384x150.png' },
   // { alt: 'Entebbe Duty Free', src: '/Vector.svg' },
-  { alt: 'Coffee At Last', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759499290/coffeatlastlgog_lsat63-removebg-preview_k5vfbh.png' },
-  { alt: '32 Degree East', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622961/32east_hvuk3u.jpg' },
-  { alt: 'Farm to Table', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622734/farmtotable_ilqbss.jpg' },
-  { alt: 'Afrotide Crafts', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757622805/afrotide_g6egnn.jpg' },
-  { alt: 'Tierra Tours', src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762986376/Tierra-Full-Logo-Green_gxnaj6.webp' },
+  { alt: 'Coffee At Last', src: 'https://cdn.sanity.io/images/wf5e366r/production/4299c07e010cf4d76f512a24ee6faecf43694bdc-125x125.png' },
+  { alt: '32 Degree East', src: 'https://cdn.sanity.io/images/wf5e366r/production/5f4529c5e5fbe869d6eb2b7f5c25a2c35595815a-299x168.jpg' },
+  { alt: 'Farm to Table', src: 'https://cdn.sanity.io/images/wf5e366r/production/19f1d85a8b5634f1686c7d093158680d9dd5f222-225x225.jpg' },
+  { alt: 'Afrotide Crafts', src: 'https://cdn.sanity.io/images/wf5e366r/production/f90c865b8ffdb1de3878efbd3cd71f03469657dd-225x225.jpg' },
+  { alt: 'Tierra Tours', src: 'https://cdn.sanity.io/images/wf5e366r/production/c63cb736e2b83848d2ec2dec5bbb721e8f035217-2290x1969.webp' },
   
 ];
 
 const carousel = [
-  { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
-  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984519/IMG_0145_aswkq8.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
-  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984637/IMG_0203_ekodw2.jpg', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
-  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762984754/IMG_0227_mrfdsc.jpg', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
+  { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
+  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
+  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
+  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
 
 ];
 
@@ -56,18 +56,18 @@ const fadeUp = {
 
 export default function HBHome() {
   const heroImages = [
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451431/20210731_172431_1_v5vw1y.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497786/IMG_0185_c83zq7.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497289/IMG_0214_ma3gau.jpg',//
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495003/IMG_0291_pkvi7q.jpg',//
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497733/IMG_0151_wrxcit.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497640/IMG_0095_zdx7pv.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757498617/IMG_0231_jpk3oz.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497299/IMG_0111_m68vis.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497768/IMG_0072_n3ab2i.jpg',//
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497310/IMG_0100_nb3zq6.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451447/IMG_0203_s6bliw.jpg',
-    'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451427/20210206_125023_wdecoo.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg',//
+    'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg',//
+    'https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg',//
+    'https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg',
   ];
   const pillButtonProps = {
     bg: 'black',
@@ -172,11 +172,11 @@ export default function HBHome() {
     nextArrow: <NextArrow />,
   }
   const familyImages = [
-    { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757598800/Obaya_honey_week_m4wiae.png', caption: 'Obaya at National Honey Week doing a Honey Tasting' },
-    { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757599416/HB_tasting_letaru_aopu57.png', caption: 'Letaru at our Kabalagala HQ doing a honey Tasting' },
-    { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757599558/AnguyoPFP.d8c042b3_1_ub5ssi.jpg', caption: 'Anguyo on the way to the Lwamata Forest Apiary' },
-    { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757599679/LetaruPFP.3d162952_kvvv1k.png', caption: 'Letaru in the Kabalagala HQ' },
-    { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757598212/ObayaPFP.26bfbd84_puexik.jpg', caption: 'Obaya on the way to the Lwamata Forest Apiary' }
+    { src: 'https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png', caption: 'Obaya at National Honey Week doing a Honey Tasting' },
+    { src: 'https://cdn.sanity.io/images/wf5e366r/production/d09a5fcb8fd674a3e5f27f789faf2664c3b96e09-904x1087.png', caption: 'Letaru at our Kabalagala HQ doing a honey Tasting' },
+    { src: 'https://cdn.sanity.io/images/wf5e366r/production/278e6a05cad70266d83b4251d64a507d59b35ca3-2263x2656.jpg', caption: 'Anguyo on the way to the Lwamata Forest Apiary' },
+    { src: 'https://cdn.sanity.io/images/wf5e366r/production/780ba0424065cce0adc69c82102747f66088122f-2263x2762.png', caption: 'Letaru in the Kabalagala HQ' },
+    { src: 'https://cdn.sanity.io/images/wf5e366r/production/774e06c1dd8e49fd7b59bba04a30e2b0ba3dbb5a-2263x2767.jpg', caption: 'Obaya on the way to the Lwamata Forest Apiary' }
   ];
   return (
     <Box bg={'#f5cb81'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
@@ -188,7 +188,7 @@ export default function HBHome() {
           '@type': 'Organization',
           name: 'Humble Beeing',
           url: undefined,
-          logo: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png',
+          logo: 'https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png',
         }}
       />
 
@@ -320,7 +320,7 @@ export default function HBHome() {
           </VStack>
           <VStack>
             <Image
-              src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585367/HB_Tasting_Letaru_2_axwfee.png" 
+              src="https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png" 
               alt="Humble Beeing Story"
               borderRadius="3xl"
               objectFit="cover"
@@ -481,7 +481,7 @@ export default function HBHome() {
 
           mt={{ base: 6, lg: 20 }}
           h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757497786/IMG_0185_c83zq7.jpg')"}
+          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg')"}
           bgSize="cover"
           bgPos="center"
           bgRepeat="no-repeat"
@@ -554,8 +554,8 @@ export default function HBHome() {
           maxW="container.xl"
           mt={{ base: 6, lg: 20 }}
           h="95vh"
-          // bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757589584/AMW_Cropped_zguxn7.png')"}
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757589584/AMW_Cropped_zguxn7.png')"}
+          // bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png')"}
+          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png')"}
 
           
           bgSize="cover"
@@ -612,7 +612,7 @@ export default function HBHome() {
           maxW="container.xl"
           mt={{ base: 6, lg: 20 }}
           h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757598800/Obaya_honey_week_m4wiae.png')"}
+          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png')"}
           bgSize="cover"
           bgPos="center"
           bgRepeat="no-repeat"
@@ -728,7 +728,7 @@ export default function HBHome() {
         py={{ base: 12, md: 20 }}
         px={{ base: 6, md: 12 }}
         bgImage={
-          "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497169/random-institute-zXu9RsYKgHA-unsplash_qcpgiy.jpg')"
+          "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url('https://cdn.sanity.io/images/wf5e366r/production/9484a86c3200f89d7c0558d1bd1238cc28de7b01-3000x2000.jpg')"
         }
         bgSize="cover"
         bgPos="center"
@@ -781,7 +781,7 @@ export default function HBHome() {
           maxW="container.xl"
           mt={{ base: 6, lg: 20 }}
           h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585366/HB_Tasting_Latitude2_qh91nd.png')"}
+          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/4dfb5556eba5a09ad920ebc2c6a70b2a083c2daa-1200x911.png')"}
           bgSize="cover"
           bgPos="center"
           bgRepeat="no-repeat"
@@ -887,7 +887,7 @@ export default function HBHome() {
           maxW="container.xl"
           mt={{ base: 6, lg: 20 }}
           h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.85)), url('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762985462/HB_tasting_letaru_f0sh9o.png')"}
+          bgImage={"linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.85)), url('https://cdn.sanity.io/images/wf5e366r/production/bd61c8b1a8ed936847ac22805b9201884f74c35d-905x1200.png')"}
           bgSize="cover"
           bgPos="center"
           bgRepeat="no-repeat"
@@ -953,7 +953,7 @@ export default function HBHome() {
                 <VStack spacing={3} align="center">
                   <ChakraLink href="https://tunadobees.org/" isExternal _hover={{ textDecoration: 'none', opacity: 0.85 }}>
                     <Image
-                      src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497155/TUNADO_logo_ssjqo4.png"
+                      src="https://cdn.sanity.io/images/wf5e366r/production/5d7e7c96941067625b03a2237d453997ee15ddde-200x241.png"
                       alt="TUNADO Membership"
                       maxW={{ base: '120px', md: '160px' }}
                       bg="white"
@@ -965,7 +965,7 @@ export default function HBHome() {
                 <VStack spacing={3} align="center">
                   <ChakraLink href="https://unbs.go.ug/content.php?src=product-certification&pg=content" isExternal _hover={{ textDecoration: 'none', opacity: 0.85 }}>
                     <Image
-                      src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1759497151/UNBS_QMark_Logo_v8hbbz.png"
+                      src="https://cdn.sanity.io/images/wf5e366r/production/8d19ad6abb9cf3d307255c19a5420cc38f446d75-226x278.png"
                       alt="Uganda National Bureau of Standards"
                       maxW={{ base: '120px', md: '160px' }}
                       bg="white"

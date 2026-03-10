@@ -15,7 +15,7 @@ export default function WholesalePartnershipsPage() {
       <HeroSection
         title="Wholesale & Partnerships"
         subtitle="Chefs, retailers, events, and corporate gifting — let’s collaborate."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757498617/IMG_0231_jpk3oz.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />
@@ -39,7 +39,7 @@ export default function WholesalePartnershipsPage() {
         {/* Optional feature image */}
         <Box pb={8}>
           <Image
-            src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585367/HB_Tasting_Letaru_2_axwfee.png"
+            src="https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png"
             alt="Humble Beeing tasting and wholesale presentation"
             borderRadius="3xl"
             objectFit="cover"

@@ -15,14 +15,14 @@ export default function ContactPage() {
         <title>{'Contact Us' || 'Ashton & Carrington'}</title>
         <meta name="description" content={'Empowering Innovation and Financial Growth Through Expertise'} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757515387/lOGO-LARGE-transparent_gl7jrn.png" />
+        <link rel="icon" href="https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png" />
       </Head>
 
       {/* Hero */}
       <HeroSection
         title="Contact Us"
         subtitle="We’ll get back to you as soon as we can."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757451427/20210206_125023_wdecoo.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       />

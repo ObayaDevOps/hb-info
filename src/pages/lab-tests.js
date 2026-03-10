@@ -8,8 +8,8 @@ const labReports = [
   {
     title: 'Lab Certificate — Moisture & HMF',
     subtitle: 'Batch HB-2025-01 · SGS Kampala · June 2025',
-    imageUrl: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762987943/Lab-Test-FA-2025-10664_copy_of2v1k.pdf',
-    downloadUrl: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762987943/Lab-Test-FA-2025-10664_copy_of2v1k.pdf',
+    imageUrl: 'https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf',
+    downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf',
     metrics: [
       { label: 'Moisture', value: '17%' },
       { label: 'HMF', value: '21 mg/kg' },
@@ -19,8 +19,8 @@ const labReports = [
   {
     title: 'Lab Certificate — Residue & Adulteration',
     subtitle: 'Batch HB-2025-01 · ISO 17025 Partner Lab · June 2025',
-    imageUrl: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762987942/Lab-Test-Results-ML-2025-06446_ovreug.pdf',
-    downloadUrl: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1762987942/Lab-Test-Results-ML-2025-06446_ovreug.pdf',
+    imageUrl: 'https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf',
+    downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf',
     metrics: [
       { label: 'Pesticide Residue', value: 'Not detected' },
       { label: 'Antibiotics', value: 'Not detected' },
@@ -43,7 +43,7 @@ export default function LabTestsPage() {
       <HeroSection
         title="Lab Test Certificates"
         subtitle="Independent QA documentation for every harvest batch."
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757495003/IMG_0291_pkvi7q.jpg'}
+        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       >
