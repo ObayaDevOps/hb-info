@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
@@ -23,33 +22,33 @@ export default function PremiumHoneyUganda() {
   }
 
   return (
-    <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
       <HeroSection title={title} subtitle="Taste, texture, and trusted provenance" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
-      <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
-        <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">Where premium begins</Heading>
-          <Text>Our highest-scoring lots come from apiaries tucked between forest reserves and coffee estates. Bees forage on wild eucalyptus, shea, and indigenous blossoms you can’t bottle at scale. Harvest teams pull frames at dawn, extract at ambient temperature, and log every batch with moisture readings and sensory notes. That obsessive fieldwork is the first, non-negotiable step toward premium quality.</Text>
+      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Where premium begins</h2>
+          <p>Our highest-scoring lots come from apiaries tucked between forest reserves and coffee estates. Bees forage on wild eucalyptus, shea, and indigenous blossoms you can’t bottle at scale. Harvest teams pull frames at dawn, extract at ambient temperature, and log every batch with moisture readings and sensory notes. That obsessive fieldwork is the first, non-negotiable step toward premium quality.</p>
 
-          <Heading as="h2" size="lg">Quality checks that justify the price</Heading>
-          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '10px' } }}>
-            <Box as="li"><b>Lab analytics:</b> adulteration screens, diastase, HMF, and residue tests catch anything that shouldn’t be in your jar.</Box>
-            <Box as="li"><b>Sensory panels:</b> chefs and sommeliers taste blind, scoring aroma, texture, and finish before any jar earns the premium label.</Box>
-            <Box as="li"><b>Batch traceability:</b> QR-coded labels link to harvest location, beekeeper, and suggested pairings.</Box>
-            <Box as="li"><b>Packaging discipline:</b> UV-protective glass, tamper seals, and batch cards keep quality intact long after dispatch.</Box>
-          </Box>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Quality checks that justify the price</h2>
+          <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
+            <li style={{ marginBottom: '10px' }}><b>Lab analytics:</b> adulteration screens, diastase, HMF, and residue tests catch anything that shouldn’t be in your jar.</li>
+            <li style={{ marginBottom: '10px' }}><b>Sensory panels:</b> chefs and sommeliers taste blind, scoring aroma, texture, and finish before any jar earns the premium label.</li>
+            <li style={{ marginBottom: '10px' }}><b>Batch traceability:</b> QR-coded labels link to harvest location, beekeeper, and suggested pairings.</li>
+            <li style={{ marginBottom: '10px' }}><b>Packaging discipline:</b> UV-protective glass, tamper seals, and batch cards keep quality intact long after dispatch.</li>
+          </ul>
 
-          <Heading as="h2" size="lg">When premium honey makes the difference</Heading>
-          <Text>Upgrade croissants with eucalyptus honey butter, glaze roast chicken with shea blossom richness, or finish a cheese board with pine honey’s resinous bite. Mixologists love its viscosity for balanced sours. In short: use premium honey when you want flavour to do the talking and shortcuts would taste like, well, shortcuts.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>When premium honey makes the difference</h2>
+          <p>Upgrade croissants with eucalyptus honey butter, glaze roast chicken with shea blossom richness, or finish a cheese board with pine honey’s resinous bite. Mixologists love its viscosity for balanced sours. In short: use premium honey when you want flavour to do the talking and shortcuts would taste like, well, shortcuts.</p>
 
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Heading as="h2" size="lg">FAQs</Heading>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Text>For chef-grade batches and bulk formats, visit <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link> or <Link href="/contact-and-connect">Contact & Connect</Link>.</Text>
-        </VStack>
-      </Container>
-    </Box>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <p>For chef-grade batches and bulk formats, visit <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link> or <Link href="/contact-and-connect">Contact & Connect</Link>.</p>
+        </div>
+      </div>
+    </div>
   )
 }
 

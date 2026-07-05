@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
@@ -23,36 +22,36 @@ export default function HowWeTestHoneyUganda() {
   }
 
   return (
-    <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
       <HeroSection title={title} subtitle="Transparency, traceability, and rigorous quality checks" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
-      <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
-        <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">Step 1: disciplined harvesting</Heading>
-          <Text>Every apiary visit is logged—GPS coordinates, dominant nectar flow, weather notes. Frames are removed at 80% capping, uncapped with food-grade knives, and spun once. We filter through stainless mesh at ambient temperature so enzymes and pollen remain intact. Storage drums are sanitised between batches because a trusted product starts with neurotic cleanliness.</Text>
+      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 1: disciplined harvesting</h2>
+          <p>Every apiary visit is logged—GPS coordinates, dominant nectar flow, weather notes. Frames are removed at 80% capping, uncapped with food-grade knives, and spun once. We filter through stainless mesh at ambient temperature so enzymes and pollen remain intact. Storage drums are sanitised between batches because a trusted product starts with neurotic cleanliness.</p>
 
-          <Heading as="h2" size="lg">Step 2: field testing and chain of custody</Heading>
-          <Text>Before leaving Hoima or Kibaale, we record moisture readings using calibrated Atago refractometers. Anything above 18.5% is set aside for additional ripening. Samples are sealed in tamper-evident vials, labelled with QR-coded batch IDs, and transported to Kampala in insulated crates. The chain-of-custody paperwork isn’t glamorous, but it ensures nobody can sneak dilution into the journey.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 2: field testing and chain of custody</h2>
+          <p>Before leaving Hoima or Kibaale, we record moisture readings using calibrated Atago refractometers. Anything above 18.5% is set aside for additional ripening. Samples are sealed in tamper-evident vials, labelled with QR-coded batch IDs, and transported to Kampala in insulated crates. The chain-of-custody paperwork isn’t glamorous, but it ensures nobody can sneak dilution into the journey.</p>
 
-          <Heading as="h2" size="lg">Step 3: accredited laboratory analytics</Heading>
-          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '10px' } }}>
-            <Box as="li"><b>LC-IRMS adulteration screening:</b> confirms sugars originate from nectar—not imported syrups.</Box>
-            <Box as="li"><b>Diastase activity and HMF:</b> reveal whether heat ever mistreated the batch.</Box>
-            <Box as="li"><b>Electrical conductivity and pollen microscopy:</b> double-check floral origin against field notes.</Box>
-            <Box as="li"><b>Targeted residue tests:</b> pesticides, antibiotics, or heavy metals when apiary neighbours spray or medicate.</Box>
-          </Box>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 3: accredited laboratory analytics</h2>
+          <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
+            <li style={{ marginBottom: '10px' }}><b>LC-IRMS adulteration screening:</b> confirms sugars originate from nectar—not imported syrups.</li>
+            <li style={{ marginBottom: '10px' }}><b>Diastase activity and HMF:</b> reveal whether heat ever mistreated the batch.</li>
+            <li style={{ marginBottom: '10px' }}><b>Electrical conductivity and pollen microscopy:</b> double-check floral origin against field notes.</li>
+            <li style={{ marginBottom: '10px' }}><b>Targeted residue tests:</b> pesticides, antibiotics, or heavy metals when apiary neighbours spray or medicate.</li>
+          </ul>
 
-          <Heading as="h2" size="lg">Step 4: reporting back to you</Heading>
-          <Text>We compile results into batch cards with harvest region, moisture, diastase, flavour descriptors, and best-use suggestions. Wholesale buyers receive the full certificates and auditors are welcome to review five years of archived data. Home subscribers get a succinct summary and direct access to our quality team—because transparency should be as accessible as your breakfast toast.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 4: reporting back to you</h2>
+          <p>We compile results into batch cards with harvest region, moisture, diastase, flavour descriptors, and best-use suggestions. Wholesale buyers receive the full certificates and auditors are welcome to review five years of archived data. Home subscribers get a succinct summary and direct access to our quality team—because transparency should be as accessible as your breakfast toast.</p>
 
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Heading as="h2" size="lg">FAQs</Heading>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Text>For technical documentation and wholesale specs, visit <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link> or <Link href="/contact-and-connect">Contact us</Link>.</Text>
-        </VStack>
-      </Container>
-    </Box>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <p>For technical documentation and wholesale specs, visit <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link> or <Link href="/contact-and-connect">Contact us</Link>.</p>
+        </div>
+      </div>
+    </div>
   )
 }
 

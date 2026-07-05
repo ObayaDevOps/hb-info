@@ -1,12 +1,28 @@
 import Head from 'next/head';
-import { Box, Container, Heading, Text, VStack, SimpleGrid, HStack, Badge, Button, Image } from '@chakra-ui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import Section from '@/components/sections/Section';
 import PageLayout from '@/components/layouts/PageLayout';
 
+const headingMd = {
+  fontSize: '1rem',
+  lineHeight: '1.5rem',
+  fontWeight: 600,
+  fontFamily: 'var(--font-hanken)',
+}
+
+const pillarCard = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: '8px',
+  border: '1px solid #1A2234',
+  borderRadius: '0.375rem',
+  padding: '24px',
+}
+
 export default function ImpactPage() {
   return (
-    <Box bg={'#FFF2D7'}color={'#000819'} minH="100vh">
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <Head>
         <title>Impact & Sustainability | Humble Beeing</title>
         <meta name="description" content="Poverty alleviation, biodiversity, traceability, gender inclusion, and UN SDG alignment." />
@@ -19,59 +35,106 @@ export default function ImpactPage() {
         overlay
         py={{ base: 16, md: 24 }}
       >
-        <Text mt={4} maxW="2xl" color="white">
+        <p style={{ marginTop: '16px', maxWidth: '42rem', color: 'white' }}>
           From beekeeper training to biodiversity corridors, every jar you enjoy funds lasting change.
-        </Text>
+        </p>
       </HeroSection>
 
       <Section
         py={{ base: 10, md: 16 }}
-        bg={'#FFF2D7'}
-        rounded={{ base: 'none', lg: '4xl' }}
-        // shadow={{ base: 'none', lg: 'xl' }}
         px={{ base: 12, md: 20 }}
+        className="rbr rpx rpy"
+        style={{ backgroundColor: '#FFF2D7', '--br': '0px', '--br-lg': '2rem' }}
       >
         {/* Impact pillars */}
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} pb={8}>
-          <VStack align="start" spacing={3} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
-            <Heading as="h2" size="md">Poverty Alleviation</Heading>
-            <Text color="#000819">5,000 farmers trained and supported with income uplift through fair, consistent purchasing.</Text>
-          </VStack>
-          <VStack align="start" spacing={3} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
-            <Heading as="h2" size="md">Environmental Conservation</Heading>
-            <Text color="#000819">Preservation of Shea trees and biodiversity corridors across priority landscapes.</Text>
-          </VStack>
-          <VStack align="start" spacing={3} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
-            <Heading as="h2" size="md">Traceability & Quality</Heading>
-            <Text color="#000819">Fighting adulteration with QR-enabled traceability and rigorous testing protocols.</Text>
-          </VStack>
-          <VStack align="start" spacing={3} borderWidth="1px" borderColor="#1A2234" borderRadius="md" p={6}>
-            <Heading as="h2" size="md">Gender & Inclusion</Heading>
-            <Text color="#000819">Focused training and recruitment driving a higher percentage of women beekeepers.</Text>
-          </VStack>
-        </SimpleGrid>
+        <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(2, 1fr)', paddingBottom: '32px' }}>
+          {[
+            ['Poverty Alleviation', '5,000 farmers trained and supported with income uplift through fair, consistent purchasing.'],
+            ['Environmental Conservation', 'Preservation of Shea trees and biodiversity corridors across priority landscapes.'],
+            ['Traceability & Quality', 'Fighting adulteration with QR-enabled traceability and rigorous testing protocols.'],
+            ['Gender & Inclusion', 'Focused training and recruitment driving a higher percentage of women beekeepers.'],
+          ].map(([title, text]) => (
+            <div key={title} style={pillarCard}>
+              <h2 style={headingMd}>{title}</h2>
+              <p style={{ color: '#000819' }}>{text}</p>
+            </div>
+          ))}
+        </div>
 
         {/* UN SDG Alignment (placeholder infographic area) */}
-        <VStack align="start" spacing={3} pb={8}>
-          <Heading as="h2" size="md">UN SDG Alignment</Heading>
-          <Text color="#000819">Visual summary of aligned SDGs and outcomes (infographic placeholder).</Text>
-          <Image src={'/globe.svg'} alt="SDG Infographic" boxSize={{ base: '200px', md: '280px' }} />
-        </VStack>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '32px' }}>
+          <h2 style={headingMd}>UN SDG Alignment</h2>
+          <p style={{ color: '#000819' }}>Visual summary of aligned SDGs and outcomes (infographic placeholder).</p>
+          <img
+            src="/globe.svg"
+            alt="SDG Infographic"
+            className="rw rh"
+            style={{ '--w': '200px', '--h': '200px', '--w-md': '280px', '--h-md': '280px', objectFit: 'contain' }}
+          />
+        </div>
 
         {/* KPI Dashboard (snapshot) */}
-        <VStack align="start" spacing={3} pb={6}>
-          <Heading as="h2" size="md">Impact Dashboard</Heading>
-          <Text color="#000819">Quarterly KPIs: farmer count, hectares conserved, % women trained, units traceable.</Text>
-        </VStack>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '24px' }}>
+          <h2 style={headingMd}>Impact Dashboard</h2>
+          <p style={{ color: '#000819' }}>Quarterly KPIs: farmer count, hectares conserved, % women trained, units traceable.</p>
+        </div>
 
         {/* CTA */}
-        <HStack spacing={4}>
-          <Button as="a" href="#" size={{base: 'xs', md: 'lg'}} target="_blank" bg="#000819" color="white" _hover={{ opacity: 0.9 }}>Download our Impact Deck</Button>
-          <Button variant="outline" size={{base: 'xs', md: 'lg'}} as="a" href="/wholesale-and-partnerships" borderColor="#000819" color="#000819" _hover={{ bg: 'rgba(0, 8, 25, 0.08)' }}>Partner with us</Button>
-        </HStack>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <a
+            href="#"
+            target="_blank"
+            className="hover-op9 rh rpx rt"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '12px',
+              '--h': '32px',
+              '--h-md': '44px',
+              '--px': '10px',
+              '--px-md': '20px',
+              '--fs': '0.75rem',
+              '--lh': '1rem',
+              '--fs-md': '1rem',
+              '--lh-md': '1.5rem',
+              fontWeight: 500,
+              borderRadius: '4px',
+              backgroundColor: '#000819',
+              color: 'white',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Download our Impact Deck
+          </a>
+          <a
+            href="/wholesale-and-partnerships"
+            className="hover-bg-navy rh rpx rt"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '12px',
+              '--h': '32px',
+              '--h-md': '44px',
+              '--px': '10px',
+              '--px-md': '20px',
+              '--fs': '0.75rem',
+              '--lh': '1rem',
+              '--fs-md': '1rem',
+              '--lh-md': '1.5rem',
+              fontWeight: 500,
+              borderRadius: '4px',
+              border: '1px solid #000819',
+              color: '#000819',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Partner with us
+          </a>
+        </div>
       </Section>
-
-    </Box>
+    </div>
   );
 }
 

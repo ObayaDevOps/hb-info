@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
@@ -21,33 +20,33 @@ export default function UgandanGiftIdeas() {
     image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
   return (
-    <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
       <HeroSection title={title} subtitle="Thoughtful, local, and beautifully packaged" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
-      <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
-        <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">How we curate each gift</Heading>
-          <Text>Every set begins with small-batch honey from Hoima or Fort Portal, poured into UV-protective glass and paired with beeswax candles rolled and poured in Kampala. We add locally woven baskets, hand-printed cards, and sustainable cushioning so the unboxing feels as intentional as the contents. Your gift is assembled by the same team that supplies luxury hotels, which means alignment on quality and timing.</Text>
+      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How we curate each gift</h2>
+          <p>Every set begins with small-batch honey from Hoima or Fort Portal, poured into UV-protective glass and paired with beeswax candles rolled and poured in Kampala. We add locally woven baskets, hand-printed cards, and sustainable cushioning so the unboxing feels as intentional as the contents. Your gift is assembled by the same team that supplies luxury hotels, which means alignment on quality and timing.</p>
 
-          <Heading as="h2" size="lg">Signature combinations</Heading>
-          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '10px' } }}>
-            <Box as="li"><b>Honey Flight Trio:</b> Pine, shea, and coffee blossom minis with tasting cards comparing flavour notes.</Box>
-            <Box as="li"><b>Candle & Honey Duet:</b> 300 g raw honey plus a beeswax pillar scented with lemongrass or amber—ideal for housewarmings.</Box>
-            <Box as="li"><b>Chef’s Hamper:</b> Premium eucalyptus honey, spiced nuts, and pairing suggestions for cheese boards.</Box>
-            <Box as="li"><b>Corporate Suite:</b> Custom-branded sleeves, handwritten cards, and delivery routing managed by our logistics team.</Box>
-          </Box>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Signature combinations</h2>
+          <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
+            <li style={{ marginBottom: '10px' }}><b>Honey Flight Trio:</b> Pine, shea, and coffee blossom minis with tasting cards comparing flavour notes.</li>
+            <li style={{ marginBottom: '10px' }}><b>Candle & Honey Duet:</b> 300 g raw honey plus a beeswax pillar scented with lemongrass or amber—ideal for housewarmings.</li>
+            <li style={{ marginBottom: '10px' }}><b>Chef’s Hamper:</b> Premium eucalyptus honey, spiced nuts, and pairing suggestions for cheese boards.</li>
+            <li style={{ marginBottom: '10px' }}><b>Corporate Suite:</b> Custom-branded sleeves, handwritten cards, and delivery routing managed by our logistics team.</li>
+          </ul>
 
-          <Heading as="h2" size="lg">Occasions we handle often</Heading>
-          <Text>From executive welcome hampers to wedding favours and destination event amenities, we manage fulfilment timelines, storage, and delivery so you can focus on relationships instead of ribbon lengths. International guests? We provide travel-safe packaging and documentation for carry-on allowances.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Occasions we handle often</h2>
+          <p>From executive welcome hampers to wedding favours and destination event amenities, we manage fulfilment timelines, storage, and delivery so you can focus on relationships instead of ribbon lengths. International guests? We provide travel-safe packaging and documentation for carry-on allowances.</p>
 
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Heading as="h2" size="lg">FAQs</Heading>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Text>Brief us on your gifting project through <Link href="/contact-and-connect">Contact & Connect</Link>—we’ll share mood boards, pricing, and timelines within 24 hours.</Text>
-        </VStack>
-      </Container>
-    </Box>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <p>Brief us on your gifting project through <Link href="/contact-and-connect">Contact & Connect</Link>—we’ll share mood boards, pricing, and timelines within 24 hours.</p>
+        </div>
+      </div>
+    </div>
   )
 }
 

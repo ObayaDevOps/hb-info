@@ -1,32 +1,29 @@
-import {
-  Box,
-  Flex,
-  Text,
-  Image,
-  Link,
-  VStack,
-  HStack,
-  Stack,
-  Icon,
-  Button,
-  Input,
-} from '@chakra-ui/react'
-import { FaLinkedin } from 'react-icons/fa'
+import { FaLinkedin, FaTree } from 'react-icons/fa'
 import { FiCode } from 'react-icons/fi'
-import { FaTree } from 'react-icons/fa'
 import { GiBeehive } from 'react-icons/gi'
 import { TbShirt } from 'react-icons/tb'
 import { motion } from 'framer-motion'
 import { toaster } from '@/lib/toaster'
-
-const MotionBox = motion.create ? motion.create(Box) : motion(Box)
-const MotionText = motion.create ? motion.create(Text) : motion(Text)
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.3 },
   transition: { duration: 0.6, ease: 'easeOut' },
+}
+
+const donateBtnStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '8px',
+  height: '40px',
+  borderRadius: '9999px',
+  fontWeight: 700,
+  fontSize: '0.875rem',
+  lineHeight: '1.25rem',
+  backgroundColor: '#09090b',
+  color: '#f5cb81',
+  border: '1px solid #f5cb81',
 }
 
 const Footer = () => {
@@ -59,199 +56,280 @@ const Footer = () => {
   }
 
   return (
-    <Box as="footer" color="#f5cb81" bg="#000819" px={0} fontFamily={'var(--font-hanken)'} borderTopRadius="4xl" >
-      <Flex minH={{ base: '80vh', md: '80vh' }} align="center" justify="center" px={{ base: '1.5rem', md: '5.5rem' }} py={{ base: 10, md: 0 }} >
-        <Flex
-          w="full"
-          maxW="1200px"
-          direction={{ base: 'column', lg: 'row' }}
-          align={{ base: 'stretch', lg: 'center' }}
-          justify="space-between"
-          gap={{ base: 10, md: 12, lg: 16 }}
-          
+    <footer
+      style={{
+        color: '#f5cb81',
+        backgroundColor: '#000819',
+        fontFamily: 'var(--font-hanken)',
+        borderTopLeftRadius: '2rem',
+        borderTopRightRadius: '2rem',
+      }}
+    >
+      <div
+        className="rpx rpy"
+        style={{
+          minHeight: '80vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          '--px': '1.5rem',
+          '--px-md': '5.5rem',
+          '--py': '40px',
+          '--py-md': '0px',
+        }}
+      >
+        <div
+          className="rfd rai rg"
+          style={{
+            width: '100%',
+            maxWidth: '1200px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            '--fd': 'column',
+            '--fd-lg': 'row',
+            '--ai': 'stretch',
+            '--ai-lg': 'center',
+            '--g': '40px',
+            '--g-md': '48px',
+            '--g-lg': '64px',
+          }}
         >
           {/* Brand + Info */}
-          <Stack flex={1} spacing={{ base: 6, md: 8 }} >
-            <MotionBox {...fadeUp}>
-              <HStack align="center" spacing={4}>
-                <Image
-                  src={'https://cdn.sanity.io/images/wf5e366r/production/31804bbe067efeb8f270cc0f9205ea7ca34d6149-652x394.png'}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <motion.div {...fadeUp}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <img
+                  src="https://cdn.sanity.io/images/wf5e366r/production/31804bbe067efeb8f270cc0f9205ea7ca34d6149-652x394.png"
                   alt="Humble Beeing Logo"
-                  height={{ base: '216px', md: '240px' }}
-                  width="auto"
-                  maxW="100%"
-                  objectFit="contain"
+                  className="rh"
+                  style={{ '--h': '216px', '--h-md': '240px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
                 />
-              </HStack>
-            </MotionBox>
+              </div>
+            </motion.div>
 
-            <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={700}>
+            <motion.p
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+              className="rt"
+              style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontWeight: 700 }}
+            >
               Building a sweeter, more sustainable future.
-            </MotionText>
+            </motion.p>
 
-            <VStack align="flex-start" spacing={1}>
-              <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} fontSize="0.875rem" fontWeight={500}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+              <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} style={{ fontSize: '0.875rem', fontWeight: 500 }}>
                 2nd Floor, Tools and Machinery Building, Kabalagala, Kampala
-              </MotionText>
-              <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
-                <Link href="mailto:hi@humble-beeing.com" fontSize="0.875rem" fontWeight={600} _hover={{ textDecoration: 'underline' }} color="#f5cb81">
+              </motion.p>
+              <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
+                <a
+                  href="mailto:hi@humble-beeing.com"
+                  className="hover-underline"
+                  style={{ fontSize: '0.875rem', fontWeight: 600, color: '#f5cb81' }}
+                >
                   hi@humble-beeing.com
-                </Link>
-              </MotionText>
-              <HStack pt={2} spacing={3}>
-                <MotionBox {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
-                  <Link href="https://www.linkedin.com/company/humble-beeing" isExternal aria-label="LinkedIn">
-                    <Icon as={FaLinkedin} boxSize={6} color="#f5cb81" p={1} borderRadius="md" />
-                  </Link>
-                </MotionBox>
-                <MotionBox {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
-                  <Link href="https://www.dralegawebops.com/" isExternal aria-label="Developer Portfolio/Website">
-                    <Icon as={FiCode} boxSize={6} color="#f5cb81" p={1} borderRadius="md" />
-                  </Link>
-                </MotionBox>
-                <MotionBox {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
-                  <Button size="sm" variant="outline" borderColor="#f5cb81" color="#f5cb81" _hover={{ bg: 'rgba(245, 203, 129, 0.12)' }}>
-                    <Link href='https://www.dralegawebops.com/' isExternal aria-label="Developer Portfolio/Website" color='#f5cb81'>
-                      Built by DWO
-                    </Link>
-                  </Button>
-                </MotionBox>
-              </HStack>
+                </a>
+              </motion.p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingTop: '8px' }}>
+                <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+                  <a
+                    href="https://www.linkedin.com/company/humble-beeing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    style={{ display: 'inline-flex', padding: '4px', borderRadius: '0.375rem', color: '#f5cb81' }}
+                  >
+                    <FaLinkedin size={16} />
+                  </a>
+                </motion.div>
+                <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
+                  <a
+                    href="https://www.dralegawebops.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Developer Portfolio/Website"
+                    style={{ display: 'inline-flex', padding: '4px', borderRadius: '0.375rem', color: '#f5cb81' }}
+                  >
+                    <FiCode size={16} />
+                  </a>
+                </motion.div>
+                <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
+                  <a
+                    href="https://www.dralegawebops.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Developer Portfolio/Website"
+                    className="btn-ghost-amber"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      height: '36px',
+                      padding: '0 14px',
+                      borderRadius: '0.375rem',
+                      border: '1px solid #f5cb81',
+                      color: '#f5cb81',
+                      fontSize: '0.875rem',
+                      fontWeight: 500,
+                      transition: 'background-color 150ms ease',
+                    }}
+                  >
+                    Built by DWO
+                  </a>
+                </motion.div>
+              </div>
 
-              <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.45 }} fontSize="0.875rem" fontWeight={500} pt={2} display={{ base: 'none', lg: 'flex' }}>
+              <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.45 }}
+                className="rd"
+                style={{ fontSize: '0.875rem', fontWeight: 500, paddingTop: '8px', '--d': 'none', '--d-lg': 'flex' }}
+              >
                 © {currentYear} Humble Beeing. All rights reserved
-              </MotionText>
-            </VStack>
-          </Stack>
+              </motion.p>
+            </div>
+          </div>
 
           {/* Newsletter Pill */}
-          <Stack flex={1} spacing={{ base: 5, md: 6 }} align="stretch">
-            <MotionText {...fadeUp} fontSize={{ base: '1.5rem', md: '2rem' }} fontWeight={800}>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '8px' }}>
+            <motion.p
+              {...fadeUp}
+              className="rt"
+              style={{ '--fs': '1.5rem', '--fs-md': '2rem', '--lh': '1.2', fontWeight: 800 }}
+            >
               Join our newsletter
-            </MotionText>
-            <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} fontSize={{ base: '0.95rem', md: '1rem' }} fontWeight={500}>
+            </motion.p>
+            <motion.p
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+              className="rt"
+              style={{ '--fs': '0.95rem', '--fs-md': '1rem', '--lh': '1.5', fontWeight: 500 }}
+            >
               Be first to hear about new products, impact updates, and stories from our beekeepers.
-            </MotionText>
+            </motion.p>
 
-            <MotionBox
+            <motion.div
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.2 }}
-              bg={'#000819'}
-              borderWidth="2px"
-              borderColor="#f5cb81"
-              rounded="full"
-              boxShadow="md"
-              style={{ backdropFilter: 'blur(10px)' }}
-              px={{ base: 2, sm: 3 }}
-              py={{ base: 2, sm: 2.5 }}
-              w="full"
+              className="rp"
+              style={{
+                backgroundColor: '#000819',
+                border: '2px solid #f5cb81',
+                borderRadius: '9999px',
+                boxShadow: '0px 4px 8px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                '--p': '8px',
+                '--p-sm': '10px 12px',
+                width: '100%',
+              }}
             >
               <form onSubmit={handleSubscribe} style={{ width: '100%' }}>
-                <HStack spacing={{ base: 1.5, sm: 2 }} align="center">
-                  <Input
+                <div className="rg" style={{ display: 'flex', alignItems: 'center', '--g': '6px', '--g-sm': '8px' }}>
+                  <input
                     name="email"
                     type="email"
                     placeholder="Enter your email"
-                    variant="unstyled"
-                    // bg='black'
-                    bg='#000819'
-                    color={'#f5cb81'}
-                    _placeholder={{ color: 'rgba(245, 203, 129, 0.9)' }}
-                    px={{ base: 3, sm: 4 }}
-                    py={{ base: 2, sm: 2.5 }}
-                    fontSize={{ base: '0.95rem', md: '1rem' }}
-                    fontWeight={500}
+                    className="footer-mail rpx rpy rt"
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      border: 'none',
+                      outline: 'none',
+                      backgroundColor: '#000819',
+                      color: '#f5cb81',
+                      '--px': '12px',
+                      '--px-sm': '16px',
+                      '--py': '8px',
+                      '--py-sm': '10px',
+                      '--fs': '0.95rem',
+                      '--fs-md': '1rem',
+                      '--lh': '1.5',
+                      fontWeight: 500,
+                    }}
                   />
-                  <Button
+                  <button
                     type="submit"
-                    px={{ base: 4, md: 6 }}
-                    py={{ base: 2, md: 3 }}
-                    rounded="full"
-                    fontWeight={700}
-                    bg="#f5cb81"
-                    color="#000819"
-                    borderWidth="1px"
-                    borderColor="#f5cb81"
-                    _hover={{ bg: 'transparent', color: '#f5cb81' }}
-                    transition="all 150ms ease"
+                    className="btn-sub rpx"
+                    style={{
+                      height: '40px',
+                      '--px': '16px',
+                      '--px-md': '24px',
+                      borderRadius: '9999px',
+                      fontWeight: 700,
+                      fontSize: '0.875rem',
+                      lineHeight: '1.25rem',
+                      backgroundColor: '#f5cb81',
+                      color: '#000819',
+                      border: '1px solid #f5cb81',
+                    }}
                   >
                     Subscribe
-                  </Button>
-                </HStack>
+                  </button>
+                </div>
               </form>
-            </MotionBox>
+            </motion.div>
 
-            <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} fontSize="0.8rem" color="#f5cb81">
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ fontSize: '0.8rem', color: '#f5cb81' }}>
               We respect your privacy. Unsubscribe anytime.
-            </MotionText>
+            </motion.p>
 
             {/* Donate to Support */}
-            <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }} fontSize={{ base: '1.25rem', md: '1.5rem' }} fontWeight={800} pt={{ base: 6, md: 8 }}>
-              Get Involved! 
-            </MotionText>
-            <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }} fontSize={{ base: '0.75rem', md: '1rem' }} fontWeight={800}>
+            <motion.p
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.15 }}
+              className="rt rpt"
+              style={{ '--fs': '1.25rem', '--fs-md': '1.5rem', '--lh': '1.2', fontWeight: 800, '--pt': '24px', '--pt-md': '32px' }}
+            >
+              Get Involved!
+            </motion.p>
+            <motion.p
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.15 }}
+              className="rt"
+              style={{ '--fs': '0.75rem', '--fs-md': '1rem', '--lh': '1.5', fontWeight: 800 }}
+            >
               Donate to Support a Smallholder Beekeeper
-            </MotionText>
-            <MotionBox {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              <HStack spacing={{ base: 3, md: 4 }} flexWrap="wrap">
-                <Button
-                  leftIcon={<GiBeehive size={18} />}
-                  as={Link}
-                  href='https://store.pesapal.com/humblebeeinghoneypayments'
-                  bg="black"
-                  color="#f5cb81"
-                  borderWidth="1px"
-                  borderColor="#f5cb81"
-                  rounded="full"
-                  px={{ base: 4, md: 6 }}
-                  py={{ base: 2, md: 3 }}
-                  fontWeight={700}
-                  _hover={{ bg: '#f5cb81', color: 'black' }}
+            </motion.p>
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+              <div className="rg" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', '--g': '12px', '--g-md': '16px' }}>
+                <a
+                  href="https://store.pesapal.com/humblebeeinghoneypayments"
+                  className="btn-dark rpx"
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '24px' }}
                 >
+                  <GiBeehive size={18} />
                   Beehive - $100
-                </Button>
-                <Button
-                  leftIcon={<TbShirt size={18} />}
-                  as={Link}
-                  href='https://store.pesapal.com/humblebeeinghoneypayments'
-                  bg="black"
-                  color="#f5cb81"
-                  borderWidth="1px"
-                  borderColor="#f5cb81"
-                  rounded="full"
-                  px={{ base: 4, md: 6 }}
-                  py={{ base: 2, md: 3 }}
-                  fontWeight={700}
-                  _hover={{ bg: '#f5cb81', color: 'black' }}
+                </a>
+                <a
+                  href="https://store.pesapal.com/humblebeeinghoneypayments"
+                  className="btn-dark rpx"
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '24px' }}
                 >
+                  <TbShirt size={18} />
                   Beesuit-$80
-                </Button>
-                <Button
-                  leftIcon={<FaTree size={18} />}
-                  as={Link}
-                  href='https://store.pesapal.com/humblebeeinghoneypayments'
-                  bg="black"
-                  color="#f5cb81"
-                  borderWidth="1px"
-                  borderColor="#f5cb81"
-                  rounded="full"
-                  px={{ base: 4, md: 6 }}
-                  py={{ base: 2, md: 3 }}
-                  fontWeight={700}
-                  _hover={{ bg: '#f5cb81', color: 'black' }}
+                </a>
+                <a
+                  href="https://store.pesapal.com/humblebeeinghoneypayments"
+                  className="btn-dark rpx"
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '24px' }}
                 >
+                  <FaTree size={18} />
                   Shea Trees -$15
-                </Button>
-              </HStack>
-            </MotionBox>
+                </a>
+              </div>
+            </motion.div>
 
-            <MotionText {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }} fontSize="0.875rem" fontWeight={500} pt={2} display={{ base: 'flex', lg: 'none' }}>
+            <motion.p
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.35 }}
+              className="rd"
+              style={{ fontSize: '0.875rem', fontWeight: 500, paddingTop: '8px', '--d': 'flex', '--d-lg': 'none' }}
+            >
               © {currentYear} HB Fine Honey Suppliers Limited. All rights reserved
-            </MotionText>
-          </Stack>
-        </Flex>
-      </Flex>
-    </Box>
+            </motion.p>
+          </div>
+        </div>
+      </div>
+    </footer>
   )
 }
 

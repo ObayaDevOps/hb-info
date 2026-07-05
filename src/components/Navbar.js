@@ -1,17 +1,6 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  Link,
-  useDisclosure,
-  useBreakpointValue,
-  Image,
-  VisuallyHidden,
-} from '@chakra-ui/react'
-import { useEffect, useMemo, useState } from 'react'
-import MobileDrawer from './MobileDrawer'
+import { useMemo } from 'react'
 import { useRouter } from 'next/router'
-// Dark mode removed from navbar
+import MobileDrawer from './MobileDrawer'
 import {
   Home as HomeIcon,
   BookOpen as BookOpenIcon,
@@ -24,202 +13,158 @@ import {
   Route as RouteIcon,
 } from 'lucide-react'
 
-const NavLink = ({ children, href, color, isExternal, ...rest }) => (
-  <Link
-    px={3}
-    py={1}
-    rounded={'md'}
-    color={color}
-    _hover={{ textDecoration: 'none' }}
-    href={href}
-    isExternal={isExternal}
-    {...rest}
-    fontFamily="var(--font-hanken)"
-    fontWeight={600}
-  >
-    {children}
-  </Link>
-)
+const shadowMd = '0px 4px 8px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)'
 
 function FloatingPill({ items }) {
-  const containerBg = 'rgba(255, 255, 255, 0.6)'
   const pillLogoSrc = 'https://cdn.sanity.io/files/wf5e366r/production/abe3713a984fec694f2bc5e23a9f8173a94985a3.svg'
+  const trace = items.find((it) => it.label === 'Trace')
+  const shop = items.find((it) => it.label === 'Shop')
+
+  const ctaLink = (item) => (
+    <a
+      key={item.label}
+      href={item.href}
+      target={item.isExternal ? '_blank' : undefined}
+      rel={item.isExternal ? 'noopener noreferrer' : undefined}
+      className="btn-dark rpx rml"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        '--px': '20px',
+        '--px-xl': '24px',
+        '--ml': '8px',
+        '--ml-xl': '16px',
+        paddingTop: '12px',
+        paddingBottom: '12px',
+        borderRadius: '9999px',
+        fontWeight: 700,
+        fontFamily: 'var(--font-hanken)',
+        backgroundColor: '#09090b',
+        color: '#f5cb81',
+        border: '1px solid #09090b',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {item.icon ? <item.icon size={20} /> : null}
+      <span className="rt" style={{ '--fs': '1rem', '--fs-xl': '1.125rem', '--lh': '1.5' }}>{item.label}</span>
+    </a>
+  )
 
   return (
-    <Box position="fixed" top={8} left={0} right={0} zIndex={1050} display={{base: 'none', md: "flex"}} justifyContent="center">
-      <HStack
-        spacing={{ base: 1.5, sm: 2.5 }}
-        bg={containerBg}
-        borderWidth="2px"
-        borderColor="black"
-        px={{ base: 3, sm: 4 }}
-        py={{ base: 2, sm: 3 }}
-        rounded="full"
-        boxShadow="md"
-        align="center"
-        style={{ backdropFilter: 'blur(10px)' }}
-        w={{ base: '90vw', lg: 'auto' }}
+    <div
+      className="rd"
+      style={{
+        position: 'fixed',
+        top: '32px',
+        left: 0,
+        right: 0,
+        zIndex: 1050,
+        '--d': 'none',
+        '--d-lg': 'flex',
+        justifyContent: 'center',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          border: '2px solid #09090b',
+          padding: '12px 16px',
+          borderRadius: '9999px',
+          boxShadow: shadowMd,
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          maxWidth: '100%',
+        }}
       >
-        <Link
+        <a
           href="/"
-          _hover={{ textDecoration: 'none' }}
-          display="inline-flex"
-          alignItems="center"
-          px={{ base: 3.5, sm: 5 }}
-          py={1}
-          rounded="full"
-          mr={{ base: 8, sm: 10, md: 14, lg: 16 }}
+          className="rmr"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            padding: '4px 20px',
+            borderRadius: '9999px',
+            '--mr': '16px',
+            '--mr-xl': '48px',
+          }}
         >
-          <Image src={pillLogoSrc} alt="Humble Beeing Logo" height={{ base: '50px', sm: '40px' }} width="auto" />
-        </Link>
-        <HStack as="nav" align="center" spacing={{ base: 1.5, sm: 2 }}>
+          <img src={pillLogoSrc} alt="Humble Beeing Logo" style={{ height: '40px', width: 'auto' }} />
+        </a>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           {items
             .filter((it) => it.label !== 'Shop' && it.label !== 'Trace')
             .map((item) => (
-              <Link
+              <a
                 key={item.label}
                 href={item.href}
-                isExternal={item.isExternal}
-                role="group"
-                position="relative"
-                px={{ base: 4, sm: 5, md: 8 }}
-                py={3}
-                rounded="full"
-                fontWeight={600}
-                fontFamily="var(--font-hanken)"
-                color={'black'}
-                _hover={{ color: 'black', textDecoration: 'none' }}
-                transition="color 200ms ease, transform 150ms ease"
+                target={item.isExternal ? '_blank' : undefined}
+                rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                className="navlink rpx"
+                style={{
+                  position: 'relative',
+                  '--px': '12px',
+                  '--px-xl': '24px',
+                  paddingTop: '12px',
+                  paddingBottom: '12px',
+                  borderRadius: '9999px',
+                  fontWeight: 600,
+                  fontFamily: 'var(--font-hanken)',
+                  color: '#09090b',
+                  whiteSpace: 'nowrap',
+                  transition: 'color 200ms ease, transform 150ms ease',
+                }}
               >
-                <Box as="span" position="relative" zIndex={1} fontSize="lg">
+                <span
+                  className="rt"
+                  style={{ position: 'relative', zIndex: 1, '--fs': '1rem', '--fs-xl': '1.125rem', '--lh': '1.5' }}
+                >
                   {item.label}
-                </Box>
+                </span>
                 {!item.active ? (
-                  <Box
+                  <span
                     aria-hidden
-                    position="absolute"
-                    inset={0}
-                    rounded="full"
-                    bg={'rgba(128, 128, 128, 0.12)'}
-                    borderWidth="1px"
-                    borderColor={'gray.300'}
-                    zIndex={0}
-                    opacity={0}
-                    transition="opacity 150ms ease"
-                    _groupHover={{ opacity: 1 }}
+                    className="navlink-bg"
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      borderRadius: '9999px',
+                      backgroundColor: 'rgba(128, 128, 128, 0.12)',
+                      border: '1px solid #d4d4d8',
+                      zIndex: 0,
+                    }}
                   />
-                ) : null}
-                {item.active ? (
-                  <Box
+                ) : (
+                  <span
                     aria-hidden
-                    position="absolute"
-                    inset={0}
-                    rounded="full"
-                    bg={'rgba(128, 128, 128, 0.16)'}
-                    borderWidth="1px"
-                    borderColor={'gray.400'}
-                    zIndex={0}
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      borderRadius: '9999px',
+                      backgroundColor: 'rgba(128, 128, 128, 0.16)',
+                      border: '1px solid #a1a1aa',
+                      zIndex: 0,
+                    }}
                   />
-                ) : null}
-              </Link>
+                )}
+              </a>
             ))}
-          {(() => {
-            const trace = items.find((it) => it.label === 'Trace')
-            if (!trace) return null
-            return (
-              <Link
-                key={trace.label}
-                href={trace.href}
-                isExternal={trace.isExternal}
-                display="inline-flex"
-                alignItems="center"
-                gap={2}
-                px={{ base: 5, md: 7 }}
-                py={3}
-                rounded="full"
-                fontWeight={700}
-                fontFamily="var(--font-hanken)"
-                bg="black"
-                color="#f5cb81"
-                borderWidth="1px"
-                borderColor="black"
-                _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-                transition="all 150ms ease"
-                ml={{ base: 4, md: 6 }}
-              >
-                {trace.icon ? <Box as={trace.icon} boxSize={5} /> : null}
-                <Box as="span" fontSize="lg">
-                  {trace.label}
-                </Box>
-              </Link>
-            )
-          })()}
-          {(() => {
-            const shop = items.find((it) => it.label === 'Shop')
-            if (!shop) return null
-            return (
-              <Link
-                key={shop.label}
-                href={shop.href}
-                isExternal={shop.isExternal}
-                display="inline-flex"
-                alignItems="center"
-                gap={2}
-                px={{ base: 5, md: 7 }}
-                py={3}
-                rounded="full"
-                fontWeight={700}
-                fontFamily="var(--font-hanken)"
-                bg="black"
-                color="#f5cb81"
-                borderWidth="1px"
-                borderColor="black"
-                _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-                transition="all 150ms ease"
-                ml={{ base: 4, md: 6 }}
-              >
-                {shop.icon ? <Box as={shop.icon} boxSize={5} /> : null}
-                <Box as="span" fontSize="lg">
-                  {shop.label}
-                </Box>
-              </Link>
-            )
-          })()}
-        </HStack>
-      </HStack>
-    </Box>
+          {trace ? ctaLink(trace) : null}
+          {shop ? ctaLink(shop) : null}
+        </nav>
+      </div>
+    </div>
   )
 }
 
 export default function Navbar(props) {
-  const { isOpen, onClose } = useDisclosure()
-  const isDesktop = useBreakpointValue({ base: false, lg: true })
-  const [overlayScrolled, setOverlayScrolled] = useState(false)
-  const [hasScrolled, setHasScrolled] = useState(false)
   const overlayOnHero = props.overlayOnHero || false
   const router = useRouter()
 
-  // Desktop navbar is hidden; no need to track scroll to toggle it
-  // useEffect(() => {
-  //   const onScroll = () => setHasScrolled(window.scrollY > 10)
-  //   onScroll()
-  //   window.addEventListener('scroll', onScroll)
-  //   return () => window.removeEventListener('scroll', onScroll)
-  // }, [])
-
-  // useEffect(() => {
-  //   if (!overlayOnHero) return
-  //   const onScroll = () => setOverlayScrolled(window.scrollY > 10)
-  //   onScroll()
-  //   window.addEventListener('scroll', onScroll)
-  //   return () => window.removeEventListener('scroll', onScroll)
-  // }, [overlayOnHero])
-
-  const isOverlay = overlayOnHero && !overlayScrolled
-  const navBg = isOverlay ? 'transparent' : props.bg || '#f5cb81'
-  const linkColor = isOverlay ? 'white' : '#000819'
   const blackLogo = 'https://cdn.sanity.io/files/wf5e366r/production/abe3713a984fec694f2bc5e23a9f8173a94985a3.svg'
-  const whiteLogo = 'https://cdn.sanity.io/images/wf5e366r/production/35206c00d9aa9c8bb7000bf6c38b95a157470649-1090x647.png'
   const mobileLogoSrc = blackLogo
 
   const navItems = useMemo(
@@ -248,68 +193,101 @@ export default function Navbar(props) {
   }, [router?.asPath, navItems])
 
   return (
-    <Box
-      px={{ base: '1rem', sm: '2rem', lg: '5.5rem' }}
-      py={{ base: '0.625rem', sm: '1rem', lg: 0 }}
-      position={overlayOnHero ? 'fixed' : 'sticky'}
-      top={0}
-      left={0}
-      right={0}
-      zIndex={1000}
-      bg={'transparent' }
+    <div
+      className="rpx rpy"
+      style={{
+        '--px': '1rem',
+        '--px-sm': '2rem',
+        '--px-lg': '5.5rem',
+        '--py': '0.625rem',
+        '--py-sm': '1rem',
+        '--py-lg': '0',
+        position: overlayOnHero ? 'fixed' : 'sticky',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        backgroundColor: 'transparent',
+      }}
     >
-      {/* Desktop navbar hidden intentionally; pill is always visible on desktop */}
-
-      <Box display={{ base: 'block', lg: 'none' }}>
-        <Box display="flex" justifyContent="center">
-          <Box
-            bg={'rgba(255, 255, 255, 0.6)'}
-            borderWidth="2px"
-            borderColor="black"
-            px={{ base: 2, sm: 3 }}
-            py={{ base: 1.5, sm: 2 }}
-            rounded="full"
-            boxShadow="md"
-            style={{ backdropFilter: 'blur(10px)' }}
-            w="90vw"
-            display="grid"
-            gridTemplateColumns="1fr auto 1fr"
-            alignItems="center"
-            columnGap={{ base: 2, sm: 3 }}
+      {/* Mobile / tablet pill (hidden from lg where the floating pill takes over) */}
+      <div className="rd" style={{ '--d': 'block', '--d-lg': 'none' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div
+            className="rpx rpy"
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.6)',
+              border: '2px solid #09090b',
+              '--px': '8px',
+              '--px-sm': '12px',
+              '--py': '6px',
+              '--py-sm': '8px',
+              borderRadius: '9999px',
+              boxShadow: shadowMd,
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              width: '90vw',
+              display: 'grid',
+              gridTemplateColumns: '1fr auto 1fr',
+              alignItems: 'center',
+              columnGap: '8px',
+            }}
           >
-            <Box justifySelf="start" ml={{ base: 1, sm: 3 }}>
-              <MobileDrawer navItems={itemsWithActive} triggerColor={'black'} triggerSize={'1.25rem'} />
-            </Box>
-            <Link href="/" _hover={{ textDecoration: 'none' }} justifySelf="center">
-              <Image src={mobileLogoSrc} alt="The Humble Beeing Logo" height={{ base: '30px', sm: '36px' }} width="auto" />
-            </Link>
-            <Link
+            <div className="rml" style={{ justifySelf: 'start', '--ml': '4px', '--ml-sm': '12px' }}>
+              <MobileDrawer navItems={itemsWithActive} triggerColor="black" triggerSize="1.25rem" />
+            </div>
+            <a href="/" style={{ justifySelf: 'center', display: 'inline-flex' }}>
+              <img
+                src={mobileLogoSrc}
+                alt="The Humble Beeing Logo"
+                className="rh"
+                style={{ '--h': '30px', '--h-sm': '36px', width: 'auto' }}
+              />
+            </a>
+            <a
               href="https://shop.humble-beeing.com"
-              isExternal
-              display="inline-flex"
-              alignItems="center"
-              gap={{ base: 1, sm: 1.5 }}
-              px={{ base: 3, sm: 4 }}
-              py={{ base: 1.5, sm: 2 }}
-              rounded="full"
-              fontWeight={700}
-              fontFamily="var(--font-poppins)"
-              bg="black"
-              color="#f5cb81"
-              borderWidth="1px"
-              borderColor="black"
-              _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-              transition="all 150ms ease"
-              justifySelf="end"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-dark rpx rpy"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                '--px': '12px',
+                '--px-sm': '16px',
+                '--py': '6px',
+                '--py-sm': '8px',
+                borderRadius: '9999px',
+                fontWeight: 700,
+                fontFamily: 'var(--font-poppins)',
+                backgroundColor: '#09090b',
+                color: '#f5cb81',
+                border: '1px solid #09090b',
+                justifySelf: 'end',
+              }}
             >
-              <Box as={ShoppingBagIcon} boxSize={{ base: 3.5, sm: 4 }} />
-              <VisuallyHidden>Shop</VisuallyHidden>
-            </Link>
-          </Box>
-        </Box>
-      </Box>
+              <ShoppingBagIcon size={14} />
+              <span
+                style={{
+                  position: 'absolute',
+                  width: '1px',
+                  height: '1px',
+                  padding: 0,
+                  margin: '-1px',
+                  overflow: 'hidden',
+                  clip: 'rect(0, 0, 0, 0)',
+                  whiteSpace: 'nowrap',
+                  border: 0,
+                }}
+              >
+                Shop
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-      {isDesktop ? <FloatingPill items={itemsWithActive} /> : null}
-    </Box>
+      <FloatingPill items={itemsWithActive} />
+    </div>
   )
 }

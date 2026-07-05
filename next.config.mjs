@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     domains:['cdn.sanity.io','res.cloudinary.com'],
   },
-  experimental: {
-    optimizePackageImports: ["@chakra-ui/react"],
-  },
   async redirects() {
     return [
       // Journal -> Blog

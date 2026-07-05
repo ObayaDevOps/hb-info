@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
@@ -35,7 +34,7 @@ export default function RawHoneyUgandaGuide() {
   }
 
   return (
-    <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
       <HeroSection
         title={title}
@@ -44,37 +43,37 @@ export default function RawHoneyUgandaGuide() {
         overlay
         py={{ base: 16, md: 24 }}
       />
-      <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
-        <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">What qualifies as “raw” honey in our Ugandan apiaries?</Heading>
-          <Text>During harvest season we pull combs from Hoima and Kibaale at sunrise, when nectar is still cool. Each frame is uncapped by hand, spun once, and strained through food-grade mesh. No heat, no pressure filters, and definitely no corn syrup masquerading as floral notes. That minimal handling keeps enzymes, pollen, and terroir intact—think vinyl record warmth versus a compressed mp3.</Text>
+      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>What qualifies as “raw” honey in our Ugandan apiaries?</h2>
+          <p>During harvest season we pull combs from Hoima and Kibaale at sunrise, when nectar is still cool. Each frame is uncapped by hand, spun once, and strained through food-grade mesh. No heat, no pressure filters, and definitely no corn syrup masquerading as floral notes. That minimal handling keeps enzymes, pollen, and terroir intact—think vinyl record warmth versus a compressed mp3.</p>
 
-          <Heading as="h2" size="lg">How does raw honey taste different?</Heading>
-          <Text>Expect a layered profile: citrus blossom from Budongo forest apiaries, deeper molasses notes from eucalyptus stands near Fort Portal, and a finish that shifts with the season. Volatile aromatics survive because we refuse to overheat the harvest. Independent sensory panels in Kampala (yes, we invite chefs with notebooks) routinely score raw batches well above commercial blends on aroma intensity and mouthfeel.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How does raw honey taste different?</h2>
+          <p>Expect a layered profile: citrus blossom from Budongo forest apiaries, deeper molasses notes from eucalyptus stands near Fort Portal, and a finish that shifts with the season. Volatile aromatics survive because we refuse to overheat the harvest. Independent sensory panels in Kampala (yes, we invite chefs with notebooks) routinely score raw batches well above commercial blends on aroma intensity and mouthfeel.</p>
 
-          <Heading as="h2" size="lg">How we prove purity and safety</Heading>
-          <Text>Experience is useful, but lab data closes the case. Every batch is logged with hive coordinates, moisture levels (target: 17–18.5%), and pollen spectra. Spot samples go to ISO-accredited labs in Kampala to screen for antibiotics, HMF, and adulteration markers. Our team holds Level II beekeeper certifications from the Uganda National Apiculture Development Organisation, and we follow Codex Alimentarius standards because guessing is for amateurs.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How we prove purity and safety</h2>
+          <p>Experience is useful, but lab data closes the case. Every batch is logged with hive coordinates, moisture levels (target: 17–18.5%), and pollen spectra. Spot samples go to ISO-accredited labs in Kampala to screen for antibiotics, HMF, and adulteration markers. Our team holds Level II beekeeper certifications from the Uganda National Apiculture Development Organisation, and we follow Codex Alimentarius standards because guessing is for amateurs.</p>
 
-          <Heading as="h2" size="lg">Where should you buy raw honey in Kampala?</Heading>
-          <Text>Traceability matters. Order directly from Humble Beeing for same-week harvests labelled with beekeeper names. Prefer retail? You’ll find our jars at Good Glass Bugolobi, Endiro Coffee Kololo, La Patisserie in Muyenga, and curated grocers in Kisementi. Ask for the batch card; if a seller can’t point to harvest month and moisture readings, walk away gracefully.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Where should you buy raw honey in Kampala?</h2>
+          <p>Traceability matters. Order directly from Humble Beeing for same-week harvests labelled with beekeeper names. Prefer retail? You’ll find our jars at Good Glass Bugolobi, Endiro Coffee Kololo, La Patisserie in Muyenga, and curated grocers in Kisementi. Ask for the batch card; if a seller can’t point to harvest month and moisture readings, walk away gracefully.</p>
 
-          <Heading as="h2" size="lg">How to store raw honey in our climate</Heading>
-          <Text>Kampala humidity can stage a coup against even the best honey. Keep jars sealed, off the sunny windowsill, and comfortably at room temperature. If crystals appear—and they will—rest the jar in a 40–45°C water bath and stir every few minutes. Anything hotter risks nuking the enzymes you were so careful to buy in the first place.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How to store raw honey in our climate</h2>
+          <p>Kampala humidity can stage a coup against even the best honey. Keep jars sealed, off the sunny windowsill, and comfortably at room temperature. If crystals appear—and they will—rest the jar in a 40–45°C water bath and stir every few minutes. Anything hotter risks nuking the enzymes you were so careful to buy in the first place.</p>
 
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Heading as="h2" size="lg">FAQs</Heading>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
 
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Text>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <p>
             Curious about the latest harvest notes? Send a message via {' '}
             <Link href="/contact-and-connect">Contact & Connect</Link> {' '}
             and we’ll share current tasting cards. Wholesale buyers can tap our vetted supply chain through {' '}
             <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link>.
-          </Text>
-        </VStack>
-      </Container>
-    </Box>
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
 

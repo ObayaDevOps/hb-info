@@ -1,165 +1,155 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  Link,
-  IconButton,
-  Drawer,
-  VStack,
-  Text,
-  Portal,
-} from '@chakra-ui/react';
-import { Menu, X } from 'lucide-react';
-import { useRef } from "react"; // Keep useRef
+import { useEffect, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
-// Reusable NavLink component with icon support
-const NavLink = ({ children, href, isExternal, active }) => (
-  <Link
-    px={3}
-    py={2}
-    rounded={active ? '4xl' : 'md'}
-    bg={active ? 'rgba(0, 8, 25, 0.08)' : 'transparent'}
-    color={'#000819'}
-    _hover={{ textDecoration: 'none', opacity: 0.9 }}
-    href={href}
-    isExternal={isExternal}
-    fontFamily="var(--font-hanken)"
-    fontWeight={600}
-    borderWidth={active ? '2px' : '0px'}
-    borderColor={active ? '#000819' : 'transparent'}
-    aria-current={active ? 'page' : undefined}
-  >
-    {children}
-  </Link>
-);
+// Full-screen slide-in menu, hand-rolled (no Chakra).
+// Trigger is a real <button> so it is keyboard-focusable (was a bare svg).
+export default function MobileDrawer({ navItems, triggerColor = '#000819', triggerSize = '2rem' }) {
+  const [open, setOpen] = useState(false)
 
-export default function MobileDrawer({ isOpen, onClose, navItems, getInTouchText = "Get in Touch", triggerColor = '#000819', triggerSize = '2rem' }) {
-  // 1. Create a ref for the Drawer Content
-  const contentRef = useRef(null);
+  // Lock body scroll while open + close on Escape
+  useEffect(() => {
+    if (!open) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prev
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Shop')
+  const trace = navItems.find((it) => it.label === 'Trace')
+  const shop = navItems.find((it) => it.label === 'Shop')
+
+  const pillLinkStyle = {
+    padding: '12px 16px',
+    borderRadius: '2rem',
+    backgroundColor: '#09090b',
+    color: '#f5cb81',
+    border: '1px solid #09090b',
+    fontFamily: 'var(--font-hanken)',
+    fontWeight: 700,
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+  }
+
+  const bigLabelStyle = {
+    fontSize: '1.6875rem',
+    lineHeight: 'normal',
+    letterSpacing: '0.02rem',
+    textTransform: 'none',
+    fontFamily: 'var(--font-hanken)',
+    fontWeight: 600,
+    margin: 0,
+  }
 
   return (
-    // Use Drawer from Chakra UI Ark integration directly if preferred, or keep as is if using Radix via Ark
-    <Drawer.Root 
-        size={'full'} 
-        placement="start" 
-        // 3. Use the contentRef for initialFocusEl
-        initialFocusEl={contentRef} 
-        // Note: isOpen and onClose are typically managed by Drawer.Root's context, 
-        // unless you need external control. If using external control, 
-        // you might need `open={isOpen}` and `onOpenChange={(open) => !open && onClose()}` props.
-        // Check Chakra UI Ark/Radix documentation for the specific props if needed.
-        // Assuming default context-based control for simplicity here.
-    >
-      <Drawer.Trigger asChild>
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        aria-label="Open menu"
+        aria-expanded={open}
+        style={{ display: 'flex', alignItems: 'center', color: triggerColor }}
+      >
         <Menu color={triggerColor} size={triggerSize} />
-      </Drawer.Trigger>
-      <Portal>
-        <Drawer.Backdrop />
-        <Drawer.Positioner>
-          {/* 2. Attach the ref to Drawer.Content */}
-          <Drawer.Content
-            ref={contentRef}
-            bg='rgba(255, 255, 255, 0.8)'
-            color="#000819"
-            style={{ backdropFilter: 'blur(10px)' }}
-          > 
-            <Drawer.Body>
-              {(() => {
-                const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Shop')
-                const trace = navItems.find((it) => it.label === 'Trace')
-                const shop = navItems.find((it) => it.label === 'Shop')
-                return (
-                  <VStack spacing={8} align="stretch" pt={'6rem'} minH="85vh" justify="space-between">
-                    <VStack spacing={8} align="stretch">
-                      {primary.map((item) => (
-                        <NavLink key={item.label} href={item.href} isExternal={item.isExternal} active={item.active}>
-                          <HStack spacing={3.6} align="center">
-                            {item.icon ? (
-                              <Box as={item.icon} boxSize={9} color="#000819" />
-                            ) : null}
-                            <Text
-                              fontSize="1.6875rem"
-                              fontFamily="var(--font-hanken)"
-                              fontStyle='normal'
-                              fontWeight={600}
-                              color="#000819"
-                              lineHeight='normal'
-                              letterSpacing="0.02rem"
-                              textTransform='none'
-                            >
-                              {item.label}
-                            </Text>
-                          </HStack>
-                        </NavLink>
-                      ))}
-                    </VStack>
-                    <VStack spacing={3} align="stretch" pb={4}>
-                      {trace && (
-                        <Link
-                          key={trace.label}
-                          href={trace.href}
-                          isExternal={trace.isExternal}
-                          px={4}
-                          py={3}
-                          rounded='4xl'
-                          bg='black'
-                          color='#f5cb81'
-                          borderWidth='1px'
-                          borderColor='black'
-                          _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-                          fontFamily='var(--font-hanken)'
-                          fontWeight={700}
-                          display='flex'
-                          alignItems='center'
-                          gap={3}
-                        >
-                          {trace.icon ? <Box as={trace.icon} boxSize={9} /> : null}
-                          <Text fontSize='1.6875rem' lineHeight='normal' letterSpacing='0.02rem' textTransform='none'>
-                            {trace.label}
-                          </Text>
-                        </Link>
-                      )}
-                      {shop && (
-                        <Link
-                          key={shop.label}
-                          href={shop.href}
-                          isExternal={shop.isExternal}
-                          px={4}
-                          py={3}
-                          rounded='4xl'
-                          bg='black'
-                          color='#f5cb81'
-                          borderWidth='1px'
-                          borderColor='black'
-                          _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-                          fontFamily='var(--font-hanken)'
-                          fontWeight={700}
-                          display='flex'
-                          alignItems='center'
-                          gap={3}
-                        >
-                          {shop.icon ? <Box as={shop.icon} boxSize={9} /> : null}
-                          <Text fontSize='1.6875rem' lineHeight='normal' letterSpacing='0.02rem' textTransform='none'>
-                            {shop.label}
-                          </Text>
-                        </Link>
-                      )}
-                    </VStack>
-                  </VStack>
-                )
-              })()}
-              {/* Removed Get in Touch button per request */}
-            </Drawer.Body>
+      </button>
 
-            <Drawer.CloseTrigger asChild>
-              {/* Position the close button more intentionally, e.g., absolute positioning */}
-              <Box position="absolute" top={4} right={4} m={2}> 
-                <X color="#000819" size={'2.75rem'} cursor="pointer" /> 
-              </Box>
-            </Drawer.CloseTrigger>
-          </Drawer.Content>
-        </Drawer.Positioner>
-      </Portal>
-    </Drawer.Root>
-  );
+      <div
+        aria-hidden={!open}
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 1300,
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          color: '#000819',
+          transform: open ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 300ms ease',
+          overflowY: 'auto',
+          visibility: open ? 'visible' : 'hidden',
+        }}
+      >
+        <div
+          role="dialog"
+          aria-label="Navigation menu"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            gap: '8px',
+            minHeight: '85vh',
+            padding: '6rem 1.5rem 1rem 1.5rem',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {primary.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target={item.isExternal ? '_blank' : undefined}
+                rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                aria-current={item.active ? 'page' : undefined}
+                className="hover-op9"
+                style={{
+                  padding: '8px 12px',
+                  borderRadius: item.active ? '2rem' : '0.375rem',
+                  backgroundColor: item.active ? 'rgba(0, 8, 25, 0.08)' : 'transparent',
+                  border: item.active ? '2px solid #000819' : '2px solid transparent',
+                  color: '#000819',
+                  fontFamily: 'var(--font-hanken)',
+                  fontWeight: 600,
+                }}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                  {item.icon ? <item.icon size={36} color="#000819" /> : null}
+                  <span style={bigLabelStyle}>{item.label}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingBottom: '16px' }}>
+            {trace && (
+              <a
+                href={trace.href}
+                target={trace.isExternal ? '_blank' : undefined}
+                rel={trace.isExternal ? 'noopener noreferrer' : undefined}
+                className="btn-dark"
+                style={pillLinkStyle}
+              >
+                {trace.icon ? <trace.icon size={36} /> : null}
+                <span style={{ ...bigLabelStyle, fontWeight: 700 }}>{trace.label}</span>
+              </a>
+            )}
+            {shop && (
+              <a
+                href={shop.href}
+                target={shop.isExternal ? '_blank' : undefined}
+                rel={shop.isExternal ? 'noopener noreferrer' : undefined}
+                className="btn-dark"
+                style={pillLinkStyle}
+              >
+                {shop.icon ? <shop.icon size={36} /> : null}
+                <span style={{ ...bigLabelStyle, fontWeight: 700 }}>{shop.label}</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        <button
+          onClick={() => setOpen(false)}
+          aria-label="Close menu"
+          style={{ position: 'absolute', top: '16px', right: '16px', margin: '8px', color: '#000819' }}
+        >
+          <X color="#000819" size="2.75rem" />
+        </button>
+      </div>
+    </>
+  )
 }

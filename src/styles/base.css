@@ -1,0 +1,400 @@
+/* ============================================================
+   Humble Beeing — un-Chakra global stylesheet.
+   Everything static is styled inline in the JSX. This file only
+   holds what inline styles cannot express:
+   1. a baseline reset (replaces Chakra's preflight)
+   2. responsive "ladder" classes driven by CSS custom properties
+      set inline (media queries can't be written inline)
+   3. hover / focus rules (pseudo-classes can't be written inline)
+   4. keyframes + third-party (slick) overrides
+   ============================================================ */
+
+/* ---------- 1. Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+#__next {
+  background: #f5cb81;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+button {
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Keyboard-only focus indicator (replaces focus-visible polyfill) */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid #000819;
+  outline-offset: 2px;
+}
+
+/* Site root: brand fonts actually load here (next/font variables are
+   applied on this element in _app.js) */
+.site {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Film grain overlay (ported from the old emotion Global styles) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  z-index: 9998;
+}
+
+/* ---------- 2. Responsive ladders ----------
+   Usage: <div className="rt rpx" style={{ '--fs': '1rem', '--fs-md': '1.25rem',
+   '--px': '1.5rem', '--px-md': '2rem' }}>
+   Values live inline as custom properties; these classes are pure plumbing.
+   Breakpoints match Chakra's: sm 480, md 768, lg 1024, xl 1280. */
+
+.rt   { font-size: var(--fs); line-height: var(--lh, 1.2); letter-spacing: var(--ls, normal); }
+.rd   { display: var(--d); }
+.rw   { width: var(--w); }
+.rh   { height: var(--h); }
+.rminh { min-height: var(--minh); }
+.rmaxw { max-width: var(--maxw); }
+.rminw { min-width: var(--minw); }
+.rp   { padding: var(--p); }
+.rpx  { padding-left: var(--px); padding-right: var(--px); }
+.rpy  { padding-top: var(--py); padding-bottom: var(--py); }
+.rpt  { padding-top: var(--pt); }
+.rpb  { padding-bottom: var(--pb); }
+.rm   { margin: var(--m); }
+.rmt  { margin-top: var(--mt); }
+.rmb  { margin-bottom: var(--mb); }
+.rml  { margin-left: var(--ml); }
+.rmr  { margin-right: var(--mr); }
+.rg   { gap: var(--g); }
+.rfd  { flex-direction: var(--fd); }
+.rai  { align-items: var(--ai); }
+.rjc  { justify-content: var(--jc); }
+.rgtc { grid-template-columns: var(--gtc); }
+.rbr  { border-radius: var(--br); }
+.rsh  { box-shadow: var(--sh); }
+.rta  { text-align: var(--ta); }
+.rleft { left: var(--left); }
+.rright { right: var(--right); }
+.rbottom { bottom: var(--bottom); }
+.rtop { top: var(--top); }
+.rbgi { background-image: var(--bgi); }
+.rov { overflow: var(--ov); }
+
+@media (min-width: 480px) {
+  .rt   { font-size: var(--fs-sm, var(--fs)); line-height: var(--lh-sm, var(--lh, 1.2)); letter-spacing: var(--ls-sm, var(--ls, normal)); }
+  .rd   { display: var(--d-sm, var(--d)); }
+  .rw   { width: var(--w-sm, var(--w)); }
+  .rh   { height: var(--h-sm, var(--h)); }
+  .rminh { min-height: var(--minh-sm, var(--minh)); }
+  .rmaxw { max-width: var(--maxw-sm, var(--maxw)); }
+  .rminw { min-width: var(--minw-sm, var(--minw)); }
+  .rp   { padding: var(--p-sm, var(--p)); }
+  .rpx  { padding-left: var(--px-sm, var(--px)); padding-right: var(--px-sm, var(--px)); }
+  .rpy  { padding-top: var(--py-sm, var(--py)); padding-bottom: var(--py-sm, var(--py)); }
+  .rpt  { padding-top: var(--pt-sm, var(--pt)); }
+  .rpb  { padding-bottom: var(--pb-sm, var(--pb)); }
+  .rm   { margin: var(--m-sm, var(--m)); }
+  .rmt  { margin-top: var(--mt-sm, var(--mt)); }
+  .rmb  { margin-bottom: var(--mb-sm, var(--mb)); }
+  .rml  { margin-left: var(--ml-sm, var(--ml)); }
+  .rmr  { margin-right: var(--mr-sm, var(--mr)); }
+  .rg   { gap: var(--g-sm, var(--g)); }
+  .rfd  { flex-direction: var(--fd-sm, var(--fd)); }
+  .rai  { align-items: var(--ai-sm, var(--ai)); }
+  .rjc  { justify-content: var(--jc-sm, var(--jc)); }
+  .rgtc { grid-template-columns: var(--gtc-sm, var(--gtc)); }
+  .rbr  { border-radius: var(--br-sm, var(--br)); }
+  .rsh  { box-shadow: var(--sh-sm, var(--sh)); }
+  .rta  { text-align: var(--ta-sm, var(--ta)); }
+  .rleft { left: var(--left-sm, var(--left)); }
+  .rright { right: var(--right-sm, var(--right)); }
+  .rbottom { bottom: var(--bottom-sm, var(--bottom)); }
+  .rtop { top: var(--top-sm, var(--top)); }
+  .rbgi { background-image: var(--bgi-sm, var(--bgi)); }
+  .rov { overflow: var(--ov-sm, var(--ov)); }
+}
+
+@media (min-width: 768px) {
+  .rt   { font-size: var(--fs-md, var(--fs-sm, var(--fs))); line-height: var(--lh-md, var(--lh-sm, var(--lh, 1.2))); letter-spacing: var(--ls-md, var(--ls-sm, var(--ls, normal))); }
+  .rd   { display: var(--d-md, var(--d-sm, var(--d))); }
+  .rw   { width: var(--w-md, var(--w-sm, var(--w))); }
+  .rh   { height: var(--h-md, var(--h-sm, var(--h))); }
+  .rminh { min-height: var(--minh-md, var(--minh-sm, var(--minh))); }
+  .rmaxw { max-width: var(--maxw-md, var(--maxw-sm, var(--maxw))); }
+  .rminw { min-width: var(--minw-md, var(--minw-sm, var(--minw))); }
+  .rp   { padding: var(--p-md, var(--p-sm, var(--p))); }
+  .rpx  { padding-left: var(--px-md, var(--px-sm, var(--px))); padding-right: var(--px-md, var(--px-sm, var(--px))); }
+  .rpy  { padding-top: var(--py-md, var(--py-sm, var(--py))); padding-bottom: var(--py-md, var(--py-sm, var(--py))); }
+  .rpt  { padding-top: var(--pt-md, var(--pt-sm, var(--pt))); }
+  .rpb  { padding-bottom: var(--pb-md, var(--pb-sm, var(--pb))); }
+  .rm   { margin: var(--m-md, var(--m-sm, var(--m))); }
+  .rmt  { margin-top: var(--mt-md, var(--mt-sm, var(--mt))); }
+  .rmb  { margin-bottom: var(--mb-md, var(--mb-sm, var(--mb))); }
+  .rml  { margin-left: var(--ml-md, var(--ml-sm, var(--ml))); }
+  .rmr  { margin-right: var(--mr-md, var(--mr-sm, var(--mr))); }
+  .rg   { gap: var(--g-md, var(--g-sm, var(--g))); }
+  .rfd  { flex-direction: var(--fd-md, var(--fd-sm, var(--fd))); }
+  .rai  { align-items: var(--ai-md, var(--ai-sm, var(--ai))); }
+  .rjc  { justify-content: var(--jc-md, var(--jc-sm, var(--jc))); }
+  .rgtc { grid-template-columns: var(--gtc-md, var(--gtc-sm, var(--gtc))); }
+  .rbr  { border-radius: var(--br-md, var(--br-sm, var(--br))); }
+  .rsh  { box-shadow: var(--sh-md, var(--sh-sm, var(--sh))); }
+  .rta  { text-align: var(--ta-md, var(--ta-sm, var(--ta))); }
+  .rleft { left: var(--left-md, var(--left-sm, var(--left))); }
+  .rright { right: var(--right-md, var(--right-sm, var(--right))); }
+  .rbottom { bottom: var(--bottom-md, var(--bottom-sm, var(--bottom))); }
+  .rtop { top: var(--top-md, var(--top-sm, var(--top))); }
+  .rbgi { background-image: var(--bgi-md, var(--bgi-sm, var(--bgi))); }
+  .rov { overflow: var(--ov-md, var(--ov-sm, var(--ov))); }
+}
+
+@media (min-width: 1024px) {
+  .rt   { font-size: var(--fs-lg, var(--fs-md, var(--fs-sm, var(--fs)))); line-height: var(--lh-lg, var(--lh-md, var(--lh-sm, var(--lh, 1.2)))); letter-spacing: var(--ls-lg, var(--ls-md, var(--ls-sm, var(--ls, normal)))); }
+  .rd   { display: var(--d-lg, var(--d-md, var(--d-sm, var(--d)))); }
+  .rw   { width: var(--w-lg, var(--w-md, var(--w-sm, var(--w)))); }
+  .rh   { height: var(--h-lg, var(--h-md, var(--h-sm, var(--h)))); }
+  .rminh { min-height: var(--minh-lg, var(--minh-md, var(--minh-sm, var(--minh)))); }
+  .rmaxw { max-width: var(--maxw-lg, var(--maxw-md, var(--maxw-sm, var(--maxw)))); }
+  .rminw { min-width: var(--minw-lg, var(--minw-md, var(--minw-sm, var(--minw)))); }
+  .rp   { padding: var(--p-lg, var(--p-md, var(--p-sm, var(--p)))); }
+  .rpx  { padding-left: var(--px-lg, var(--px-md, var(--px-sm, var(--px)))); padding-right: var(--px-lg, var(--px-md, var(--px-sm, var(--px)))); }
+  .rpy  { padding-top: var(--py-lg, var(--py-md, var(--py-sm, var(--py)))); padding-bottom: var(--py-lg, var(--py-md, var(--py-sm, var(--py)))); }
+  .rpt  { padding-top: var(--pt-lg, var(--pt-md, var(--pt-sm, var(--pt)))); }
+  .rpb  { padding-bottom: var(--pb-lg, var(--pb-md, var(--pb-sm, var(--pb)))); }
+  .rm   { margin: var(--m-lg, var(--m-md, var(--m-sm, var(--m)))); }
+  .rmt  { margin-top: var(--mt-lg, var(--mt-md, var(--mt-sm, var(--mt)))); }
+  .rmb  { margin-bottom: var(--mb-lg, var(--mb-md, var(--mb-sm, var(--mb)))); }
+  .rml  { margin-left: var(--ml-lg, var(--ml-md, var(--ml-sm, var(--ml)))); }
+  .rmr  { margin-right: var(--mr-lg, var(--mr-md, var(--mr-sm, var(--mr)))); }
+  .rg   { gap: var(--g-lg, var(--g-md, var(--g-sm, var(--g)))); }
+  .rfd  { flex-direction: var(--fd-lg, var(--fd-md, var(--fd-sm, var(--fd)))); }
+  .rai  { align-items: var(--ai-lg, var(--ai-md, var(--ai-sm, var(--ai)))); }
+  .rjc  { justify-content: var(--jc-lg, var(--jc-md, var(--jc-sm, var(--jc)))); }
+  .rgtc { grid-template-columns: var(--gtc-lg, var(--gtc-md, var(--gtc-sm, var(--gtc)))); }
+  .rbr  { border-radius: var(--br-lg, var(--br-md, var(--br-sm, var(--br)))); }
+  .rsh  { box-shadow: var(--sh-lg, var(--sh-md, var(--sh-sm, var(--sh)))); }
+  .rta  { text-align: var(--ta-lg, var(--ta-md, var(--ta-sm, var(--ta)))); }
+  .rleft { left: var(--left-lg, var(--left-md, var(--left-sm, var(--left)))); }
+  .rright { right: var(--right-lg, var(--right-md, var(--right-sm, var(--right)))); }
+  .rbottom { bottom: var(--bottom-lg, var(--bottom-md, var(--bottom-sm, var(--bottom)))); }
+  .rtop { top: var(--top-lg, var(--top-md, var(--top-sm, var(--top)))); }
+  .rbgi { background-image: var(--bgi-lg, var(--bgi-md, var(--bgi-sm, var(--bgi)))); }
+  .rov { overflow: var(--ov-lg, var(--ov-md, var(--ov-sm, var(--ov)))); }
+}
+
+@media (min-width: 1280px) {
+  .rt   { font-size: var(--fs-xl, var(--fs-lg, var(--fs-md, var(--fs-sm, var(--fs))))); line-height: var(--lh-xl, var(--lh-lg, var(--lh-md, var(--lh-sm, var(--lh, 1.2))))); letter-spacing: var(--ls-xl, var(--ls-lg, var(--ls-md, var(--ls-sm, var(--ls, normal))))); }
+  .rd   { display: var(--d-xl, var(--d-lg, var(--d-md, var(--d-sm, var(--d))))); }
+  .rw   { width: var(--w-xl, var(--w-lg, var(--w-md, var(--w-sm, var(--w))))); }
+  .rh   { height: var(--h-xl, var(--h-lg, var(--h-md, var(--h-sm, var(--h))))); }
+  .rminh { min-height: var(--minh-xl, var(--minh-lg, var(--minh-md, var(--minh-sm, var(--minh))))); }
+  .rmaxw { max-width: var(--maxw-xl, var(--maxw-lg, var(--maxw-md, var(--maxw-sm, var(--maxw))))); }
+  .rminw { min-width: var(--minw-xl, var(--minw-lg, var(--minw-md, var(--minw-sm, var(--minw))))); }
+  .rp   { padding: var(--p-xl, var(--p-lg, var(--p-md, var(--p-sm, var(--p))))); }
+  .rpx  { padding-left: var(--px-xl, var(--px-lg, var(--px-md, var(--px-sm, var(--px))))); padding-right: var(--px-xl, var(--px-lg, var(--px-md, var(--px-sm, var(--px))))); }
+  .rpy  { padding-top: var(--py-xl, var(--py-lg, var(--py-md, var(--py-sm, var(--py))))); padding-bottom: var(--py-xl, var(--py-lg, var(--py-md, var(--py-sm, var(--py))))); }
+  .rpt  { padding-top: var(--pt-xl, var(--pt-lg, var(--pt-md, var(--pt-sm, var(--pt))))); }
+  .rpb  { padding-bottom: var(--pb-xl, var(--pb-lg, var(--pb-md, var(--pb-sm, var(--pb))))); }
+  .rm   { margin: var(--m-xl, var(--m-lg, var(--m-md, var(--m-sm, var(--m))))); }
+  .rmt  { margin-top: var(--mt-xl, var(--mt-lg, var(--mt-md, var(--mt-sm, var(--mt))))); }
+  .rmb  { margin-bottom: var(--mb-xl, var(--mb-lg, var(--mb-md, var(--mb-sm, var(--mb))))); }
+  .rml  { margin-left: var(--ml-xl, var(--ml-lg, var(--ml-md, var(--ml-sm, var(--ml))))); }
+  .rmr  { margin-right: var(--mr-xl, var(--mr-lg, var(--mr-md, var(--mr-sm, var(--mr))))); }
+  .rg   { gap: var(--g-xl, var(--g-lg, var(--g-md, var(--g-sm, var(--g))))); }
+  .rfd  { flex-direction: var(--fd-xl, var(--fd-lg, var(--fd-md, var(--fd-sm, var(--fd))))); }
+  .rai  { align-items: var(--ai-xl, var(--ai-lg, var(--ai-md, var(--ai-sm, var(--ai))))); }
+  .rjc  { justify-content: var(--jc-xl, var(--jc-lg, var(--jc-md, var(--jc-sm, var(--jc))))); }
+  .rgtc { grid-template-columns: var(--gtc-xl, var(--gtc-lg, var(--gtc-md, var(--gtc-sm, var(--gtc))))); }
+  .rbr  { border-radius: var(--br-xl, var(--br-lg, var(--br-md, var(--br-sm, var(--br))))); }
+  .rsh  { box-shadow: var(--sh-xl, var(--sh-lg, var(--sh-md, var(--sh-sm, var(--sh))))); }
+  .rta  { text-align: var(--ta-xl, var(--ta-lg, var(--ta-md, var(--ta-sm, var(--ta))))); }
+  .rleft { left: var(--left-xl, var(--left-lg, var(--left-md, var(--left-sm, var(--left))))); }
+  .rright { right: var(--right-xl, var(--right-lg, var(--right-md, var(--right-sm, var(--right))))); }
+  .rbottom { bottom: var(--bottom-xl, var(--bottom-lg, var(--bottom-md, var(--bottom-sm, var(--bottom))))); }
+  .rtop { top: var(--top-xl, var(--top-lg, var(--top-md, var(--top-sm, var(--top))))); }
+  .rbgi { background-image: var(--bgi-xl, var(--bgi-lg, var(--bgi-md, var(--bgi-sm, var(--bgi))))); }
+  .rov { overflow: var(--ov-xl, var(--ov-lg, var(--ov-md, var(--ov-sm, var(--ov))))); }
+}
+
+/* ---------- 3. Hover / interaction rules ---------- */
+
+/* Black pill button: black bg, amber text; inverts on hover */
+.btn-dark {
+  transition: all 150ms ease;
+}
+.btn-dark:hover {
+  background-color: #f5cb81 !important;
+  color: black !important;
+  text-decoration: none;
+}
+
+/* Amber pill button: amber bg, black text; inverts on hover */
+.btn-amber {
+  transition: all 150ms ease;
+}
+.btn-amber:hover {
+  background-color: black !important;
+  color: #f5cb81 !important;
+  text-decoration: none;
+}
+
+/* Footer subscribe: amber bg -> transparent on hover */
+.btn-sub {
+  transition: all 150ms ease;
+}
+.btn-sub:hover {
+  background-color: transparent !important;
+  color: #f5cb81 !important;
+}
+
+/* Footer "Built by DWO" ghost outline */
+.btn-ghost-amber:hover {
+  background-color: rgba(245, 203, 129, 0.12) !important;
+}
+
+/* Card lift (StyledCard) */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 16px rgba(17, 24, 39, 0.1), 0px 0px 1px rgba(17, 24, 39, 0.3);
+}
+
+/* Desktop nav pill links: hover backdrop appears */
+.navlink .navlink-bg {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.navlink:hover .navlink-bg {
+  opacity: 1;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
+/* Footer newsletter input placeholder */
+.footer-mail::placeholder {
+  color: rgba(245, 203, 129, 0.9);
+}
+
+/* Legacy teal accents (terms page / contact modal) */
+.hover-teal:hover {
+  background-color: rgba(0, 222, 227, 0.1) !important;
+  color: #00DEE3 !important;
+}
+.stepper-link:hover {
+  color: #99f6e4 !important;
+}
+
+/* Contact form focus rings */
+.form-input:focus {
+  border-color: #00DEE3 !important;
+}
+.form-input-err:focus {
+  border-color: #ef4444 !important;
+}
+
+.hover-fade:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.hover-op9:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.hover-bg-navy:hover {
+  background-color: rgba(0, 8, 25, 0.08) !important;
+}
+
+/* ---------- 4. Keyframes + third-party overrides ---------- */
+
+/* Hero marquee (Marquee.js) */
+@keyframes hb-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Toast entrance */
+@keyframes hb-toast-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hidden scrollbars (terms page content pane) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Hide default slick arrow glyphs (custom arrows are used) */
+.slick-prev:before,
+.slick-next:before {
+  content: '';
+}

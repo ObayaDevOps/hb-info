@@ -1,28 +1,24 @@
-import { Box } from '@chakra-ui/react'
-
-export default function StyledCard({ children, _hover: hoverProps = {}, ...props }) {
+export default function StyledCard({ children, className = '', style = {}, ...rest }) {
   return (
-    <Box
-      bg="brand.red"
-      borderColor="#000819"
-      borderWidth={'2px'}
-      borderRadius="lg"
-      boxShadow="md"
-      overflow="hidden"
-      transition="transform 0.25s ease, box-shadow 0.25s ease"
-      _hover={{
-        transform: 'translateY(-6px)',
-        boxShadow: 'lg',
-        ...hoverProps,
+    <div
+      className={`card-lift ${className}`}
+      style={{
+        backgroundColor: '#fff7e1',
+        border: '2px solid #000819',
+        borderRadius: '0.5rem',
+        boxShadow: '0px 4px 8px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)',
+        overflow: 'hidden',
+        height: '100%',
+        marginLeft: '8px',
+        marginRight: '8px',
+        display: 'flex',
+        flexDirection: 'column',
+        fontFamily: 'var(--font-hanken)',
+        ...style,
       }}
-      h="100%"
-      mx={2}
-      display="flex"
-      flexDirection="column"
-      fontFamily='var(--font-hanken)'
-      {...props}
+      {...rest}
     >
       {children}
-    </Box>
+    </div>
   )
 }

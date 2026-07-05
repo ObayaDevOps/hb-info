@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
@@ -22,33 +21,33 @@ export default function SpecialistHoneyChefsKampala() {
   }
 
   return (
-    <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
       <HeroSection title={title} subtitle="Field-sourced nectar with chef-approved consistency" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
-      <Container maxW="6xl" px={{ base: 12, md: 20 }} py={{ base: 12, md: 20 }} bg={'#FFF2D7'} rounded={{ base: 'none', lg: '4xl' }}>
-        <VStack align="start" spacing={6}>
-          <Heading as="h2" size="lg">Honey flights built with chefs</Heading>
-          <Text>Our culinary team schedules quarterly cuppings with Kampala’s hotels and independent restaurants. We taste blind, document flavour arcs, and map each honey to menu applications. The result is a curated library—from resinous pine blossom for blue cheese pairings to buttery shea blossom for viennoiserie—that you can plug into your mise en place without guesswork.</Text>
+      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Honey flights built with chefs</h2>
+          <p>Our culinary team schedules quarterly cuppings with Kampala’s hotels and independent restaurants. We taste blind, document flavour arcs, and map each honey to menu applications. The result is a curated library—from resinous pine blossom for blue cheese pairings to buttery shea blossom for viennoiserie—that you can plug into your mise en place without guesswork.</p>
 
-          <Heading as="h2" size="lg">Pairings that earn their keep</Heading>
-          <Box as="ul" pl={6} sx={{ listStyleType: 'disc', '& > li': { marginBottom: '10px' } }}>
-            <Box as="li"><b>Pine blossom:</b> Resinous, savoury, brilliant for aged cheddar, blue cheese, or lacquered pork belly.</Box>
-            <Box as="li"><b>Shea blossom:</b> Silky, floral, perfect for mille-feuille glazes, gelato swirls, and upscale brunch service.</Box>
-            <Box as="li"><b>Coffee blossom:</b> Cocoa nib and citrus notes that elevate espresso martinis, cold brew, and tiramisu cream.</Box>
-            <Box as="li"><b>Eucalyptus wildflower:</b> Herbaceous with a cooling finish—stir into vinaigrettes or brush on grilled fish.</Box>
-          </Box>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Pairings that earn their keep</h2>
+          <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
+            <li style={{ marginBottom: '10px' }}><b>Pine blossom:</b> Resinous, savoury, brilliant for aged cheddar, blue cheese, or lacquered pork belly.</li>
+            <li style={{ marginBottom: '10px' }}><b>Shea blossom:</b> Silky, floral, perfect for mille-feuille glazes, gelato swirls, and upscale brunch service.</li>
+            <li style={{ marginBottom: '10px' }}><b>Coffee blossom:</b> Cocoa nib and citrus notes that elevate espresso martinis, cold brew, and tiramisu cream.</li>
+            <li style={{ marginBottom: '10px' }}><b>Eucalyptus wildflower:</b> Herbaceous with a cooling finish—stir into vinaigrettes or brush on grilled fish.</li>
+          </ul>
 
-          <Heading as="h2" size="lg">Formats built for service</Heading>
-          <Text>We package single-origin lots in 1.5 kg pouches for pastry stations and 12 kg drums for commissary kitchens. Every delivery arrives with batch cards detailing moisture, flavour, and suggested pairings. Standing orders get priority allocation during peak season, so your menu doesn’t rely on wishful thinking.</Text>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Formats built for service</h2>
+          <p>We package single-origin lots in 1.5 kg pouches for pastry stations and 12 kg drums for commissary kitchens. Every delivery arrives with batch cards detailing moisture, flavour, and suggested pairings. Standing orders get priority allocation during peak season, so your menu doesn’t rely on wishful thinking.</p>
 
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Heading as="h2" size="lg">FAQs</Heading>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
-          <Box as="hr" borderColor="#000819" borderTopWidth="1px" w="full" />
-          <Text>Book a tasting or request pricing through <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link>. Prefer face time? Schedule a session at our Bugolobi lab via <Link href="/contact-and-connect">Contact & Connect</Link>.</Text>
-        </VStack>
-      </Container>
-    </Box>
+          <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
+          <p>Book a tasting or request pricing through <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link>. Prefer face time? Schedule a session at our Bugolobi lab via <Link href="/contact-and-connect">Contact & Connect</Link>.</p>
+        </div>
+      </div>
+    </div>
   )
 }
 

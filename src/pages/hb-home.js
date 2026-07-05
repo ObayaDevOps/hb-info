@@ -1,7 +1,6 @@
-import Head from 'next/head';
+// Switch homepage to Humble Beeing layout — un-Chakra'd: semantic HTML + inline styles.
 import SEO from '@/components/SEO';
 import Link from 'next/link';
-import { Box, Container, Heading, Text, VStack, HStack, Flex, Button, SimpleGrid, Image, Badge, IconButton, Link as ChakraLink } from '@chakra-ui/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import dynamic from 'next/dynamic'
@@ -10,13 +9,7 @@ const Slider = dynamic(() => import('react-slick'), { ssr: false })
 import PageLayout from '@/components/layouts/PageLayout';
 import Marquee from 'react-fast-marquee';
 import StyledCard from '@/components/StyledCard';
-// Marquee handled inside HeroCarousel
 import HeroCarousel from '@/components/home/HeroCarousel';
-
-const featured = [
-  { name: 'Gift Boxes', href: 'https://shop.humble-beeing.com', external: true },
-  { name: 'Wholesale Inquiries', href: '/wholesale-and-partnerships' },
-];
 
 // Logos for the small marquee under "Uganda's Finest Honey"
 const trustedLogos = [
@@ -24,13 +17,11 @@ const trustedLogos = [
   { alt: 'Le Gourmet Delicatessen', src: 'https://cdn.sanity.io/files/wf5e366r/production/fff846c85549f356e03908c96e86fe74cc50e1cc.svg' },
   { alt: 'Yujo Izakaya', src: 'https://cdn.sanity.io/images/wf5e366r/production/f2231cd129038eb65672eb11d3c54d7f003b38e9-236x214.png' },
   { alt: 'Karuna Yoga Studio', src: 'https://cdn.sanity.io/images/wf5e366r/production/69a883cd9c0228b6fa2bb347631a300c0eaf448f-384x150.png' },
-  // { alt: 'Entebbe Duty Free', src: '/Vector.svg' },
   { alt: 'Coffee At Last', src: 'https://cdn.sanity.io/images/wf5e366r/production/4299c07e010cf4d76f512a24ee6faecf43694bdc-125x125.png' },
   { alt: '32 Degree East', src: 'https://cdn.sanity.io/images/wf5e366r/production/5f4529c5e5fbe869d6eb2b7f5c25a2c35595815a-299x168.jpg' },
   { alt: 'Farm to Table', src: 'https://cdn.sanity.io/images/wf5e366r/production/19f1d85a8b5634f1686c7d093158680d9dd5f222-225x225.jpg' },
   { alt: 'Afrotide Crafts', src: 'https://cdn.sanity.io/images/wf5e366r/production/f90c865b8ffdb1de3878efbd3cd71f03469657dd-225x225.jpg' },
   { alt: 'Tierra Tours', src: 'https://cdn.sanity.io/images/wf5e366r/production/c63cb736e2b83848d2ec2dec5bbb721e8f035217-2290x1969.webp' },
-  
 ];
 
 const carousel = [
@@ -38,14 +29,7 @@ const carousel = [
   { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
   { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
   { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
-
 ];
-
-const MotionBox = motion.create ? motion.create(Box) : motion(Box)
-const MotionText = motion.create ? motion.create(Text) : motion(Text)
-const MotionVStack = motion.create ? motion.create(VStack) : motion(VStack)
-const MotionHeading = motion.create ? motion.create(Heading) : motion(Heading)
-const MotionHStack = motion.create ? motion.create(HStack) : motion(HStack)
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -54,87 +38,109 @@ const fadeUp = {
   transition: { duration: 0.6, ease: 'easeOut' },
 }
 
+// Shared bits (Chakra-token equivalents, all values literal CSS)
+const shadowXl = '0px 16px 24px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)'
+const hanken = 'var(--font-hanken)'
+
+// Black pill button (hover inverts via .btn-dark)
+const pillBtn = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '40px',
+  backgroundColor: '#09090b',
+  color: '#f5cb81',
+  border: '1px solid #09090b',
+  borderRadius: '9999px',
+  fontWeight: 700,
+  fontFamily: hanken,
+  fontSize: '0.875rem',
+  lineHeight: '1.25rem',
+}
+
+// Amber pill button used on dark photo sections (hover inverts via .btn-amber)
+const pillBtnAmber = {
+  ...pillBtn,
+  backgroundColor: '#f5cb81',
+  color: '#09090b',
+  border: '1px solid #09090b',
+}
+
+// Full-bleed photo statement containers
+const statementContainer = {
+  position: 'relative',
+  maxWidth: '90rem',
+  width: '100%',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  height: '95vh',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  color: 'white',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
+  alignItems: 'flex-start',
+}
+
+const statementResponsive = {
+  '--br': '0px',
+  '--br-lg': '24px',
+  '--sh': 'none',
+  '--sh-lg': shadowXl,
+  '--px': '48px',
+  '--px-md': '80px',
+  '--py': '64px',
+  '--py-md': '80px',
+  '--mt': '24px',
+  '--mt-lg': '80px',
+}
+
 export default function HBHome() {
   const heroImages = [
     'https://cdn.sanity.io/images/wf5e366r/production/7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg',
-    'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg',//
-    'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg',//
+    'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg',
+    'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg',
-    'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg',//
+    'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg',
     'https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg',
   ];
-  const pillButtonProps = {
-    bg: 'black',
-    color: '#f5cb81',
-    borderWidth: '1px',
-    borderColor: 'black',
-    rounded: 'full',
-    px: { base: 5, md: 7 },
-    py: 3,
-    fontWeight: 700,
-    fontFamily: 'var(--font-hanken)',
-    _hover: { bg: '#f5cb81', color: 'black', textDecoration: 'none' },
-    transition: 'all 150ms ease',
-  }
-  const panelContainerProps = {
-    bg: '#FFF2D7',
-    rounded: { base: 'none', lg: '4xl' },
-    shadow: { base: 'none', lg: 'xl' },
-    px: { base: 12, md: 20 },
-    py: { base: 16, md: 20 },
-  }
-  const PrevArrow = (props) => {
-    const { className, style, onClick } = props
+
+  const Arrow = ({ dir, className, style, onClick }) => {
+    const Icon = dir === 'prev' ? ArrowLeft : ArrowRight
     return (
-      <IconButton
-        aria-label="Previous"
-        icon={<ArrowLeft size={20} />}
+      <button
+        aria-label={dir === 'prev' ? 'Previous' : 'Next'}
         onClick={onClick}
-        className={className}
-        style={{ ...style, display: 'block' }}
-        position="absolute"
-        left={{ base: 2, md: 3 }}
-        top="50%"
-        transform="translateY(-50%)"
-        rounded="full"
-        bg="black"
-        color="#f5cb81"
-        borderWidth="1px"
-        borderColor="black"
-        _hover={{ bg: '#f5cb81', color: 'black' }}
-        size="md"
-        zIndex={2}
-      />
-    )
-  }
-  const NextArrow = (props) => {
-    const { className, style, onClick } = props
-    return (
-      <IconButton
-        aria-label="Next"
-        icon={<ArrowRight size={20} />}
-        onClick={onClick}
-        className={className}
-        style={{ ...style, display: 'block' }}
-        position="absolute"
-        right={{ base: 2, md: 3 }}
-        top="50%"
-        transform="translateY(-50%)"
-        rounded="full"
-        bg="black"
-        color="#f5cb81"
-        borderWidth="1px"
-        borderColor="black"
-        _hover={{ bg: '#f5cb81', color: 'black' }}
-        size="md"
-        zIndex={2}
-      />
+        className={`${className || ''} btn-dark ${dir === 'prev' ? 'rleft' : 'rright'}`}
+        style={{
+          ...style,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'absolute',
+          [dir === 'prev' ? '--left' : '--right']: '8px',
+          [dir === 'prev' ? '--left-md' : '--right-md']: '12px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: '40px',
+          height: '40px',
+          borderRadius: '9999px',
+          backgroundColor: '#09090b',
+          color: '#f5cb81',
+          border: '1px solid #09090b',
+          zIndex: 2,
+        }}
+      >
+        <Icon size={20} />
+      </button>
     )
   }
   const sliderSettings = {
@@ -144,8 +150,8 @@ export default function HBHome() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    prevArrow: <Arrow dir="prev" />,
+    nextArrow: <Arrow dir="next" />,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
@@ -158,28 +164,12 @@ export default function HBHome() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    prevArrow: <Arrow dir="prev" />,
+    nextArrow: <Arrow dir="next" />,
   }
-  const sliderSettingsFamily = {
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-  }
-  const familyImages = [
-    { src: 'https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png', caption: 'Obaya at National Honey Week doing a Honey Tasting' },
-    { src: 'https://cdn.sanity.io/images/wf5e366r/production/d09a5fcb8fd674a3e5f27f789faf2664c3b96e09-904x1087.png', caption: 'Letaru at our Kabalagala HQ doing a honey Tasting' },
-    { src: 'https://cdn.sanity.io/images/wf5e366r/production/278e6a05cad70266d83b4251d64a507d59b35ca3-2263x2656.jpg', caption: 'Anguyo on the way to the Lwamata Forest Apiary' },
-    { src: 'https://cdn.sanity.io/images/wf5e366r/production/780ba0424065cce0adc69c82102747f66088122f-2263x2762.png', caption: 'Letaru in the Kabalagala HQ' },
-    { src: 'https://cdn.sanity.io/images/wf5e366r/production/774e06c1dd8e49fd7b59bba04a30e2b0ba3dbb5a-2263x2767.jpg', caption: 'Obaya on the way to the Lwamata Forest Apiary' }
-  ];
+
   return (
-    <Box bg={'#f5cb81'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#f5cb81', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
         title="Gourmet Raw Honey, Beeswax Candles, and Sustainable Impact - Pure Ugandan Honey"
         description="Gourmet Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale. Pure Ugandan Honey"
@@ -197,793 +187,775 @@ export default function HBHome() {
         images={heroImages}
         marquee={(
           <>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600}>
-              Highest Quality Raw African Honey
-            </Text>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600} ml={32}>
-              Traceable & Pesticide-free
-            </Text>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600} ml={32}>
-              Single Origin & Small Batch
-            </Text>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600} ml={32}>
-              100% Ugandan Owned
-            </Text>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600} ml={32}>
-              Eco-Friendly & Recyclable Packaging
-            </Text>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600} ml={32}>
-              Ethical & Sustainable Impact
-            </Text>
-            <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'lg', md: 'xl' }} fontWeight={600} ml={32}>
-              Direct from Small-holder Farmers
-            </Text>
+            {[
+              'Highest Quality Raw African Honey',
+              'Traceable & Pesticide-free',
+              'Single Origin & Small Batch',
+              '100% Ugandan Owned',
+              'Eco-Friendly & Recyclable Packaging',
+              'Ethical & Sustainable Impact',
+              'Direct from Small-holder Farmers',
+            ].map((line, i) => (
+              <p
+                key={line}
+                className="rt"
+                style={{
+                  fontFamily: hanken,
+                  '--fs': '1.125rem',
+                  '--lh': '1.75rem',
+                  '--fs-md': '1.25rem',
+                  '--lh-md': '1.875rem',
+                  fontWeight: 600,
+                  marginLeft: i > 0 ? '128px' : 0,
+                }}
+              >
+                {line}
+              </p>
+            ))}
           </>
         )}
       >
-        <MotionVStack align="start" spacing={4} {...fadeUp}>
-          <MotionHeading as="h1" 
-            size={{base:"3xl", md:"6xl"}}
-            fontFamily="var(--font-hanken)"
-            {...fadeUp} 
-            transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              Uganda's Finest Honey
-          </MotionHeading>
-          {/* <MotionHeading as="h2" 
-            size={{base:"lg", md:"2xl"}}
-            fontFamily="var(--font-hanken)"
-            {...fadeUp} 
-          transition={{ ...fadeUp.transition, delay: 0.1 }}>
-            Gourmet Raw Honey, Traceable from Hive to Jar with a Sustainable Impact
-          </MotionHeading> */}
-          <MotionText maxW={{base: 'md', md:"2xl"}}
-          fontFamily="var(--font-hanken)"
-          fontSize={{base:"md", md:"xl"}}
-          {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}
+        <motion.div
+          {...fadeUp}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}
+        >
+          <motion.h1
+            className="rt"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            style={{
+              '--fs': '1.875rem',
+              '--lh': '2.375rem',
+              '--fs-md': '3.75rem',
+              '--lh-md': '4.5rem',
+              '--ls-md': '-0.025em',
+              fontWeight: 600,
+              fontFamily: hanken,
+            }}
           >
-            Gourmet Raw Honey From Uganda's Pristine Biodiverse Landscapes. </MotionText>
-            <MotionText maxW={{base: 'md', md:"2xl"}}
-          fontFamily="var(--font-hanken)"
-          fontSize={{base:"md", md:"xl"}}
-          {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}
+            Uganda's Finest Honey
+          </motion.h1>
+          <motion.p
+            className="rt rmaxw"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.2 }}
+            style={{ '--maxw': '28rem', '--maxw-md': '42rem', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
           >
-          Traceable from Hive to Jar with a Sustainable Impact. </MotionText>
-          <MotionHStack spacing={4} pt={2} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
-            <Button
-              as={Link}
-              href="https://shop.humble-beeing.com"
-              bg="black"
-              color="#f5cb81"
-              borderWidth="1px"
-              borderColor="black"
-              rounded="full"
-              px={{ base: 5, md: 7 }}
-              py={3}
-              fontWeight={700}
-              fontFamily="var(--font-hanken)"
-              _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-              transition="all 150ms ease"
-            >
+            Gourmet Raw Honey From Uganda's Pristine Biodiverse Landscapes.
+          </motion.p>
+          <motion.p
+            className="rt rmaxw"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.2 }}
+            style={{ '--maxw': '28rem', '--maxw-md': '42rem', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
+          >
+            Traceable from Hive to Jar with a Sustainable Impact.
+          </motion.p>
+          <motion.div
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.3 }}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '8px' }}
+          >
+            <Link href="https://shop.humble-beeing.com" className="btn-dark rpx" style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}>
               Shop Now
-            </Button>
-            <Button
-              as={Link}
-              href="/impact-and-sustainability"
-              bg="black"
-              color="#f5cb81"
-              borderWidth="1px"
-              borderColor="black"
-              rounded="full"
-              px={{ base: 5, md: 7 }}
-              py={3}
-              fontWeight={700}
-              fontFamily="var(--font-hanken)"
-              _hover={{ bg: '#f5cb81', color: 'black', textDecoration: 'none' }}
-              transition="all 150ms ease"
-            >
+            </Link>
+            <Link href="/impact-and-sustainability" className="btn-dark rpx" style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}>
               Explore Impact
-            </Button>
-          </MotionHStack>
-        </MotionVStack>
+            </Link>
+          </motion.div>
+        </motion.div>
       </HeroCarousel>
 
-
-      {/* <Container maxW="container.xl" mt={{ base: 0, md: 24 }}
-        minH={{ base: 'auto', md: '70vh' }}
-        {...panelContainerProps}
+      {/* Product Slider (react-slick) — desktop */}
+      <div
+        className="rd rpx rpy rsh"
+        style={{
+          position: 'relative',
+          width: '100%',
+          maxWidth: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: 'black',
+          minHeight: '100vh',
+          '--sh': 'none',
+          '--sh-lg': shadowXl,
+          '--px': '48px',
+          '--px-md': '80px',
+          '--py': '0px',
+          '--py-md': '64px',
+          '--d': 'none',
+          '--d-md': 'block',
+        }}
       >
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8, lg: 10 }} alignItems="stretch">
-          <VStack align="start" spacing={4} pr={{base: 'none', md:20}}>
-            <Heading as="h2" size={{ base: '3xl', md: '6xl' }}>Uganda's Finest Honey</Heading>
+        <div style={{ padding: '8px', marginTop: '64px' }}>
+          <motion.h2
+            className="rt rmb"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            style={{ '--fs': '0.875rem', '--lh': '1.25rem', '--fs-lg': '1.25rem', '--lh-lg': '1.875rem', '--mb': '12px', '--mb-md': '0px', color: '#FFF2D7', fontWeight: 600, fontFamily: hanken }}
+          >
+            Explore Selections
+          </motion.h2>
+          <motion.h2
+            className="rt rmb"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.2 }}
+            style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-lg': '1.875rem', '--lh-lg': '2.375rem', '--mb': '12px', '--mb-md': '16px', color: '#FFF2D7', fontWeight: 600, fontFamily: hanken }}
+          >
+            Our Product Range
+          </motion.h2>
+        </div>
 
-
-            <Text fontSize={{ base: 'lg', md: '2xl' }} pt={0}>
-            Experience the pure taste of Uganda's biodiverse landscapes
-            </Text>
-
-            <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
-            At Humble Beeing, We meticulously hand-process raw, Grade A honeycomb sourced directly from smallholder farmers in the pristine, pesticide-free regions of the West Nile. We ensure they receive above-market rates for their Grade A honeycomb, fostering sustainable livelihoods.
-
-            </Text>
-
-            <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
-
-            Our honey is never heated, preserving all its natural enzymes and health benefits, resulting in exceptionally low moisture content. We also never mix batches leaving you with a truly pure taste that changes uniquely with each seasonal harvest, reflecting the diverse local flora of each apiary.
-            </Text>
-
-            <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
-
-            Indulge further with our special, 1-month minimum, Infusions, each natural and local ingredient specifically paired to compliment the taste of the honey.
-            </Text>
-
-
-          </VStack>
-          <VStack>
-            <Image
-              src="https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png" 
-              alt="Humble Beeing Story"
-              borderRadius="3xl"
-              objectFit="cover"
-              width="100%"
-              height="auto"
-            />
-          </VStack>
-        </SimpleGrid>
-      </Container> */}
-       {/* Product Slider (react-slick) */}
-      <Container maxW="full" 
-      bg='black'
-      minH='100vh'
-      // rounded={{ base: 'none', lg: '3xl' }}
-      shadow= {{ base: 'none', lg: 'xl' }}
-      px={{ base: 12, md: 20 }}
-      py={{ base: 0, md: 16 }}
-      mt={{base: 0, lg: 0}}
-      display={{ base: 'none', md: 'block' }} // Hide on mobile, show on desktop
-      >
-        <Box p={2} mt={{ base: 16, md: 16 }}>
-          <MotionHeading as="h2" size={{ base: 'sm', lg: 'xl' }} mb={{ base: 3, md: 0 }} color='#FFF2D7' {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Explore Selections</MotionHeading>
-          <MotionHeading as="h2" size={{ base: 'lg', lg: '3xl' }} mb={{ base: 3, md: 4 }} color='#FFF2D7' {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>Our Product Range</MotionHeading>
-        </Box>
-
-        <MotionBox className="slider-container" pb={{base: 8, md: 6}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+        <motion.div className="slider-container rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
           <Slider {...sliderSettings}>
             {carousel.map((c, index) => (
-              <MotionBox key={c.name} px={{ base: 2, md: 0 }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }}>
-                <StyledCard borderRadius="2xl" shadow="md">
-                  <Box>
-                    <VStack align="start" spacing={4} p={{ base: 6, md: 8 }}>
-                      <Image src={c.image} alt={c.name} boxSize={{ base: '200px', md: 'full' }} alignSelf="center" rounded="xl" />
-                      <Text fontWeight={700} fontSize={{ base: 'lg', md: 'xl' }}>{c.name}</Text>
-                      <Text fontWeight={400} fontSize={{ base: 'md', md: 'lg' }}>{c.description}</Text>
-                      <Button as={Link} href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noopener noreferrer' : undefined} size="md" {...pillButtonProps}>Shop</Button>
-                    </VStack>
-                  </Box>
+              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }}>
+                <StyledCard style={{ borderRadius: '1rem' }}>
+                  <div>
+                    <div
+                      className="rp"
+                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', '--p': '24px', '--p-md': '32px' }}
+                    >
+                      <img
+                        src={c.image}
+                        alt={c.name}
+                        className="rw rh"
+                        style={{ '--w': '200px', '--h': '200px', '--w-md': '100%', '--h-md': '100%', alignSelf: 'center', borderRadius: '0.75rem', objectFit: 'cover' }}
+                      />
+                      <p className="rt" style={{ fontWeight: 700, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{c.name}</p>
+                      <p className="rt" style={{ fontWeight: 400, '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{c.description}</p>
+                      <Link
+                        href={c.href}
+                        target={c.external ? '_blank' : undefined}
+                        rel={c.external ? 'noopener noreferrer' : undefined}
+                        className="btn-dark rpx"
+                        style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}
+                      >
+                        Shop
+                      </Link>
+                    </div>
+                  </div>
                 </StyledCard>
-              </MotionBox>
+              </motion.div>
             ))}
           </Slider>
-        </MotionBox>
-      </Container>
+        </motion.div>
+      </div>
 
-       {/* Product Slider Mobile (react-slick) */}
-      <Container maxW="container.xl" 
-      
-      bg='black'
-      rounded={{ base: 'none', lg: '3xl' }}
-      shadow= {{ base: 'none', lg: 'xl' }}
-      px={{ base: 4, md: 20 }}
-      py={{ base: 16, md: 16 }}
-      mt={{base: 6, lg: 32}}
-      display={{ base: 'block', md: 'none' }} // Show on mobile, hide on desktop
+      {/* Product Slider Mobile (react-slick) */}
+      <div
+        className="rd rpx rpy rbr rsh rmt"
+        style={{
+          position: 'relative',
+          maxWidth: '90rem',
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: 'black',
+          '--br': '0px',
+          '--br-lg': '24px',
+          '--sh': 'none',
+          '--sh-lg': shadowXl,
+          '--px': '16px',
+          '--px-md': '80px',
+          '--py': '64px',
+          '--mt': '24px',
+          '--mt-lg': '128px',
+          '--d': 'block',
+          '--d-md': 'none',
+        }}
       >
-        <Box p={4}>
-          <MotionHeading as="h2" size="xl" mb={{ base: 2, md: 0 }} color='#FFF2D7' {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Explore Selections</MotionHeading>
-          <MotionHeading as="h2" size="3xl" mb={{ base: 3, md: 4 }} color='#FFF2D7' {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>Our Product Range</MotionHeading>
-        </Box>
+        <div style={{ padding: '16px' }}>
+          <motion.h2
+            className="rmb"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            style={{ fontSize: '1.25rem', lineHeight: '1.875rem', '--mb': '8px', '--mb-md': '0px', color: '#FFF2D7', fontWeight: 600, fontFamily: hanken }}
+          >
+            Explore Selections
+          </motion.h2>
+          <motion.h2
+            className="rmb"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.2 }}
+            style={{ fontSize: '1.875rem', lineHeight: '2.375rem', '--mb': '12px', '--mb-md': '16px', color: '#FFF2D7', fontWeight: 600, fontFamily: hanken }}
+          >
+            Our Product Range
+          </motion.h2>
+        </div>
 
-        <MotionBox className="slider-container" pb={{base: 8, md: 6}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+        <motion.div className="slider-container rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
           <Slider {...sliderSettingsMobile}>
             {carousel.map((c, index) => (
-              <MotionBox key={c.name} px={{ base: 0, md: 0 }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }}>
-                <StyledCard borderRadius="2xl" shadow="md">
-                  <Box>
-                    <VStack align="start" spacing={4} p={{ base: 8, md: 8 }}>
-                      <Image src={c.image} alt={c.name} boxSize={{ base: '300px', md: '350px' }} alignSelf="center" rounded="xl" />
-                      <Text fontWeight={700} fontSize={{ base: 'lg', md: 'xl' }}>{c.name}</Text>
-                      <Text fontWeight={400} fontSize={{ base: 'md', md: 'lg' }}>{c.description}</Text>
-                      <Button as={Link} href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noopener noreferrer' : undefined} size="md" {...pillButtonProps}>Shop</Button>
-                    </VStack>
-                  </Box>
+              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }}>
+                <StyledCard style={{ borderRadius: '1rem' }}>
+                  <div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '32px' }}>
+                      <img
+                        src={c.image}
+                        alt={c.name}
+                        className="rw rh"
+                        style={{ '--w': '300px', '--h': '300px', '--w-md': '350px', '--h-md': '350px', alignSelf: 'center', borderRadius: '0.75rem', objectFit: 'cover' }}
+                      />
+                      <p className="rt" style={{ fontWeight: 700, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{c.name}</p>
+                      <p className="rt" style={{ fontWeight: 400, '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{c.description}</p>
+                      <Link
+                        href={c.href}
+                        target={c.external ? '_blank' : undefined}
+                        rel={c.external ? 'noopener noreferrer' : undefined}
+                        className="btn-dark rpx"
+                        style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}
+                      >
+                        Shop
+                      </Link>
+                    </div>
+                  </div>
                 </StyledCard>
-              </MotionBox>
+              </motion.div>
             ))}
           </Slider>
-        </MotionBox>
-      </Container>
-
+        </motion.div>
+      </div>
 
       {/* Trusted Supplier marquee section */}
-      <Container
-        maxW="container.xl"
-        mt={{ base: 0, md: 20 }}
-        {...panelContainerProps}
-        py={{ base: 10, md: 20 }}
+      <div
+        className="rmt rbr rsh rpx rpy"
+        style={{
+          position: 'relative',
+          maxWidth: '90rem',
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: '#FFF2D7',
+          '--mt': '0px',
+          '--mt-md': '80px',
+          '--br': '0px',
+          '--br-lg': '32px',
+          '--sh': 'none',
+          '--sh-lg': shadowXl,
+          '--px': '48px',
+          '--px-md': '80px',
+          '--py': '40px',
+          '--py-md': '80px',
+        }}
       >
-        <VStack spacing={{ base: 4, md: 6 }} align="stretch">
-          <Text fontSize={{ base: 'lg', lg: '2xl' }} 
-          mb={{ base: 3, md: 4 }} 
-          mt={{base: 3, md: -8}} 
-          fontWeight={600} 
-          color='gray.600'
-          textAlign={{ base: 'center', md: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '8px' }}>
+          <p
+            className="rt rmt rmb"
+            style={{
+              '--fs': '1.125rem',
+              '--lh': '1.75rem',
+              '--fs-lg': '1.5rem',
+              '--lh-lg': '2rem',
+              '--mb': '12px',
+              '--mb-md': '16px',
+              '--mt': '12px',
+              '--mt-md': '-32px',
+              fontWeight: 600,
+              color: '#52525b',
+              textAlign: 'center',
+            }}
+          >
             Trusted Supplier To
-          </Text>
-          <Box maxW='full'>
+          </p>
+          <div style={{ maxWidth: '100%' }}>
             <Marquee gradient={false} speed={40} pauseOnHover>
-              {trustedLogos.map((item, idx) => {
-                const logo = (
-                  <HStack
+              {trustedLogos.map((item, idx) => (
+                <div key={idx} style={{ display: 'inline-block' }}>
+                  <div
                     title={item.alt}
-                    bg={'#FFF2D7'}
-                    rounded="full"
-                    style={{ backdropFilter: 'blur(8px)' }}
-                    px={{ base: 3, md: 4 }}
-                    py={{ base: 1, md: 2 }}
-                    mr={{ base: 3, md: 6 }}
+                    className="rpx rpy rmr"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      backgroundColor: '#FFF2D7',
+                      borderRadius: '9999px',
+                      backdropFilter: 'blur(8px)',
+                      WebkitBackdropFilter: 'blur(8px)',
+                      '--px': '12px',
+                      '--px-md': '16px',
+                      '--py': '4px',
+                      '--py-md': '8px',
+                      '--mr': '12px',
+                      '--mr-md': '24px',
+                    }}
                   >
-                    <Image
+                    <img
                       src={item.src}
                       alt={item.alt}
-                      height={{ base: '64px', md: '86px' }}
-                      width="auto"
-                      objectFit="contain"
-                      opacity={0.9}
-                      filter="grayscale(100%)"
+                      className="rh"
+                      style={{ '--h': '64px', '--h-md': '86px', width: 'auto', objectFit: 'contain', opacity: 0.9, filter: 'grayscale(100%)' }}
                     />
-                  </HStack>
-                )
-
-                if (item.href) {
-                  return (
-                    <ChakraLink
-                      key={idx}
-                      href={item.href}
-                      target={item.external ? '_blank' : undefined}
-                      rel={item.external ? 'noopener noreferrer' : undefined}
-                      display="inline-block"
-                      _hover={{ textDecoration: 'none' }}
-                    >
-                      {logo}
-                    </ChakraLink>
-                  )
-                }
-
-                return (
-                  <Box key={idx} display="inline-block">
-                    {logo}
-                  </Box>
-                )
-              })}
+                  </div>
+                </div>
+              ))}
             </Marquee>
-          </Box>
-        </VStack>
-      </Container>
+          </div>
+        </div>
+      </div>
 
-
-
-
-
-       {/* Honey Statement */}
- <Box py={{ base: 12, md: 16 }}>
-        <Container
-          maxW="container.xl"
-
-          mt={{ base: 6, lg: 20 }}
-          h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg')"}
-          bgSize="cover"
-          bgPos="center"
-          bgRepeat="no-repeat"
-          rounded={{ base: 'none', lg: '3xl' }}
-          shadow={{ base: 'none', lg: 'xl' }}
-          px={{ base: 12, md: 20 }}
-          py={{ base: 16, md: 20 }}
-          color="white"
-          display="flex"
-          flexDirection="column"
-          justifyContent="flex-end"
-          alignItems="flex-start"
+      {/* Honey Statement */}
+      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+        <div
+          className="rbr rsh rpx rpy rmt"
+          style={{
+            ...statementContainer,
+            ...statementResponsive,
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg')",
+          }}
         >
-          <MotionVStack align="start" spacing={2} {...fadeUp}>
-            <MotionHeading as="h3" size={{base: 'lg', md: "2xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              Gourmet Raw Ugandan Honey
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              Traceable.
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              Pesticide Free.
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
-              Single-Origin.
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: '3xl', md: "7xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
-              Ethically Sourced.
-            </MotionHeading>
-            {/* <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
-              We hand select the finest Grade-A honeycombs and hand press them to preserve the natural aromas, flavours and 'Terroir'.  This fine, Raw, cold pressed honey is loaded with immune-boosting trace vitamins, minerals and gut friendly live probiotics, prebiotics and enzymes. All gifts from the abundant Bio-diversity of Uganda's Landscapes.
-              Our honey is 'Single-Origin', we never blend our Honeys. This means our honey is different from one apiary location to another and one harvest to another. We want it that way ! Each batch has a unique identifying 'Harvest Number', and once a Harvest is sold out, it's gone! 
-            </MotionText> */}
-            <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
-              <Button
-                as={Link}
-                href="/our-process"
-                {...pillButtonProps}
-                bg="#f5cb81"
-                color="black"
-                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
-                fontSize={{base: 'sm', md: "lg"}}
-              >
-                Find Out More About Our Honey
-              </Button>
-            </MotionHStack>
-          </MotionVStack>
-        </Container>
-      </Box>
-
-
-
-
-
-
-
-      {/* Did you know - uganda harvest */}
-      {/* <Container maxW="container.md"  my={{base: 12, lg: 16}} pb={{md: 0}}>
-        <MotionVStack spacing={4} align="center" {...fadeUp}>
-          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>Did you know ?</MotionHeading>
-          <MotionHeading as="h1" size={{ base: '3xl', md: '6xl' }} maxW='4xl' textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>Uganda currently harvests only 1% of a potential 500,000 tonnes of honey per year</MotionHeading>
-          <MotionHeading as="h2" size={{ base: 'lg', md: 'xl' }} pt={6} textAlign='center' fontFamily={'var(--font-hanken)'} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}> - Dr. Deborah Ruth Amulen</MotionHeading>
-        </MotionVStack>
-      </Container> */}
-
-
-      {/* Impact Statement */}
-      <Box py={{ base: 12, md: 16 }}>
-        <Container
-          maxW="container.xl"
-          mt={{ base: 6, lg: 20 }}
-          h="95vh"
-          // bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png')"}
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png')"}
-
-          
-          bgSize="cover"
-          bgPos="center"
-          bgRepeat="no-repeat"
-          rounded={{ base: 'none', lg: '3xl' }}
-          shadow={{ base: 'none', lg: 'xl' }}
-          px={{ base: 12, md: 20 }}
-          py={{ base: 16, md: 20 }}
-          color="white"
-          display="flex"
-          flexDirection="column"
-          justifyContent="flex-end"
-          alignItems="flex-start"
-        >
-          <MotionVStack align="start" spacing={2} {...fadeUp}>
-            <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              Our Mission & Vision
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              2,000 farmers.
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              400 tons of Organic Honey.
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
-              Certified luxury.
-            </MotionHeading>
-            <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
-              Our mission is to improve the livelihood of 2000 farmers by providing knowledge, fair market-access and building inclusive, resilient, and sustainable beehive product value chains. 
-              We aim to become Africa's largest producer and exporter to EU of certified organic honey and beeswax. While promoting the planting and conservation of the native Shea Tree.
-            </MotionText>
-            <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
-              <Button
-                as={Link}
-                href="/impact-and-sustainability"
-                {...pillButtonProps}
-                bg="#f5cb81"
-                color="black"
-                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
-                fontSize={{base: 'sm', md: "lg"}}
-              >
-                Explore our Impact
-              </Button>
-            </MotionHStack>
-          </MotionVStack>
-        </Container>
-      </Box>
-
-
-      {/* Impact Statement */}
-      <Box py={{ base: 12, md: 16 }}>
-        <Container
-          maxW="container.xl"
-          mt={{ base: 6, lg: 20 }}
-          h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png')"}
-          bgSize="cover"
-          bgPos="center"
-          bgRepeat="no-repeat"
-          rounded={{ base: 'none', lg: '3xl' }}
-          shadow={{ base: 'none', lg: 'xl' }}
-          px={{ base: 12, md: 20 }}
-          py={{ base: 16, md: 20 }}
-          color="white"
-          display="flex"
-          flexDirection="column"
-          justifyContent="flex-end"
-          alignItems="flex-start"
-        >
-          <MotionVStack align="start" spacing={2} {...fadeUp}>
-            <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-             A Family Business
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              Built By Ugandans.
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              For The World.
-            </MotionHeading>
-
-            <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
-            Humble Beeing is a 100% Ugandan-Family Owned company, led by Obaya who quit his job in London working as a Trading Systems Software Developer at an Investment Bank 
-            to move back home to Uganda (where he grew up) to start a beekeeping social enterprise, to (hopefully) give his life some more meaning and change the world for the better.
-
-            Now the aim is to transform the family village in Yumbe into an economic hub and allow everyone the opportunity to benefit from domestic and international markets.
-
-            </MotionText>
-            <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
-              <Button
-                as={Link}
-                href="/our-story"
-                {...pillButtonProps}
-                bg="#f5cb81"
-                color="black"
-                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
-                fontSize={{base: 'sm', md: "lg"}}
-              >
-                Read our Story
-              </Button>
-            </MotionHStack>
-          </MotionVStack>
-        </Container>
-      </Box>
-
-
-
-      {/* Meet the Family  */}
-      {/* <Container maxW="container.xl" mt={{ base: 0, md: 24 }}
-        minH={{ base: 'auto', md: '70vh' }}
-        {...panelContainerProps}
-      >
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8, lg: 10 }} alignItems="stretch">
-          <VStack align="start" spacing={4} pr={{base: 'none', md:20}} >
-              <Box pt={{base: 'none', md: 4}}>
-              <Heading as="h2" size={{ base: 'md', md: 'xl' }}>About Us</Heading>
-
-                <Heading as="h2" size={{ base: '3xl', md: '6xl' }}>Meet the Family</Heading>
-              <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
-                Humble Beeing is a 100% Ugandan-Family Owned company, led by Obaya who quit his job in London working as a Trading Systems Software Developer at Credit Suisse Investment Bank to move back home to Uganda to start a beekeeping social enterprise, to (hopefully) give his life some more meaning and change the world for the better.
-              </Text>
-              <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
-                He combined his love of Nature, Food and Family to build a life he was happy to live. There have been a  *lot* of ups and downs along the way, but it wouldn't be an adventure if everything went to plan!
-              </Text>
-              <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>           
-                He was joined by his Artist Sister, Letaru, and his Optician Dad, Anguyo, to start Humble Beeing with the aim of improving the livelihoods of those in the village they come from by rebranding an overlooked but extremely valuable commodity - Honey!
-              </Text>
-              <Text fontSize={{ base: 'lg', md: 'xl' }} pt={6}>
-                Now the aim is to transform the village into an economic hub and allow everyone the opportunity to benefit from domestic and international markets.
-              </Text>
-              <Button as={Link} href="/our-story" mt={6} mb={{base: 6, md: 0}} {...pillButtonProps}>
-                <Text fontSize={{ base: 'sm', md: 'xl' }} py={{base: 6, md: 0}} >
-                  Meet Our Team
-                </Text>
-                </Button>
-              </Box>
-          </VStack>
-          <VStack>
-            <Box className="slider-container" pb={{base: 8, md: 6}} width="100%">
-              <Slider {...sliderSettingsFamily}>
-                {familyImages.map((imageObj, index) => (
-                  <Box key={index} px={{ base: 2, md: 0 }} py={{base: 0, md: 4}}>
-                    <StyledCard borderRadius="2xl" shadow="md">
-                      <Image
-                        src={imageObj.src}
-                        alt={imageObj.caption}
-                        objectFit="cover"
-                        width="100%"
-                        height="auto"
-                      />
-                      <Text fontFamily={'var(--font-hanken)'} fontSize={{ base: 'md', md: 'lg' }} py={4} textAlign="center">
-                        {imageObj.caption}
-                      </Text>
-                    </StyledCard>
-                  </Box>
-                ))}
-              </Slider>
-            </Box>
-          </VStack>
-        </SimpleGrid>
-      </Container> */}
-
-
-      {/* Did you know */}
-      <Box
-        w="full"
-        minH='85vh'
-        mt={{ base: 16, lg: 24 }}
-        mb={{ base: 6, lg: 16 }}
-        py={{ base: 12, md: 20 }}
-        px={{ base: 6, md: 12 }}
-        bgImage={
-          "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url('https://cdn.sanity.io/images/wf5e366r/production/9484a86c3200f89d7c0558d1bd1238cc28de7b01-3000x2000.jpg')"
-        }
-        bgSize="cover"
-        bgPos="center"
-        bgRepeat="no-repeat"
-      >
-        <Container maxW="container.lg" color="white">
-          <MotionVStack spacing={4} align="center" {...fadeUp}>
-            <MotionHeading
-              as="h2"
-              size={{ base: 'lg', md: 'xl' }}
-              pt={6}
-              textAlign="center"
-              fontFamily={'var(--font-hanken)'}
+          <motion.div {...fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+            <motion.h3
+              className="rt"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.1 }}
+              style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.5rem', '--lh-md': '2rem', fontWeight: 600, fontFamily: hanken }}
             >
-              Our Guarantee
-            </MotionHeading>
-            <MotionHeading
-              as="h1"
-              size={{ base: '3xl', md: '6xl' }}
-              maxW="4xl"
-              textAlign="center"
-              fontFamily={'var(--font-hanken)'}
+              Gourmet Raw Ugandan Honey
+            </motion.h3>
+            {['Traceable.', 'Pesticide Free.', 'Single-Origin.', 'Ethically Sourced.'].map((line, i) => (
+              <motion.h2
+                key={line}
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i < 3 ? 0.15 + i * 0.05 : 0.25 }}
+                style={{ '--fs': '1.875rem', '--lh': '2.375rem', '--fs-md': '4.5rem', '--lh-md': '5.75rem', '--ls-md': '-0.025em', fontWeight: 600, fontFamily: hanken }}
+              >
+                {line}
+              </motion.h2>
+            ))}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '16px' }}>
+              <Link
+                href="/our-process"
+                className="btn-amber rpx rt"
+                style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px', '--fs': '0.875rem', '--lh': '1.25rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}
+              >
+                Find Out More About Our Honey
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Impact Statement */}
+      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+        <div
+          className="rbr rsh rpx rpy rmt"
+          style={{
+            ...statementContainer,
+            ...statementResponsive,
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png')",
+          }}
+        >
+          <motion.div {...fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+            <motion.h3
+              className="rt"
               {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.2 }}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+              style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', fontWeight: 600, fontFamily: hanken }}
             >
-              Only the very best Grade-A honeycomb from pesticide-free areas makes it into our jars and our farmers are given a fair price
-            </MotionHeading>
-            <MotionHeading
-              as="h2"
-              size={{ base: 'lg', md: 'xl' }}
-              pt={6}
-              textAlign="center"
-              fontFamily={'var(--font-hanken)'}
+              Our Mission & Vision
+            </motion.h3>
+            {['2,000 farmers.', '400 tons of Organic Honey.', 'Certified luxury.'].map((line, i) => (
+              <motion.h2
+                key={line}
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.15 + i * 0.05 }}
+                style={{ '--fs': '1.25rem', '--lh': '1.875rem', '--fs-md': '1.875rem', '--lh-md': '2.375rem', fontWeight: 600, fontFamily: hanken }}
+              >
+                {line}
+              </motion.h2>
+            ))}
+            <motion.p
+              className="rt"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.3 }}
+              style={{ maxWidth: '42rem', paddingTop: '24px', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
+            >
+              Our mission is to improve the livelihood of 2000 farmers by providing knowledge, fair market-access and building inclusive, resilient, and sustainable beehive product value chains.
+              We aim to become Africa's largest producer and exporter to EU of certified organic honey and beeswax. While promoting the planting and conservation of the native Shea Tree.
+            </motion.p>
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '16px' }}>
+              <Link
+                href="/impact-and-sustainability"
+                className="btn-amber rpx rt"
+                style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px', '--fs': '0.875rem', '--lh': '1.25rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}
+              >
+                Explore our Impact
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Family Statement */}
+      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+        <div
+          className="rbr rsh rpx rpy rmt"
+          style={{
+            ...statementContainer,
+            ...statementResponsive,
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png')",
+          }}
+        >
+          <motion.div {...fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+            <motion.h3
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+              style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', fontWeight: 600, fontFamily: hanken }}
+            >
+              A Family Business
+            </motion.h3>
+            {['Built By Ugandans.', 'For The World.'].map((line, i) => (
+              <motion.h2
+                key={line}
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.15 + i * 0.05 }}
+                style={{ '--fs': '1.25rem', '--lh': '1.875rem', '--fs-md': '1.875rem', '--lh-md': '2.375rem', fontWeight: 600, fontFamily: hanken }}
+              >
+                {line}
+              </motion.h2>
+            ))}
+            <motion.p
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.3 }}
+              style={{ maxWidth: '42rem', paddingTop: '24px', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
+            >
+              Humble Beeing is a 100% Ugandan-Family Owned company, led by Obaya who quit his job in London working as a Trading Systems Software Developer at an Investment Bank
+              to move back home to Uganda (where he grew up) to start a beekeeping social enterprise, to (hopefully) give his life some more meaning and change the world for the better.
+
+              Now the aim is to transform the family village in Yumbe into an economic hub and allow everyone the opportunity to benefit from domestic and international markets.
+            </motion.p>
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '16px' }}>
+              <Link
+                href="/our-story"
+                className="btn-amber rpx rt"
+                style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px', '--fs': '0.875rem', '--lh': '1.25rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}
+              >
+                Read our Story
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Our Guarantee */}
+      <div
+        className="rmt rmb rpy rpx"
+        style={{
+          width: '100%',
+          minHeight: '85vh',
+          '--mt': '64px',
+          '--mt-lg': '96px',
+          '--mb': '24px',
+          '--mb-lg': '64px',
+          '--py': '48px',
+          '--py-md': '80px',
+          '--px': '24px',
+          '--px-md': '48px',
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url('https://cdn.sanity.io/images/wf5e366r/production/9484a86c3200f89d7c0558d1bd1238cc28de7b01-3000x2000.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div
+          className="rpx"
+          style={{ position: 'relative', maxWidth: '90rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', color: 'white', '--px': '16px', '--px-md': '24px', '--px-lg': '32px' }}
+        >
+          <motion.div {...fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <motion.h2
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+              style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', paddingTop: '24px', textAlign: 'center', fontWeight: 600, fontFamily: hanken }}
+            >
+              Our Guarantee
+            </motion.h2>
+            <motion.h1
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.2 }}
+              style={{ '--fs': '1.875rem', '--lh': '2.375rem', '--fs-md': '3.75rem', '--lh-md': '4.5rem', '--ls-md': '-0.025em', maxWidth: '56rem', textAlign: 'center', fontWeight: 600, fontFamily: hanken }}
+            >
+              Only the very best Grade-A honeycomb from pesticide-free areas makes it into our jars and our farmers are given a fair price
+            </motion.h1>
+            <motion.h2
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.3 }}
+              style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', paddingTop: '24px', textAlign: 'center', fontWeight: 600, fontFamily: hanken }}
             >
               - Humble Beeing Promise, 2023
-            </MotionHeading>
-          </MotionVStack>
-        </Container>
-      </Box>
-
-
+            </motion.h2>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Recipes */}
-      <Box py={{ base: 12, md: 16 }}>
-        <Container
-          maxW="container.xl"
-          mt={{ base: 6, lg: 20 }}
-          h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/4dfb5556eba5a09ad920ebc2c6a70b2a083c2daa-1200x911.png')"}
-          bgSize="cover"
-          bgPos="center"
-          bgRepeat="no-repeat"
-          rounded={{ base: 'none', lg: '3xl' }}
-          shadow={{ base: 'none', lg: 'xl' }}
-          px={{ base: 12, md: 20 }}
-          py={{ base: 16, md: 20 }}
-          color="white"
-          display="flex"
-          flexDirection="column"
-          justifyContent="flex-end"
-          alignItems="flex-start"
+      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+        <div
+          className="rbr rsh rpx rpy rmt"
+          style={{
+            ...statementContainer,
+            ...statementResponsive,
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/4dfb5556eba5a09ad920ebc2c6a70b2a083c2daa-1200x911.png')",
+          }}
         >
-          <MotionVStack align="start" spacing={2} {...fadeUp}>
-            <MotionHeading as="h3" size={{base: 'md', md: "lg"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+          <motion.div {...fadeUp} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+            <motion.h3
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+              style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', fontWeight: 600, fontFamily: hanken }}
+            >
               For the Foodies
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              A Gourmet World Awaits!
-            </MotionHeading>
-            <MotionHeading as="h2" size={{base: 'xl', md: "3xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-              Hand-Picked Infusion Pairings
-            </MotionHeading>
-
-            <MotionText maxW='2xl' pt={6} fontSize={{base: 'md', md: "xl"}} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+            </motion.h3>
+            {['A Gourmet World Awaits!', 'Hand-Picked Infusion Pairings'].map((line) => (
+              <motion.h2
+                key={line}
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.15 }}
+                style={{ '--fs': '1.25rem', '--lh': '1.875rem', '--fs-md': '1.875rem', '--lh-md': '2.375rem', fontWeight: 600, fontFamily: hanken }}
+              >
+                {line}
+              </motion.h2>
+            ))}
+            <motion.p
+              className="rt"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.3 }}
+              style={{ maxWidth: '42rem', paddingTop: '24px', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
+            >
               Unleash your inner chef! Our exquisite honeys are not just for your tea; they are a secret ingredient waiting to transform your culinary creations. From delectable glazes to gourmet desserts, explore a world of flavors.
               Have a look at our recipes for inspiration!
-            </MotionText>
-            <MotionHStack pt={4} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
-              <Button
-                as={Link}
+            </motion.p>
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '16px' }}>
+              <Link
                 href="/blog"
-                {...pillButtonProps}
-                bg="#f5cb81"
-                color="black"
-                _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
-                fontSize={{base: 'sm', md: "lg"}}
+                className="btn-amber rpx rt"
+                style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px', '--fs': '0.875rem', '--lh': '1.25rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}
               >
                 See more Recipes
-              </Button>
-            </MotionHStack>
-          </MotionVStack>
-        </Container>
-      </Box>
-
-
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Testimonials and Social Proof */}
-      <Container maxW="container.xl" {...panelContainerProps}  pt={{base: 6, lg: 12}} pb={{base: 6, lg: 20}} mb={{ base: 12, lg: 24 }}>
-                <MotionHeading
-          as="h2"
-          size={{ base: 'md', md: 'lg' }}
-          mb={{ base: 4, md: 0 }}
-          fontFamily={'var(--font-hanken)'}
+      <div
+        className="rbr rsh rpx rpt rpb rmb"
+        style={{
+          position: 'relative',
+          maxWidth: '90rem',
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: '#FFF2D7',
+          '--br': '0px',
+          '--br-lg': '32px',
+          '--sh': 'none',
+          '--sh-lg': shadowXl,
+          '--px': '48px',
+          '--px-md': '80px',
+          '--pt': '24px',
+          '--pt-lg': '48px',
+          '--pb': '24px',
+          '--pb-lg': '80px',
+          '--mb': '48px',
+          '--mb-lg': '96px',
+        }}
+      >
+        <motion.h2
+          className="rt rmb"
           {...fadeUp}
+          style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', '--mb': '16px', '--mb-md': '0px', fontWeight: 600, fontFamily: hanken }}
         >
           Testimonials
-        </MotionHeading>
-        <MotionHeading
-          as="h2"
-          size={{ base: 'lg', md: '2xl' }}
-          mb={{ base: 4, md: 8 }}
-          fontFamily={'var(--font-hanken)'}
+        </motion.h2>
+        <motion.h2
+          className="rt rmb"
           {...fadeUp}
+          style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.5rem', '--lh-md': '2rem', '--mb': '16px', '--mb-md': '32px', fontWeight: 600, fontFamily: hanken }}
         >
           Don't just take our word for it!
-        </MotionHeading>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
-          {[{q: '“The Garlic and chilli infused honey flavors go really well with fried chicken wings🥰❤️ 100% recommend!”', a: 'Sheillah R. - Food Reviewer'}, {q: '“Without a doubt, this is the best honey in Uganda. I’ve been in the country for years, and this is by far the best souvenir I’ve found here. Everyone I’ve gifted it to has loved it! My personal favorite is the rosemary-infused honey. My dad, a cheese lover, enjoys it drizzled over cheese, especially the garlic-infused variety. My mom uses them in her Asian cooking, and it elevates the flavors like nothing else!”', a: 'Minori - Japan'}, {q: '“The best honey I’ve had! Love their raw honey, so luxurious and delicious and I’m not even normally the biggest fan of honey. Definitely the best honey you can find in Uganda, my family loved them as gifts.”', a: 'Lina A.'}].map((t, idx) => (
-            <StyledCard key={idx} borderRadius="2xl" shadow="md" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }} py={{base: 4, md: 'none'}}>
-              <VStack align="start" spacing={4} p={6}>
-                <Text fontSize={{ base: 'lg', md: 'xl' }}> {t.q} </Text>
-                <Badge
-                  variant="solid"
-                  bg="black"
-                  color="#f5cb81"
-                  borderColor="black"
-                  rounded="full"
-                  px={3}
-                  py={1}
-                >
-                  {t.a}
-                </Badge>
-              </VStack>
-            </StyledCard>
+        </motion.h2>
+        <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(3, 1fr)' }}>
+          {[
+            { q: '“The Garlic and chilli infused honey flavors go really well with fried chicken wings🥰❤️ 100% recommend!”', a: 'Sheillah R. - Food Reviewer' },
+            { q: '“Without a doubt, this is the best honey in Uganda. I’ve been in the country for years, and this is by far the best souvenir I’ve found here. Everyone I’ve gifted it to has loved it! My personal favorite is the rosemary-infused honey. My dad, a cheese lover, enjoys it drizzled over cheese, especially the garlic-infused variety. My mom uses them in her Asian cooking, and it elevates the flavors like nothing else!”', a: 'Minori - Japan' },
+            { q: '“The best honey I’ve had! Love their raw honey, so luxurious and delicious and I’m not even normally the biggest fan of honey. Definitely the best honey you can find in Uganda, my family loved them as gifts.”', a: 'Lina A.' },
+          ].map((t, idx) => (
+            <motion.div key={idx} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }} style={{ display: 'flex' }}>
+              <StyledCard style={{ borderRadius: '1rem', paddingTop: '16px', paddingBottom: '16px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '24px' }}>
+                  <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}> {t.q} </p>
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      minHeight: '20px',
+                      backgroundColor: '#09090b',
+                      color: '#f5cb81',
+                      borderRadius: '9999px',
+                      padding: '4px 12px',
+                      fontSize: '0.75rem',
+                      lineHeight: '1rem',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {t.a}
+                  </span>
+                </div>
+              </StyledCard>
+            </motion.div>
           ))}
-        </SimpleGrid>
-        <MotionBox textAlign="center" pt={{ base: 8, md: 12 }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.6 }}>
-          <Button
-            as={ChakraLink}
+        </div>
+        <motion.div className="rpt" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.6 }} style={{ textAlign: 'center', '--pt': '32px', '--pt-md': '48px' }}>
+          <a
             href="https://g.page/r/CXO3cDknQeegEBM/review"
-            isExternal
-            {...pillButtonProps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-dark rpx"
+            style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}
           >
             Leave Us a Review!
-          </Button>
-        </MotionBox>
-      </Container>
+          </a>
+        </motion.div>
+      </div>
 
       {/* Quality Assured */}
-      <Box py={{ base: 12, md: 16 }}>
-        <Container
-          maxW="container.xl"
-          mt={{ base: 6, lg: 20 }}
-          h="95vh"
-          bgImage={"linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.85)), url('https://cdn.sanity.io/images/wf5e366r/production/bd61c8b1a8ed936847ac22805b9201884f74c35d-905x1200.png')"}
-          bgSize="cover"
-          bgPos="center"
-          bgRepeat="no-repeat"
-          rounded={{ base: 'none', lg: '3xl' }}
-          shadow={{ base: 'none', lg: 'xl' }}
-          px={{ base: 12, md: 20 }}
-          py={{ base: 16, md: 20 }}
-          color="white"
-          display="flex"
-          flexDirection="column"
-          justifyContent="flex-end"
+      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+        <div
+          className="rbr rsh rpx rpy rmt"
+          style={{
+            ...statementContainer,
+            ...statementResponsive,
+            alignItems: 'stretch',
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.85)), url('https://cdn.sanity.io/images/wf5e366r/production/bd61c8b1a8ed936847ac22805b9201884f74c35d-905x1200.png')",
+          }}
         >
-          <MotionBox
-            // as={Flex}
-            direction={{ base: 'column', lg: 'row' }}
-            align={{ base: 'flex-start', lg: 'flex-end' }}
-            justify="space-between"
-            w="full"
-            gap={{ base: 10, lg: 16 }}
-            {...fadeUp}
-          >
-            <MotionVStack align="start" spacing={2} flex="1" maxW="4xl" w="full" {...fadeUp}>
-              <MotionHeading as="h3" size={{ base: 'md', md: 'lg' }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+          <motion.div {...fadeUp} style={{ width: '100%' }}>
+            <motion.div
+              {...fadeUp}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', flex: 1, maxWidth: '56rem', width: '100%' }}
+            >
+              <motion.h3
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
+                style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', fontWeight: 600, fontFamily: hanken }}
+              >
                 Quality Assured
-              </MotionHeading>
-              <MotionHeading as="h2" size={{ base: 'xl', md: '4xl' }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
+              </motion.h3>
+              <motion.h2
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.15 }}
+                style={{ '--fs': '1.25rem', '--lh': '1.875rem', '--fs-md': '2.25rem', '--lh-md': '2.75rem', '--ls-md': '-0.025em', fontWeight: 600, fontFamily: hanken }}
+              >
                 Certified. Traceable. Trusted.
-              </MotionHeading>
-              <MotionText maxW="full" pt={6} fontSize={{ base: 'md', md: 'xl' }} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
+              </motion.h2>
+              <motion.p
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.25 }}
+                style={{ maxWidth: '100%', paddingTop: '24px', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
+              >
                 Proud partners and certified producers meeting the highest standards for Ugandan honey and beeswax. Every jar carries lab-grade moisture readings, batch provenance, and Uganda National Bureau of Standards compliance.
-              </MotionText>
-              <MotionText maxW="full" fontSize={{ base: 'md', md: 'xl' }} color="gray.100" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+              </motion.p>
+              <motion.p
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.3 }}
+                style={{ maxWidth: '100%', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', color: '#f4f4f5', fontFamily: hanken }}
+              >
                 Each harvest is tested in independent food laboratories for moisture, acidity, antibiotic residue, and HMF levels—and we consistently exceed European export benchmarks.
-              </MotionText>
-              <MotionText maxW="full" fontSize={{ base: 'md', md: 'xl' }} color="gray.100" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.33 }}>
+              </motion.p>
+              <motion.p
+                className="rt"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.33 }}
+                style={{ maxWidth: '100%', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', color: '#f4f4f5', fontFamily: hanken }}
+              >
                 We invest in rigorous third-party audits so chefs, retailers, and families can trust that what is on the label is exactly what is inside the jar.
-              </MotionText>
-              <MotionBox pt={8} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
-                <Button
-                  as={Link}
+              </motion.p>
+              <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ paddingTop: '32px' }}>
+                <Link
                   href="/lab-tests"
-                  {...pillButtonProps}
-                  bg="#f5cb81"
-                  color="black"
-                  _hover={{ bg: 'black', color: '#f5cb81', textDecoration: 'none' }}
-                  fontSize={{ base: 'sm', md: 'lg' }}
+                  className="btn-amber rpx rt"
+                  style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px', '--fs': '0.875rem', '--lh': '1.25rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}
                 >
                   View Lab Test Results
-                </Button>
-              </MotionBox>
-            </MotionVStack>
-            <MotionBox
-              display="flex"
-              flexDirection="column"
-              justifyContent="flex-end"
-              alignItems={{ base: 'flex-start', lg: 'flex-end' }}
-              minW={{ base: 'auto', lg: '320px' }}
-              w="full"
+                </Link>
+              </motion.div>
+            </motion.div>
+            <motion.div
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.35 }}
+              className="rai rminw"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                '--ai': 'flex-start',
+                '--ai-lg': 'flex-end',
+                '--minw': 'auto',
+                '--minw-lg': '320px',
+                width: '100%',
+              }}
             >
-              <MotionHStack spacing={{ base: 6, md: 8 }} flexWrap="wrap" justify={{ base: 'flex-start', lg: 'flex-end' }}>
-                <VStack spacing={3} align="center">
-                  <ChakraLink href="https://tunadobees.org/" isExternal _hover={{ textDecoration: 'none', opacity: 0.85 }}>
-                    <Image
+              <motion.div
+                className="rjc"
+                style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', '--jc': 'flex-start', '--jc-lg': 'flex-end' }}
+              >
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                  <a href="https://tunadobees.org/" target="_blank" rel="noopener noreferrer" className="hover-fade">
+                    <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/5d7e7c96941067625b03a2237d453997ee15ddde-200x241.png"
                       alt="TUNADO Membership"
-                      maxW={{ base: '120px', md: '160px' }}
-                      bg="white"
-                      rounded="lg"
-                      p={4}
+                      className="rmaxw"
+                      style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />
-                  </ChakraLink>
-                </VStack>
-                <VStack spacing={3} align="center">
-                  <ChakraLink href="https://unbs.go.ug/content.php?src=product-certification&pg=content" isExternal _hover={{ textDecoration: 'none', opacity: 0.85 }}>
-                    <Image
+                  </a>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                  <a
+                    href="https://unbs.go.ug/content.php?src=product-certification&pg=content"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover-fade"
+                  >
+                    <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/8d19ad6abb9cf3d307255c19a5420cc38f446d75-226x278.png"
                       alt="Uganda National Bureau of Standards"
-                      maxW={{ base: '120px', md: '160px' }}
-                      bg="white"
-                      rounded="lg"
-                      p={4}
+                      className="rmaxw"
+                      style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />
-                  </ChakraLink>
-                </VStack>
-              </MotionHStack>
-            </MotionBox>
-          </MotionBox>
-        </Container>
-      </Box>
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Spacer above footer with brand background */}
-      <Box bg="#f5cb81" h={{ base: 12, lg: 24 }} />
-
-    </Box>
+      <div className="rh" style={{ backgroundColor: '#f5cb81', '--h': '48px', '--h-lg': '96px' }} />
+    </div>
   );
 }
 

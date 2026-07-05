@@ -1,10 +1,13 @@
 import Head from 'next/head';
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Container, Heading, Text, VStack, Badge, Image } from '@chakra-ui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import PageLayout from '@/components/layouts/PageLayout';
 // Layout supplies Navbar/Footer
+
+const hanken = 'var(--font-hanken)'
+
+const bodyTextClass = { '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }
 
 export default function BlogPostPage() {
   const router = useRouter();
@@ -38,7 +41,7 @@ export default function BlogPostPage() {
   const tagName = post ? categories.find((c) => c.slug === post.category)?.name : undefined;
 
   return (
-    <Box bg={'#FFF2D7'} color={'#000819'} minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <Head>
         <title>{pageTitle} | Humble Beeing</title>
         <meta name="description" content="Blog article from Humble Beeing." />
@@ -53,53 +56,79 @@ export default function BlogPostPage() {
         py={{ base: 16, md: 24 }}
       />
 
-      <Container
-        maxW="6xl"
-        px={{ base: 12, md: 20 }}
-        py={{ base: 12, md: 20 }}
-        bg={'#FFF2D7'}
-        rounded={{ base: 'none', lg: '4xl' }}
-        mt={{ base: 0, md: 6 }}
+      <div
+        className="rpx rpy rbr rmt"
+        style={{
+          position: 'relative',
+          maxWidth: '72rem',
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: '#FFF2D7',
+          '--px': '48px',
+          '--px-md': '80px',
+          '--py': '48px',
+          '--py-md': '80px',
+          '--br': '0px',
+          '--br-lg': '2rem',
+          '--mt': '0px',
+          '--mt-md': '24px',
+        }}
       >
-        <VStack align="start" spacing={6} pb={8}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '32px' }}>
           {tagName && (
-            <Badge variant="solid" bg="#000819" color="white">
+            <span
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                minHeight: '20px',
+                padding: '0 6px',
+                borderRadius: '0.25rem',
+                backgroundColor: '#000819',
+                color: 'white',
+                fontSize: '0.75rem',
+                lineHeight: '1rem',
+                fontWeight: 500,
+              }}
+            >
               {tagName}
-            </Badge>
+            </span>
           )}
-          <Heading as="h1" size={{ base: 'lg', md: 'xl' }}>{pageTitle}</Heading>
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000819">
+          <h1
+            className="rt"
+            style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontWeight: 600, fontFamily: hanken }}
+          >
+            {pageTitle}
+          </h1>
+          <p className="rt" style={{ ...bodyTextClass, color: '#000819' }}>
             Intro paragraph for the article. Highlight key themes like African luxury honey, pure beeswax candles, and traceable sourcing in Uganda.
-          </Text>
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000819">
+          </p>
+          <p className="rt" style={{ ...bodyTextClass, color: '#000819' }}>
             Body content goes here. Include rich storytelling, expert tips, and links to Impact & Sustainability where relevant.
-          </Text>
-        </VStack>
+          </p>
+        </div>
 
         {post?.image && (
-          <Box pb={8}>
-            <Image
+          <div style={{ paddingBottom: '32px' }}>
+            <img
               src={post.image}
               alt={pageTitle}
-              borderRadius="3xl"
-              objectFit="cover"
-              width="100%"
-              maxH={{ base: '280px', md: '420px' }}
+              className="rh"
+              style={{ borderRadius: '1.5rem', objectFit: 'cover', width: '100%', '--h': '280px', '--h-md': '420px' }}
             />
-          </Box>
+          </div>
         )}
 
-        <VStack align="start" spacing={6}>
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000819">
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+          <p className="rt" style={{ ...bodyTextClass, color: '#000819' }}>
             Continue the story with supporting details, quotes, and data. Add CTAs to products or related posts.
-          </Text>
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="#000819">
+          </p>
+          <p className="rt" style={{ ...bodyTextClass, color: '#000819' }}>
             Wrap up with a conclusion and next steps for the reader.
-          </Text>
-        </VStack>
-      </Container>
-
-    </Box>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 

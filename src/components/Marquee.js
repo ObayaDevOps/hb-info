@@ -1,30 +1,24 @@
-import { Box, HStack, Text } from '@chakra-ui/react'
-import { keyframes } from '@emotion/react'
-
-const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-`
-
 export default function Marquee({ speed = 95, children, gap = 52 }) {
   // Rough mapping from speed to duration (seconds)
   const durationSec = Math.max(8, Math.round(800 / speed))
+  const gapPx = gap * 4 // Chakra spacing token -> px
   return (
-    <Box overflow="hidden" w="100%">
-      <Box
-        display="flex"
-        whiteSpace="nowrap"
-        animation={`${scroll} ${durationSec}s linear infinite`}
-        // Two copies for seamless loop
+    <div style={{ overflow: 'hidden', width: '100%' }}>
+      <div
+        style={{
+          display: 'flex',
+          whiteSpace: 'nowrap',
+          animation: `hb-scroll ${durationSec}s linear infinite`,
+        }}
       >
-        <HStack spacing={gap} pr={gap}>
+        {/* Two copies for a seamless loop */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingRight: `${gapPx}px` }}>
           {children}
-        </HStack>
-        <HStack spacing={gap} pl={gap}>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingLeft: `${gapPx}px` }}>
           {children}
-        </HStack>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   )
 }
-

@@ -1,4 +1,3 @@
-import { Box, Text } from '@chakra-ui/react';
 import Form from '@/components/Form'
 import Head from "next/head";
 import HeroSection from '@/components/sections/HeroSection';
@@ -6,13 +5,12 @@ import PageLayout from '@/components/layouts/PageLayout';
 
 // Layout supplies Navbar/Footer
 
-
 export default function ContactPage() {
   return (
-    <Box bg={'#f5cb81'} minH='100vh'>
+    <div style={{ backgroundColor: '#f5cb81', minHeight: '100vh' }}>
       <Head>
         {/* Use data from Sanity */}
-        <title>{'Contact Us' || 'Ashton & Carrington'}</title>
+        <title>{'Contact Us'}</title>
         <meta name="description" content={'Empowering Innovation and Financial Growth Through Expertise'} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png" />
@@ -28,41 +26,53 @@ export default function ContactPage() {
       />
 
       {/* Panel */}
-      <Box
-        maxW="container.md"
-        mx="auto"
-        px={{ base: 12, md: 20 }}
-        py={{ base: 16, md: 20 }}
-        bg={'#FFF2D7'}
-        rounded={{ base: 'none', lg: '4xl' }}
-        boxShadow={{ base: 'none', lg: 'xl' }}
-        mt={{ base: 0, md: 10 }}
+      <div
+        className="rpx rpy rbr rsh rmt"
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: '#FFF2D7',
+          '--px': '48px',
+          '--px-md': '80px',
+          '--py': '64px',
+          '--py-md': '80px',
+          '--br': '0px',
+          '--br-lg': '2rem',
+          '--sh': 'none',
+          '--sh-lg': '0px 16px 24px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)',
+          '--mt': '0px',
+          '--mt-md': '40px',
+        }}
       >
-        <Text
-          fontFamily='var(--font-hanken)'
-          fontSize={'1.25rem'}
-          lineHeight='normal'
-          fontWeight='600'
-          color='#000819'
+        <p
+          style={{
+            fontFamily: 'var(--font-hanken)',
+            fontSize: '1.25rem',
+            lineHeight: 'normal',
+            fontWeight: 600,
+            color: '#000819',
+          }}
         >
           Contact Us
-        </Text>
-        <Text
-          fontFamily='var(--font-hanken)'
-          fontSize='0.95rem'
-          lineHeight='1.75rem'
-          fontWeight='400'
-          color='#000819'
-          pt={'0.5rem'}
+        </p>
+        <p
+          style={{
+            fontFamily: 'var(--font-hanken)',
+            fontSize: '0.95rem',
+            lineHeight: '1.75rem',
+            fontWeight: 400,
+            color: '#000819',
+            paddingTop: '0.5rem',
+          }}
         >
           Want to reach out? Enter your details below and provide a message to Ashton & Carrington and we'll respond as soon as we can.
-        </Text>
+        </p>
 
-        <Box mt={4}>
+        <div style={{ marginTop: '16px' }}>
           <Form buttonPosition='none' />
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 }
 

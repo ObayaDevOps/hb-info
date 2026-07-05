@@ -1,14 +1,13 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { Box, Container, Heading, Text, VStack, SimpleGrid, Image, Button, HStack, Badge } from '@chakra-ui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import PageLayout from '@/components/layouts/PageLayout';
+
+const hanken = 'var(--font-hanken)'
 
 const labReports = [
   {
     title: 'Lab Certificate — Moisture & HMF',
     subtitle: 'Batch HB-2025-01 · SGS Kampala · June 2025',
-    imageUrl: 'https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf',
     downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf',
     metrics: [
       { label: 'Moisture', value: '17%' },
@@ -19,7 +18,6 @@ const labReports = [
   {
     title: 'Lab Certificate — Residue & Adulteration',
     subtitle: 'Batch HB-2025-01 · ISO 17025 Partner Lab · June 2025',
-    imageUrl: 'https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf',
     downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf',
     metrics: [
       { label: 'Pesticide Residue', value: 'Not detected' },
@@ -31,7 +29,7 @@ const labReports = [
 
 export default function LabTestsPage() {
   return (
-    <Box bg="#FFF2D7" color="#000819" minH="100vh" fontFamily={'var(--font-hanken)'}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <Head>
         <title>Lab Test Certificates | Humble Beeing</title>
         <meta
@@ -47,74 +45,114 @@ export default function LabTestsPage() {
         overlay
         py={{ base: 16, md: 24 }}
       >
-        <Text mt={4} maxW="2xl" color="white" fontSize={{ base: 'lg', md: 'xl' }}>
+        <p className="rt" style={{ marginTop: '16px', maxWidth: '42rem', color: 'white', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
           Review moisture, HMF, residue, and adulteration reports that keep our honey certified and export ready.
-        </Text>
+        </p>
       </HeroSection>
 
-      <Container
-        maxW="6xl"
-        px={{ base: 6, md: 12 }}
-        py={{ base: 12, md: 20 }}
+      <div
+        className="rpx rpy"
+        style={{
+          position: 'relative',
+          maxWidth: '72rem',
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          '--px': '24px',
+          '--px-md': '48px',
+          '--py': '48px',
+          '--py-md': '80px',
+        }}
       >
-        <VStack align="start" spacing={4} mb={{ base: 10, md: 16 }}>
-          <Heading as="h1" size={{ base: '2xl', md: '4xl' }}>
+        <div className="rmb" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', '--mb': '40px', '--mb-md': '64px' }}>
+          <h1
+            className="rt"
+            style={{ '--fs': '1.5rem', '--lh': '2rem', '--fs-md': '2.25rem', '--lh-md': '2.75rem', '--ls-md': '-0.025em', fontWeight: 600, fontFamily: hanken }}
+          >
             Lab Test Certificates
-          </Heading>
-          <Text fontSize={{ base: 'md', md: 'xl' }} maxW="3xl">
+          </h1>
+          <p className="rt" style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', maxWidth: '48rem' }}>
             Every harvest batch is verified in ISO-accredited laboratories. Download the original A4 certificates below to review
             moisture readings, HMF values, residue panels, and adulteration results.
-          </Text>
-        </VStack>
+          </p>
+        </div>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 12, md: 14 }}>
+        <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(2, 1fr)' }}>
           {labReports.map((report) => (
-            <VStack
+            <div
               key={report.title}
-              spacing={5}
-              align="stretch"
-              bg="white"
-              p={{ base: 4, md: 6 }}
-              mr={6}
-              borderRadius="2xl"
-              boxShadow="0 12px 30px rgba(0, 8, 25, 0.08)"
-              borderWidth="2px"
-              borderColor="#000819"
+              className="rp"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'stretch',
+                gap: '8px',
+                backgroundColor: 'white',
+                '--p': '16px',
+                '--p-md': '24px',
+                marginRight: '24px',
+                borderRadius: '1rem',
+                boxShadow: '0 12px 30px rgba(0, 8, 25, 0.08)',
+                border: '2px solid #000819',
+              }}
             >
-              <Box>
-                <Heading as="h2" size="md">
+              <div>
+                <h2 style={{ fontSize: '1rem', lineHeight: '1.5rem', fontWeight: 600, fontFamily: hanken }}>
                   {report.title}
-                </Heading>
-                <Text fontSize="sm" color="gray.600">
+                </h2>
+                <p style={{ fontSize: '0.875rem', lineHeight: '1.25rem', color: '#52525b' }}>
                   {report.subtitle}
-                </Text>
-              </Box>
+                </p>
+              </div>
 
-
-              <HStack spacing={3} flexWrap="wrap">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 {report.metrics.map((metric) => (
-                  <Badge key={metric.label} bg="#000819" color="#f5cb81" borderRadius="full" px={3} py={1}>
+                  <span
+                    key={metric.label}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      minHeight: '20px',
+                      backgroundColor: '#000819',
+                      color: '#f5cb81',
+                      borderRadius: '9999px',
+                      padding: '4px 12px',
+                      fontSize: '0.75rem',
+                      lineHeight: '1rem',
+                      fontWeight: 500,
+                    }}
+                  >
                     {metric.label}: {metric.value}
-                  </Badge>
+                  </span>
                 ))}
-              </HStack>
+              </div>
 
-              <Button
-                as={Link}
+              <a
                 href={report.downloadUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                bg="#000819"
-                color="white"
-                _hover={{ opacity: 0.85 }}
+                className="hover-fade"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '40px',
+                  padding: '0 16px',
+                  fontSize: '0.875rem',
+                  lineHeight: '1.25rem',
+                  fontWeight: 500,
+                  borderRadius: '4px',
+                  backgroundColor: '#000819',
+                  color: 'white',
+                }}
               >
                 View Full Certificate
-              </Button>
-            </VStack>
+              </a>
+            </div>
           ))}
-        </SimpleGrid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 }
 
