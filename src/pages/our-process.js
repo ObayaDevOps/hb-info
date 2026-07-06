@@ -59,7 +59,7 @@ function OurProcessPage() {
       <HeroSection
         title="Our Process"
         subtitle="From hive to jar with uncompromising care."
-        bgImage="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757586042/HB_Beekeeper_Field_yvm7dn.png"
+        bgImage="/images/our-process/beekeeper-field.jpg"
         overlay
         py={{ base: 16, md: 24 }}
       />
@@ -103,28 +103,28 @@ function OurProcessPage() {
               description:
                 'Combs are lifted at peak bloom to protect nectar character. We supply food-grade buckets and cold chains so the honey arrives untouched.',
               image:
-                'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757586042/HB_Single_Origin_vvfwce.png',
+                '/images/our-process/harvest-collection.jpg',
             },
             {
               title: 'Slow Extraction',
               description:
                 'Our Kampala hub uses gentle, centrifugal extraction and gravity settling. No heat, no blends—just raw honey retaining enzymes and pollen.',
               image:
-                'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757585872/HB_Pouring_Honey_fypwmz.png',
+                '/images/our-process/pouring-honey.jpg',
             },
             {
               title: 'Wax Craftsmanship',
               description:
                 'Beeswax caps are filtered through organic cotton, then poured into candles and balms that keep their natural golden sheen and aroma.',
               image:
-                'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757586042/HB_Beeswax_qonpwy.png',
+                '/images/our-process/beeswax.jpg',
             },
             {
               title: 'Quality Assurance',
               description:
                 'Each batch is tested for moisture, pollen diversity, and sensory notes. Only lots that meet our premium benchmarks are bottled.',
               image:
-                'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1757586042/HB_Infused_Honeys_zfy3c4.png',
+                '/images/our-process/infused-honeys.jpg',
             },
           ].map((item) => (
             <div key={item.title} style={col}>
