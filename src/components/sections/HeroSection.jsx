@@ -16,9 +16,13 @@ export default function HeroSection({
     transition: { duration: 0.6, ease: 'easeOut' },
   }
 
+  // py applies to the outer wrapper (as in the original); Chakra tokens are x4px
+  const tok = (v) => (typeof v === 'number' ? `${v * 4}px` : v)
+  const pyObj = typeof py === 'object' ? py : { base: py }
+
   return (
     <div
-      className="rminh"
+      className="rminh rpy"
       style={{
         position: 'relative',
         backgroundImage: bgImage
@@ -29,13 +33,15 @@ export default function HeroSection({
         backgroundRepeat: 'no-repeat',
         '--minh': '35vh',
         '--minh-md': '30vh',
+        '--py': tok(pyObj.base),
+        '--py-md': tok(pyObj.md),
         borderBottomLeftRadius: '2rem',
         borderBottomRightRadius: '2rem',
         overflow: 'hidden',
       }}
     >
       {overlay && <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.35)' }} />}
-      <Section py={py}>
+      <Section>
         {title && (
           <motion.div
             initial={fadeUp.initial}
