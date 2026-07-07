@@ -4,10 +4,25 @@
 
 ## Products
 
-- Single-origin gourmet raw honey (pine and coffee blossom, shea blossom, and seasonal harvests)
-- Infused raw honeys (orange peel, lemon, rosemary, vanilla bean)
-- Pure beeswax and scented candles, hand-poured in Kampala
-- Luxury gift sets and hampers — weddings, kwanjula/kukyala introduction ceremonies, corporate gifting
+Full range with prices, tasting notes, pairings, and FAQs: https://humble-beeing.com/products
+
+Raw single-origin honey (350g, UGX 30,000 — harvested and bottled by region, never blended):
+- [Yumbe Shea Blossom Honey](https://humble-beeing.com/products/yumbe-shea-blossom-honey) — best seller; buttery caramel monofloral honey from the West Nile shea belt
+- [Nebbi Multifloral Honey](https://humble-beeing.com/products/nebbi-multifloral-honey) — dark, complex wild-forage honey
+- [Arua Calliandra Blossom Honey](https://humble-beeing.com/products/arua-calliandra-honey) — light, delicate floral honey
+
+Infused raw honey (350g, UGX 35,000 — whole real ingredients aged in raw honey, no heat, no fermentation):
+- [Vanilla Bean](https://humble-beeing.com/products/vanilla-bean-infused-honey) — best seller; aged with whole locally sourced Ugandan vanilla pods
+- [Rosemary](https://humble-beeing.com/products/rosemary-infused-honey) — best seller; savoury-sweet, the cook's favourite
+- [Lemon Peel](https://humble-beeing.com/products/lemon-peel-infused-honey) — sun-dried lemon zest, classic sore-throat remedy
+- [Orange Peel](https://humble-beeing.com/products/orange-peel-infused-honey) — marmalade notes, baker's and bartender's jar
+- [Scotch Bonnet Chilli](https://humble-beeing.com/products/scotch-bonnet-chilli-infused-honey) — Uganda's hot honey, for pizza and fried chicken
+- [Garlic](https://humble-beeing.com/products/garlic-infused-honey) — allicin-rich kitchen remedy for cold season
+
+Candles, cosmetics and gifts:
+- [Natural Beeswax Candle — Lemongrass & Ginger](https://humble-beeing.com/products/beeswax-candle) (200g, ~60h burn, UGX 70,000), hand-poured in Kampala
+- [Natural Beeswax Lip Balm](https://humble-beeing.com/products/beeswax-lip-balm) (15g, UGX 12,000)
+- [Honey Taster Gift Set](https://humble-beeing.com/products/taster-gift-set) (4 × 30g, UGX 40,000) — weddings, kwanjula/kukyala introduction ceremonies, corporate gifting
 - Wholesale and bulk honey for chefs, hotels, retailers, and NGOs
 
 ## Where to buy
@@ -18,6 +33,7 @@
 ## Key pages
 
 - [Home](https://humble-beeing.com/): brand overview and products
+- [Products](https://humble-beeing.com/products): full range with prices, pairings, health benefits, and FAQs
 - [Our Story](https://humble-beeing.com/our-story): the family and mission behind the brand
 - [Our Process](https://humble-beeing.com/our-process): how the honey is harvested and cold-extracted
 - [Lab Tests](https://humble-beeing.com/lab-tests): published purity certificates for every batch

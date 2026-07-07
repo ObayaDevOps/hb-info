@@ -1,4 +1,5 @@
 import { STATIC_ROUTES, BLOG_SLUGS } from '@/lib/siteMeta'
+import { PRODUCT_SLUGS } from '@/lib/products'
 
 export async function getServerSideProps({ res, req }) {
   const scheme = req.headers['x-forwarded-proto'] || 'https'
@@ -7,6 +8,7 @@ export async function getServerSideProps({ res, req }) {
 
   const pages = [
     ...STATIC_ROUTES,
+    ...PRODUCT_SLUGS.map((s) => `/products/${s}`),
     ...BLOG_SLUGS.map((s) => `/blog/${s}`),
   ]
 

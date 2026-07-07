@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 
 // Full-screen slide-in menu, hand-rolled (no Chakra).
 // Trigger is a real <button> so it is keyboard-focusable (was a bare svg).
@@ -10,6 +10,17 @@ import { Menu, X } from 'lucide-react'
 export default function MobileDrawer({ navItems, triggerColor = '#000819', triggerSize = '2rem' }) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  // Labels of expandable sections (items with children) currently open
+  const [openSections, setOpenSections] = useState(() => new Set())
+
+  const toggleSection = (label) => {
+    setOpenSections((prev) => {
+      const next = new Set(prev)
+      if (next.has(label)) next.delete(label)
+      else next.add(label)
+      return next
+    })
+  }
 
   useEffect(() => setMounted(true), [])
 
@@ -96,30 +107,90 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            {primary.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target={item.isExternal ? '_blank' : undefined}
-                rel={item.isExternal ? 'noopener noreferrer' : undefined}
-                aria-current={item.active ? 'page' : undefined}
-                className="hover-op9"
-                style={{
-                  padding: '8px 12px',
-                  borderRadius: item.active ? '2rem' : '0.375rem',
-                  backgroundColor: item.active ? 'rgba(0, 8, 25, 0.08)' : 'transparent',
-                  border: item.active ? '2px solid #000819' : '2px solid transparent',
-                  color: '#000819',
-                  fontFamily: 'var(--font-hanken)',
-                  fontWeight: 600,
-                }}
-              >
-                <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  {item.icon ? <item.icon size={36} color="#000819" /> : null}
-                  <span style={bigLabelStyle}>{item.label}</span>
-                </span>
-              </a>
-            ))}
+            {primary.map((item) => {
+              const rowStyle = {
+                padding: '8px 12px',
+                borderRadius: item.active ? '2rem' : '0.375rem',
+                backgroundColor: item.active ? 'rgba(0, 8, 25, 0.08)' : 'transparent',
+                border: item.active ? '2px solid #000819' : '2px solid transparent',
+                color: '#000819',
+                fontFamily: 'var(--font-hanken)',
+                fontWeight: 600,
+              }
+
+              if (item.children?.length) {
+                const sectionOpen = openSections.has(item.label)
+                return (
+                  <div key={item.label}>
+                    {/* Whole row toggles the section — a label link here caused
+                        accidental navigation when users meant to expand */}
+                    <button
+                      type="button"
+                      onClick={() => toggleSection(item.label)}
+                      aria-label={`${sectionOpen ? 'Collapse' : 'Expand'} ${item.label} links`}
+                      aria-expanded={sectionOpen}
+                      className="hover-op9"
+                      style={{
+                        ...rowStyle,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                        textAlign: 'left',
+                      }}
+                    >
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                        {item.icon ? <item.icon size={36} color="#000819" /> : null}
+                        <span style={bigLabelStyle}>{item.label}</span>
+                      </span>
+                      <ChevronDown
+                        size={28}
+                        color="#000819"
+                        style={{ transform: sectionOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms ease' }}
+                      />
+                    </button>
+                    {sectionOpen && (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', paddingLeft: '62px' }}>
+                        {item.children.map((child) => (
+                          <a
+                            key={child.href}
+                            href={child.href}
+                            className="hover-op9"
+                            style={{
+                              padding: '6px 12px',
+                              color: '#000819',
+                              fontFamily: 'var(--font-hanken)',
+                              fontWeight: 600,
+                              fontSize: '1.25rem',
+                              lineHeight: '1.75rem',
+                            }}
+                          >
+                            {child.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.isExternal ? '_blank' : undefined}
+                  rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                  aria-current={item.active ? 'page' : undefined}
+                  className="hover-op9"
+                  style={rowStyle}
+                >
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                    {item.icon ? <item.icon size={36} color="#000819" /> : null}
+                    <span style={bigLabelStyle}>{item.label}</span>
+                  </span>
+                </a>
+              )
+            })}
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingBottom: '16px' }}>

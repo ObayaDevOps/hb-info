@@ -52,6 +52,7 @@ export function breadcrumbJsonLd(items) {
 
 export const STATIC_ROUTES = [
   '/',
+  '/products',
   '/blog',
   '/our-story',
   '/our-process',
