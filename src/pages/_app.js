@@ -8,6 +8,7 @@ function App({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => <PageLayout>{page}</PageLayout>)
   return (
     <div
+      id="site-root"
       className={`site ${hankenGrotesk.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} ${unbounded.variable}`}
     >
       {getLayout(<Component {...pageProps} />)}

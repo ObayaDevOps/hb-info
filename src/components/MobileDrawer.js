@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Menu, X } from 'lucide-react'
 
 // Full-screen slide-in menu, hand-rolled (no Chakra).
 // Trigger is a real <button> so it is keyboard-focusable (was a bare svg).
+// The overlay is portaled to the app root: the nav pill's backdrop-filter
+// makes it the containing block for fixed descendants, which would clip a
+// fixed overlay rendered in place to the pill's size.
 export default function MobileDrawer({ navItems, triggerColor = '#000819', triggerSize = '2rem' }) {
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
 
   // Lock body scroll while open + close on Escape
   useEffect(() => {
@@ -59,6 +66,7 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
         <Menu color={triggerColor} size={triggerSize} />
       </button>
 
+      {mounted ? createPortal(
       <div
         aria-hidden={!open}
         style={{
@@ -149,7 +157,9 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
         >
           <X color="#000819" size="2.75rem" />
         </button>
-      </div>
+      </div>,
+      document.getElementById('site-root') || document.body,
+      ) : null}
     </>
   )
 }
