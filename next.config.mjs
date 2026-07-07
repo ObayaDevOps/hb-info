@@ -27,6 +27,12 @@ const nextConfig = {
         destination: 'https://shop.humble-beeing.com',
         permanent: true,
       },
+      // Legacy contact page -> main contact page
+      {
+        source: '/contact',
+        destination: '/contact-and-connect',
+        permanent: true,
+      },
     ]
   },
 };

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
+import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function SpecialistHoneyChefsKampala() {
@@ -20,9 +21,11 @@ export default function SpecialistHoneyChefsKampala() {
     image: 'https://cdn.sanity.io/images/wf5e366r/production/ddf580905739f82cb20bef3648f54eaaa7ef3056-198x180.png', mainEntityOfPage: { '@type': 'WebPage' },
   }
 
+  const crumbs = breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: title, path: '/blog/specialist-honey-for-chefs-in-kampala-pairings-and-uses' }])
+
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
-      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
+      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd, crumbs]} />
       <HeroSection title={title} subtitle="Field-sourced nectar with chef-approved consistency" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/e19ff4b7f6b8a5b6342a833ef7ff61efa2efc905-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>

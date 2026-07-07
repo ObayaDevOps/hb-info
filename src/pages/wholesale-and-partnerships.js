@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import HeroSection from '@/components/sections/HeroSection';
 import PageLayout from '@/components/layouts/PageLayout';
 import StyledCard from '@/components/StyledCard';
@@ -28,10 +28,10 @@ const inputStyle = {
 export default function WholesalePartnershipsPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
-      <Head>
-        <title>Wholesale & Partnerships | Humble Beeing</title>
-        <meta name="description" content="Bulk orders for chefs and retailers, corporate gifting, and NGO/donor partnerships." />
-      </Head>
+      <SEO
+        title="Wholesale & Bulk Honey Supplier in Kampala — Corporate Gifts"
+        description="Bulk raw honey for chefs, hotels, retailers, and NGOs, plus corporate gift hampers and branded gift sets made in Uganda. Delivery across Kampala."
+      />
       {/* Hero */}
       <HeroSection
         title="Wholesale & Partnerships"
@@ -64,7 +64,7 @@ export default function WholesalePartnershipsPage() {
         {/* Intro copy */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '32px' }}>
           <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
-            We partner with chefs, retailers, and organizations to deliver luxury honey and beeswax products with traceability and impact. From custom gift boxes to bulk formats, we tailor solutions to your needs.
+            As a bulk honey supplier in Kampala, we partner with chefs, hotels, retailers, and NGOs to deliver luxury raw honey and beeswax products with traceability and impact. From corporate gift hampers and branded gift sets to bulk formats, we tailor solutions to your needs.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function WholesalePartnershipsPage() {
         <div style={{ paddingBottom: '32px' }}>
           <img
             src="https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png"
-            alt="Humble Beeing tasting and wholesale presentation"
+            alt="Wholesale honey tasting presentation for Kampala chefs and retailers by Humble Beeing"
             className="rh"
             style={{ borderRadius: '1.5rem', objectFit: 'cover', width: '100%', '--h': '280px', '--h-md': '420px' }}
           />

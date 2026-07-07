@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import HeroSection from '@/components/sections/HeroSection';
 import PageLayout from '@/components/layouts/PageLayout';
 
@@ -30,13 +30,10 @@ const labReports = [
 export default function LabTestsPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
-      <Head>
-        <title>Lab Test Certificates | Humble Beeing</title>
-        <meta
-          name="description"
-          content="Independent lab certificates for Humble Beeing honey batches covering moisture, HMF, residues, and adulteration checks."
-        />
-      </Head>
+      <SEO
+        title="Lab-Tested Pure Honey — Batch Quality Certificates"
+        description="Independent lab certificates proving our honey is 100% pure raw Ugandan honey: moisture, HMF, residue, and adulteration checks for every batch."
+      />
 
       <HeroSection
         title="Lab Test Certificates"

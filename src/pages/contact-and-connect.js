@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import { useState } from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -84,10 +84,10 @@ export default function ContactConnectPage() {
 
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
-      <Head>
-        <title>Contact & Connect | Humble Beeing</title>
-        <meta name="description" content="Contact form, social media links, and newsletter signup." />
-      </Head>
+      <SEO
+        title="Contact Us — Honey Delivery in Kampala"
+        description="Get in touch with Humble Beeing to order pure raw Ugandan honey, beeswax candles, and luxury gift hampers with Kampala delivery, or ask about wholesale."
+      />
 
       {/* Hero */}
       <HeroSection
@@ -126,7 +126,7 @@ export default function ContactConnectPage() {
           <div style={{ paddingBottom: '16px', width: '100%' }}>
             <img
               src="https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg"
-              alt="Humble Beeing contact and tasting"
+              alt="Raw Ugandan honey tasting with the Humble Beeing team in Kampala"
               className="rh"
               style={{ borderRadius: '1.5rem', objectFit: 'cover', width: '100%', '--h': '260px', '--h-md': '380px' }}
             />

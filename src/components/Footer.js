@@ -116,6 +116,16 @@ const Footer = () => {
               Building a sweeter, more sustainable future.
             </motion.p>
 
+            <motion.p
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.15 }}
+              style={{ fontSize: '0.875rem', lineHeight: '1.375rem', maxWidth: '28rem', opacity: 0.9 }}
+            >
+              Humble Beeing is a Kampala-based Ugandan producer of pure raw honey, infused honeys,
+              hand-poured beeswax candles, and luxury gift hampers — lab-tested, traceable, and
+              crafted with smallholder beekeepers.
+            </motion.p>
+
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
               <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} style={{ fontSize: '0.875rem', fontWeight: 500 }}>
                 2nd Floor, Tools and Machinery Building, Kabalagala, Kampala

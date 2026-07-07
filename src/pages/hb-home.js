@@ -25,10 +25,10 @@ const trustedLogos = [
 ];
 
 const carousel = [
-  { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
-  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
-  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
-  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
+  { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', alt: 'Jar of single-origin raw Ugandan honey with pine and coffee blossom notes', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
+  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', alt: 'Creamy infused raw honey with shea blossom notes, pure honey from Uganda', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
+  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', alt: 'Hand-poured pure beeswax candles made in Kampala, Uganda', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
+  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', alt: 'Luxury Ugandan gift set with honey jars and beeswax candles in recycled paper packaging', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
 ];
 
 const fadeUp = {
@@ -171,14 +171,24 @@ export default function HBHome() {
   return (
     <div style={{ backgroundColor: '#f5cb81', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Gourmet Raw Honey, Beeswax Candles, and Sustainable Impact - Pure Ugandan Honey"
-        description="Gourmet Ugandan honey and beeswax candles. Shop now and support traceable, regenerative impact with Kampala delivery and wholesale. Pure Ugandan Honey"
+        title="Pure Raw Honey from Uganda — Luxury Gifts & Beeswax Candles"
+        description="Humble Beeing crafts pure raw Ugandan honey, infused honeys, beeswax candles, and luxury gift hampers in Kampala — lab-tested, traceable, delivered citywide."
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'Humble Beeing',
-          url: undefined,
-          logo: 'https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png',
+          '@type': 'ItemList',
+          name: 'Humble Beeing Products',
+          itemListElement: carousel.map((c, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            item: {
+              '@type': 'Product',
+              name: c.name,
+              description: c.description,
+              image: c.image,
+              url: c.href,
+              brand: { '@type': 'Brand', name: 'Humble Beeing' },
+            },
+          })),
         }}
       />
 
@@ -241,7 +251,7 @@ export default function HBHome() {
             transition={{ ...fadeUp.transition, delay: 0.2 }}
             style={{ '--maxw': '28rem', '--maxw-md': '42rem', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
           >
-            Gourmet Raw Honey From Uganda's Pristine Biodiverse Landscapes.
+            Pure, Gourmet Raw Honey From Uganda's Pristine Biodiverse Landscapes.
           </motion.p>
           <motion.p
             className="rt rmaxw"
@@ -318,7 +328,7 @@ export default function HBHome() {
                     >
                       <img
                         src={c.image}
-                        alt={c.name}
+                        alt={c.alt || c.name}
                         className="rw rh"
                         style={{ '--w': '200px', '--h': '200px', '--w-md': '100%', '--h-md': '100%', alignSelf: 'center', borderRadius: '0.75rem', objectFit: 'cover' }}
                       />
@@ -393,7 +403,7 @@ export default function HBHome() {
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '32px' }}>
                       <img
                         src={c.image}
-                        alt={c.name}
+                        alt={c.alt || c.name}
                         className="rw rh"
                         style={{ '--w': '300px', '--h': '300px', '--w-md': '350px', '--h-md': '350px', alignSelf: 'center', borderRadius: '0.75rem', objectFit: 'cover' }}
                       />
@@ -926,7 +936,7 @@ export default function HBHome() {
                   <a href="https://tunadobees.org/" target="_blank" rel="noopener noreferrer" className="hover-fade">
                     <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/5d7e7c96941067625b03a2237d453997ee15ddde-200x241.png"
-                      alt="TUNADO Membership"
+                      alt="TUNADO membership badge — The Uganda National Apiculture Development Organisation"
                       className="rmaxw"
                       style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />
@@ -941,7 +951,7 @@ export default function HBHome() {
                   >
                     <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/8d19ad6abb9cf3d307255c19a5420cc38f446d75-226x278.png"
-                      alt="Uganda National Bureau of Standards"
+                      alt="Uganda National Bureau of Standards (UNBS) certification mark for honey quality"
                       className="rmaxw"
                       style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />

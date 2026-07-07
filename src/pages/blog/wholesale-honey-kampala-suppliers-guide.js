@@ -2,6 +2,7 @@ import Link from 'next/link'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
+import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function WholesaleHoneyKampalaGuide() {
@@ -19,9 +20,10 @@ export default function WholesaleHoneyKampalaGuide() {
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/b1b8152aeed20473991a459a0f062eb50aa4d810-125x125.png', mainEntityOfPage: { '@type': 'WebPage' },
   }
+  const crumbs = breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: title, path: '/blog/wholesale-honey-kampala-suppliers-guide' }])
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
-      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
+      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd, crumbs]} />
       <HeroSection title={title} subtitle="MOQ, logistics, documentation, and formats" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import HeroSection from '@/components/sections/HeroSection';
 import PageLayout from '@/components/layouts/PageLayout';
 
@@ -54,10 +54,10 @@ const h2Style = {
 export default function AboutPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
-      <Head>
-        <title>Our Story | Humble Beeing</title>
-        <meta name="description" content="Our story, mission & vision, team, and milestones at Humble Beeing." />
-      </Head>
+      <SEO
+        title="Our Story — A Ugandan Family Honey Brand in Kampala"
+        description="How Humble Beeing grew into one of the best honey brands in Uganda: a Kampala family business crafting pure raw honey, beeswax candles, and luxury gift sets."
+      />
       {/* Hero */}
       <HeroSection
         title="Our Story"
@@ -67,7 +67,7 @@ export default function AboutPage() {
         py={{ base: 16, md: 24 }}
       >
         <p style={{ marginTop: '16px', maxWidth: '42rem', color: 'white', fontSize: '1.125rem', lineHeight: '1.75rem' }}>
-          From hive to table, we pair elevated taste with measurable impact across communities and ecosystems.
+          Humble Beeing is a family-owned Ugandan honey brand based in Kampala. From hive to table, we pair elevated taste with measurable impact across communities and ecosystems.
         </p>
       </HeroSection>
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Head from "next/head";
+import SEO from '@/components/SEO';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import client from '../../sanity/lib/client';
 import { PortableText } from '@portabletext/react';
@@ -223,12 +223,7 @@ export default function TermsPage({ pageData }) {
         }}
       />
 
-      <Head>
-        <title>{title} | Ashton & Carrington</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png" />
-      </Head>
+      <SEO title={title} description={metaDescription} />
 
       {/* Navbar provided by PageLayout */}
 

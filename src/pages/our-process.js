@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import SEO from '@/components/SEO'
 import { CircleCheck } from 'lucide-react'
 
 import HeroSection from '@/components/sections/HeroSection'
@@ -48,13 +48,10 @@ const col = {
 function OurProcessPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
-      <Head>
-        <title>Our Process | Humble Beeing</title>
-        <meta
-          name="description"
-          content="See how Humble Beeing sources raw honey and wax directly from smallholder farmers, preserves premium quality, and delivers natural health benefits."
-        />
-      </Head>
+      <SEO
+        title="How We Harvest Pure Raw Honey in Uganda — Our Process"
+        description="From hive to jar: how Humble Beeing harvests raw, unprocessed Ugandan honey and beeswax with smallholder farmers — cold-extracted, lab-tested, and traceable."
+      />
 
       <HeroSection
         title="Our Process"
@@ -104,6 +101,7 @@ function OurProcessPage() {
                 'Combs are lifted at peak bloom to protect nectar character. We supply food-grade buckets and cold chains so the honey arrives untouched.',
               image:
                 '/images/our-process/harvest-collection.jpg',
+              alt: 'Beekeeper harvesting raw honeycomb from hives in Uganda',
             },
             {
               title: 'Slow Extraction',
@@ -111,6 +109,7 @@ function OurProcessPage() {
                 'Our Kampala hub uses gentle, centrifugal extraction and gravity settling. No heat, no blends—just raw honey retaining enzymes and pollen.',
               image:
                 '/images/our-process/pouring-honey.jpg',
+              alt: 'Pure raw Ugandan honey being poured after gentle cold extraction',
             },
             {
               title: 'Wax Craftsmanship',
@@ -118,6 +117,7 @@ function OurProcessPage() {
                 'Beeswax caps are filtered through organic cotton, then poured into candles and balms that keep their natural golden sheen and aroma.',
               image:
                 '/images/our-process/beeswax.jpg',
+              alt: 'Golden natural beeswax filtered for hand-poured candles in Kampala',
             },
             {
               title: 'Quality Assurance',
@@ -125,12 +125,13 @@ function OurProcessPage() {
                 'Each batch is tested for moisture, pollen diversity, and sensory notes. Only lots that meet our premium benchmarks are bottled.',
               image:
                 '/images/our-process/infused-honeys.jpg',
+              alt: 'Jars of infused raw honey awaiting lab purity testing',
             },
           ].map((item) => (
             <div key={item.title} style={col}>
               <img
                 src={item.image}
-                alt={item.title}
+                alt={item.alt || item.title}
                 className="rh"
                 style={{
                   borderRadius: '1.5rem',

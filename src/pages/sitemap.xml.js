@@ -1,28 +1,4 @@
-const staticRoutes = [
-  '/',
-  '/blog',
-  '/impact-and-sustainability',
-  '/our-story',
-  '/contact-and-connect',
-  '/contact',
-  '/terms-and-conditions',
-  '/wholesale-and-partnerships',
-]
-
-const blogSlugs = [
-  'best-honey-in-kampala-buyers-guide-2025',
-  'where-to-buy-honey-in-kampala-stockists-and-delivery',
-  'raw-honey-uganda-benefits-and-buying-guide',
-  'how-to-store-honey-in-kampala-heat-and-humidity-tips',
-  'premium-honey-uganda-what-makes-it-worth-it',
-  'how-we-test-honey-purity-in-uganda-lab-and-field',
-  'organic-honey-in-uganda-what-it-really-means',
-  'specialist-honey-for-chefs-in-kampala-pairings-and-uses',
-  'wholesale-honey-kampala-suppliers-guide',
-  'ugandan-gift-ideas-honey-and-candle-gift-sets',
-  'beeswax-candles-uganda-clean-burn-guide',
-  'scented-candles-uganda-fragrance-guide-and-room-pairings',
-]
+import { STATIC_ROUTES, BLOG_SLUGS } from '@/lib/siteMeta'
 
 export async function getServerSideProps({ res, req }) {
   const scheme = req.headers['x-forwarded-proto'] || 'https'
@@ -30,8 +6,8 @@ export async function getServerSideProps({ res, req }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || `${scheme}://${host}`
 
   const pages = [
-    ...staticRoutes,
-    ...blogSlugs.map((s) => `/blog/${s}`),
+    ...STATIC_ROUTES,
+    ...BLOG_SLUGS.map((s) => `/blog/${s}`),
   ]
 
   const now = new Date().toISOString()

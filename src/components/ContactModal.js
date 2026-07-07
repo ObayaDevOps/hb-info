@@ -101,7 +101,7 @@ const ContactModal = ({ buttonText = "Get in Touch" }) => {
               >
                 Want to reach out?
                 Enter your details below and provide a
-                message to Ashton & Carrington
+                message to Humble Beeing
                 and we'll respond as soon as we can.
               </p>
 

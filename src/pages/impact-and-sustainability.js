@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import HeroSection from '@/components/sections/HeroSection';
 import Section from '@/components/sections/Section';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -23,10 +23,10 @@ const pillarCard = {
 export default function ImpactPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
-      <Head>
-        <title>Impact & Sustainability | Humble Beeing</title>
-        <meta name="description" content="Poverty alleviation, biodiversity, traceability, gender inclusion, and UN SDG alignment." />
-      </Head>
+      <SEO
+        title="Impact & Sustainability — Ethical Beekeeping in Uganda"
+        description="Regenerative, ethical beekeeping in Uganda: poverty alleviation, biodiversity, gender inclusion, and full traceability behind every jar of pure Ugandan honey."
+      />
       {/* Hero */}
       <HeroSection
         title="Impact & Sustainability"
@@ -67,7 +67,7 @@ export default function ImpactPage() {
           <p style={{ color: '#000819' }}>Visual summary of aligned SDGs and outcomes (infographic placeholder).</p>
           <img
             src="/globe.svg"
-            alt="SDG Infographic"
+            alt="UN Sustainable Development Goals supported by Humble Beeing's ethical beekeeping in Uganda"
             className="rw rh"
             style={{ '--w': '200px', '--h': '200px', '--w-md': '280px', '--h-md': '280px', objectFit: 'contain' }}
           />

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
+import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function RawHoneyUgandaGuide() {
@@ -33,9 +34,11 @@ export default function RawHoneyUgandaGuide() {
     mainEntityOfPage: { '@type': 'WebPage' },
   }
 
+  const crumbs = breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: title, path: '/blog/raw-honey-uganda-benefits-and-buying-guide' }])
+
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
-      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
+      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd, crumbs]} />
       <HeroSection
         title={title}
         subtitle="Field-tested advice from Hoima apiaries to Kampala kitchens"

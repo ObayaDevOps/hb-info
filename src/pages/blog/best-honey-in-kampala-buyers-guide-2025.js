@@ -2,6 +2,7 @@ import Link from 'next/link'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import SEO from '@/components/SEO'
+import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function BestHoneyKampala() {
@@ -49,9 +50,11 @@ export default function BestHoneyKampala() {
     mainEntityOfPage: { '@type': 'WebPage' },
   }
 
+  const crumbs = breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: title, path: '/blog/best-honey-in-kampala-buyers-guide-2025' }])
+
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
-      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd]} />
+      <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd, crumbs]} />
 
       <HeroSection
         title={title}
