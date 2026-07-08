@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 
 export default function OrganicHoneyUganda() {
   const title = 'Organic Honey in Uganda: What It Really Means'
-  const description = 'Understand “organic” for honey in Uganda — certifications, practical limitations, and responsible beekeeping practices you can trust.'
+  const description = 'Understand “organic” for honey in Uganda: certifications, practical limitations, and responsible beekeeping practices you can trust.'
   const faqs = [
     { q: 'Is Ugandan honey certified organic?', a: 'Certification is rare. We focus on residue testing, remote forage zones, and careful handling to achieve organic‑level outcomes.' },
     { q: 'Can you label honey organic without certification?', a: 'We avoid using the term as a claim unless certified. Instead, we document practices and lab results.' },

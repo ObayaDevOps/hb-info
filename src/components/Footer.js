@@ -122,7 +122,7 @@ const Footer = () => {
               style={{ fontSize: '0.875rem', lineHeight: '1.375rem', maxWidth: '28rem', opacity: 0.9 }}
             >
               Humble Beeing is a Kampala-based Ugandan producer of pure raw honey, infused honeys,
-              hand-poured beeswax candles, and luxury gift hampers — lab-tested, traceable, and
+              hand-poured beeswax candles, and luxury gift hampers: lab-tested, traceable, and
               crafted with smallholder beekeepers.
             </motion.p>
 

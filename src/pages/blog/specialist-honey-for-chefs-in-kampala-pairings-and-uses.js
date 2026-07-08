@@ -11,7 +11,7 @@ export default function SpecialistHoneyChefsKampala() {
   const faqs = [
     { q: 'Can I get consistent flavour across batches?', a: 'Yes. We maintain single-origin lots with detailed batch cards so you can replicate dishes season after season.' },
     { q: 'Do you offer bulk formats?', a: 'Our food-service line comes in 1.5 kg pouches and 12 kg drums, with refrigerated delivery for quality assurance.' },
-    { q: 'Can we co-develop menu items?', a: 'We run R&D tastings with kitchens, mixologists, and pastry teams—reach out to book a session at our Bugolobi lab.' },
+    { q: 'Can we co-develop menu items?', a: 'We run R&D tastings with kitchens, mixologists, and pastry teams: reach out to book a session at our Bugolobi lab.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
@@ -30,14 +30,14 @@ export default function SpecialistHoneyChefsKampala() {
       <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Honey flights built with chefs</h2>
-          <p>Our culinary team schedules quarterly cuppings with Kampala’s hotels and independent restaurants. We taste blind, document flavour arcs, and map each honey to menu applications. The result is a curated library—from resinous pine blossom for blue cheese pairings to buttery shea blossom for viennoiserie—that you can plug into your mise en place without guesswork.</p>
+          <p>Our culinary team schedules quarterly cuppings with Kampala’s hotels and independent restaurants. We taste blind, document flavour arcs, and map each honey to menu applications. The result is a curated library (from resinous pine blossom for blue cheese pairings to buttery shea blossom for viennoiserie) that you can plug into your mise en place without guesswork.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Pairings that earn their keep</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
             <li style={{ marginBottom: '10px' }}><b>Pine blossom:</b> Resinous, savoury, brilliant for aged cheddar, blue cheese, or lacquered pork belly.</li>
             <li style={{ marginBottom: '10px' }}><b>Shea blossom:</b> Silky, floral, perfect for mille-feuille glazes, gelato swirls, and upscale brunch service.</li>
             <li style={{ marginBottom: '10px' }}><b>Coffee blossom:</b> Cocoa nib and citrus notes that elevate espresso martinis, cold brew, and tiramisu cream.</li>
-            <li style={{ marginBottom: '10px' }}><b>Eucalyptus wildflower:</b> Herbaceous with a cooling finish—stir into vinaigrettes or brush on grilled fish.</li>
+            <li style={{ marginBottom: '10px' }}><b>Eucalyptus wildflower:</b> Herbaceous with a cooling finish: stir into vinaigrettes or brush on grilled fish.</li>
           </ul>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Formats built for service</h2>

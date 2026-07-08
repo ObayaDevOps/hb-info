@@ -74,7 +74,7 @@ export default function BestHoneyKampala() {
             <li style={{ marginBottom: '8px' }}><b>Where was it harvested?</b> Names like Hoima, Kibaale, or Mt. Elgon indicate real apiaries, not marketing poetry.</li>
             <li style={{ marginBottom: '8px' }}><b>Is there lab proof?</b> Moisture should sit below 18.5%, HMF under 40 mg/kg, and adulteration markers should read “not detected.”</li>
             <li style={{ marginBottom: '8px' }}><b>How was it handled?</b> Cold filtration and no heat above 40°C keeps enzymes intact and flavours vibrant.</li>
-            <li style={{ marginBottom: '8px' }}><b>What does it taste like?</b> Expect distinct botanical notes—coffee blossom, eucalyptus, or wildflower. A flat, sugary finish is a red flag.</li>
+            <li style={{ marginBottom: '8px' }}><b>What does it taste like?</b> Expect distinct botanical notes: coffee blossom, eucalyptus, or wildflower. A flat, sugary finish is a red flag.</li>
             <li style={{ marginBottom: '8px' }}><b>Who stands behind it?</b> Look for companies willing to share beekeeper names, batch logs, and delivery routes.</li>
           </ul>
 

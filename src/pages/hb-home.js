@@ -171,8 +171,8 @@ export default function HBHome() {
   return (
     <div style={{ backgroundColor: '#f5cb81', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Pure Raw Honey from Uganda — Luxury Gifts & Beeswax Candles"
-        description="Humble Beeing crafts pure raw Ugandan honey, infused honeys, beeswax candles, and luxury gift hampers in Kampala — lab-tested, traceable, delivered citywide."
+        title="Pure Raw Honey from Uganda: Luxury Gifts & Beeswax Candles"
+        description="Humble Beeing crafts pure raw Ugandan honey, infused honeys, beeswax candles, and luxury gift hampers in Kampala: lab-tested, traceable, delivered citywide."
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
@@ -893,7 +893,7 @@ export default function HBHome() {
                 transition={{ ...fadeUp.transition, delay: 0.3 }}
                 style={{ maxWidth: '100%', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', color: '#f4f4f5', fontFamily: hanken }}
               >
-                Each harvest is tested in independent food laboratories for moisture, acidity, antibiotic residue, and HMF levels—and we consistently exceed European export benchmarks.
+                Each harvest is tested in independent food laboratories for moisture, acidity, antibiotic residue, and HMF levels, and we consistently exceed European export benchmarks.
               </motion.p>
               <motion.p
                 className="rt"
@@ -936,7 +936,7 @@ export default function HBHome() {
                   <a href="https://tunadobees.org/" target="_blank" rel="noopener noreferrer" className="hover-fade">
                     <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/5d7e7c96941067625b03a2237d453997ee15ddde-200x241.png"
-                      alt="TUNADO membership badge — The Uganda National Apiculture Development Organisation"
+                      alt="TUNADO membership badge: The Uganda National Apiculture Development Organisation"
                       className="rmaxw"
                       style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />

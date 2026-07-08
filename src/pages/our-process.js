@@ -49,8 +49,8 @@ function OurProcessPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
-        title="How We Harvest Pure Raw Honey in Uganda — Our Process"
-        description="From hive to jar: how Humble Beeing harvests raw, unprocessed Ugandan honey and beeswax with smallholder farmers — cold-extracted, lab-tested, and traceable."
+        title="How We Harvest Pure Raw Honey in Uganda: Our Process"
+        description="From hive to jar: how Humble Beeing harvests raw, unprocessed Ugandan honey and beeswax with smallholder farmers: cold-extracted, lab-tested, and traceable."
       />
 
       <HeroSection
@@ -106,7 +106,7 @@ function OurProcessPage() {
             {
               title: 'Slow Extraction',
               description:
-                'Our Kampala hub uses gentle, centrifugal extraction and gravity settling. No heat, no blends—just raw honey retaining enzymes and pollen.',
+                'Our Kampala hub uses gentle, centrifugal extraction and gravity settling. No heat, no blends: just raw honey retaining enzymes and pollen.',
               image:
                 '/images/our-process/pouring-honey.jpg',
               alt: 'Pure raw Ugandan honey being poured after gentle cold extraction',

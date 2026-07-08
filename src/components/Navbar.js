@@ -274,7 +274,7 @@ const ABOUT_LINKS = [
     href: '/our-story',
     image: '/images/products/founder-obaya-apiary.jpg',
     imageAlt: 'Founder Obaya inspecting a honeycomb frame at Lwamata apiary',
-    blurb: 'Three generations of beekeeping in Yumbe, West Nile — and a mission to give Ugandan honey the market it deserves.',
+    blurb: 'Three generations of beekeeping in Yumbe, West Nile, and a mission to give Ugandan honey the market it deserves.',
   },
   {
     label: 'Our Process',
@@ -288,7 +288,7 @@ const ABOUT_LINKS = [
     href: '/impact-and-sustainability',
     image: 'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg',
     imageAlt: 'Smallholder beekeeping community supported by Humble Beeing in West Nile',
-    blurb: 'Farmers paid 30% above market rates, regenerative apiaries, and trade — not aid — across West Nile.',
+    blurb: 'Farmers paid 30% above market rates, regenerative apiaries, and trade (not aid) across West Nile.',
   },
 ]
 

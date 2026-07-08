@@ -6,7 +6,7 @@ const hanken = 'var(--font-hanken)'
 
 const labReports = [
   {
-    title: 'Lab Certificate — Moisture & HMF',
+    title: 'Lab Certificate: Moisture & HMF',
     subtitle: 'Batch HB-2025-01 · SGS Kampala · June 2025',
     downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf',
     metrics: [
@@ -16,7 +16,7 @@ const labReports = [
     ],
   },
   {
-    title: 'Lab Certificate — Residue & Adulteration',
+    title: 'Lab Certificate: Residue & Adulteration',
     subtitle: 'Batch HB-2025-01 · ISO 17025 Partner Lab · June 2025',
     downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf',
     metrics: [
@@ -31,7 +31,7 @@ export default function LabTestsPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Lab-Tested Pure Honey — Batch Quality Certificates"
+        title="Lab-Tested Pure Honey: Batch Quality Certificates"
         description="Independent lab certificates proving our honey is 100% pure raw Ugandan honey: moisture, HMF, residue, and adulteration checks for every batch."
       />
 

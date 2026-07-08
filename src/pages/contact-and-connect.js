@@ -85,14 +85,14 @@ export default function ContactConnectPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Contact Us — Honey Delivery in Kampala"
+        title="Contact Us: Honey Delivery in Kampala"
         description="Get in touch with Humble Beeing to order pure raw Ugandan honey, beeswax candles, and luxury gift hampers with Kampala delivery, or ask about wholesale."
       />
 
       {/* Hero */}
       <HeroSection
         title="Contact & Connect"
-        subtitle="We’d love to hear from you — drop us a note."
+        subtitle="We’d love to hear from you: drop us a note."
         bgImage={'https://cdn.sanity.io/images/wf5e366r/production/536a0d144a6196619310c04ede39ee01395494cf-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}

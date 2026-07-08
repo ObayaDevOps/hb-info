@@ -24,7 +24,7 @@ export default function ImpactPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
-        title="Impact & Sustainability — Ethical Beekeeping in Uganda"
+        title="Impact & Sustainability: Ethical Beekeeping in Uganda"
         description="Regenerative, ethical beekeeping in Uganda: poverty alleviation, biodiversity, gender inclusion, and full traceability behind every jar of pure Ugandan honey."
       />
       {/* Hero */}

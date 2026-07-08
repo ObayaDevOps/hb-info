@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 
 export default function WholesaleHoneyKampalaGuide() {
   const title = 'Where Can Kampala Businesses Source Reliable Wholesale Honey?'
-  const description = 'Procurement insights from Humble Beeing—covering MOQs, pricing tiers, logistics, and documentation for restaurants, hotels, and retailers.'
+  const description = 'Procurement insights from Humble Beeing, covering MOQs, pricing tiers, logistics, and documentation for restaurants, hotels, and retailers.'
   const faqs = [
     { q: 'What are your minimum order quantities?', a: 'Starting at 24 x 500 g jars or 12 kg drums; subscription clients can customise monthly draws.' },
     { q: 'Do you provide full lab documentation?', a: 'Every shipment includes moisture, adulteration, residue, and pollen reports, with original certificates available on request.' },

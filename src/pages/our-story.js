@@ -55,7 +55,7 @@ export default function AboutPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
-        title="Our Story — A Ugandan Family Honey Brand in Kampala"
+        title="Our Story: A Ugandan Family Honey Brand in Kampala"
         description="How Humble Beeing grew into one of the best honey brands in Uganda: a Kampala family business crafting pure raw honey, beeswax candles, and luxury gift sets."
       />
       {/* Hero */}

@@ -141,19 +141,19 @@ export const BLOG_POSTS = [
     slug: 'kwanjula-and-kukyala-gift-guide-honey-in-introduction-ceremony-baskets',
     title: 'Kwanjula & Kukyala Gift Guide: Why Honey Belongs in Every Introduction Ceremony Basket',
     category: 'gifts',
-    snippet: 'Plan kwanjula and kukyala gifts with confidence — what to carry, how to present it, and why pure Ugandan honey has always belonged in the basket.',
+    snippet: 'Plan kwanjula and kukyala gifts with confidence: what to carry, how to present it, and why pure Ugandan honey has always belonged in the basket.',
   },
   {
     slug: 'single-origin-ugandan-honey-west-nile-shea-and-coffee-blossom',
     title: 'Single-Origin Ugandan Honey: West Nile, Shea Blossom & Coffee Blossom Explained',
     category: 'beekeeping',
-    snippet: 'Taste your way across Uganda’s honey regions — West Nile shea blossom, coffee blossom, and wildflower harvests — and learn what single-origin really means.',
+    snippet: 'Taste your way across Uganda’s honey regions (West Nile shea blossom, coffee blossom, and wildflower harvests) and learn what single-origin really means.',
   },
   {
     slug: 'real-vs-fake-honey-uganda-how-to-know-yours-is-pure',
     title: 'Real vs Fake Honey in Uganda: 5 Ways to Know Your Honey Is Pure',
     category: 'sustainability',
-    snippet: 'Adulterated honey is common in Uganda. Learn five practical checks — from crystallization myths to lab tests — to be sure your honey is pure and raw.',
+    snippet: 'Adulterated honey is common in Uganda. Learn five practical checks, from crystallization myths to lab tests, to be sure your honey is pure and raw.',
   },
 ]
 

@@ -11,7 +11,7 @@ export default function RawHoneyUgandaGuide() {
   const faqs = [
     { q: 'How do you confirm honey is genuinely raw?', a: 'Every harvest is cold-filtered, moisture-checked on a refractometer, and spot-tested in ISO-accredited labs to confirm there is no heat damage or adulteration.' },
     { q: 'Why does my raw honey crystallise so quickly?', a: 'Crystallisation is a natural signal that pollen and glucose are intact; sit the jar in 40–45°C water and stir, never microwave.' },
-    { q: 'Is raw honey safe for children?', a: 'Raw honey is a delight for adults and kids over twelve months. Infants should wait because of botulism risk—no shortcuts there.' },
+    { q: 'Is raw honey safe for children?', a: 'Raw honey is a delight for adults and kids over twelve months. Infants should wait because of botulism risk: no shortcuts there.' },
     { q: 'Where can I buy verified raw honey in Kampala?', a: 'Order directly from Humble Beeing for traceable batches or visit our vetted stockists in Bugolobi, Kololo, Muyenga, and Kisementi.' },
   ]
 
@@ -49,7 +49,7 @@ export default function RawHoneyUgandaGuide() {
       <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>What qualifies as “raw” honey in our Ugandan apiaries?</h2>
-          <p>During harvest season we pull combs from Hoima and Kibaale at sunrise, when nectar is still cool. Each frame is uncapped by hand, spun once, and strained through food-grade mesh. No heat, no pressure filters, and definitely no corn syrup masquerading as floral notes. That minimal handling keeps enzymes, pollen, and terroir intact—think vinyl record warmth versus a compressed mp3.</p>
+          <p>During harvest season we pull combs from Hoima and Kibaale at sunrise, when nectar is still cool. Each frame is uncapped by hand, spun once, and strained through food-grade mesh. No heat, no pressure filters, and definitely no corn syrup masquerading as floral notes. That minimal handling keeps enzymes, pollen, and terroir intact: think vinyl record warmth versus a compressed mp3.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How does raw honey taste different?</h2>
           <p>Expect a layered profile: citrus blossom from Budongo forest apiaries, deeper molasses notes from eucalyptus stands near Fort Portal, and a finish that shifts with the season. Volatile aromatics survive because we refuse to overheat the harvest. Independent sensory panels in Kampala (yes, we invite chefs with notebooks) routinely score raw batches well above commercial blends on aroma intensity and mouthfeel.</p>
@@ -61,7 +61,7 @@ export default function RawHoneyUgandaGuide() {
           <p>Traceability matters. Order directly from Humble Beeing for same-week harvests labelled with beekeeper names. Prefer retail? You’ll find our jars at Good Glass Bugolobi, Endiro Coffee Kololo, La Patisserie in Muyenga, and curated grocers in Kisementi. Ask for the batch card; if a seller can’t point to harvest month and moisture readings, walk away gracefully.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How to store raw honey in our climate</h2>
-          <p>Kampala humidity can stage a coup against even the best honey. Keep jars sealed, off the sunny windowsill, and comfortably at room temperature. If crystals appear—and they will—rest the jar in a 40–45°C water bath and stir every few minutes. Anything hotter risks nuking the enzymes you were so careful to buy in the first place.</p>
+          <p>Kampala humidity can stage a coup against even the best honey. Keep jars sealed, off the sunny windowsill, and comfortably at room temperature. If crystals appear (and they will), rest the jar in a 40–45°C water bath and stir every few minutes. Anything hotter risks nuking the enzymes you were so careful to buy in the first place.</p>
 
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>

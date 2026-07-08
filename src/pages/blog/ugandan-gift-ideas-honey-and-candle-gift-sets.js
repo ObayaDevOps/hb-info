@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 
 export default function UgandanGiftIdeas() {
   const title = 'What Are the Best Ugandan Honey and Candle Gifts for People Who Have Everything?'
-  const description = 'Gift sets curated by Humble Beeing’s team—packed with raw honey, beeswax candles, and local craftsmanship—for personal, corporate, and destination gifting.'
+  const description = 'Gift sets curated by Humble Beeing’s team, packed with raw honey, beeswax candles, and local craftsmanship, for personal, corporate, and destination gifting.'
   const faqs = [
     { q: 'Do you offer corporate gifting?', a: 'Yes. We design branded sleeves, tasting cards, and delivery logistics for teams from 10 to 500 recipients.' },
     { q: 'Can I personalise a gift?', a: 'We add handwritten notes, engraved lids, and custom scent blends with two weeks’ lead time.' },
@@ -33,7 +33,7 @@ export default function UgandanGiftIdeas() {
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Signature combinations</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
             <li style={{ marginBottom: '10px' }}><b>Honey Flight Trio:</b> Pine, shea, and coffee blossom minis with tasting cards comparing flavour notes.</li>
-            <li style={{ marginBottom: '10px' }}><b>Candle & Honey Duet:</b> 300 g raw honey plus a beeswax pillar scented with lemongrass or amber—ideal for housewarmings.</li>
+            <li style={{ marginBottom: '10px' }}><b>Candle & Honey Duet:</b> 300 g raw honey plus a beeswax pillar scented with lemongrass or amber: ideal for housewarmings.</li>
             <li style={{ marginBottom: '10px' }}><b>Chef’s Hamper:</b> Premium eucalyptus honey, spiced nuts, and pairing suggestions for cheese boards.</li>
             <li style={{ marginBottom: '10px' }}><b>Corporate Suite:</b> Custom-branded sleeves, handwritten cards, and delivery routing managed by our logistics team.</li>
           </ul>
@@ -45,7 +45,7 @@ export default function UgandanGiftIdeas() {
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
-          <p>Brief us on your gifting project through <Link href="/contact-and-connect">Contact & Connect</Link>—we’ll share mood boards, pricing, and timelines within 24 hours.</p>
+          <p>Brief us on your gifting project through <Link href="/contact-and-connect">Contact & Connect</Link>: we’ll share mood boards, pricing, and timelines within 24 hours.</p>
         </div>
       </div>
     </div>

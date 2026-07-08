@@ -51,7 +51,7 @@ export default function StoreHoneyKampala() {
       <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Why climate control matters here</h2>
-          <p>Our Kampala kitchens flirt with 30°C afternoons and humidity north of 70%. Honey is hygroscopic, meaning it pulls moisture the way journalists pull late nights. Too much water invites fermentation, so we rotate jars off the counter during service hours and keep them tucked into a cool cupboard—ideally on the wall opposite your cooker.</p>
+          <p>Our Kampala kitchens flirt with 30°C afternoons and humidity north of 70%. Honey is hygroscopic, meaning it pulls moisture the way journalists pull late nights. Too much water invites fermentation, so we rotate jars off the counter during service hours and keep them tucked into a cool cupboard, ideally on the wall opposite your cooker.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Daily habits that protect flavour</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
@@ -64,7 +64,7 @@ export default function StoreHoneyKampala() {
           <p>Crystals signal that your honey retains its natural glucose ratio. To return it to velvet, place the jar in a 40–45°C water bath and stir every few minutes. We use sous-vide sticks at the honey house, but a kettle and patient hand works just as well. Skip the microwave; it overheats the outer layer, flattens aromas, and makes bees everywhere shake their heads.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Fermentation red flags (and fixes)</h2>
-          <p>True fermentation smells slightly sour and foams around the lid. If that happens, the jar either absorbed moisture or was bottled with too-high water content. Contact us—we’ll troubleshoot, replace your jar, and adjust future handling. For extra insurance, we bottle at 17–18% moisture and include the reading on your batch card.</p>
+          <p>True fermentation smells slightly sour and foams around the lid. If that happens, the jar either absorbed moisture or was bottled with too-high water content. Contact us: we’ll troubleshoot, replace your jar, and adjust future handling. For extra insurance, we bottle at 17–18% moisture and include the reading on your batch card.</p>
 
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>

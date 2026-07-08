@@ -128,7 +128,7 @@ function ProductPage({ product }) {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
         title={product.name}
-        description={`${product.tagline} ${formatUGX(product.price)} per ${product.size}. ${product.categoryLabel} from Humble Beeing, Kampala — pure, raw, traceable Ugandan honey.`}
+        description={`${product.tagline} ${formatUGX(product.price)} per ${product.size}. ${product.categoryLabel} from Humble Beeing, Kampala: pure, raw, traceable Ugandan honey.`}
         openGraph={{ type: 'website', image: imageUrl }}
         jsonLd={jsonLd}
       />
@@ -243,7 +243,7 @@ function ProductPage({ product }) {
               { label: 'Origin', value: product.origin.region },
               { label: isHoney ? 'Source' : 'Made from', value: product.origin.floralSource },
               { label: isHoney ? 'Harvest' : 'Batch', value: product.origin.harvest },
-              { label: 'Traceability', value: 'Harvest-numbered — traceable to the farmer' },
+              { label: 'Traceability', value: 'Harvest-numbered: traceable to the farmer' },
             ].map(({ label, value }) => (
               <div key={label} style={col}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8a5420' }}>
@@ -300,7 +300,7 @@ function ProductPage({ product }) {
           </div>
           {isHoney && (
             <p style={{ fontSize: '0.875rem', color: 'rgba(0,8,25,0.6)', marginTop: '24px', marginBottom: 0 }}>
-              Honey is a natural food, not a medicine — these notes reflect tradition and published research, not medical advice. Raw
+              Honey is a natural food, not a medicine: these notes reflect tradition and published research, not medical advice. Raw
               honey is not suitable for children under 12 months.
             </p>
           )}

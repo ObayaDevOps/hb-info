@@ -29,13 +29,13 @@ export default function WholesalePartnershipsPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Wholesale & Bulk Honey Supplier in Kampala — Corporate Gifts"
+        title="Wholesale & Bulk Honey Supplier in Kampala: Corporate Gifts"
         description="Bulk raw honey for chefs, hotels, retailers, and NGOs, plus corporate gift hampers and branded gift sets made in Uganda. Delivery across Kampala."
       />
       {/* Hero */}
       <HeroSection
         title="Wholesale & Partnerships"
-        subtitle="Chefs, retailers, events, and corporate gifting — let’s collaborate."
+        subtitle="Chefs, retailers, events, and corporate gifting: let’s collaborate."
         bgImage={'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
