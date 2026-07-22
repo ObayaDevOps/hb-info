@@ -791,14 +791,14 @@ export default function HBHome() {
         <motion.h2
           className="rt rmb"
           {...fadeUp}
-          style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', '--mb': '16px', '--mb-md': '0px', fontWeight: 600, fontFamily: hanken }}
+          style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem', '--mb': '12px', '--mb-md': '0px', fontWeight: 600, fontFamily: hanken }}
         >
           Testimonials
         </motion.h2>
         <motion.h2
           className="rt rmb"
           {...fadeUp}
-          style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.5rem', '--lh-md': '2rem', '--mb': '16px', '--mb-md': '32px', fontWeight: 600, fontFamily: hanken }}
+          style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.5rem', '--lh-md': '2rem', '--mb': '12px', '--mb-md': '16px', fontWeight: 600, fontFamily: hanken }}
         >
           Don't just take our word for it!
         </motion.h2>

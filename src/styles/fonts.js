@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Space_Mono, Poppins, Unbounded, Hanken_Grotesk } from 'next/font/google'
+import { Geist, Geist_Mono, Space_Mono, Poppins, Unbounded, Hanken_Grotesk, Tiny5 } from 'next/font/google'
 
 export const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,5 +31,11 @@ export const unbounded = Unbounded({
 export const hankenGrotesk = Hanken_Grotesk({
   variable: '--font-hanken',
   weight: ['300', '400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+})
+
+export const tiny5 = Tiny5({
+  variable: '--font-tiny5',
+  weight: '400',
   subsets: ['latin'],
 })

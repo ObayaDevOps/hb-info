@@ -166,6 +166,23 @@ export default function ContactConnectPage() {
             </div>
           </div>
 
+          {/* HQ / Find Us */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', width: '100%' }}>
+            <h2 style={headingLg}>Find Our HQ</h2>
+            <p style={{ color: '#000819', fontSize: '0.875rem', lineHeight: '1.25rem' }}>
+              Visit us at the Humble Beeing Honey HQ in Kampala.
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.764797037328!2d32.601544374828116!3d0.2967788997003092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbddcecd0812d%3A0xa0e741273970b773!2sHumble%20Beeing%20Honey!5e0!3m2!1sen!2sse!4v1784721180897!5m2!1sen!2sse"
+              title="Map showing the Humble Beeing Honey HQ location in Kampala"
+              className="rh"
+              style={{ border: 0, borderRadius: '1.5rem', width: '100%', '--h': '320px', '--h-md': '450px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+
           {/* Newsletter */}
           <StyledCard style={{ width: '100%' }}>
             <div className="rp" style={{ '--p': '16px', '--p-md': '24px' }}>

@@ -1,5 +1,4 @@
 import { FaLinkedin, FaTree } from 'react-icons/fa'
-import { FiCode } from 'react-icons/fi'
 import { GiBeehive } from 'react-icons/gi'
 import { TbShirt } from 'react-icons/tb'
 import { motion } from 'framer-motion'
@@ -24,6 +23,7 @@ const donateBtnStyle = {
   backgroundColor: '#09090b',
   color: '#f5cb81',
   border: '1px solid #f5cb81',
+  whiteSpace: 'nowrap',
 }
 
 const Footer = () => {
@@ -102,19 +102,10 @@ const Footer = () => {
                   src="https://cdn.sanity.io/images/wf5e366r/production/31804bbe067efeb8f270cc0f9205ea7ca34d6149-652x394.png"
                   alt="Humble Beeing Logo"
                   className="rh"
-                  style={{ '--h': '216px', '--h-md': '240px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
+                  style={{ '--h': '108px', '--h-md': '240px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
                 />
               </div>
             </motion.div>
-
-            <motion.p
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.1 }}
-              className="rt"
-              style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontWeight: 700 }}
-            >
-              Building a sweeter, more sustainable future.
-            </motion.p>
 
             <motion.p
               {...fadeUp}
@@ -127,16 +118,27 @@ const Footer = () => {
             </motion.p>
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
-              <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} style={{ fontSize: '0.875rem', fontWeight: 500 }}>
-                2nd Floor, Tools and Machinery Building, Kabalagala, Kampala
+              <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} style={{ fontSize: '0.95rem', fontWeight: 700 }}>
+                Find us:
+              </motion.p>
+              <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+                <a
+                  href="https://www.google.com/maps/place/Humble+Beeing+Honey/@0.2967789,32.6015444,17z/data=!3m1!4b1!4m6!3m5!1s0x177dbddcecd0812d:0xa0e741273970b773!8m2!3d0.2967789!4d32.6041193!16s%2Fg%2F11vdlztbc5?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover-underline"
+                  style={{ fontSize: '0.875rem', fontWeight: 500, color: '#f5cb81' }}
+                >
+                  2nd Floor, Tools and Machinery Building, Kabalagala, Kampala
+                </a>
               </motion.p>
               <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
                 <a
-                  href="mailto:hi@humble-beeing.com"
+                  href="mailto:obaya@humble-beeing.com"
                   className="hover-underline"
                   style={{ fontSize: '0.875rem', fontWeight: 600, color: '#f5cb81' }}
                 >
-                  hi@humble-beeing.com
+                  obaya@humble-beeing.com
                 </a>
               </motion.p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingTop: '8px' }}>
@@ -151,20 +153,9 @@ const Footer = () => {
                     <FaLinkedin size={16} />
                   </a>
                 </motion.div>
-                <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
-                  <a
-                    href="https://www.dralegawebops.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Developer Portfolio/Website"
-                    style={{ display: 'inline-flex', padding: '4px', borderRadius: '0.375rem', color: '#f5cb81' }}
-                  >
-                    <FiCode size={16} />
-                  </a>
-                </motion.div>
                 <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
                   <a
-                    href="https://www.dralegawebops.com/"
+                    href="https://twofivesix.online"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Developer Portfolio/Website"
@@ -179,10 +170,11 @@ const Footer = () => {
                       color: '#f5cb81',
                       fontSize: '0.875rem',
                       fontWeight: 500,
+                      fontFamily: 'var(--font-tiny5)',
                       transition: 'background-color 150ms ease',
                     }}
                   >
-                    Built by DWO
+                    built by twofivesix.online
                   </a>
                 </motion.div>
               </div>
@@ -300,11 +292,11 @@ const Footer = () => {
               Donate to Support a Smallholder Beekeeper
             </motion.p>
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              <div className="rg" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', '--g': '12px', '--g-md': '16px' }}>
+              <div className="rfd rai rg" style={{ display: 'flex', '--fd': 'column', '--fd-md': 'row', '--ai': 'stretch', '--ai-md': 'center', '--g': '12px', '--g-md': '4px' }}>
                 <a
                   href="https://store.pesapal.com/humblebeeinghoneypayments"
                   className="btn-dark rpx"
-                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '24px' }}
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px' }}
                 >
                   <GiBeehive size={18} />
                   Beehive - $100
@@ -312,7 +304,7 @@ const Footer = () => {
                 <a
                   href="https://store.pesapal.com/humblebeeinghoneypayments"
                   className="btn-dark rpx"
-                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '24px' }}
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px' }}
                 >
                   <TbShirt size={18} />
                   Beesuit-$80
@@ -320,7 +312,7 @@ const Footer = () => {
                 <a
                   href="https://store.pesapal.com/humblebeeinghoneypayments"
                   className="btn-dark rpx"
-                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '24px' }}
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px' }}
                 >
                   <FaTree size={18} />
                   Shea Trees -$15
