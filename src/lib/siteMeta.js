@@ -59,6 +59,7 @@ export const STATIC_ROUTES = [
   '/impact-and-sustainability',
   '/wholesale-and-partnerships',
   '/lab-tests',
+  '/store-locator',
   '/contact-and-connect',
   '/terms-and-conditions',
 ]

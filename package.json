@@ -11,7 +11,8 @@
     "cloudinary:upload:dry": "node scripts/uploadCloudinaryMatchesToSanity.js --dry-run",
     "cloudinary:upload": "node scripts/uploadCloudinaryMatchesToSanity.js",
     "cloudinary:replace:dry": "node scripts/replaceCloudinaryUrlsWithSanity.js",
-    "cloudinary:replace": "node scripts/replaceCloudinaryUrlsWithSanity.js --write"
+    "cloudinary:replace": "node scripts/replaceCloudinaryUrlsWithSanity.js --write",
+    "seed:stores": "node scripts/seedStores.js"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",
@@ -19,6 +20,7 @@
     "@sanity/vision": "^3.85.1",
     "cloudinary-build-url": "^0.2.4",
     "framer-motion": "^12.7.4",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.484.0",
     "next": "15.2.6",
     "next-sanity": "^9.9.6",
@@ -29,6 +31,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.55.0",
     "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
     "react-photo-album": "^3.1.0",
     "react-slick": "^0.31.0",
     "resend": "^6.2.2",
