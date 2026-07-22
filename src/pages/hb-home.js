@@ -266,8 +266,8 @@ export default function HBHome() {
             transition={{ ...fadeUp.transition, delay: 0.3 }}
             style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '8px' }}
           >
-            <Link href="https://shop.humble-beeing.com" className="btn-dark rpx" style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}>
-              Shop Now
+            <Link href="/products" className="btn-dark rpx" style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}>
+              See our Products
             </Link>
             <Link href="/impact-and-sustainability" className="btn-dark rpx" style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}>
               Explore Impact
@@ -319,12 +319,12 @@ export default function HBHome() {
         <motion.div className="slider-container rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
           <Slider {...sliderSettings}>
             {carousel.map((c, index) => (
-              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }}>
+              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
                 <StyledCard style={{ borderRadius: '1rem' }}>
-                  <div>
+                  <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div
                       className="rp"
-                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', '--p': '24px', '--p-md': '32px' }}
+                      style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', '--p': '24px', '--p-md': '32px' }}
                     >
                       <img
                         src={c.image}
@@ -339,7 +339,7 @@ export default function HBHome() {
                         target={c.external ? '_blank' : undefined}
                         rel={c.external ? 'noopener noreferrer' : undefined}
                         className="btn-dark rpx"
-                        style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}
+                        style={{ ...pillBtn, marginTop: 'auto', '--px': '20px', '--px-md': '28px' }}
                       >
                         Shop
                       </Link>
@@ -397,10 +397,10 @@ export default function HBHome() {
         <motion.div className="slider-container rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
           <Slider {...sliderSettingsMobile}>
             {carousel.map((c, index) => (
-              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }}>
+              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
                 <StyledCard style={{ borderRadius: '1rem' }}>
-                  <div>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '32px' }}>
+                  <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '32px' }}>
                       <img
                         src={c.image}
                         alt={c.alt || c.name}
@@ -414,7 +414,7 @@ export default function HBHome() {
                         target={c.external ? '_blank' : undefined}
                         rel={c.external ? 'noopener noreferrer' : undefined}
                         className="btn-dark rpx"
-                        style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}
+                        style={{ ...pillBtn, marginTop: 'auto', '--px': '20px', '--px-md': '28px' }}
                       >
                         Shop
                       </Link>

@@ -11,8 +11,7 @@ export default function HeroSection({
 }) {
   const fadeUp = {
     initial: { opacity: 0, y: 24 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.6 },
+    animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6, ease: 'easeOut' },
   }
 
@@ -45,8 +44,7 @@ export default function HeroSection({
         {title && (
           <motion.div
             initial={fadeUp.initial}
-            whileInView={fadeUp.whileInView}
-            viewport={fadeUp.viewport}
+            animate={fadeUp.animate}
             transition={fadeUp.transition}
           >
             <h1
@@ -70,8 +68,7 @@ export default function HeroSection({
         {subtitle && (
           <motion.div
             initial={fadeUp.initial}
-            whileInView={fadeUp.whileInView}
-            viewport={fadeUp.viewport}
+            animate={fadeUp.animate}
             transition={{ ...fadeUp.transition, delay: 0.08 }}
           >
             <p

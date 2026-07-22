@@ -398,3 +398,14 @@ body::before {
 .slick-next:before {
   content: '';
 }
+
+/* Equal-height slides: track becomes flex so every slide stretches to the tallest */
+.slider-container .slick-track {
+  display: flex !important;
+}
+.slider-container .slick-slide {
+  height: auto; /* overrides slick's inline-computed height */
+}
+.slider-container .slick-slide > div {
+  height: 100%; /* slick's own slide wrapper div */
+}
