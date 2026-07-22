@@ -7,11 +7,11 @@ import {
   BookOpen as BookOpenIcon,
   ChevronDown as ChevronDownIcon,
   ShoppingBag as ShoppingBagIcon,
-  Newspaper as NewspaperIcon,
   Package as PackageIcon,
   Phone as PhoneIcon,
   Route as RouteIcon,
   ArrowRight as ArrowRightIcon,
+  MapPin as MapPinIcon,
 } from 'lucide-react'
 import { PRODUCT_CATEGORIES, getProductsByCategory, formatUGX } from '@/lib/products'
 
@@ -199,6 +199,20 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
             >
               View all products <ArrowRightIcon size={16} />
             </a>
+            <a
+              href="/wholesale-and-partnerships"
+              role="menuitem"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontWeight: 700,
+                fontFamily: 'var(--font-hanken)',
+                color: '#09090b',
+              }}
+            >
+              Wholesale &amp; partnerships <ArrowRightIcon size={16} />
+            </a>
           </div>
         </div>
 
@@ -290,6 +304,13 @@ const ABOUT_LINKS = [
     imageAlt: 'Smallholder beekeeping community supported by Humble Beeing in West Nile',
     blurb: 'Farmers paid 30% above market rates, regenerative apiaries, and trade (not aid) across West Nile.',
   },
+  {
+    label: 'Blog',
+    href: '/blog',
+    image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg',
+    imageAlt: 'Jars of Humble Beeing honey from the Humble Beeing blog',
+    blurb: 'Stories from the apiaries, honey guides, and news from the Humble Beeing team.',
+  },
 ]
 
 function AboutMenu({ item, linkStyle, labelStyle, renderBg }) {
@@ -301,9 +322,9 @@ function AboutMenu({ item, linkStyle, labelStyle, renderBg }) {
       renderBg={renderBg}
       ariaLabel="About"
       panelStyle={{
-        width: 'min(52rem, calc(100vw - 48px))',
+        width: 'min(64rem, calc(100vw - 48px))',
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '24px',
       }}
     >
@@ -523,29 +544,30 @@ export default function Navbar(props) {
       {
         label: 'About',
         icon: BookOpenIcon,
-        match: ['/our-story', '/our-process', '/impact-and-sustainability'],
+        match: ['/our-story', '/our-process', '/impact-and-sustainability', '/blog'],
         children: [
           { label: 'Our Story', href: '/our-story' },
           { label: 'Our Process', href: '/our-process' },
           { label: 'Impact', href: '/impact-and-sustainability' },
+          { label: 'Blog', href: '/blog' },
         ],
       },
       {
         label: 'Products',
         icon: PackageIcon,
-        match: ['/products'],
+        match: ['/products', '/wholesale-and-partnerships'],
         children: [
           ...PRODUCT_CATEGORIES.map((c) => ({
             label: c.navLabel,
             href: `/products#${c.key}`,
           })),
           { label: 'All products →', href: '/products' },
+          { label: 'Wholesale', href: '/wholesale-and-partnerships' },
         ],
       },
+      { label: 'Store Locator', href: '/store-locator', icon: MapPinIcon },
       { label: 'Trace', href: 'https://trace.humble-beeing.com', isExternal: true, icon: RouteIcon },
       { label: 'Shop', href: 'https://shop.humble-beeing.com', isExternal: true, icon: ShoppingBagIcon },
-      { label: 'Blog', href: '/blog', icon: NewspaperIcon },
-      { label: 'Wholesale', href: '/wholesale-and-partnerships', icon: PackageIcon },
       { label: 'Contact', href: '/contact-and-connect', icon: PhoneIcon },
     ],
     [],
