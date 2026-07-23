@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
   Search as SearchIcon,
   LocateFixed as LocateFixedIcon,
+  Store as StoreIcon,
   Phone as PhoneIcon,
   Instagram as InstagramIcon,
   Facebook as FacebookIcon,
@@ -363,6 +365,27 @@ export default function StoreLocatorPage({ stores }) {
             <LocateFixedIcon size={18} />
             {geoLoading ? 'Locating…' : 'Find stores near me'}
           </button>
+          <Link
+            href="/contact-and-connect?type=wholesale"
+            className="hover-bg-navy"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              height: '48px',
+              padding: '0 22px',
+              borderRadius: '9999px',
+              border: '1px solid #000819',
+              color: '#000819',
+              fontFamily: hanken,
+              fontWeight: 600,
+              fontSize: '0.9375rem',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <StoreIcon size={18} />
+            Become a stockist
+          </Link>
         </motion.div>
 
         {geoError && (

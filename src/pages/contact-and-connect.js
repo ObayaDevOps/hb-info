@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { MessageCircle, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import SEO from '@/components/SEO';
 import HeroSection from '@/components/sections/HeroSection';
@@ -112,7 +113,13 @@ function SegmentedToggle({ value, onChange }) {
 }
 
 export default function ContactConnectPage({ whatsappNumber }) {
+  const router = useRouter();
   const [isWholesale, setIsWholesale] = useState(false);
+
+  // Deep links like /contact-and-connect?type=wholesale preselect the wholesale segment
+  useEffect(() => {
+    if (router.isReady && router.query.type === 'wholesale') setIsWholesale(true)
+  }, [router.isReady, router.query.type]);
 
   const waNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
   const whatsappUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent("Hello Humble Beeing! I'd like to get in touch.")}`
