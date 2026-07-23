@@ -10,6 +10,7 @@ import BlogPostSchema from './schemas/blogPostSchema'
 import BlogCategorySchema from './schemas/blogCategorySchema'
 import TermsPageSchema from './schemas/termsPageSchema'
 import StoreSchema from './schemas/storeSchema'
+import SiteSettingsSchema from './schemas/siteSettingsSchema'
 
 import CtaObject from './schemas/objects/cta'
 import PortableTextObject from './schemas/objects/portableText'
@@ -30,6 +31,7 @@ export const schema = {
     BlogCategorySchema,
     TermsPageSchema,
     StoreSchema,
+    SiteSettingsSchema,
     PortableTextObject,
     CtaObject,
     FormFieldObject,

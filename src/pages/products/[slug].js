@@ -1,11 +1,14 @@
 import Link from 'next/link'
-import { CircleCheck, ShoppingBag, ArrowRight } from 'lucide-react'
+import { CircleCheck, MessageCircle, ArrowRight } from 'lucide-react'
 
 import SEO from '@/components/SEO'
 import PageLayout from '@/components/layouts/PageLayout'
 import FaqAccordion from '@/components/FaqAccordion'
 import { PRODUCTS, SHOP_URL, getProduct, formatUGX } from '@/lib/products'
 import { breadcrumbJsonLd } from '@/lib/siteMeta'
+import client from '../../../sanity/lib/client'
+
+const DEFAULT_WHATSAPP_NUMBER = '+256789062116'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://humble-beeing.com'
 const hanken = 'var(--font-hanken)'
@@ -81,8 +84,12 @@ function sectionTitle(title) {
   return <h2 style={{ ...headingLg, marginBottom: '24px' }}>{title}</h2>
 }
 
-function ProductPage({ product }) {
+function ProductPage({ product, whatsappNumber }) {
   if (!product) return null
+
+  const waNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
+  const waMessage = `Hello Humble Beeing! I'd like to order the ${product.name} (${product.size}).`
+  const whatsappUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`
 
   const productUrl = `${SITE_URL}/products/${product.slug}`
   const imageUrl = product.image.startsWith('http') ? product.image : `${SITE_URL}${product.image}`
@@ -190,7 +197,7 @@ function ProductPage({ product }) {
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '4px' }}>
               <a
-                href={SHOP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-dark"
@@ -207,7 +214,7 @@ function ProductPage({ product }) {
                   border: '1px solid #09090b',
                 }}
               >
-                <ShoppingBag size={18} /> Buy on our shop
+                <MessageCircle size={18} /> Place order on WhatsApp
               </a>
               <Link
                 href="/lab-tests"
@@ -356,7 +363,18 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const product = getProduct(params.slug)
   if (!product) return { notFound: true }
-  return { props: { product } }
+
+  let whatsappNumber = null
+  try {
+    whatsappNumber = await client.fetch(`*[_type == "siteSettings"][0].whatsappNumber`)
+  } catch (err) {
+    whatsappNumber = null
+  }
+
+  return {
+    props: { product, whatsappNumber: whatsappNumber || null },
+    revalidate: 60,
+  }
 }
 
 ProductPage.getLayout = (page) => <PageLayout>{page}</PageLayout>

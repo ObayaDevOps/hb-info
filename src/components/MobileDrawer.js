@@ -39,9 +39,9 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
     }
   }, [open])
 
-  const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Shop')
+  const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Order on WhatsApp')
   const trace = navItems.find((it) => it.label === 'Trace')
-  const shop = navItems.find((it) => it.label === 'Shop')
+  const shop = navItems.find((it) => it.label === 'Order on WhatsApp')
 
   const pillLinkStyle = {
     padding: '12px 16px',
