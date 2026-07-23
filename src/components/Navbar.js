@@ -17,7 +17,22 @@ import { PRODUCT_CATEGORIES, getProductsByCategory, formatUGX } from '@/lib/prod
 
 const shadowMd = '0px 4px 8px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)'
 
-const MENU_CATEGORIES = PRODUCT_CATEGORIES
+// Wholesale is not a product category in products.js (it has its own page and
+// no retail products), but the menu presents it like one, listed after Gifts.
+const WHOLESALE_MENU_ITEM = {
+  key: 'wholesale',
+  navLabel: 'Wholesale',
+  href: '/wholesale-and-partnerships',
+  blurb: 'Bulk raw honey and beeswax for chefs, hotels, retailers, and NGOs, with the same harvest-number traceability.',
+  card: {
+    title: 'Wholesale & Partnerships',
+    text: 'Bulk formats & corporate gifts',
+    image: '/images/products/wholesale-bulk-honey.jpg',
+    imageAlt: 'Humble Beeing bulk jerrycan of raw pressed shea blossom honey for wholesale',
+  },
+}
+
+const MENU_CATEGORIES = [...PRODUCT_CATEGORIES, WHOLESALE_MENU_ITEM]
 
 // Generic hover dropdown for the desktop floating pill: trigger link + fixed
 // panel. The panel is portaled to the app root: the nav pill's backdrop-filter
@@ -136,7 +151,7 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
   const [activeCategory, setActiveCategory] = useState('raw')
 
   const activeMeta = MENU_CATEGORIES.find((c) => c.key === activeCategory) || MENU_CATEGORIES[0]
-  const activeProducts = getProductsByCategory(activeMeta.key)
+  const activeProducts = activeMeta.card ? [] : getProductsByCategory(activeMeta.key)
 
   return (
     <NavDropdown
@@ -160,7 +175,7 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
               return (
                 <a
                   key={category.key}
-                  href={`/products#${category.key}`}
+                  href={category.href || `/products#${category.key}`}
                   role="menuitem"
                   onMouseEnter={() => setActiveCategory(category.key)}
                   onFocus={() => setActiveCategory(category.key)}
@@ -199,32 +214,44 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
             >
               View all products <ArrowRightIcon size={16} />
             </a>
-            <a
-              href="/wholesale-and-partnerships"
-              role="menuitem"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontWeight: 700,
-                fontFamily: 'var(--font-hanken)',
-                color: '#09090b',
-              }}
-            >
-              Wholesale &amp; partnerships <ArrowRightIcon size={16} />
-            </a>
           </div>
         </div>
 
-        {/* Right area: product cards for the active category */}
+        {/* Right area: product cards for the active category (or the single
+            page card for entries like Wholesale that have no products) */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: `repeat(${Math.min(activeProducts.length, 3)}, 1fr)`,
+            gridTemplateColumns: `repeat(${Math.min(activeProducts.length, 3) || 3}, 1fr)`,
             gap: '16px',
             alignContent: 'start',
           }}
         >
+          {activeMeta.card && (
+            <a
+              href={activeMeta.href}
+              role="menuitem"
+              className="hover-op9"
+              style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: '#09090b' }}
+            >
+              <img
+                src={activeMeta.card.image}
+                alt={activeMeta.card.imageAlt}
+                style={{
+                  width: '100%',
+                  aspectRatio: '4 / 3',
+                  objectFit: 'cover',
+                  borderRadius: '0.75rem',
+                  border: '1px solid rgba(9, 9, 11, 0.15)',
+                  display: 'block',
+                }}
+              />
+              <span style={{ fontFamily: 'var(--font-hanken)', fontWeight: 600, lineHeight: '1.25rem' }}>
+                {activeMeta.card.title}
+              </span>
+              <span style={{ fontSize: '0.875rem', color: 'rgba(9, 9, 11, 0.7)' }}>{activeMeta.card.text}</span>
+            </a>
+          )}
           {activeProducts.map((product) => (
             <a
               key={product.slug}
@@ -361,7 +388,7 @@ function AboutMenu({ item, linkStyle, labelStyle, renderBg }) {
 function FloatingPill({ items }) {
   const pillLogoSrc = 'https://cdn.sanity.io/files/wf5e366r/production/abe3713a984fec694f2bc5e23a9f8173a94985a3.svg'
   const trace = items.find((it) => it.label === 'Trace')
-  const shop = items.find((it) => it.label === 'Shop')
+  const shop = items.find((it) => it.label === 'Order on WhatsApp')
 
   const ctaLink = (item) => (
     <a
@@ -439,7 +466,7 @@ function FloatingPill({ items }) {
         </a>
         <nav style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           {items
-            .filter((it) => it.label !== 'Shop' && it.label !== 'Trace')
+            .filter((it) => it.label !== 'Order on WhatsApp' && it.label !== 'Trace')
             .map((item) => {
               const linkStyle = {
                 position: 'relative',
@@ -561,13 +588,19 @@ export default function Navbar(props) {
             label: c.navLabel,
             href: `/products#${c.key}`,
           })),
-          { label: 'All products →', href: '/products' },
           { label: 'Wholesale', href: '/wholesale-and-partnerships' },
+          { label: 'All products →', href: '/products' },
         ],
       },
       { label: 'Store Locator', href: '/store-locator', icon: MapPinIcon },
       { label: 'Trace', href: 'https://trace.humble-beeing.com', isExternal: true, icon: RouteIcon },
-      { label: 'Shop', href: 'https://shop.humble-beeing.com', isExternal: true, icon: ShoppingBagIcon },
+      // WhatsApp ordering fills the CTA slot until the online shop (shop.humble-beeing.com) goes live:
+      {
+        label: 'Order on WhatsApp',
+        href: 'https://wa.me/256789062116?text=Hello%20Humble%20Beeing!%20I%27d%20like%20to%20place%20an%20order.',
+        isExternal: true,
+        icon: ShoppingBagIcon,
+      },
       { label: 'Contact', href: '/contact-and-connect', icon: PhoneIcon },
     ],
     [],
@@ -637,45 +670,6 @@ export default function Navbar(props) {
                 className="rh"
                 style={{ '--h': '30px', '--h-sm': '36px', width: 'auto' }}
               />
-            </a>
-            <a
-              href="https://shop.humble-beeing.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-dark rpx rpy"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                '--px': '12px',
-                '--px-sm': '16px',
-                '--py': '6px',
-                '--py-sm': '8px',
-                borderRadius: '9999px',
-                fontWeight: 700,
-                fontFamily: 'var(--font-poppins)',
-                backgroundColor: '#09090b',
-                color: '#f5cb81',
-                border: '1px solid #09090b',
-                justifySelf: 'end',
-              }}
-            >
-              <ShoppingBagIcon size={14} />
-              <span
-                style={{
-                  position: 'absolute',
-                  width: '1px',
-                  height: '1px',
-                  padding: 0,
-                  margin: '-1px',
-                  overflow: 'hidden',
-                  clip: 'rect(0, 0, 0, 0)',
-                  whiteSpace: 'nowrap',
-                  border: 0,
-                }}
-              >
-                Shop
-              </span>
             </a>
           </div>
         </div>

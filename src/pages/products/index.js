@@ -143,6 +143,48 @@ function ProductsIndexPage() {
             </div>
           )
         })}
+
+        {/* Wholesale is not a retail category in products.js, but it is
+            presented like one here (and in the navbar menu), after Gifts. */}
+        <div id="wholesale" style={{ paddingBottom: '64px', scrollMarginTop: '128px' }}>
+          <div style={{ ...col, paddingBottom: '24px' }}>
+            <h2 style={headingLg}>Wholesale &amp; Partnerships</h2>
+            <p style={{ fontSize: '1.125rem', lineHeight: '1.75rem', margin: 0, color: 'rgba(0,8,25,0.75)' }}>
+              Bulk raw honey and beeswax for chefs, hotels, retailers, and NGOs, with the same harvest-number traceability.
+            </p>
+          </div>
+          <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(3, 1fr)', gap: '20px' }}>
+            <Link
+              href="/wholesale-and-partnerships"
+              style={{
+                ...col,
+                border: '1px solid #1A2234',
+                borderRadius: '1rem',
+                overflow: 'hidden',
+                color: '#000819',
+                gap: 0,
+                backgroundColor: 'rgba(255,255,255,0.35)',
+              }}
+            >
+              <div style={{ position: 'relative', width: '100%' }}>
+                <img
+                  src="/images/products/wholesale-bulk-honey.jpg"
+                  alt="Humble Beeing bulk jerrycan of raw pressed shea blossom honey for wholesale"
+                  style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div style={{ ...col, padding: '20px', gap: '8px', width: '100%' }}>
+                <h3 style={{ ...headingMd, margin: 0 }}>Wholesale &amp; Partnerships</h3>
+                <p style={{ margin: 0, fontSize: '0.9375rem', lineHeight: '1.4rem', color: 'rgba(0,8,25,0.7)' }}>
+                  Bulk formats, corporate gift hampers, and branded gift sets, tailored to your needs.
+                </p>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.875rem', fontWeight: 600, color: '#8a5420' }}>
+                  Partner with us <ArrowRight size={14} />
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   )
