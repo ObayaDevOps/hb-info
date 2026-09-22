@@ -328,19 +328,19 @@ function ProductPage({ product, whatsappNumber }) {
                 <Link
                   key={rel.slug}
                   href={`/products/${rel.slug}`}
-                  style={{ ...col, border: '1px solid #1A2234', borderRadius: '1rem', overflow: 'hidden', color: '#000819', gap: 0 }}
+                  style={{ ...col, border: '2px solid #000819', borderRadius: '1rem', overflow: 'hidden', color: '#000819', gap: 0 }}
                 >
                   <img
                     src={rel.image}
                     alt={rel.imageAlt}
-                    style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover' }}
+                    className="catalog-card__image"
                   />
-                  <div style={{ ...col, padding: '16px', gap: '6px', width: '100%' }}>
+                  <div style={{ ...col, padding: '16px', gap: '6px', width: '100%', flex: 1 }}>
                     {rel.bestSeller && <span style={{ ...bestSellerBadge, fontSize: '0.625rem', padding: '2px 8px' }}>★ Best Seller</span>}
                     <h3 style={{ ...headingMd, margin: 0 }}>{rel.shortName}</h3>
                     <p style={{ margin: 0, fontSize: '0.875rem', color: 'rgba(0,8,25,0.7)' }}>{formatUGX(rel.price)} · {rel.size}</p>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.875rem', fontWeight: 600, color: '#8a5420' }}>
-                      View product <ArrowRight size={14} />
+                    <span className="catalog-card__button">
+                      View product <ArrowRight size={16} />
                     </span>
                   </div>
                 </Link>

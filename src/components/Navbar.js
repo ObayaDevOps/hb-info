@@ -222,7 +222,7 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: `repeat(${Math.min(activeProducts.length, 3) || 3}, 1fr)`,
+            gridTemplateColumns: `repeat(${Math.min((activeMeta.card ? 1 : 0) + activeProducts.length, 3) || 3}, 1fr)`,
             gap: '16px',
             alignContent: 'start',
           }}
@@ -423,7 +423,7 @@ function FloatingPill({ items }) {
 
   return (
     <div
-      className="rd"
+      className="rd desktop-nav-pill"
       style={{
         position: 'fixed',
         top: '32px',
@@ -592,6 +592,7 @@ export default function Navbar(props) {
           { label: 'All products →', href: '/products' },
         ],
       },
+      { label: 'Recipes', href: '/recipes', icon: BookOpenIcon },
       { label: 'Store Locator', href: '/store-locator', icon: MapPinIcon },
       { label: 'Trace', href: 'https://trace.humble-beeing.com', isExternal: true, icon: RouteIcon },
       // WhatsApp ordering fills the CTA slot until the online shop (shop.humble-beeing.com) goes live:
@@ -638,7 +639,7 @@ export default function Navbar(props) {
       }}
     >
       {/* Mobile / tablet pill (hidden from lg where the floating pill takes over) */}
-      <div className="rd" style={{ '--d': 'block', '--d-lg': 'none' }}>
+      <div className="rd mobile-nav-pill" style={{ '--d': 'block', '--d-lg': 'none' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div
             className="rpx rpy"

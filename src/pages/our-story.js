@@ -65,11 +65,7 @@ export default function AboutPage() {
         bgImage={'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
-      >
-        <p style={{ marginTop: '16px', maxWidth: '42rem', color: 'white', fontSize: '1.125rem', lineHeight: '1.75rem' }}>
-          Humble Beeing is a family-owned Ugandan honey brand based in Kampala. From hive to table, we pair elevated taste with measurable impact across communities and ecosystems.
-        </p>
-      </HeroSection>
+      />
 
       <div
         className="rpx rpy rbr rmt"
@@ -92,6 +88,7 @@ export default function AboutPage() {
       >
         {/* Our Story */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '48px' }}>
+          <h2 style={h2Style}>How it began</h2>
           <p className="rt" style={{ ...bodyText, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
             From London finance to Uganda’s wild landscapes: our founder set out to build a luxury brand that regenerates nature and livelihoods. Humble Beeing pairs elevated taste with measurable impact, working directly with beekeepers across biodiverse regions to bring you single-origin and infused honeys, and pure beeswax candles.
           </p>

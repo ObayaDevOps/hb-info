@@ -322,24 +322,22 @@ export default function HBHome() {
               <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
                 <StyledCard style={{ borderRadius: '1rem' }}>
                   <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <img
+                      src={c.image}
+                      alt={c.alt || c.name}
+                      className="catalog-card__image"
+                    />
                     <div
                       className="rp"
                       style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', '--p': '24px', '--p-md': '32px' }}
                     >
-                      <img
-                        src={c.image}
-                        alt={c.alt || c.name}
-                        className="rw rh"
-                        style={{ '--w': '200px', '--h': '200px', '--w-md': '100%', '--h-md': '100%', alignSelf: 'center', borderRadius: '0.75rem', objectFit: 'cover' }}
-                      />
                       <p className="rt" style={{ fontWeight: 700, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{c.name}</p>
                       <p className="rt" style={{ fontWeight: 400, '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{c.description}</p>
                       <Link
                         href={c.href}
                         target={c.external ? '_blank' : undefined}
                         rel={c.external ? 'noopener noreferrer' : undefined}
-                        className="btn-dark rpx"
-                        style={{ ...pillBtn, marginTop: 'auto', '--px': '20px', '--px-md': '28px' }}
+                        className="catalog-card__button"
                       >
                         Shop
                       </Link>
@@ -400,21 +398,19 @@ export default function HBHome() {
               <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
                 <StyledCard style={{ borderRadius: '1rem' }}>
                   <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <img
+                      src={c.image}
+                      alt={c.alt || c.name}
+                      className="catalog-card__image"
+                    />
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '32px' }}>
-                      <img
-                        src={c.image}
-                        alt={c.alt || c.name}
-                        className="rw rh"
-                        style={{ '--w': '300px', '--h': '300px', '--w-md': '350px', '--h-md': '350px', alignSelf: 'center', borderRadius: '0.75rem', objectFit: 'cover' }}
-                      />
                       <p className="rt" style={{ fontWeight: 700, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{c.name}</p>
                       <p className="rt" style={{ fontWeight: 400, '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{c.description}</p>
                       <Link
                         href={c.href}
                         target={c.external ? '_blank' : undefined}
                         rel={c.external ? 'noopener noreferrer' : undefined}
-                        className="btn-dark rpx"
-                        style={{ ...pillBtn, marginTop: 'auto', '--px': '20px', '--px-md': '28px' }}
+                        className="catalog-card__button"
                       >
                         Shop
                       </Link>
@@ -753,7 +749,7 @@ export default function HBHome() {
             </motion.p>
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '16px' }}>
               <Link
-                href="/blog"
+                href="/recipes"
                 className="btn-amber rpx rt"
                 style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px', '--fs': '0.875rem', '--lh': '1.25rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}
               >

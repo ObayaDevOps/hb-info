@@ -75,23 +75,34 @@ function ProductsIndexPage() {
       <HeroSection
         title="Nine honeys, one story."
         subtitle="Raw single-origin harvests, slow-aged infusions, and pure beeswax: every jar traceable to the farmer."
+        bgImage="https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg"
+        overlay
         py={{ base: 16, md: 24 }}
       />
 
-      <div
-        className="rpx rpy"
-        style={{
-          position: 'relative',
-          maxWidth: '72rem',
-          width: '100%',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          '--px': '24px',
-          '--px-md': '80px',
-          '--py': '32px',
-          '--py-md': '48px',
-        }}
-      >
+      <div className="products-index-layout">
+        <aside className="products-index-nav">
+          <nav aria-label="Product categories" className="products-index-nav__links">
+            <p className="products-index-nav__title">Explore products</p>
+            {PRODUCT_CATEGORIES.filter((category) => PRODUCTS.some((product) => product.category === category.key)).map((category) => (
+              <a key={category.key} href={`#${category.key}`} className="products-anchor">{category.label}</a>
+            ))}
+            <a href="#wholesale" className="products-anchor">Wholesale &amp; Partnerships</a>
+          </nav>
+        </aside>
+        <div
+          className="rpx rpy products-index-content"
+          style={{
+            maxWidth: '72rem',
+            width: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            '--px': '24px',
+            '--px-md': '80px',
+            '--py': '32px',
+            '--py-md': '48px',
+          }}
+        >
         {PRODUCT_CATEGORIES.map((category) => {
           const items = PRODUCTS.filter((p) => p.category === category.key)
           if (items.length === 0) return null
@@ -106,9 +117,10 @@ function ProductsIndexPage() {
                   <Link
                     key={product.slug}
                     href={`/products/${product.slug}`}
+                    className="product-list-card"
                     style={{
                       ...col,
-                      border: '1px solid #1A2234',
+                      border: '1px solid #000819',
                       borderRadius: '1rem',
                       overflow: 'hidden',
                       color: '#000819',
@@ -120,21 +132,21 @@ function ProductsIndexPage() {
                       <img
                         src={product.image}
                         alt={product.imageAlt}
-                        style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }}
+                        className="catalog-card__image"
                       />
                       {product.bestSeller && (
                         <span style={{ ...bestSellerBadge, position: 'absolute', top: '12px', left: '12px' }}>★ Best Seller</span>
                       )}
                     </div>
-                    <div style={{ ...col, padding: '20px', gap: '8px', width: '100%' }}>
+                    <div style={{ ...col, padding: '20px', gap: '8px', width: '100%', flex: 1 }}>
                       <h3 style={{ ...headingMd, margin: 0 }}>{product.shortName}</h3>
                       <p style={{ margin: 0, fontSize: '0.9375rem', lineHeight: '1.4rem', color: 'rgba(0,8,25,0.7)' }}>{product.tagline}</p>
                       <p style={{ margin: 0, fontWeight: 700, fontFamily: hanken }}>
                         {formatUGX(product.price)}{' '}
                         <span style={{ fontWeight: 400, color: 'rgba(0,8,25,0.6)' }}>· {product.size}</span>
                       </p>
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.875rem', fontWeight: 600, color: '#8a5420' }}>
-                        Pairings, benefits & FAQs <ArrowRight size={14} />
+                      <span className="catalog-card__button">
+                        Pairings, benefits &amp; FAQs <ArrowRight size={16} />
                       </span>
                     </div>
                   </Link>
@@ -156,9 +168,10 @@ function ProductsIndexPage() {
           <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(3, 1fr)', gap: '20px' }}>
             <Link
               href="/wholesale-and-partnerships"
+              className="product-list-card"
               style={{
                 ...col,
-                border: '1px solid #1A2234',
+                border: '1px solid #000819',
                 borderRadius: '1rem',
                 overflow: 'hidden',
                 color: '#000819',
@@ -170,26 +183,27 @@ function ProductsIndexPage() {
                 <img
                   src="/images/products/wholesale-bulk-honey.jpg"
                   alt="Humble Beeing bulk jerrycan of raw pressed shea blossom honey for wholesale"
-                  style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }}
+                  className="catalog-card__image"
                 />
               </div>
-              <div style={{ ...col, padding: '20px', gap: '8px', width: '100%' }}>
+              <div style={{ ...col, padding: '20px', gap: '8px', width: '100%', flex: 1 }}>
                 <h3 style={{ ...headingMd, margin: 0 }}>Wholesale &amp; Partnerships</h3>
                 <p style={{ margin: 0, fontSize: '0.9375rem', lineHeight: '1.4rem', color: 'rgba(0,8,25,0.7)' }}>
                   Bulk formats, corporate gift hampers, and branded gift sets, tailored to your needs.
                 </p>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.875rem', fontWeight: 600, color: '#8a5420' }}>
-                  Partner with us <ArrowRight size={14} />
+                <span className="catalog-card__button">
+                  Partner with us <ArrowRight size={16} />
                 </span>
               </div>
             </Link>
           </div>
+        </div>
         </div>
       </div>
     </div>
   )
 }
 
-ProductsIndexPage.getLayout = (page) => <PageLayout>{page}</PageLayout>
+ProductsIndexPage.getLayout = (page) => <PageLayout navbarProps={{ overlayOnHero: true }}>{page}</PageLayout>
 
 export default ProductsIndexPage

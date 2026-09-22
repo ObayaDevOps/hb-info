@@ -1,15 +1,20 @@
 import { STATIC_ROUTES, BLOG_SLUGS } from '@/lib/siteMeta'
 import { PRODUCT_SLUGS } from '@/lib/products'
+import { getRecipeSlugs } from '@/lib/recipes'
 
 export async function getServerSideProps({ res, req }) {
   const scheme = req.headers['x-forwarded-proto'] || 'https'
   const host = req.headers.host
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || `${scheme}://${host}`
 
+  let recipeSlugs = []
+  try { recipeSlugs = await getRecipeSlugs() || [] } catch (error) { console.error('Could not load recipe slugs', error) }
+
   const pages = [
     ...STATIC_ROUTES,
     ...PRODUCT_SLUGS.map((s) => `/products/${s}`),
     ...BLOG_SLUGS.map((s) => `/blog/${s}`),
+    ...recipeSlugs.map((s) => `/recipes/${s}`),
   ]
 
   const now = new Date().toISOString()
@@ -29,4 +34,3 @@ export async function getServerSideProps({ res, req }) {
 export default function Sitemap() {
   return null
 }
-

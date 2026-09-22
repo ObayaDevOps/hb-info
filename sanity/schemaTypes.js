@@ -8,6 +8,8 @@ import ContactConnectPageSchema from './schemas/contactConnectPageSchema'
 import BlogPageSchema from './schemas/blogPageSchema'
 import BlogPostSchema from './schemas/blogPostSchema'
 import BlogCategorySchema from './schemas/blogCategorySchema'
+import RecipeSchema from './schemas/recipeSchema'
+import RecipeTagSchema from './schemas/recipeTagSchema'
 import TermsPageSchema from './schemas/termsPageSchema'
 import StoreSchema from './schemas/storeSchema'
 import SiteSettingsSchema from './schemas/siteSettingsSchema'
@@ -29,6 +31,8 @@ export const schema = {
     BlogPageSchema,
     BlogPostSchema,
     BlogCategorySchema,
+    RecipeSchema,
+    RecipeTagSchema,
     TermsPageSchema,
     StoreSchema,
     SiteSettingsSchema,

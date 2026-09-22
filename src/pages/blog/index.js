@@ -119,7 +119,7 @@ export default function BlogPage() {
               return (
                 <div key={p.slug} style={{ padding: '8px' }}>
                   <StyledCard style={{ padding: '8px' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '16px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '16px', flex: 1 }}>
                       {categoryName ? (
                         <span
                           style={{
@@ -138,10 +138,11 @@ export default function BlogPage() {
                           {categoryName}
                         </span>
                       ) : null}
-                      <Link href={`/blog/${p.slug}`}><span style={{ fontWeight: 600 }}>{p.title}</span></Link>
+                      <h2 style={{ fontWeight: 600 }}>{p.title}</h2>
                       <p style={{ color: '#000819', fontSize: '0.875rem', lineHeight: '1.25rem' }}>
                         {p.snippet}
                       </p>
+                      <Link href={`/blog/${p.slug}`} className="catalog-card__button">Read article</Link>
                     </div>
                   </StyledCard>
                 </div>

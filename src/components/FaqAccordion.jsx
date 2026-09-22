@@ -19,7 +19,7 @@ export default function FaqAccordion({ items = [], defaultOpenValues = [] }) {
         const key = String(index)
         const isOpen = open.has(key)
         return (
-          <div key={index} style={{ borderBottom: '1px solid #e4e4e7' }}>
+          <div key={index} style={{ borderBottom: '1px solid #09090b' }}>
             <button
               onClick={() => toggle(key)}
               aria-expanded={isOpen}

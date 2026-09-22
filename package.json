@@ -12,7 +12,8 @@
     "cloudinary:upload": "node scripts/uploadCloudinaryMatchesToSanity.js",
     "cloudinary:replace:dry": "node scripts/replaceCloudinaryUrlsWithSanity.js",
     "cloudinary:replace": "node scripts/replaceCloudinaryUrlsWithSanity.js --write",
-    "seed:stores": "node scripts/seedStores.js"
+    "seed:stores": "node scripts/seedStores.js",
+    "seed:recipe": "node scripts/seedGarlicHoneyCucumberRecipe.js"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",

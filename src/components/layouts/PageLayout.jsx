@@ -8,7 +8,7 @@ export default function PageLayout({ children, navbarProps }) {
     <div style={{ backgroundColor: '#FFF2D7' }}>
       <Navbar {...(navbarProps || {})} />
       {/* Prevent floating nav pill from overlapping non-hero content on desktop */}
-      <main className="rpt" style={{ '--pt': '0px', '--pt-lg': overlayOnHero ? '0px' : '112px' }}>
+      <main className="rpt site-main" style={{ '--pt': '0px', '--pt-lg': overlayOnHero ? '0px' : '112px' }}>
         {children}
       </main>
       <Footer />

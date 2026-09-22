@@ -90,6 +90,204 @@ button {
   font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Keep the first hero's top margin inside the cream page background. */
+.site-main {
+  display: flow-root;
+}
+
+/* Inset image header shared by the content pages. */
+.subpage-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(480px, 78svh, 820px);
+  margin: 16px;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: #66563b;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  isolation: isolate;
+}
+
+.subpage-hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .35), transparent 75%),
+    linear-gradient(0deg, rgba(0, 0, 0, .68), rgba(0, 0, 0, .06) 68%);
+}
+
+.subpage-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  padding: 140px 32px var(--hero-bottom, 64px);
+}
+
+.subpage-hero__title {
+  font-family: var(--font-hanken);
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.subpage-hero__subtitle {
+  max-width: 42rem;
+  margin-top: 16px;
+  font-family: var(--font-hanken);
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.subpage-hero__extra {
+  max-width: 42rem;
+}
+
+.catalog-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 2px solid #000819;
+}
+
+.catalog-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  margin-top: auto;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #000819;
+  color: #fff7e1;
+  font-family: var(--font-hanken);
+  font-size: .9375rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.product-list-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.product-list-card .catalog-card__image {
+  border-bottom-width: 1px;
+}
+
+.product-list-card .catalog-card__button {
+  border: 1px solid #000819;
+  background: #fff7e1;
+  color: #000819;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .product-list-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 8, 25, .14);
+  }
+}
+
+.products-anchor {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #000819;
+  font-family: var(--font-hanken);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.products-anchor:hover,
+.products-anchor:focus-visible {
+  background: #000819;
+  color: #fff7e1;
+}
+
+.products-index-nav {
+  display: none;
+}
+
+.products-index-nav__title {
+  flex: none;
+  font-family: var(--font-hanken);
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .products-index-nav {
+    display: block;
+    max-width: 72rem;
+    margin: 24px auto 0;
+    padding: 0 80px;
+  }
+  .products-index-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .products-index-nav__title { margin-right: 12px; }
+  .products-anchor { flex: none; }
+}
+
+@media (min-width: 1280px) {
+  .products-index-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 72rem) minmax(0, 1fr);
+    align-items: start;
+  }
+  .products-index-nav {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    position: sticky;
+    top: 128px;
+    width: clamp(120px, calc(50vw - 520px), 180px);
+    margin-top: 48px;
+    margin-left: max(8px, calc(100% - 200px));
+  }
+  .products-index-nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+  }
+  .products-index-nav__title { margin: 0 0 12px 12px; }
+  .products-index-content { grid-column: 2; grid-row: 1; }
+}
+
+@media (min-width: 768px) {
+  .subpage-hero { margin: 24px; }
+  .subpage-hero__content { padding: 160px 5% var(--hero-bottom-md, 80px); }
+}
+
+@media (max-width: 767px) {
+  .subpage-hero { min-height: max(520px, 72svh); border-radius: 20px; }
+  .subpage-hero__title { font-size: clamp(2.5rem, 11vw, 4rem); }
+  .subpage-hero__subtitle { font-size: 1.125rem; }
+}
+
+/* The full desktop pill needs more room after Recipes joins the nav. */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .desktop-nav-pill { display: none !important; }
+  .mobile-nav-pill { display: block !important; }
+  .site-main { padding-top: 0 !important; }
+}
+
 /* Film grain overlay (ported from the old emotion Global styles) */
 body::before {
   content: '';
