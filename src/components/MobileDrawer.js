@@ -57,7 +57,7 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
   }
 
   const bigLabelStyle = {
-    fontSize: '1.6875rem',
+    fontSize: '1.18125rem',
     lineHeight: 'normal',
     letterSpacing: '0.02rem',
     textTransform: 'none',
@@ -161,8 +161,8 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
                               color: '#000819',
                               fontFamily: 'var(--font-hanken)',
                               fontWeight: 600,
-                              fontSize: '1.25rem',
-                              lineHeight: '1.75rem',
+                              fontSize: '0.875rem',
+                              lineHeight: '1.25rem',
                             }}
                           >
                             {child.label}

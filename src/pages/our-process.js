@@ -93,7 +93,7 @@ function OurProcessPage() {
           </p>
         </div>
 
-        <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(2, 1fr)', paddingBottom: '64px' }}>
+        <div className="rgtc process-stage-grid" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(2, minmax(0, 1fr))', paddingBottom: '64px' }}>
           {[
             {
               title: 'Harvest & Collection',
@@ -128,28 +128,21 @@ function OurProcessPage() {
               alt: 'Jars of infused raw honey awaiting lab purity testing',
             },
           ].map((item) => (
-            <div key={item.title} style={col}>
+            <div key={item.title} style={{ ...col, gap: '12px', minWidth: 0 }}>
               <img
                 src={item.image}
                 alt={item.alt || item.title}
-                className="rh"
-                style={{
-                  borderRadius: '1.5rem',
-                  objectFit: 'cover',
-                  width: '100%',
-                  '--h': 'auto',
-                  maxHeight: '280px',
-                }}
+                className="process-stage-image"
               />
               <h2 style={headingMd}>{item.title}</h2>
-              <p style={textLg}>{item.description}</p>
+              <p className="rt" style={{ '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{item.description}</p>
             </div>
           ))}
         </div>
 
         <div style={{ paddingBottom: '64px' }}>
           <h2 style={{ ...headingLg, marginBottom: '24px' }}>From Smallholder To Sanctuary</h2>
-          <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(3, 1fr)' }}>
+          <div className="rgtc process-feature-grid" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(3, minmax(0, 1fr))' }}>
             {[
               {
                 name: 'Direct Trade Guarantee',
@@ -170,7 +163,7 @@ function OurProcessPage() {
               <div key={item.name} style={{ ...col, border: '1px solid #1A2234', borderRadius: '0.75rem', padding: '24px' }}>
                 <span style={grayBadge}>{item.badge}</span>
                 <h3 style={headingMd}>{item.name}</h3>
-                <p style={textLg}>{item.note}</p>
+                <p className="rt" style={{ '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{item.note}</p>
               </div>
             ))}
           </div>

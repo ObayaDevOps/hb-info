@@ -64,7 +64,7 @@ export default function BestHoneyKampala() {
         py={{ base: 16, md: 24 }}
       />
 
-      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+      <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How we benchmark honey in 2025</h2>
           <p>Every quarter we host a tasting flight with chefs from Kampala, Jinja, and Entebbe. We line up anonymised jars under neutral light, evaluate aroma, texture, and finish, and then compare notes with lab reports. Honey that survives this double scrutiny earns a place on our recommended list. The shortlist is dominated by raw, single-origin Ugandan batches because shorter supply chains mean fresher nectar and fewer opportunities for tampering.</p>

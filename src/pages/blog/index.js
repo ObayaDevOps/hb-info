@@ -69,7 +69,7 @@ export default function BlogPage() {
           >
             Blog Articles
           </h1>
-          <p style={{ color: '#000819' }}>Read stories from our beekeepers, explore pairings, and dive into sustainability insights.</p>
+          <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>Read stories from our beekeepers, explore pairings, and dive into sustainability insights.</p>
 
           {/* Category Filter (UI only) */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', width: '100%' }}>

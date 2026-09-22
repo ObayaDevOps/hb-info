@@ -101,7 +101,7 @@ button {
   display: flex;
   align-items: flex-end;
   min-height: clamp(480px, 78svh, 820px);
-  margin: 16px;
+  margin: 8px;
   overflow: hidden;
   border-radius: 24px;
   background-color: #66563b;
@@ -155,6 +155,28 @@ button {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-bottom: 2px solid #000819;
+}
+
+.process-stage-grid {
+  column-gap: clamp(20px, 3vw, 32px);
+  row-gap: 40px;
+}
+
+.process-stage-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.process-feature-grid {
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .process-feature-grid { gap: 24px; }
 }
 
 .catalog-card__button {
@@ -271,7 +293,7 @@ button {
 }
 
 @media (min-width: 768px) {
-  .subpage-hero { margin: 24px; }
+  .subpage-hero { margin: 12px; }
   .subpage-hero__content { padding: 160px 5% var(--hero-bottom-md, 80px); }
 }
 
@@ -279,6 +301,24 @@ button {
   .subpage-hero { min-height: max(520px, 72svh); border-radius: 20px; }
   .subpage-hero__title { font-size: clamp(2.5rem, 11vw, 4rem); }
   .subpage-hero__subtitle { font-size: 1.125rem; }
+
+  /* Match the wholesale page's content gutter on pages with an image hero. */
+  .subpage-hero + .rpx.rpy,
+  .subpage-hero + .products-index-layout .products-index-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .subpage-hero__extra p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .subpage-article p,
+  .subpage-article li {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 /* The full desktop pill needs more room after Recipes joins the nav. */

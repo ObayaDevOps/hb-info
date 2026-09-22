@@ -56,7 +56,7 @@ export default function ImpactPage() {
           ].map(([title, text]) => (
             <div key={title} style={pillarCard}>
               <h2 style={headingMd}>{title}</h2>
-              <p style={{ color: '#000819' }}>{text}</p>
+              <p className="rt" style={{ color: '#000819', '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>{text}</p>
             </div>
           ))}
         </div>
@@ -64,7 +64,7 @@ export default function ImpactPage() {
         {/* UN SDG Alignment (placeholder infographic area) */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '32px' }}>
           <h2 style={headingMd}>UN SDG Alignment</h2>
-          <p style={{ color: '#000819' }}>Visual summary of aligned SDGs and outcomes (infographic placeholder).</p>
+          <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>Visual summary of aligned SDGs and outcomes (infographic placeholder).</p>
           <img
             src="/globe.svg"
             alt="UN Sustainable Development Goals supported by Humble Beeing's ethical beekeeping in Uganda"
@@ -76,7 +76,7 @@ export default function ImpactPage() {
         {/* KPI Dashboard (snapshot) */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '24px' }}>
           <h2 style={headingMd}>Impact Dashboard</h2>
-          <p style={{ color: '#000819' }}>Quarterly KPIs: farmer count, hectares conserved, % women trained, units traceable.</p>
+          <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>Quarterly KPIs: farmer count, hectares conserved, % women trained, units traceable.</p>
         </div>
 
         {/* CTA */}

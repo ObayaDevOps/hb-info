@@ -48,7 +48,7 @@ export default function WhereToBuyHoneyKampala() {
         py={{ base: 16, md: 24 }}
       />
 
-      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+      <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How we vet every stockist</h2>
           <p>After our jars leave the apiary, we keep them on a short leash. Each retail partner signs cold-chain and display agreements, trains staff on batch traceability, and stores stock away from direct sunlight. We audit shelves twice a month (clipboards, refractometer, the works) because EEAT applies to real-world shelves too.</p>

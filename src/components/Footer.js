@@ -26,6 +26,21 @@ const donateBtnStyle = {
   whiteSpace: 'nowrap',
 }
 
+const sitemapLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Our Story', href: '/our-story' },
+  { label: 'Our Process', href: '/our-process' },
+  { label: 'Impact & Sustainability', href: '/impact-and-sustainability' },
+  { label: 'Products', href: '/products' },
+  { label: 'Wholesale', href: '/wholesale-and-partnerships' },
+  { label: 'Recipes', href: '/recipes' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Lab Tests', href: '/lab-tests' },
+  { label: 'Store Locator', href: '/store-locator' },
+  { label: 'Contact', href: '/contact-and-connect' },
+  { label: 'Terms & Conditions', href: '/terms-and-conditions' },
+]
+
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
@@ -84,6 +99,7 @@ const Footer = () => {
             width: '100%',
             maxWidth: '1200px',
             display: 'flex',
+            flexWrap: 'wrap',
             justifyContent: 'space-between',
             '--fd': 'column',
             '--fd-lg': 'row',
@@ -292,11 +308,11 @@ const Footer = () => {
               Donate to Support a Smallholder Beekeeper
             </motion.p>
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              <div className="rfd rai rg" style={{ display: 'flex', '--fd': 'column', '--fd-md': 'row', '--ai': 'stretch', '--ai-md': 'center', '--g': '12px', '--g-md': '4px' }}>
+              <div className="rfd rai rg" style={{ display: 'flex', '--fd': 'column', '--fd-md': 'row', '--ai': 'stretch', '--ai-md': 'center', '--g': '12px', '--g-md': '4px', '--g-lg': '4px' }}>
                 <a
                   href="https://store.pesapal.com/humblebeeinghoneypayments"
                   className="btn-dark rpx"
-                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px' }}
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px', '--px-lg': '8px' }}
                 >
                   <GiBeehive size={18} />
                   Beehive - $100
@@ -304,7 +320,7 @@ const Footer = () => {
                 <a
                   href="https://store.pesapal.com/humblebeeinghoneypayments"
                   className="btn-dark rpx"
-                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px' }}
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px', '--px-lg': '8px' }}
                 >
                   <TbShirt size={18} />
                   Beesuit-$80
@@ -312,7 +328,7 @@ const Footer = () => {
                 <a
                   href="https://store.pesapal.com/humblebeeinghoneypayments"
                   className="btn-dark rpx"
-                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px' }}
+                  style={{ ...donateBtnStyle, '--px': '16px', '--px-md': '14px', '--px-lg': '8px' }}
                 >
                   <FaTree size={18} />
                   Shea Trees -$15
@@ -329,6 +345,19 @@ const Footer = () => {
               © {currentYear} HB Fine Honey Suppliers Limited. All rights reserved
             </motion.p>
           </div>
+
+          <nav aria-label="Sitemap" style={{ flex: '1 0 auto', width: '100%', display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '32px', paddingBottom: '72px', borderTop: '1px solid rgba(245, 203, 129, 0.35)' }}>
+            <h2 style={{ fontSize: '1.25rem', lineHeight: '1.5rem', fontWeight: 800 }}>Sitemap</h2>
+            <ul className="rgtc" style={{ display: 'grid', '--gtc': 'repeat(2, minmax(0, 1fr))', '--gtc-sm': 'repeat(3, minmax(0, 1fr))', '--gtc-lg': 'repeat(4, minmax(0, 1fr))', gap: '8px 24px' }}>
+              {sitemapLinks.map(({ label, href }) => (
+                <li key={href}>
+                  <a href={href} className="hover-underline" style={{ fontSize: '0.875rem', lineHeight: '1.375rem', color: '#f5cb81' }}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </footer>

@@ -86,7 +86,7 @@ export default function RecipesPage({ recipes }) {
                     <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '12px', padding: '20px' }}>
                       <span style={{ color: '#8a5420', fontWeight: 700, fontSize: '0.875rem' }}>{recipe.totalMinutes} min · {recipe.servings} servings</span>
                       <h3 style={{ fontSize: '1.5rem', lineHeight: 1.25, fontWeight: 700 }}>{recipe.title}</h3>
-                      <p style={{ lineHeight: 1.5, flex: 1 }}>{recipe.summary}</p>
+                      <p className="rt" style={{ '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '1rem', '--lh-md': '1.5rem', flex: 1 }}>{recipe.summary}</p>
                       <span className="catalog-card__button">View recipe <ArrowRight size={18} aria-hidden /></span>
                     </div>
                   </Link>

@@ -140,7 +140,7 @@ function ProductsIndexPage() {
                     </div>
                     <div style={{ ...col, padding: '20px', gap: '8px', width: '100%', flex: 1 }}>
                       <h3 style={{ ...headingMd, margin: 0 }}>{product.shortName}</h3>
-                      <p style={{ margin: 0, fontSize: '0.9375rem', lineHeight: '1.4rem', color: 'rgba(0,8,25,0.7)' }}>{product.tagline}</p>
+                      <p className="rt" style={{ margin: 0, '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '0.9375rem', '--lh-md': '1.4rem', color: 'rgba(0,8,25,0.7)' }}>{product.tagline}</p>
                       <p style={{ margin: 0, fontWeight: 700, fontFamily: hanken }}>
                         {formatUGX(product.price)}{' '}
                         <span style={{ fontWeight: 400, color: 'rgba(0,8,25,0.6)' }}>· {product.size}</span>
@@ -188,7 +188,7 @@ function ProductsIndexPage() {
               </div>
               <div style={{ ...col, padding: '20px', gap: '8px', width: '100%', flex: 1 }}>
                 <h3 style={{ ...headingMd, margin: 0 }}>Wholesale &amp; Partnerships</h3>
-                <p style={{ margin: 0, fontSize: '0.9375rem', lineHeight: '1.4rem', color: 'rgba(0,8,25,0.7)' }}>
+                <p className="rt" style={{ margin: 0, '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '0.9375rem', '--lh-md': '1.4rem', color: 'rgba(0,8,25,0.7)' }}>
                   Bulk formats, corporate gift hampers, and branded gift sets, tailored to your needs.
                 </p>
                 <span className="catalog-card__button">

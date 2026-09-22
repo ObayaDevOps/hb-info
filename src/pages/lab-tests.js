@@ -68,7 +68,7 @@ export default function LabTestsPage() {
           >
             Lab Test Certificates
           </h1>
-          <p className="rt" style={{ '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', maxWidth: '48rem' }}>
+          <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', maxWidth: '48rem' }}>
             Every harvest batch is verified in ISO-accredited laboratories. Download the original A4 certificates below to review
             moisture readings, HMF values, residue panels, and adulteration results.
           </p>

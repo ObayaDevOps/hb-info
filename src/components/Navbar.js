@@ -3,36 +3,19 @@ import { createPortal } from 'react-dom'
 import { useRouter } from 'next/router'
 import MobileDrawer from './MobileDrawer'
 import {
-  Home as HomeIcon,
   BookOpen as BookOpenIcon,
   ChevronDown as ChevronDownIcon,
   ShoppingBag as ShoppingBagIcon,
   Package as PackageIcon,
+  Handshake as HandshakeIcon,
   Phone as PhoneIcon,
-  Route as RouteIcon,
+  // Route as RouteIcon,
   ArrowRight as ArrowRightIcon,
   MapPin as MapPinIcon,
 } from 'lucide-react'
 import { PRODUCT_CATEGORIES, getProductsByCategory, formatUGX } from '@/lib/products'
 
 const shadowMd = '0px 4px 8px rgba(24, 24, 27, 0.1), 0px 0px 1px rgba(24, 24, 27, 0.3)'
-
-// Wholesale is not a product category in products.js (it has its own page and
-// no retail products), but the menu presents it like one, listed after Gifts.
-const WHOLESALE_MENU_ITEM = {
-  key: 'wholesale',
-  navLabel: 'Wholesale',
-  href: '/wholesale-and-partnerships',
-  blurb: 'Bulk raw honey and beeswax for chefs, hotels, retailers, and NGOs, with the same harvest-number traceability.',
-  card: {
-    title: 'Wholesale & Partnerships',
-    text: 'Bulk formats & corporate gifts',
-    image: '/images/products/wholesale-bulk-honey.jpg',
-    imageAlt: 'Humble Beeing bulk jerrycan of raw pressed shea blossom honey for wholesale',
-  },
-}
-
-const MENU_CATEGORIES = [...PRODUCT_CATEGORIES, WHOLESALE_MENU_ITEM]
 
 // Generic hover dropdown for the desktop floating pill: trigger link + fixed
 // panel. The panel is portaled to the app root: the nav pill's backdrop-filter
@@ -150,8 +133,8 @@ function NavDropdown({ item, linkStyle, labelStyle, renderBg, ariaLabel, panelSt
 function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
   const [activeCategory, setActiveCategory] = useState('raw')
 
-  const activeMeta = MENU_CATEGORIES.find((c) => c.key === activeCategory) || MENU_CATEGORIES[0]
-  const activeProducts = activeMeta.card ? [] : getProductsByCategory(activeMeta.key)
+  const activeMeta = PRODUCT_CATEGORIES.find((c) => c.key === activeCategory) || PRODUCT_CATEGORIES[0]
+  const activeProducts = getProductsByCategory(activeMeta.key)
 
   return (
     <NavDropdown
@@ -170,7 +153,7 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
         {/* Left column: category links + blurb */}
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '24px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            {MENU_CATEGORIES.map((category) => {
+            {PRODUCT_CATEGORIES.map((category) => {
               const isActive = category.key === activeMeta.key
               return (
                 <a
@@ -217,41 +200,15 @@ function ProductsMegaMenu({ item, linkStyle, labelStyle, renderBg }) {
           </div>
         </div>
 
-        {/* Right area: product cards for the active category (or the single
-            page card for entries like Wholesale that have no products) */}
+        {/* Right area: product cards for the active category */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: `repeat(${Math.min((activeMeta.card ? 1 : 0) + activeProducts.length, 3) || 3}, 1fr)`,
+            gridTemplateColumns: `repeat(${Math.min(activeProducts.length, 3) || 3}, 1fr)`,
             gap: '16px',
             alignContent: 'start',
           }}
         >
-          {activeMeta.card && (
-            <a
-              href={activeMeta.href}
-              role="menuitem"
-              className="hover-op9"
-              style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: '#09090b' }}
-            >
-              <img
-                src={activeMeta.card.image}
-                alt={activeMeta.card.imageAlt}
-                style={{
-                  width: '100%',
-                  aspectRatio: '4 / 3',
-                  objectFit: 'cover',
-                  borderRadius: '0.75rem',
-                  border: '1px solid rgba(9, 9, 11, 0.15)',
-                  display: 'block',
-                }}
-              />
-              <span style={{ fontFamily: 'var(--font-hanken)', fontWeight: 600, lineHeight: '1.25rem' }}>
-                {activeMeta.card.title}
-              </span>
-              <span style={{ fontSize: '0.875rem', color: 'rgba(9, 9, 11, 0.7)' }}>{activeMeta.card.text}</span>
-            </a>
-          )}
           {activeProducts.map((product) => (
             <a
               key={product.slug}
@@ -567,7 +524,6 @@ export default function Navbar(props) {
 
   const navItems = useMemo(
     () => [
-      { label: 'Home', href: '/', icon: HomeIcon },
       {
         label: 'About',
         icon: BookOpenIcon,
@@ -582,19 +538,20 @@ export default function Navbar(props) {
       {
         label: 'Products',
         icon: PackageIcon,
-        match: ['/products', '/wholesale-and-partnerships'],
+        match: ['/products'],
         children: [
           ...PRODUCT_CATEGORIES.map((c) => ({
             label: c.navLabel,
             href: `/products#${c.key}`,
           })),
-          { label: 'Wholesale', href: '/wholesale-and-partnerships' },
           { label: 'All products →', href: '/products' },
         ],
       },
+      { label: 'Wholesale', href: '/wholesale-and-partnerships', icon: HandshakeIcon },
       { label: 'Recipes', href: '/recipes', icon: BookOpenIcon },
       { label: 'Store Locator', href: '/store-locator', icon: MapPinIcon },
-      { label: 'Trace', href: 'https://trace.humble-beeing.com', isExternal: true, icon: RouteIcon },
+      // Enable this when the Trace feature is ready.
+      // { label: 'Trace', href: 'https://trace.humble-beeing.com', isExternal: true, icon: RouteIcon },
       // WhatsApp ordering fills the CTA slot until the online shop (shop.humble-beeing.com) goes live:
       {
         label: 'Order on WhatsApp',

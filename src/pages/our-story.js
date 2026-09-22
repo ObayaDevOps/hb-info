@@ -115,7 +115,7 @@ export default function AboutPage() {
           ].map(([title, text]) => (
             <div key={title} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '8px' }}>
               <h2 style={h2Style}>{title}</h2>
-              <p className="rt" style={{ ...bodyText, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{text}</p>
+              <p className="rt" style={{ ...bodyText, '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{text}</p>
             </div>
           ))}
         </div>

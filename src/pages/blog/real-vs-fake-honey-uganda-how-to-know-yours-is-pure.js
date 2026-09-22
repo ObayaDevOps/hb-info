@@ -26,7 +26,7 @@ export default function RealVsFakeHoneyUganda() {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd, crumbs]} />
       <HeroSection title={title} subtitle="Practical checks anyone can do, plus the one proof that settles it for good" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
-      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+      <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <p>Ask any chef or market vendor in Kampala and they’ll tell you the same thing: a lot of the “pure honey” on sale is nothing of the sort. Sugar syrup, glucose blends, and over-heated bulk honey are routinely rebottled and sold as natural honey across Uganda. The good news is that fake honey betrays itself, if you know where to look. Here are the five checks we recommend, in rising order of certainty.</p>
 

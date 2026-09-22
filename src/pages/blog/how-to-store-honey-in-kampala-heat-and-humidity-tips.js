@@ -48,7 +48,7 @@ export default function StoreHoneyKampala() {
         py={{ base: 16, md: 24 }}
       />
 
-      <div className="rpx rpy rbr" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
+      <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Why climate control matters here</h2>
           <p>Our Kampala kitchens flirt with 30°C afternoons and humidity north of 70%. Honey is hygroscopic, meaning it pulls moisture the way journalists pull late nights. Too much water invites fermentation, so we rotate jars off the counter during service hours and keep them tucked into a cool cupboard, ideally on the wall opposite your cooker.</p>
