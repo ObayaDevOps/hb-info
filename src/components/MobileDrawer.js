@@ -39,7 +39,10 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
     }
   }, [open])
 
-  const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Order on WhatsApp')
+  const primary = navItems.filter((it) => it.label !== 'Trace' && it.label !== 'Order on WhatsApp' && it.label !== 'Wholesale')
+  const wholesale = navItems.find((it) => it.label === 'Wholesale')
+  const contactIndex = primary.findIndex((it) => it.label === 'Contact')
+  if (wholesale) primary.splice(contactIndex < 0 ? primary.length : contactIndex, 0, wholesale)
   const trace = navItems.find((it) => it.label === 'Trace')
   const shop = navItems.find((it) => it.label === 'Order on WhatsApp')
 
@@ -56,8 +59,10 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
     gap: '12px',
   }
 
+  const menuItemSize = '1.18125rem'
+
   const bigLabelStyle = {
-    fontSize: '1.18125rem',
+    fontSize: menuItemSize,
     lineHeight: 'normal',
     letterSpacing: '0.02rem',
     textTransform: 'none',
@@ -140,17 +145,17 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
                       }}
                     >
                       <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                        {item.icon ? <item.icon size={36} color="#000819" /> : null}
+                        {item.icon ? <item.icon size={menuItemSize} color="#000819" /> : null}
                         <span style={bigLabelStyle}>{item.label}</span>
                       </span>
                       <ChevronDown
-                        size={28}
+                        size={menuItemSize}
                         color="#000819"
                         style={{ transform: sectionOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms ease' }}
                       />
                     </button>
                     {sectionOpen && (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', paddingLeft: '62px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', paddingLeft: '20px' }}>
                         {item.children.map((child) => (
                           <a
                             key={child.href}
@@ -161,8 +166,8 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
                               color: '#000819',
                               fontFamily: 'var(--font-hanken)',
                               fontWeight: 600,
-                              fontSize: '0.875rem',
-                              lineHeight: '1.25rem',
+                              fontSize: '1rem',
+                              lineHeight: '1.5rem',
                             }}
                           >
                             {child.label}
@@ -185,7 +190,7 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
                   style={rowStyle}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                    {item.icon ? <item.icon size={36} color="#000819" /> : null}
+                    {item.icon ? <item.icon size={menuItemSize} color="#000819" /> : null}
                     <span style={bigLabelStyle}>{item.label}</span>
                   </span>
                 </a>
@@ -202,7 +207,7 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
                 className="btn-dark"
                 style={pillLinkStyle}
               >
-                {trace.icon ? <trace.icon size={36} /> : null}
+                {trace.icon ? <trace.icon size={menuItemSize} /> : null}
                 <span style={{ ...bigLabelStyle, fontWeight: 700 }}>{trace.label}</span>
               </a>
             )}
@@ -214,7 +219,7 @@ export default function MobileDrawer({ navItems, triggerColor = '#000819', trigg
                 className="btn-dark"
                 style={pillLinkStyle}
               >
-                {shop.icon ? <shop.icon size={36} /> : null}
+                {shop.icon ? <shop.icon size={menuItemSize} /> : null}
                 <span style={{ ...bigLabelStyle, fontWeight: 700 }}>{shop.label}</span>
               </a>
             )}

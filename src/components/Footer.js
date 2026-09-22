@@ -72,12 +72,11 @@ const Footer = () => {
 
   return (
     <footer
+      className="site-footer"
       style={{
         color: '#f5cb81',
         backgroundColor: '#000819',
         fontFamily: 'var(--font-hanken)',
-        borderTopLeftRadius: '2rem',
-        borderTopRightRadius: '2rem',
       }}
     >
       <div
@@ -94,12 +93,11 @@ const Footer = () => {
         }}
       >
         <div
-          className="rfd rai rg"
+          className="rfd rai rg footer-layout"
           style={{
             width: '100%',
             maxWidth: '1200px',
             display: 'flex',
-            flexWrap: 'wrap',
             justifyContent: 'space-between',
             '--fd': 'column',
             '--fd-lg': 'row',
@@ -111,7 +109,7 @@ const Footer = () => {
           }}
         >
           {/* Brand + Info */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <motion.div {...fadeUp}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <img
@@ -207,7 +205,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Pill */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '8px' }}>
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '8px' }}>
             <motion.p
               {...fadeUp}
               className="rt"

@@ -1,0 +1,99 @@
+.root {
+  width: 100%;
+  min-width: 0;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-x pan-y;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track.dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.slide {
+  flex: 0 0 calc(100% - 40px);
+  min-width: 0;
+  display: flex;
+  scroll-snap-align: start;
+}
+
+.slide > * {
+  width: 100%;
+}
+
+.slide:last-child {
+  margin-right: 40px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 24px;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #f5cb81;
+  border-radius: 50%;
+  background: transparent;
+  color: #f5cb81;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, opacity 160ms ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #f5cb81;
+  color: #09090b;
+}
+
+.arrow:focus-visible {
+  outline: 2px solid #fff2d7;
+  outline-offset: 3px;
+}
+
+.arrow:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.progress {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 242, 215, .3);
+}
+
+.bar {
+  height: 100%;
+  border-radius: inherit;
+  background: #f5cb81;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow { transition: none; }
+}

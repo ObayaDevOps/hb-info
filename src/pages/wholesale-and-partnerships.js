@@ -90,6 +90,14 @@ const SEGMENTS = [
     desc: 'Retail-ready single-origin and infused jars, lab-tested every batch.',
   },
   {
+    title: 'Exporters',
+    desc: 'Traceable Ugandan honey and beeswax for export sourcing partnerships.',
+  },
+  {
+    title: 'Cosmetics companies',
+    desc: 'Beeswax supply for skincare, balms, and other personal care products.',
+  },
+  {
     title: 'Events & weddings',
     desc: 'Custom-labelled favors and gifts branded for your day.',
   },
@@ -106,6 +114,7 @@ const SEGMENTS = [
 const RANGE = [
   { title: 'Single-origin honey', desc: 'Raw, unblended honey traceable to one forest region.' },
   { title: 'Infused honeys', desc: 'Small-batch infusions from our Kampala kitchen.' },
+  { title: 'Bulk beeswax', desc: 'Beeswax for candles, balms, and other formulations; ask us about volumes and formats.' },
   { title: 'Luxury gift hampers', desc: 'Curated boxes, ready to brand for your organization.' },
   { title: 'Beeswax candles', desc: 'Hand-poured from the same hives as our honey.' },
 ]
@@ -144,13 +153,13 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Wholesale & Bulk Honey Supplier in Kampala: Corporate Gifts"
-        description="Bulk raw honey for chefs, hotels, retailers, and NGOs, plus corporate gift hampers and branded gift sets made in Uganda. Delivery across Kampala."
+        title="Wholesale Honey & Beeswax Supplier in Uganda | Partnerships"
+        description="Traceable Ugandan honey and beeswax for chefs, retailers, exporters, and cosmetics companies, plus corporate gift hampers and branded gift sets."
       />
       {/* Hero */}
       <HeroSection
         title="Wholesale & Partnerships"
-        subtitle="Chefs, retailers, events, and corporate gifting: let’s collaborate."
+        subtitle="Honey and beeswax for chefs, retailers, exporters, cosmetics makers, events, and corporate gifting."
         bgImage={'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
@@ -180,10 +189,10 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
           <div className="rgtc" style={{ display: 'grid', gap: '24px', alignItems: 'center', '--gtc': '1fr', '--gtc-md': 'minmax(0, 3fr) minmax(0, 2fr)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
-                As a bulk honey supplier in Kampala, we partner with chefs, hotels, retailers,
-                and NGOs to deliver luxury raw honey and beeswax products with traceability and
-                impact. From corporate gift hampers and branded gift sets to bulk formats, we
-                tailor solutions to your needs.
+                As a bulk honey and beeswax supplier in Kampala, we work with chefs, hotels,
+                retailers, exporters, cosmetics companies, and NGOs. From traceable raw honey
+                and beeswax to corporate gift hampers and branded gift sets, we tailor supply
+                to your needs.
               </p>
             </div>
             <img
@@ -210,7 +219,7 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
           {/* What we supply */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <h2 className="rt" style={sectionHeadingVars}>What we supply</h2>
-            <div className="rgtc" style={{ display: 'grid', gap: '16px', '--gtc': '1fr', '--gtc-sm': 'repeat(2, minmax(0, 1fr))', '--gtc-md': 'repeat(4, minmax(0, 1fr))' }}>
+            <div className="rgtc" style={{ display: 'grid', gap: '16px', '--gtc': '1fr', '--gtc-sm': 'repeat(2, minmax(0, 1fr))', '--gtc-md': 'repeat(3, minmax(0, 1fr))' }}>
               {RANGE.map((item) => (
                 <div key={item.title} style={{ display: 'flex', flexDirection: 'column', gap: '4px', borderTop: '2px solid #000819', paddingTop: '10px' }}>
                   <h3 style={{ fontSize: '1rem', lineHeight: '1.5rem', fontWeight: 600, fontFamily: hanken }}>{item.title}</h3>
@@ -249,6 +258,8 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
                       <option value="" disabled>Select one…</option>
                       <option value="Chef / Restaurant">Chef / Restaurant</option>
                       <option value="Retail / Specialty">Retail / Specialty</option>
+                      <option value="Exporter">Exporter</option>
+                      <option value="Cosmetics Company">Cosmetics Company</option>
                       <option value="Events / Weddings">Events / Weddings</option>
                       <option value="Corporate Gifting">Corporate Gifting</option>
                       <option value="NGO / Donor / Grant">NGO / Donor / Grant</option>

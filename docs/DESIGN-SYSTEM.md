@@ -29,7 +29,7 @@
 |---|---|---|
 | **Navy** (primary dark) | `#000819` | Footer & dark-section backgrounds, headings/body text on light, borders, focus outlines. A near-black with a blue undertone — the brand's "ink". |
 | **Cream** (primary light) | `#FFF2D7` | Default page/section background, text on navy. Never use pure white `#FFFFFF` as a background. |
-| **Amber / Honey** (accent) | `#f5cb81` | Signature accent: CTA buttons, badges, footer text on navy, outer page frame. The honey color — use it to draw the eye. |
+| **Amber / Honey** (accent) | `#f5cb81` | Signature accent: CTA buttons, badges, footer text on navy. The honey color — use it to draw the eye. |
 
 ### Supporting colors
 

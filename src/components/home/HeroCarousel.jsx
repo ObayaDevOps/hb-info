@@ -28,9 +28,9 @@ export default function HeroCarousel({ images = [], children, marquee, autoMs = 
 
   return (
     <section
+      className="home-hero-carousel"
       style={{
         position: 'relative',
-        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
@@ -138,7 +138,7 @@ export default function HeroCarousel({ images = [], children, marquee, autoMs = 
 
       {/* Foreground content */}
       <div
-        className="rpx"
+        className="rpx home-hero-content"
         style={{
           position: 'relative',
           zIndex: 1,

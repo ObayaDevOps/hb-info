@@ -1,15 +1,12 @@
 // Switch homepage to Humble Beeing layout — un-Chakra'd: semantic HTML + inline styles.
 import SEO from '@/components/SEO';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-
-import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion';
-const Slider = dynamic(() => import('react-slick'), { ssr: false })
 import PageLayout from '@/components/layouts/PageLayout';
 import Marquee from 'react-fast-marquee';
 import StyledCard from '@/components/StyledCard';
 import HeroCarousel from '@/components/home/HeroCarousel';
+import ProductCarousel from '@/components/home/ProductCarousel';
 
 // Logos for the small marquee under "Uganda's Finest Honey"
 const trustedLogos = [
@@ -25,10 +22,10 @@ const trustedLogos = [
 ];
 
 const carousel = [
-  { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', alt: 'Jar of single-origin raw Ugandan honey with pine and coffee blossom notes', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
-  { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', alt: 'Creamy infused raw honey with shea blossom notes, pure honey from Uganda', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
-  { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', alt: 'Hand-poured pure beeswax candles made in Kampala, Uganda', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
-  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', alt: 'Luxury Ugandan gift set with honey jars and beeswax candles in recycled paper packaging', description: 'The perfect way to explore our gourmet range. Packaged in recycled paper, handcrafted by local artisans' },
+  { name: 'Single-Origin Gourmet Raw Honey', href: '/products#raw', image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', alt: 'Jar of single-origin raw Ugandan honey with pine and coffee blossom notes', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
+  { name: 'Infused Gourmet Raw Honey', href: '/products#infused', image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', alt: 'Creamy infused raw honey with shea blossom notes, pure honey from Uganda', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
+  { name: 'Luxury Beeswax Candles', href: '/products#candles', image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', alt: 'Hand-poured pure beeswax candles made in Kampala, Uganda', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
+  { name: 'Premium Gift Sets', href: '/products#gifts', image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', alt: 'Luxury Ugandan gift set with honey jars and beeswax candles in recycled paper packaging', description: 'The perfect way to explore our gourmet range. Packaged in recycled paper, handcrafted by local artisans' },
 ];
 
 const fadeUp = {
@@ -73,7 +70,7 @@ const statementContainer = {
   width: '100%',
   marginLeft: 'auto',
   marginRight: 'auto',
-  height: '95vh',
+  minHeight: '95vh',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
@@ -89,11 +86,11 @@ const statementResponsive = {
   '--br-lg': '24px',
   '--sh': 'none',
   '--sh-lg': shadowXl,
-  '--px': '48px',
+  '--px': '24px',
   '--px-md': '80px',
-  '--py': '64px',
+  '--py': '48px',
   '--py-md': '80px',
-  '--mt': '24px',
+  '--mt': '0px',
   '--mt-lg': '80px',
 }
 
@@ -113,49 +110,8 @@ export default function HBHome() {
     'https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg',
   ];
 
-  const Arrow = ({ dir, className, style, onClick }) => {
-    const Icon = dir === 'prev' ? ArrowLeft : ArrowRight
-    return (
-      <button
-        aria-label={dir === 'prev' ? 'Previous' : 'Next'}
-        onClick={onClick}
-        className={`${className || ''} btn-dark ${dir === 'prev' ? 'rleft' : 'rright'}`}
-        style={{
-          ...style,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'absolute',
-          [dir === 'prev' ? '--left' : '--right']: '8px',
-          [dir === 'prev' ? '--left-md' : '--right-md']: '12px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '40px',
-          height: '40px',
-          borderRadius: '9999px',
-          backgroundColor: '#09090b',
-          color: '#f5cb81',
-          border: '1px solid #09090b',
-          zIndex: 2,
-        }}
-      >
-        <Icon size={20} />
-      </button>
-    )
-  }
-  const sliderSettingsMobile = {
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <Arrow dir="prev" />,
-    nextArrow: <Arrow dir="next" />,
-  }
-
   return (
-    <div style={{ backgroundColor: '#f5cb81', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
+    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
         title="Pure Raw Honey from Uganda: Luxury Gifts & Beeswax Candles"
         description="Humble Beeing crafts pure raw Ugandan honey, infused honeys, beeswax candles, and luxury gift hampers in Kampala: lab-tested, traceable, delivered citywide."
@@ -250,7 +206,7 @@ export default function HBHome() {
           <motion.div
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: 0.3 }}
-            style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '8px' }}
+            style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px', paddingTop: '8px' }}
           >
             <Link href="/products" className="btn-dark rpx" style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}>
               See our Products
@@ -262,7 +218,7 @@ export default function HBHome() {
         </motion.div>
       </HeroCarousel>
 
-      {/* Product Slider (react-slick) — desktop */}
+      {/* Product range — desktop grid */}
       <div
         className="rd rpx rpy rsh"
         style={{
@@ -320,8 +276,6 @@ export default function HBHome() {
                       <p className="rt" style={{ fontWeight: 400, '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{c.description}</p>
                       <Link
                         href={c.href}
-                        target={c.external ? '_blank' : undefined}
-                        rel={c.external ? 'noopener noreferrer' : undefined}
                         className="catalog-card__button"
                       >
                         More info
@@ -334,9 +288,9 @@ export default function HBHome() {
         </motion.div>
       </div>
 
-      {/* Product Slider Mobile (react-slick) */}
+      {/* Product range — touch-friendly mobile carousel */}
       <div
-        className="rd rpx rpy rbr rsh rmt"
+        className="rd rpx rpy rbr rsh"
         style={{
           position: 'relative',
           maxWidth: '90rem',
@@ -348,16 +302,14 @@ export default function HBHome() {
           '--br-lg': '24px',
           '--sh': 'none',
           '--sh-lg': shadowXl,
-          '--px': '16px',
+          '--px': '20px',
           '--px-md': '80px',
-          '--py': '64px',
-          '--mt': '24px',
-          '--mt-lg': '128px',
+          '--py': '48px',
           '--d': 'block',
           '--d-md': 'none',
         }}
       >
-        <div style={{ padding: '16px' }}>
+        <div style={{ paddingBottom: '20px' }}>
           <motion.h2
             className="rmb"
             {...fadeUp}
@@ -376,24 +328,22 @@ export default function HBHome() {
           </motion.h2>
         </div>
 
-        <motion.div className="slider-container rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
-          <Slider {...sliderSettingsMobile}>
-            {carousel.map((c, index) => (
-              <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
-                <StyledCard className="home-product-card" style={{ borderRadius: '1rem' }}>
+        <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+          <ProductCarousel label="Our Product Range">
+            {carousel.map((c) => (
+              <div key={c.name} style={{ height: '100%' }}>
+                <StyledCard className="home-product-card" style={{ borderRadius: '1rem', marginLeft: 0, marginRight: 0 }}>
                   <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <img
                       src={c.image}
                       alt={c.alt || c.name}
                       className="catalog-card__image"
                     />
-                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '32px' }}>
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '24px' }}>
                       <p className="rt" style={{ fontWeight: 700, '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>{c.name}</p>
                       <p className="rt" style={{ fontWeight: 400, '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.125rem', '--lh-md': '1.75rem' }}>{c.description}</p>
                       <Link
                         href={c.href}
-                        target={c.external ? '_blank' : undefined}
-                        rel={c.external ? 'noopener noreferrer' : undefined}
                         className="catalog-card__button"
                       >
                         More info
@@ -401,9 +351,9 @@ export default function HBHome() {
                     </div>
                   </div>
                 </StyledCard>
-              </motion.div>
+              </div>
             ))}
-          </Slider>
+          </ProductCarousel>
         </motion.div>
       </div>
 
@@ -448,7 +398,7 @@ export default function HBHome() {
           >
             Trusted by leading businesses
           </p>
-          <div style={{ maxWidth: '100%' }}>
+          <div className="trusted-logo-marquee">
             <Marquee gradient={false} speed={40} pauseOnHover>
               {trustedLogos.map((item, idx) => (
                 <div key={idx} style={{ display: 'inline-block' }}>
@@ -486,12 +436,16 @@ export default function HBHome() {
       </div>
 
       {/* Honey Statement */}
-      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+      <div className="rpy home-inset-statement" style={{ '--py': '8px', '--py-md': '64px' }}>
         <div
           className="rbr rsh rpx rpy rmt"
           style={{
             ...statementContainer,
             ...statementResponsive,
+            '--br': '20px',
+            '--br-md': '0px',
+            '--px': '32px',
+            '--py': '64px',
             backgroundImage:
               "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/289a82281b2afc47c22bda041c9be198359c905a-5184x3456.jpg')",
           }}
@@ -530,7 +484,7 @@ export default function HBHome() {
       </div>
 
       {/* Impact Statement */}
-      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+      <div className="rpy" style={{ '--py': '0px', '--py-md': '64px' }}>
         <div
           className="rbr rsh rpx rpy rmt"
           style={{
@@ -583,12 +537,16 @@ export default function HBHome() {
       </div>
 
       {/* Family Statement */}
-      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+      <div className="rpy home-inset-statement" style={{ '--py': '8px', '--py-md': '64px' }}>
         <div
           className="rbr rsh rpx rpy rmt"
           style={{
             ...statementContainer,
             ...statementResponsive,
+            '--br': '20px',
+            '--br-md': '0px',
+            '--px': '32px',
+            '--py': '64px',
             backgroundImage:
               "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/351d48dac96af618c5068833c2ff4ddf7046dcfe-1200x1199.png')",
           }}
@@ -643,9 +601,9 @@ export default function HBHome() {
         style={{
           width: '100%',
           minHeight: '85vh',
-          '--mt': '64px',
+          '--mt': '0px',
           '--mt-lg': '96px',
-          '--mb': '24px',
+          '--mb': '0px',
           '--mb-lg': '64px',
           '--py': '48px',
           '--py-md': '80px',
@@ -692,12 +650,16 @@ export default function HBHome() {
       </div>
 
       {/* Recipes */}
-      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+      <div className="rpy home-inset-statement" style={{ '--py': '8px', '--py-md': '64px' }}>
         <div
           className="rbr rsh rpx rpy rmt"
           style={{
             ...statementContainer,
             ...statementResponsive,
+            '--br': '20px',
+            '--br-md': '0px',
+            '--px': '32px',
+            '--py': '64px',
             backgroundImage:
               "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://cdn.sanity.io/images/wf5e366r/production/4dfb5556eba5a09ad920ebc2c6a70b2a083c2daa-1200x911.png')",
           }}
@@ -753,18 +715,19 @@ export default function HBHome() {
           width: '100%',
           marginLeft: 'auto',
           marginRight: 'auto',
-          backgroundColor: '#FFF2D7',
+          backgroundColor: '#09090b',
+          color: '#FFF2D7',
           '--br': '0px',
           '--br-lg': '32px',
           '--sh': 'none',
           '--sh-lg': shadowXl,
-          '--px': '48px',
+          '--px': '20px',
           '--px-md': '80px',
-          '--pt': '24px',
+          '--pt': '48px',
           '--pt-lg': '48px',
-          '--pb': '24px',
+          '--pb': '48px',
           '--pb-lg': '80px',
-          '--mb': '48px',
+          '--mb': '0px',
           '--mb-lg': '96px',
         }}
       >
@@ -782,14 +745,14 @@ export default function HBHome() {
         >
           Don't just take our word for it!
         </motion.h2>
-        <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(3, 1fr)' }}>
+        <div className="rgtc" style={{ display: 'grid', gap: '16px', '--gtc': '1fr', '--gtc-md': 'repeat(3, 1fr)' }}>
           {[
             { q: '“The Garlic and chilli infused honey flavors go really well with fried chicken wings🥰❤️ 100% recommend!”', a: 'Sheillah R. - Food Reviewer' },
             { q: '“Without a doubt, this is the best honey in Uganda. I’ve been in the country for years, and this is by far the best souvenir I’ve found here. Everyone I’ve gifted it to has loved it! My personal favorite is the rosemary-infused honey. My dad, a cheese lover, enjoys it drizzled over cheese, especially the garlic-infused variety. My mom uses them in her Asian cooking, and it elevates the flavors like nothing else!”', a: 'Minori - Japan' },
             { q: '“The best honey I’ve had! Love their raw honey, so luxurious and delicious and I’m not even normally the biggest fan of honey. Definitely the best honey you can find in Uganda, my family loved them as gifts.”', a: 'Lina A.' },
           ].map((t, idx) => (
             <motion.div key={idx} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 + (idx * 0.1) }} style={{ display: 'flex' }}>
-              <StyledCard style={{ borderRadius: '1rem', paddingTop: '16px', paddingBottom: '16px' }}>
+              <StyledCard style={{ borderRadius: '1rem', paddingTop: '16px', paddingBottom: '16px', marginLeft: 0, marginRight: 0, color: '#000819' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '24px' }}>
                   <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}> {t.q} </p>
                   <span
@@ -818,8 +781,8 @@ export default function HBHome() {
             href="https://g.page/r/CXO3cDknQeegEBM/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-dark rpx"
-            style={{ ...pillBtn, '--px': '20px', '--px-md': '28px' }}
+            className="btn-amber rpx"
+            style={{ ...pillBtnAmber, '--px': '20px', '--px-md': '28px' }}
           >
             Leave Us a Review!
           </a>
@@ -827,12 +790,16 @@ export default function HBHome() {
       </div>
 
       {/* Quality Assured */}
-      <div className="rpy" style={{ '--py': '48px', '--py-md': '64px' }}>
+      <div className="rpy home-inset-statement" style={{ '--py': '8px', '--py-md': '64px' }}>
         <div
           className="rbr rsh rpx rpy rmt"
           style={{
             ...statementContainer,
             ...statementResponsive,
+            '--br': '20px',
+            '--br-md': '0px',
+            '--px': '32px',
+            '--py': '64px',
             alignItems: 'stretch',
             backgroundImage:
               "linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.85)), url('https://cdn.sanity.io/images/wf5e366r/production/bd61c8b1a8ed936847ac22805b9201884f74c35d-905x1200.png')",
@@ -943,8 +910,8 @@ export default function HBHome() {
         </div>
       </div>
 
-      {/* Spacer above footer with brand background */}
-      <div className="rh" style={{ backgroundColor: '#f5cb81', '--h': '48px', '--h-lg': '96px' }} />
+      {/* Spacer above footer */}
+      <div className="rh" style={{ backgroundColor: '#FFF2D7', '--h': '0px', '--h-lg': '96px' }} />
     </div>
   );
 }
