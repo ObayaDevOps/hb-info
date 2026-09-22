@@ -1,139 +1,196 @@
+import Link from 'next/link';
 import SEO from '@/components/SEO';
 import HeroSection from '@/components/sections/HeroSection';
-import Section from '@/components/sections/Section';
 import PageLayout from '@/components/layouts/PageLayout';
 
-const headingMd = {
-  fontSize: '1rem',
-  lineHeight: '1.5rem',
-  fontWeight: 600,
-  fontFamily: 'var(--font-hanken)',
-}
+const stories = [
+  {
+    number: '01',
+    title: 'More opportunity for beekeepers',
+    body: 'We work with smallholder beekeepers on practical training, careful harvesting, and access to a dependable market for their honey.',
+    image: '/images/our-process/harvest-collection.jpg',
+    alt: 'Beekeeper holding a freshly harvested honeycomb',
+  },
+  {
+    number: '02',
+    title: 'Landscapes worth protecting',
+    body: 'Healthy bees depend on healthy habitats. Our approach connects beekeeping with care for native trees, including shea, and the places where pollinators forage.',
+    image: '/images/our-process/beeswax.jpg',
+    alt: 'Honeybee colony building a comb in a tree',
+  },
+  {
+    number: '03',
+    title: 'Care from hive to jar',
+    body: 'Direct sourcing, thoughtful handling, and batch-level quality checks help us make honey people can trust and value.',
+    image: '/images/our-process/pouring-honey.jpg',
+    alt: 'Raw honey being poured during careful processing',
+  },
+];
 
-const pillarCard = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  gap: '8px',
-  border: '1px solid #1A2234',
-  borderRadius: '0.375rem',
-  padding: '24px',
-}
+const goals = [
+  {
+    number: '01',
+    name: 'No Poverty',
+    image: '/images/sdgs/goal-01.png',
+    contribution: 'Build more reliable earning opportunities through beekeeper training and market access.',
+  },
+  {
+    number: '05',
+    name: 'Gender Equality',
+    image: '/images/sdgs/goal-05.png',
+    contribution: 'Make training and participation in the honey value chain more accessible to women.',
+  },
+  {
+    number: '08',
+    name: 'Decent Work and Economic Growth',
+    image: '/images/sdgs/goal-08.png',
+    contribution: 'Support local livelihoods and fairer, more dependable routes to market.',
+  },
+  {
+    number: '12',
+    name: 'Responsible Consumption and Production',
+    image: '/images/sdgs/goal-12.png',
+    contribution: 'Prioritize traceable sourcing, careful processing, and responsible use of hive products.',
+  },
+  {
+    number: '13',
+    name: 'Climate Action',
+    image: '/images/sdgs/goal-13.png',
+    contribution: 'Encourage land stewardship and more resilient beekeeping practices as conditions change.',
+  },
+  {
+    number: '15',
+    name: 'Life on Land',
+    image: '/images/sdgs/goal-15.png',
+    contribution: 'Value native trees and pollinator habitat alongside honey production.',
+  },
+];
+
+const measures = [
+  ['Beekeeper partnerships', 'Farmers reached through training and market access.'],
+  ['Women’s participation', 'Representation in training and sourcing partnerships.'],
+  ['Land stewardship', 'Native trees and pollinator habitats supported.'],
+  ['Product traceability', 'Batches with reliable sourcing and quality records.'],
+];
 
 export default function ImpactPage() {
   return (
-    <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
+    <div className="impact-page">
       <SEO
-        title="Impact & Sustainability: Ethical Beekeeping in Uganda"
-        description="Regenerative, ethical beekeeping in Uganda: poverty alleviation, biodiversity, gender inclusion, and full traceability behind every jar of pure Ugandan honey."
+        title="Impact & Sustainability: People, Bees and Land in Uganda"
+        description="Explore Humble Beeing’s approach to beekeeper livelihoods, women’s participation, traceable honey and pollinator habitats, aligned with six UN Sustainable Development Goals."
+        openGraph={{ image: 'https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png' }}
       />
-      {/* Hero */}
+
       <HeroSection
         title="Impact & Sustainability"
-        subtitle="Traceable quality and measurable outcomes across people and planet."
-        bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'}
+        subtitle="Better opportunities for people. More care for bees and the land."
+        bgImage="https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png"
         overlay
         py={{ base: 16, md: 24 }}
       >
-        <p style={{ marginTop: '16px', maxWidth: '42rem', color: 'white' }}>
-          From beekeeper training to biodiversity corridors, every jar you enjoy funds lasting change.
-        </p>
+        <p>Our work starts with the beekeepers and landscapes behind every harvest.</p>
       </HeroSection>
 
-      <Section
-        py={{ base: 10, md: 16 }}
-        px={{ base: 12, md: 20 }}
-        className="rbr rpx rpy"
-        style={{ backgroundColor: '#FFF2D7', '--br': '0px', '--br-lg': '2rem' }}
-      >
-        {/* Impact pillars */}
-        <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': 'repeat(2, 1fr)', paddingBottom: '32px' }}>
-          {[
-            ['Poverty Alleviation', '5,000 farmers trained and supported with income uplift through fair, consistent purchasing.'],
-            ['Environmental Conservation', 'Preservation of Shea trees and biodiversity corridors across priority landscapes.'],
-            ['Traceability & Quality', 'Fighting adulteration with QR-enabled traceability and rigorous testing protocols.'],
-            ['Gender & Inclusion', 'Focused training and recruitment driving a higher percentage of women beekeepers.'],
-          ].map(([title, text]) => (
-            <div key={title} style={pillarCard}>
-              <h2 style={headingMd}>{title}</h2>
-              <p className="rt" style={{ color: '#000819', '--fs': '0.875rem', '--lh': '1.375rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>{text}</p>
+      <div>
+        <section className="impact-intro impact-container" aria-labelledby="impact-intro-title">
+          <div>
+            <span className="impact-eyebrow">Our approach</span>
+            <h2 id="impact-intro-title">Good honey begins with thriving communities.</h2>
+          </div>
+          <p>
+            We want the value of Ugandan honey to reach the people who produce it and to
+            support the landscapes bees need. That means working with beekeepers, widening
+            opportunities for women, and treating quality and stewardship as part of the
+            same story.
+          </p>
+        </section>
+
+        <section className="impact-target impact-container" aria-label="Farmer partnership target">
+          <div>
+            <span className="impact-eyebrow">Our target</span>
+            <p className="impact-target__number">2,000</p>
+          </div>
+          <p>
+            farmers supported with beekeeping knowledge and access to a fairer, more
+            dependable market. This is the goal we are working toward.
+          </p>
+        </section>
+
+        <section className="impact-section impact-container" aria-labelledby="impact-work-title">
+          <div className="impact-section-heading">
+            <span className="impact-eyebrow">From the field</span>
+            <h2 id="impact-work-title">How we put that purpose to work</h2>
+            <p>Three connected parts of the way we source and make our honey.</p>
+          </div>
+          <div className="impact-story-grid">
+            {stories.map((story) => (
+              <article className="impact-story" key={story.number}>
+                <img src={story.image} alt={story.alt} loading="lazy" />
+                <div className="impact-story__copy">
+                  <span className="impact-story__number">{story.number}</span>
+                  <h3>{story.title}</h3>
+                  <p>{story.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="impact-sdg-section" aria-labelledby="impact-sdg-title">
+          <div className="impact-container">
+            <div className="impact-section-heading">
+              <span className="impact-eyebrow">A shared framework</span>
+              <h2 id="impact-sdg-title">Our work and the UN Sustainable Development Goals</h2>
+              <p>
+                These six goals help describe the outcomes we aim to contribute to. Our
+                alignment is a statement of intent, not a claim of UN endorsement or
+                measured progress toward the global goals.
+              </p>
             </div>
-          ))}
-        </div>
+            <div className="impact-sdg-grid">
+              {goals.map((goal) => (
+                <article className="impact-sdg-card" key={goal.number}>
+                  <img src={goal.image} alt={`UN Sustainable Development Goal ${Number(goal.number)}: ${goal.name}`} loading="lazy" />
+                  <div>
+                    <h3>{goal.name}</h3>
+                    <p>{goal.contribution}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* UN SDG Alignment (placeholder infographic area) */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '32px' }}>
-          <h2 style={headingMd}>UN SDG Alignment</h2>
-          <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>Visual summary of aligned SDGs and outcomes (infographic placeholder).</p>
-          <img
-            src="/globe.svg"
-            alt="UN Sustainable Development Goals supported by Humble Beeing's ethical beekeeping in Uganda"
-            className="rw rh"
-            style={{ '--w': '200px', '--h': '200px', '--w-md': '280px', '--h-md': '280px', objectFit: 'contain' }}
-          />
-        </div>
+        <section className="impact-section impact-container" aria-labelledby="impact-measure-title">
+          <div className="impact-section-heading">
+            <span className="impact-eyebrow">Accountability</span>
+            <h2 id="impact-measure-title">What we intend to measure</h2>
+            <p>We will share results when they have been verified. These are the areas we plan to track.</p>
+          </div>
+          <div className="impact-measure-list">
+            {measures.map(([title, description], index) => (
+              <div className="impact-measure" key={title}>
+                <span className="impact-measure__number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        {/* KPI Dashboard (snapshot) */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', paddingBottom: '24px' }}>
-          <h2 style={headingMd}>Impact Dashboard</h2>
-          <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>Quarterly KPIs: farmer count, hectares conserved, % women trained, units traceable.</p>
-        </div>
-
-        {/* CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <a
-            href="#"
-            target="_blank"
-            className="hover-op9 rh rpx rt"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '12px',
-              '--h': '32px',
-              '--h-md': '44px',
-              '--px': '10px',
-              '--px-md': '20px',
-              '--fs': '0.75rem',
-              '--lh': '1rem',
-              '--fs-md': '1rem',
-              '--lh-md': '1.5rem',
-              fontWeight: 500,
-              borderRadius: '4px',
-              backgroundColor: '#000819',
-              color: 'white',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Download our Impact Deck
-          </a>
-          <a
-            href="/wholesale-and-partnerships"
-            className="hover-bg-navy rh rpx rt"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '12px',
-              '--h': '32px',
-              '--h-md': '44px',
-              '--px': '10px',
-              '--px-md': '20px',
-              '--fs': '0.75rem',
-              '--lh': '1rem',
-              '--fs-md': '1rem',
-              '--lh-md': '1.5rem',
-              fontWeight: 500,
-              borderRadius: '4px',
-              border: '1px solid #000819',
-              color: '#000819',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Partner with us
-          </a>
-        </div>
-      </Section>
+        <section className="impact-cta impact-container" aria-labelledby="impact-cta-title">
+          <div>
+            <span className="impact-eyebrow">Work with us</span>
+            <h2 id="impact-cta-title">Let’s make the next harvest count.</h2>
+            <p>Interested in a sourcing partnership or in supporting our beekeeping work?</p>
+          </div>
+          <div className="impact-cta__links">
+            <Link className="impact-button impact-button--amber btn-amber" href="/wholesale-and-partnerships">Explore partnerships</Link>
+            <Link className="impact-button impact-button--outline" href="/contact-and-connect">Get in touch</Link>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
@@ -142,4 +199,4 @@ ImpactPage.getLayout = (page) => (
   <PageLayout navbarProps={{ overlayOnHero: true }}>
     {page}
   </PageLayout>
-)
+);
