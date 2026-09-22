@@ -28,7 +28,7 @@ const carousel = [
   { name: 'Single-Origin Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', alt: 'Jar of single-origin raw Ugandan honey with pine and coffee blossom notes', description: 'Experience the unique blend of pine and coffee blossom in this exquisite honey.' },
   { name: 'Infused Gourmet Raw Honey', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', alt: 'Creamy infused raw honey with shea blossom notes, pure honey from Uganda', description: 'Delicate and creamy honey with notes of shea blossom, a true taste of nature.' },
   { name: 'Luxury Beeswax Candles', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', alt: 'Hand-poured pure beeswax candles made in Kampala, Uganda', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
-  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', alt: 'Luxury Ugandan gift set with honey jars and beeswax candles in recycled paper packaging', description: 'The perfect way to explore our gourmet range: Orange Peel, Lemon, Rosemary, Vanilla Bean, and more. Packaged in recycled paper, handcrafted by local artisans' },
+  { name: 'Premium Gift Sets', href: 'https://shop.humble-beeing.com', external: true, image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', alt: 'Luxury Ugandan gift set with honey jars and beeswax candles in recycled paper packaging', description: 'The perfect way to explore our gourmet range. Packaged in recycled paper, handcrafted by local artisans' },
 ];
 
 const fadeUp = {
@@ -142,20 +142,6 @@ export default function HBHome() {
         <Icon size={20} />
       </button>
     )
-  }
-  const sliderSettings = {
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    prevArrow: <Arrow dir="prev" />,
-    nextArrow: <Arrow dir="next" />,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-    ],
   }
   const sliderSettingsMobile = {
     dots: true,
@@ -316,11 +302,10 @@ export default function HBHome() {
           </motion.h2>
         </div>
 
-        <motion.div className="slider-container rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
-          <Slider {...sliderSettings}>
-            {carousel.map((c, index) => (
+        <motion.div className="home-product-grid rpb" {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} style={{ '--pb': '32px', '--pb-md': '24px' }}>
+          {carousel.map((c, index) => (
               <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
-                <StyledCard style={{ borderRadius: '1rem' }}>
+                <StyledCard className="home-product-card" style={{ borderRadius: '1rem' }}>
                   <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <img
                       src={c.image}
@@ -339,14 +324,13 @@ export default function HBHome() {
                         rel={c.external ? 'noopener noreferrer' : undefined}
                         className="catalog-card__button"
                       >
-                        Shop
+                        More info
                       </Link>
                     </div>
                   </div>
                 </StyledCard>
               </motion.div>
-            ))}
-          </Slider>
+          ))}
         </motion.div>
       </div>
 
@@ -396,7 +380,7 @@ export default function HBHome() {
           <Slider {...sliderSettingsMobile}>
             {carousel.map((c, index) => (
               <motion.div key={c.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 + (index * 0.1) }} style={{ height: '100%' }}>
-                <StyledCard style={{ borderRadius: '1rem' }}>
+                <StyledCard className="home-product-card" style={{ borderRadius: '1rem' }}>
                   <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <img
                       src={c.image}
@@ -412,7 +396,7 @@ export default function HBHome() {
                         rel={c.external ? 'noopener noreferrer' : undefined}
                         className="catalog-card__button"
                       >
-                        Shop
+                        More info
                       </Link>
                     </div>
                   </div>
@@ -462,7 +446,7 @@ export default function HBHome() {
               textAlign: 'center',
             }}
           >
-            Trusted Supplier To
+            Trusted by leading businesses
           </p>
           <div style={{ maxWidth: '100%' }}>
             <Marquee gradient={false} speed={40} pauseOnHover>

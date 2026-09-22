@@ -600,10 +600,34 @@ body::before {
 /* Equal-height slides: track becomes flex so every slide stretches to the tallest */
 .slider-container .slick-track {
   display: flex !important;
+  align-items: stretch;
 }
 .slider-container .slick-slide {
   height: auto; /* overrides slick's inline-computed height */
 }
 .slider-container .slick-slide > div {
   height: 100%; /* slick's own slide wrapper div */
+  display: flex;
+  width: 100%;
+}
+.slider-container .home-product-card {
+  width: 100%;
+}
+.slider-container .home-product-card > div {
+  flex: 1;
+}
+
+.home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+.home-product-grid > div {
+  min-width: 0;
+  height: 100%;
+}
+.home-product-grid .home-product-card {
+  width: auto;
 }
