@@ -87,7 +87,7 @@ const SEGMENTS = [
   },
   {
     title: 'Retail & specialty stores',
-    desc: 'Retail-ready single-origin and infused jars, lab-tested every batch.',
+    desc: 'Retail-ready single-origin and infused jars; ask us which test documentation applies to your order.',
   },
   {
     title: 'Exporters',

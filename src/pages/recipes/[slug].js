@@ -1,15 +1,24 @@
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import SEO from '@/components/SEO'
 import PageLayout from '@/components/layouts/PageLayout'
-import { breadcrumbJsonLd } from '@/lib/siteMeta'
+import { SITE_URL, breadcrumbJsonLd } from '@/lib/siteMeta'
 import { getProduct } from '@/lib/products'
 import { getRecipe, getRecipeImage, getRecipeSlugs } from '@/lib/recipes'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://humble-beeing.com'
+const siteUrl = SITE_URL
 
 export default function RecipePage({ recipe }) {
+  const [slideIndex, setSlideIndex] = useState(0)
+  useEffect(() => setSlideIndex(0), [recipe.slug])
   const image = getRecipeImage(recipe)
   const product = getProduct(recipe.relatedProductSlug)
+  const slides = image ? [{ ...image, kind: 'recipe' }] : []
+  if (product?.image && product.image !== image?.src) {
+    slides.push({ src: product.image, alt: product.imageAlt || product.name, kind: 'product' })
+  }
+  const currentSlide = slides.length ? slides[slideIndex % slides.length] : null
   const recipePath = `/recipes/${recipe.slug}`
   const jsonLd = [
     {
@@ -37,10 +46,26 @@ export default function RecipePage({ recipe }) {
           <Link href="/recipes" style={{ color: '#8a5420', fontWeight: 700 }}>← All recipes</Link>
         </nav>
         <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-md': '1.1fr 1fr', gap: '40px', alignItems: 'center' }}>
-          {image ? (
-            <figure>
-              <img src={image.src} alt={image.alt} style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '1.5rem', border: '2px solid #000819' }} />
-              {image.credit && <figcaption style={{ marginTop: '8px', fontSize: '0.8125rem', color: '#8a5420' }}>Photo: <a href={image.creditUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>{image.credit}</a></figcaption>}
+          {currentSlide ? (
+            <figure aria-label="Recipe photos">
+              <div style={{ position: 'relative' }}>
+                {currentSlide.kind === 'product' ? (
+                  <Link href={`/products/${product.slug}`} aria-label={`View ${product.name}`}>
+                    <img src={currentSlide.src} alt={currentSlide.alt} style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '1.5rem', border: '2px solid #000819' }} />
+                  </Link>
+                ) : (
+                  <img src={currentSlide.src} alt={currentSlide.alt} style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: '1.5rem', border: '2px solid #000819' }} />
+                )}
+                {slides.length > 1 && (
+                  <>
+                    <button type="button" aria-label="Previous photo" onClick={() => setSlideIndex((index) => (index - 1 + slides.length) % slides.length)} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', display: 'grid', placeItems: 'center', width: '42px', height: '42px', borderRadius: '50%', border: '2px solid #000819', backgroundColor: '#fff7e1', cursor: 'pointer' }}><ArrowLeft size={20} aria-hidden /></button>
+                    <button type="button" aria-label="Next photo" onClick={() => setSlideIndex((index) => (index + 1) % slides.length)} style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', display: 'grid', placeItems: 'center', width: '42px', height: '42px', borderRadius: '50%', border: '2px solid #000819', backgroundColor: '#fff7e1', cursor: 'pointer' }}><ArrowRight size={20} aria-hidden /></button>
+                  </>
+                )}
+              </div>
+              {currentSlide.credit && <figcaption style={{ marginTop: '8px', fontSize: '0.8125rem', color: '#8a5420' }}>Photo: <a href={currentSlide.creditUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>{currentSlide.credit}</a></figcaption>}
+              {currentSlide.kind === 'product' && <figcaption style={{ marginTop: '8px', fontSize: '0.875rem' }}><Link href={`/products/${product.slug}`} style={{ color: '#8a5420', fontWeight: 700, textDecoration: 'underline' }}>View {product.name} →</Link></figcaption>}
+              {slides.length > 1 && <div aria-label="Photo position" style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '12px' }}>{slides.map((slide, index) => <button key={slide.src} type="button" aria-label={`Show photo ${index + 1} of ${slides.length}`} aria-current={index === slideIndex ? 'true' : undefined} onClick={() => setSlideIndex(index)} style={{ width: '12px', height: '12px', borderRadius: '50%', border: '1px solid #000819', backgroundColor: index === slideIndex ? '#000819' : '#fff7e1', cursor: 'pointer' }} />)}</div>}
             </figure>
           ) : <div style={{ aspectRatio: '4 / 3', borderRadius: '1.5rem', backgroundColor: '#f5cb81' }} />}
           <div>
@@ -48,7 +73,7 @@ export default function RecipePage({ recipe }) {
             <p style={{ fontSize: '1.125rem', lineHeight: 1.6, marginTop: '20px' }}>{recipe.summary}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '24px' }}>
               {(recipe.tags || []).filter((tag) => tag?.slug).map((tag) => (
-                <Link key={tag.slug} href={`/recipes?tag=${encodeURIComponent(tag.slug)}`} style={{ padding: '7px 14px', borderRadius: '9999px', backgroundColor: '#f5cb81', border: '2px solid #000819', fontFamily: 'var(--font-hanken)', fontWeight: 700 }}>{tag.title}</Link>
+                <Link key={tag.slug} href={`/recipes?tag=${encodeURIComponent(tag.slug)}#recipe-list`} style={{ padding: '7px 14px', borderRadius: '9999px', backgroundColor: '#f5cb81', border: '2px solid #000819', fontFamily: 'var(--font-hanken)', fontWeight: 700 }}>{tag.title}</Link>
               ))}
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginTop: '28px', fontFamily: 'var(--font-hanken)' }}>

@@ -6,6 +6,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/hb-home',
+        destination: '/',
+        permanent: true,
+      },
       // Journal -> Blog
       {
         source: '/journal',
@@ -19,12 +24,12 @@ const nextConfig = {
       },
       {
         source: '/our-candles',
-        destination: 'https://shop.humble-beeing.com',
+        destination: '/products#candles',
         permanent: true,
       },
       {
         source: '/our-candles/:path*',
-        destination: 'https://shop.humble-beeing.com',
+        destination: '/products#candles',
         permanent: true,
       },
       // Legacy contact page -> main contact page

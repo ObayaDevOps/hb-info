@@ -50,7 +50,7 @@ const goals = [
     number: '12',
     name: 'Responsible Consumption and Production',
     image: '/images/sdgs/goal-12.png',
-    contribution: 'Prioritize traceable sourcing, careful processing, and responsible use of hive products.',
+    contribution: 'Prioritize traceable sourcing, careful processing, and packaging that minimises plastic.',
   },
   {
     number: '13',
@@ -78,7 +78,7 @@ export default function ImpactPage() {
     <div className="impact-page">
       <SEO
         title="Impact & Sustainability: People, Bees and Land in Uganda"
-        description="Explore Humble Beeing’s approach to beekeeper livelihoods, women’s participation, traceable honey and pollinator habitats, aligned with six UN Sustainable Development Goals."
+        description="Explore Humble Beeing’s approach to beekeeper livelihoods, women’s participation, traceable honey, pollinator habitats and packaging that minimises plastic, aligned with six UN Sustainable Development Goals."
         openGraph={{ image: 'https://cdn.sanity.io/images/wf5e366r/production/e21c432bb95edcad8c48491cf4f76ce70f31a0a0-1154x1200.png' }}
       />
 
@@ -135,6 +135,18 @@ export default function ImpactPage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="impact-intro impact-container" style={{ paddingTop: 0 }} aria-labelledby="impact-packaging-title">
+          <div>
+            <span className="impact-eyebrow">Packaging</span>
+            <h2 id="impact-packaging-title">Packaging with less plastic.</h2>
+          </div>
+          <p>
+            We minimise the use of plastic in our packaging. Our honey comes in glass jars,
+            our cosmetics in aluminium tins, and our gift sets in recycled paper packaging
+            made by local artisans.
+          </p>
         </section>
 
         <section className="impact-sdg-section" aria-labelledby="impact-sdg-title">

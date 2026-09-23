@@ -6,10 +6,11 @@ import SEO from '@/components/SEO'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import StyledCard from '@/components/StyledCard'
-import { breadcrumbJsonLd } from '@/lib/siteMeta'
+import { SITE_URL, breadcrumbJsonLd } from '@/lib/siteMeta'
+import { getProduct } from '@/lib/products'
 import { getRecipeImage, getRecipes, recipeMatchesSearch } from '@/lib/recipes'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://humble-beeing.com'
+const siteUrl = SITE_URL
 const pill = {
   display: 'inline-flex', alignItems: 'center', padding: '8px 16px', borderRadius: '9999px',
   border: '2px solid #000819', fontFamily: 'var(--font-hanken)', fontWeight: 700,
@@ -19,6 +20,7 @@ export default function RecipesPage({ recipes }) {
   const router = useRouter()
   const [query, setQuery] = useState('')
   const selectedTag = typeof router.query.tag === 'string' ? router.query.tag : ''
+  const selectedProduct = typeof router.query.product === 'string' ? getProduct(router.query.product) : null
   const tags = useMemo(() => {
     const unique = new Map()
     recipes.forEach((recipe) => (recipe.tags || []).forEach((tag) => {
@@ -28,8 +30,9 @@ export default function RecipesPage({ recipes }) {
   }, [recipes])
   const visible = useMemo(() => recipes.filter((recipe) =>
     (!selectedTag || (recipe.tags || []).some((tag) => tag?.slug === selectedTag)) &&
+    (!selectedProduct || recipe.relatedProductSlug === selectedProduct.slug) &&
     recipeMatchesSearch(recipe, query)
-  ), [recipes, selectedTag, query])
+  ), [recipes, selectedTag, selectedProduct, query])
   const activeTag = tags.find((tag) => tag.slug === selectedTag)
 
   const jsonLd = [
@@ -47,7 +50,7 @@ export default function RecipesPage({ recipes }) {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO title="Recipes" description="Cook with Humble Beeing honey. Browse quick salads, savoury dishes, and sweet ideas by ingredient or tag." canonical={`${siteUrl}/recipes`} jsonLd={jsonLd} />
       <HeroSection title="Recipes from the hive" subtitle="Simple, flavourful ways to cook with our Ugandan honey." bgImage="/images/recipes/spicy-peanut-cucumber-salad.webp" overlay py={{ base: 16, md: 24 }} />
-      <div className="rpx rpy" style={{ maxWidth: '72rem', margin: '0 auto', '--px': '24px', '--px-md': '48px', '--py': '48px', '--py-md': '80px' }}>
+      <div id="recipe-list" className="rpx rpy" style={{ maxWidth: '72rem', margin: '0 auto', '--px': '24px', '--px-md': '48px', '--py': '48px', '--py-md': '80px' }}>
         <h2 className="rt" style={{ '--fs': '1.875rem', '--fs-md': '2.5rem', fontFamily: 'var(--font-hanken)', fontWeight: 700 }}>All recipes</h2>
         <p style={{ marginTop: '12px', maxWidth: '42rem', fontSize: '1.125rem' }}>Search by recipe, ingredient, or honey. Choose a tag to explore more of what you love.</p>
 
@@ -64,16 +67,16 @@ export default function RecipesPage({ recipes }) {
         </div>
 
         <nav aria-label="Recipe tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '24px' }}>
-          <Link href="/recipes" aria-current={!selectedTag ? 'page' : undefined} style={{ ...pill, backgroundColor: !selectedTag ? '#000819' : '#fff7e1', color: !selectedTag ? '#f5cb81' : '#000819' }}>All recipes</Link>
+          <Link href="/recipes" scroll={false} aria-current={!selectedTag && !selectedProduct ? 'page' : undefined} style={{ ...pill, backgroundColor: !selectedTag && !selectedProduct ? '#000819' : '#fff7e1', color: !selectedTag && !selectedProduct ? '#f5cb81' : '#000819' }}>All recipes</Link>
           {tags.map((tag) => (
-            <Link key={tag.slug} href={`/recipes?tag=${encodeURIComponent(tag.slug)}`} aria-current={selectedTag === tag.slug ? 'page' : undefined} style={{ ...pill, backgroundColor: selectedTag === tag.slug ? '#000819' : '#fff7e1', color: selectedTag === tag.slug ? '#f5cb81' : '#000819' }}>
+            <Link key={tag.slug} href={`/recipes?tag=${encodeURIComponent(tag.slug)}`} scroll={false} aria-current={selectedTag === tag.slug ? 'page' : undefined} style={{ ...pill, backgroundColor: selectedTag === tag.slug ? '#000819' : '#fff7e1', color: selectedTag === tag.slug ? '#f5cb81' : '#000819' }}>
               {tag.title}
             </Link>
           ))}
         </nav>
 
         <p role="status" style={{ marginTop: '32px', fontFamily: 'var(--font-hanken)', fontWeight: 600 }}>
-          {visible.length} {visible.length === 1 ? 'recipe' : 'recipes'}{activeTag ? ` tagged ${activeTag.title}` : ''}
+          {visible.length} {visible.length === 1 ? 'recipe' : 'recipes'}{selectedProduct ? ` using ${selectedProduct.name}` : ''}{activeTag ? ` tagged ${activeTag.title}` : ''}
         </p>
         {visible.length ? (
           <div className="rgtc" style={{ display: 'grid', '--gtc': '1fr', '--gtc-sm': 'repeat(2, 1fr)', '--gtc-lg': 'repeat(3, 1fr)', gap: '24px', marginTop: '20px' }}>
@@ -97,7 +100,7 @@ export default function RecipesPage({ recipes }) {
         ) : (
           <div style={{ marginTop: '20px', padding: '32px', border: '2px solid #000819', borderRadius: '1.5rem', backgroundColor: '#fff7e1' }}>
             <h3 style={{ fontFamily: 'var(--font-hanken)', fontSize: '1.25rem', fontWeight: 700 }}>No recipes found</h3>
-            <p style={{ marginTop: '8px' }}>Try another ingredient or choose All recipes.</p>
+            <p style={{ marginTop: '8px' }}>{selectedProduct ? `No recipes using ${selectedProduct.name} are available yet. ` : 'Try another ingredient or '}<Link href="/recipes" style={{ color: '#8a5420', fontWeight: 700, textDecoration: 'underline' }}>Browse all recipes</Link>.</p>
           </div>
         )}
       </div>

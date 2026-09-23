@@ -24,7 +24,7 @@ const trustedLogos = [
 const carousel = [
   { name: 'Single-Origin Raw Honey', href: '/products#raw', image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', alt: 'Jar of single-origin raw Ugandan honey with pine and coffee blossom notes', description: 'Raw honey harvested and bottled by region, with natural flavours shaped by the flowers and seasons of Uganda.' },
   { name: 'Infused Gourmet Raw Honey', href: '/products#infused', image: 'https://cdn.sanity.io/images/wf5e366r/production/5a0f907daefa5fb874629a1e49df9dc768c9a577-5184x3456.jpg', alt: 'Creamy infused raw honey with shea blossom notes, pure honey from Uganda', description: 'Raw Ugandan honey slowly infused with real ingredients for a variety of distinctive flavours.' },
-  { name: 'Luxury Beeswax Candles', href: '/products#candles', image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', alt: 'Hand-poured pure beeswax candles made in Kampala, Uganda', description: 'Sustainably sourced Beeswax. Naturally purifying. Designed to transform everyday moments into rituals of wellness.' },
+  { name: 'Luxury Beeswax Candles', href: '/products#candles', image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', alt: 'Hand-poured beeswax candles made in Kampala, Uganda', description: 'Hand-poured beeswax candles in fragrances designed for everyday rituals.' },
   { name: 'Premium Gift Sets', href: '/products#gifts', image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', alt: 'Luxury Ugandan gift set with honey jars and beeswax candles in recycled paper packaging', description: 'The perfect way to explore our gourmet range. Packaged in recycled paper, handcrafted by local artisans' },
 ];
 
@@ -114,7 +114,7 @@ export default function HBHome() {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
         title="Pure Raw Honey from Uganda: Luxury Gifts & Beeswax Candles"
-        description="Humble Beeing crafts pure raw Ugandan honey, infused honeys, beeswax candles, and luxury gift hampers in Kampala: lab-tested, traceable, delivered citywide."
+        description="Humble Beeing makes raw Ugandan honey, infused honeys, beeswax candles, and gift hampers in Kampala, with sourcing details and published UNBS test reports."
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
@@ -824,7 +824,7 @@ export default function HBHome() {
                 transition={{ ...fadeUp.transition, delay: 0.15 }}
                 style={{ '--fs': '1.25rem', '--lh': '1.875rem', '--fs-md': '2.25rem', '--lh-md': '2.75rem', '--ls-md': '-0.025em', fontWeight: 600, fontFamily: hanken }}
               >
-                Certified. Traceable. Trusted.
+                Tested. Traceable. Transparent.
               </motion.h2>
               <motion.p
                 className="rt"
@@ -832,7 +832,7 @@ export default function HBHome() {
                 transition={{ ...fadeUp.transition, delay: 0.25 }}
                 style={{ maxWidth: '100%', paddingTop: '24px', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', fontFamily: hanken }}
               >
-                Proud partners and certified producers meeting the highest standards for Ugandan honey and beeswax. Every jar carries lab-grade moisture readings, batch provenance, and Uganda National Bureau of Standards compliance.
+                We publish original Uganda National Bureau of Standards (UNBS) chemistry and microbiology reports for a raw honey sample tested in October 2025.
               </motion.p>
               <motion.p
                 className="rt"
@@ -840,7 +840,7 @@ export default function HBHome() {
                 transition={{ ...fadeUp.transition, delay: 0.3 }}
                 style={{ maxWidth: '100%', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', color: '#f4f4f5', fontFamily: hanken }}
               >
-                Each harvest is tested in independent food laboratories for moisture, acidity, antibiotic residue, and HMF levels, and we consistently exceed European export benchmarks.
+                The reports show moisture, acidity, HMF, coliform, and yeast and mould results for that sample. They do not cover every harvest or test pesticide and antibiotic residues.
               </motion.p>
               <motion.p
                 className="rt"
@@ -848,7 +848,7 @@ export default function HBHome() {
                 transition={{ ...fadeUp.transition, delay: 0.33 }}
                 style={{ maxWidth: '100%', '--fs': '1rem', '--lh': '1.5rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', color: '#f4f4f5', fontFamily: hanken }}
               >
-                We invest in rigorous third-party audits so chefs, retailers, and families can trust that what is on the label is exactly what is inside the jar.
+                Read the reports and their sample details to see exactly what the published evidence supports.
               </motion.p>
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} style={{ paddingTop: '32px' }}>
                 <Link
@@ -883,7 +883,7 @@ export default function HBHome() {
                   <a href="https://tunadobees.org/" target="_blank" rel="noopener noreferrer" className="hover-fade">
                     <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/5d7e7c96941067625b03a2237d453997ee15ddde-200x241.png"
-                      alt="TUNADO membership badge: The Uganda National Apiculture Development Organisation"
+                      alt="The Uganda National Apiculture Development Organisation (TUNADO) logo"
                       className="rmaxw"
                       style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />
@@ -891,14 +891,14 @@ export default function HBHome() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
                   <a
-                    href="https://unbs.go.ug/content.php?src=product-certification&pg=content"
+                    href="/lab-tests"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover-fade"
                   >
                     <img
                       src="https://cdn.sanity.io/images/wf5e366r/production/8d19ad6abb9cf3d307255c19a5420cc38f446d75-226x278.png"
-                      alt="Uganda National Bureau of Standards (UNBS) certification mark for honey quality"
+                      alt="Uganda National Bureau of Standards (UNBS) logo"
                       className="rmaxw"
                       style={{ '--maxw': '120px', '--maxw-md': '160px', backgroundColor: 'white', borderRadius: '0.5rem', padding: '16px' }}
                     />

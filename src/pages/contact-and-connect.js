@@ -67,30 +67,33 @@ const pillBtn = {
 
 function SegmentedToggle({ value, onChange }) {
   const options = [
-    { wholesale: false, label: 'Retail inquiry' },
-    { wholesale: true, label: 'Wholesale inquiry' },
+    { type: 'retail', label: 'Retail inquiry' },
+    { type: 'wholesale', label: 'Wholesale inquiry' },
+    { type: 'investment', label: 'Investment inquiry' },
   ]
   return (
     <div
       role="group"
       aria-label="Inquiry type"
       style={{
-        display: 'inline-flex',
-        gap: '2px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '4px',
+        maxWidth: '100%',
         padding: '3px',
         border: '1px solid #000819',
-        borderRadius: '9999px',
+        borderRadius: '1rem',
         backgroundColor: 'white',
       }}
     >
       {options.map((opt) => {
-        const selected = value === opt.wholesale
+        const selected = value === opt.type
         return (
           <button
             key={opt.label}
             type="button"
             aria-pressed={selected}
-            onClick={() => onChange(opt.wholesale)}
+            onClick={() => onChange(opt.type)}
             style={{
               height: '36px',
               padding: '0 14px',
@@ -114,11 +117,13 @@ function SegmentedToggle({ value, onChange }) {
 
 export default function ContactConnectPage({ whatsappNumber }) {
   const router = useRouter();
-  const [isWholesale, setIsWholesale] = useState(false);
+  const [inquiryType, setInquiryType] = useState('retail');
 
-  // Deep links like /contact-and-connect?type=wholesale preselect the wholesale segment
+  // Deep links can preselect wholesale or investment inquiries.
   useEffect(() => {
-    if (router.isReady && router.query.type === 'wholesale') setIsWholesale(true)
+    if (router.isReady) {
+      setInquiryType(['wholesale', 'investment'].includes(router.query.type) ? router.query.type : 'retail')
+    }
   }, [router.isReady, router.query.type]);
 
   const waNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
@@ -132,9 +137,9 @@ export default function ContactConnectPage({ whatsappNumber }) {
     const email = data.get('email') || ''
     const company = data.get('company') || ''
     const message = data.get('message') || ''
-    const subject = isWholesale
-      ? `Wholesale inquiry${company ? ` — ${company}` : ''}`
-      : `Message from ${name || 'the website'}`
+    const subject = inquiryType === 'retail'
+      ? `Message from ${name || 'the website'}`
+      : `${inquiryType === 'investment' ? 'Investment' : 'Wholesale'} inquiry${company ? ` — ${company}` : ''}`
     const body = [message, '', name && `— ${name}`, company && `${company}`, email && `${email}`]
       .filter(Boolean)
       .join('\n')
@@ -145,7 +150,7 @@ export default function ContactConnectPage({ whatsappNumber }) {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
         title="Contact Us: Honey Delivery in Kampala"
-        description="Get in touch with Humble Beeing to order pure raw Ugandan honey, beeswax candles, and luxury gift hampers with Kampala delivery, or ask about wholesale."
+        description="Get in touch with Humble Beeing about raw Ugandan honey, gift hampers, wholesale partnerships, or investment opportunities in honey."
       />
 
       {/* Hero */}
@@ -177,10 +182,15 @@ export default function ContactConnectPage({ whatsappNumber }) {
         }}
       >
         <div className="rg" style={{ display: 'flex', flexDirection: 'column', '--g': '40px', '--g-md': '56px' }}>
-          <p className="rt" style={{ color: '#000819', maxWidth: '46rem', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
-            Questions about an order, our honey, or stocking Humble Beeing? Send a message
-            or reach us directly — we reply within 1–2 business days.
-          </p>
+          <div style={{ display: 'grid', gap: '12px' }}>
+            <p className="rt" style={{ color: '#000819', maxWidth: '46rem', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
+              Questions about an order, our honey, or stocking Humble Beeing? Send a message
+              or reach us directly — we reply within 1–2 business days.
+            </p>
+            <p style={{ color: '#000819', maxWidth: '46rem', fontSize: '1.125rem', lineHeight: '1.75rem' }}>
+              Looking for investment opportunities in honey? Choose Investment inquiry below and tell us what you have in mind.
+            </p>
+          </div>
 
           {/* Form + direct contact */}
           <div className="rgtc" style={{ display: 'grid', gap: '24px', alignItems: 'stretch', '--gtc': '1fr', '--gtc-md': 'minmax(0, 3fr) minmax(0, 2fr)' }}>
@@ -189,8 +199,8 @@ export default function ContactConnectPage({ whatsappNumber }) {
               <form onSubmit={handleSubmit} className="rp" style={{ '--p': '20px', '--p-md': '28px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px', width: '100%' }}>
                   <h2 style={cardHeading}>Send us a message</h2>
-                  <SegmentedToggle value={isWholesale} onChange={setIsWholesale} />
-                  {isWholesale && (
+                  <SegmentedToggle value={inquiryType} onChange={setInquiryType} />
+                  {inquiryType === 'wholesale' && (
                     <p style={{ fontSize: '0.875rem', lineHeight: '1.375rem', color: '#000819' }}>
                       Buying for a shop, hotel, or restaurant?{' '}
                       <Link href="/wholesale-and-partnerships" className="hover-underline" style={{ fontWeight: 600, textDecoration: 'underline' }}>
@@ -207,7 +217,7 @@ export default function ContactConnectPage({ whatsappNumber }) {
                     <label htmlFor="contact-email" style={labelStyle}>Email</label>
                     <input id="contact-email" name="email" type="email" autoComplete="email" required style={inputStyle} />
                   </div>
-                  {isWholesale && (
+                  {inquiryType !== 'retail' && (
                     <div style={fieldStyle}>
                       <label htmlFor="contact-company" style={labelStyle}>Company / organization</label>
                       <input id="contact-company" name="company" autoComplete="organization" style={inputStyle} />

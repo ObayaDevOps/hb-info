@@ -1,13 +1,11 @@
-export async function getServerSideProps({ res, req }) {
-  const scheme = req.headers['x-forwarded-proto'] || 'https'
-  const host = req.headers.host
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || `${scheme}://${host}`
+import { SITE_URL } from '@/lib/siteMeta'
 
+export async function getServerSideProps({ res }) {
   const body = [
     'User-agent: *',
     'Allow: /',
     'Disallow: /studio/',
-    `Sitemap: ${siteUrl}/sitemap.xml`,
+    `Sitemap: ${SITE_URL}/sitemap.xml`,
     ''
   ].join('\n')
 
@@ -21,4 +19,3 @@ export async function getServerSideProps({ res, req }) {
 export default function Robots() {
   return null
 }
-

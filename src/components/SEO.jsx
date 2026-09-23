@@ -1,18 +1,10 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { canonicalUrl } from '@/lib/siteMeta'
 
 const SITE_NAME = 'Humble Beeing'
 const DEFAULT_DESCRIPTION = 'Luxury Ugandan honey and beeswax candles from traceable, regenerative beekeeping. Available in Kampala with delivery and wholesale.'
 const DEFAULT_OG_IMAGE = 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg'
-
-function fullUrl(asPath, reqHost) {
-  if (typeof window !== 'undefined') {
-    const base = process.env.NEXT_PUBLIC_SITE_URL || `${window.location.protocol}//${window.location.host}`
-    return new URL(asPath || '/', base).toString()
-  }
-  const base = process.env.NEXT_PUBLIC_SITE_URL || (reqHost ? `https://${reqHost}` : '')
-  return base ? new URL(asPath || '/', base).toString() : undefined
-}
 
 export default function SEO({
   title,
@@ -24,7 +16,7 @@ export default function SEO({
   jsonLd,
 }) {
   const router = useRouter()
-  const computedCanonical = canonical || fullUrl(router?.asPath)
+  const computedCanonical = canonicalUrl(canonical || router?.asPath || router?.pathname || '/')
   const pageTitle = title ? `${title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`}` : SITE_NAME
 
   const og = {
@@ -74,4 +66,3 @@ export default function SEO({
     </Head>
   )
 }
-

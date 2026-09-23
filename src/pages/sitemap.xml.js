@@ -1,12 +1,8 @@
-import { STATIC_ROUTES, BLOG_SLUGS } from '@/lib/siteMeta'
+import { SITE_URL, STATIC_ROUTES, BLOG_SLUGS } from '@/lib/siteMeta'
 import { PRODUCT_SLUGS } from '@/lib/products'
 import { getRecipeSlugs } from '@/lib/recipes'
 
-export async function getServerSideProps({ res, req }) {
-  const scheme = req.headers['x-forwarded-proto'] || 'https'
-  const host = req.headers.host
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || `${scheme}://${host}`
-
+export async function getServerSideProps({ res }) {
   let recipeSlugs = []
   try { recipeSlugs = await getRecipeSlugs() || [] } catch (error) { console.error('Could not load recipe slugs', error) }
 
@@ -17,9 +13,8 @@ export async function getServerSideProps({ res, req }) {
     ...recipeSlugs.map((s) => `/recipes/${s}`),
   ]
 
-  const now = new Date().toISOString()
   const urls = pages
-    .map((path) => `  <url>\n    <loc>${siteUrl}${path}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${path === '/' ? '1.0' : '0.7'}</priority>\n  </url>`) 
+    .map((path) => `  <url>\n    <loc>${SITE_URL}${path}</loc>\n  </url>`)
     .join('\n')
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`

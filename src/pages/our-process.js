@@ -50,7 +50,7 @@ function OurProcessPage() {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
         title="How We Harvest Pure Raw Honey in Uganda: Our Process"
-        description="From hive to jar: how Humble Beeing harvests raw, unprocessed Ugandan honey and beeswax with smallholder farmers: cold-extracted, lab-tested, and traceable."
+        description="From hive to jar: how Humble Beeing harvests and processes raw Ugandan honey and beeswax with smallholder farmers."
       />
 
       <HeroSection
@@ -98,7 +98,7 @@ function OurProcessPage() {
             {
               title: 'Harvest & Collection',
               description:
-                'Combs are lifted at peak bloom to protect nectar character. We supply food-grade buckets and cold chains so the honey arrives untouched.',
+                'Combs are lifted at peak bloom to protect nectar character. We use food-grade buckets to collect and transport each harvest.',
               image:
                 '/images/our-process/harvest-collection.jpg',
               alt: 'Beekeeper harvesting raw honeycomb from hives in Uganda',
@@ -106,10 +106,10 @@ function OurProcessPage() {
             {
               title: 'Slow Extraction',
               description:
-                'Our Kampala hub uses gentle, centrifugal extraction and gravity settling. No heat, no blends: just raw honey retaining enzymes and pollen.',
+                'Our Kampala hub uses gentle, centrifugal extraction and gravity settling, letting the floral character of each harvest come through.',
               image:
                 '/images/our-process/pouring-honey.jpg',
-              alt: 'Pure raw Ugandan honey being poured after gentle cold extraction',
+              alt: 'Pure raw Ugandan honey being poured after extraction',
             },
             {
               title: 'Wax Craftsmanship',
@@ -155,9 +155,9 @@ function OurProcessPage() {
                 badge: 'Transparent',
               },
               {
-                name: 'Cold Chain Logistics',
-                note: 'Temperature-controlled transport prevents fermentation and preserves raw integrity.',
-                badge: 'Freshness First',
+                name: 'Small-Batch Handling',
+                note: 'We bottle in micro-lots to celebrate the distinct character of each harvest.',
+                badge: 'Harvest Character',
               },
             ].map((item) => (
               <div key={item.name} style={{ ...col, border: '1px solid #1A2234', borderRadius: '0.75rem', padding: '24px' }}>
@@ -181,8 +181,7 @@ function OurProcessPage() {
                 {[
                   'Naturally antibacterial and antimicrobial, ideal for throat and skincare rituals.',
                   'Rich in amino acids and pollen that support everyday energy and recovery.',
-                  'Beeswax burns cleanly, adding negative ions that can help purify indoor air.',
-                  'Enzyme activity remains high thanks to zero heat pasteurization.',
+                  'Our beeswax is used in hand-poured candles made in Kampala.',
                 ].map((point) => (
                   <div key={point} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                     <CircleCheck color="#c77b30" size={20} style={{ marginTop: '4px', flex: 'none' }} />

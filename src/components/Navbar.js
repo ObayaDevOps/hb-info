@@ -279,7 +279,7 @@ const ABOUT_LINKS = [
     href: '/our-process',
     image: '/images/our-process/beekeeper-field.jpg',
     imageAlt: 'Beekeeper harvesting honeycomb in the field in Uganda',
-    blurb: 'From hive to jar: Grade A comb, cold-pressed below 40°C, lab-tested and traceable by harvest number.',
+    blurb: 'From hive to jar: learn how we handle each harvest and what our published UNBS reports show.',
   },
   {
     label: 'Impact',

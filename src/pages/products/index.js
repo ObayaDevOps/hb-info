@@ -5,7 +5,7 @@ import SEO from '@/components/SEO'
 import HeroSection from '@/components/sections/HeroSection'
 import PageLayout from '@/components/layouts/PageLayout'
 import { PRODUCTS, PRODUCT_CATEGORIES, formatUGX } from '@/lib/products'
-import { breadcrumbJsonLd } from '@/lib/siteMeta'
+import { SITE_URL, breadcrumbJsonLd } from '@/lib/siteMeta'
 
 const hanken = 'var(--font-hanken)'
 
@@ -55,7 +55,7 @@ function ProductsIndexPage() {
         '@type': 'ListItem',
         position: i + 1,
         name: p.name,
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://humble-beeing.com'}/products/${p.slug}`,
+        url: `${SITE_URL}/products/${p.slug}`,
       })),
     },
     breadcrumbJsonLd([
@@ -73,12 +73,16 @@ function ProductsIndexPage() {
       />
 
       <HeroSection
-        title="Nine honeys, one story."
+        title="Our Products"
         subtitle="Raw single-origin harvests, slow-aged infusions, and pure beeswax: every jar traceable to the farmer."
         bgImage="https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg"
         overlay
         py={{ base: 16, md: 24 }}
-      />
+      >
+        <p className="subpage-hero__subtitle">
+          Cared for, crafted and refined over time. Nothing is spared in pursuit of the best products we are able to offer you and your loved ones.
+        </p>
+      </HeroSection>
 
       <div className="products-index-layout">
         <aside className="products-index-nav">

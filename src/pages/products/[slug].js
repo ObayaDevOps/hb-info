@@ -4,13 +4,12 @@ import { CircleCheck, MessageCircle, ArrowRight } from 'lucide-react'
 import SEO from '@/components/SEO'
 import PageLayout from '@/components/layouts/PageLayout'
 import FaqAccordion from '@/components/FaqAccordion'
-import { PRODUCTS, SHOP_URL, getProduct, formatUGX } from '@/lib/products'
-import { breadcrumbJsonLd } from '@/lib/siteMeta'
+import { PRODUCTS, getProduct, formatUGX } from '@/lib/products'
+import { SITE_URL, breadcrumbJsonLd } from '@/lib/siteMeta'
 import client from '../../../sanity/lib/client'
 
 const DEFAULT_WHATSAPP_NUMBER = '+256789062116'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://humble-beeing.com'
 const hanken = 'var(--font-hanken)'
 
 const headingLg = {
@@ -84,7 +83,7 @@ function sectionTitle(title) {
   return <h2 style={{ ...headingLg, marginBottom: '24px' }}>{title}</h2>
 }
 
-function ProductPage({ product, whatsappNumber }) {
+function ProductPage({ product, whatsappNumber, hasRecipes }) {
   if (!product) return null
 
   const waNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\D/g, '')
@@ -108,10 +107,9 @@ function ProductPage({ product, whatsappNumber }) {
       brand: { '@type': 'Brand', name: 'Humble Beeing' },
       offers: {
         '@type': 'Offer',
-        url: SHOP_URL,
+        url: productUrl,
         priceCurrency: 'UGX',
         price: product.price,
-        availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
       },
     },
@@ -216,21 +214,39 @@ function ProductPage({ product, whatsappNumber }) {
               >
                 <MessageCircle size={18} /> Place order on WhatsApp
               </a>
-              <Link
-                href="/lab-tests"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '12px 24px',
-                  borderRadius: '9999px',
-                  fontWeight: 600,
-                  border: '1px solid #1A2234',
-                  color: '#000819',
-                }}
-              >
-                View lab tests
-              </Link>
+              {isHoney && (
+                <Link
+                  href="/lab-tests"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '12px 24px',
+                    borderRadius: '9999px',
+                    fontWeight: 600,
+                    border: '1px solid #1A2234',
+                    color: '#000819',
+                  }}
+                >
+                  Read sample UNBS reports
+                </Link>
+              )}
+              {isHoney && hasRecipes && (
+                <Link
+                  href={`/recipes?product=${encodeURIComponent(product.slug)}#recipe-list`}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '12px 24px',
+                    borderRadius: '9999px',
+                    fontWeight: 600,
+                    border: '1px solid #1A2234',
+                    color: '#000819',
+                  }}
+                >
+                  See recipes
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -365,14 +381,26 @@ export async function getStaticProps({ params }) {
   if (!product) return { notFound: true }
 
   let whatsappNumber = null
+  let hasRecipes = false
   try {
     whatsappNumber = await client.fetch(`*[_type == "siteSettings"][0].whatsappNumber`)
   } catch (err) {
     whatsappNumber = null
   }
+  if (product.category === 'raw' || product.category === 'infused') {
+    try {
+      const recipeCount = await client.fetch(
+        `count(*[_type == "recipe" && relatedProductSlug == $slug && defined(slug.current)])`,
+        { slug: product.slug }
+      )
+      hasRecipes = recipeCount > 0
+    } catch (err) {
+      hasRecipes = false
+    }
+  }
 
   return {
-    props: { product, whatsappNumber: whatsappNumber || null },
+    props: { product, whatsappNumber: whatsappNumber || null, hasRecipes },
     revalidate: 60,
   }
 }

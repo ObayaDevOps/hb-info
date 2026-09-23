@@ -7,12 +7,12 @@ import FaqAccordion from '@/components/FaqAccordion'
 
 export default function RawHoneyUgandaGuide() {
   const title = 'Why Do Serious Food Lovers in Uganda Seek Out Raw Honey Instead of the Squeeze Bottle?'
-  const description = 'A beekeeper’s field guide to what “raw” honey really means in Uganda, how we verify purity, and where discerning buyers in Kampala should shop.'
+  const description = 'A guide to raw honey handling, harvest origin, and the scope of published UNBS honey test reports in Uganda.'
   const faqs = [
-    { q: 'How do you confirm honey is genuinely raw?', a: 'Every harvest is cold-filtered, moisture-checked on a refractometer, and spot-tested in ISO-accredited labs to confirm there is no heat damage or adulteration.' },
+    { q: 'How can I assess a raw honey claim?', a: 'Ask the producer how the honey was extracted and heated, where it was harvested, and what documentation applies to the jar. A lab report supports only its listed tests and sample.' },
     { q: 'Why does my raw honey crystallise so quickly?', a: 'Crystallisation is a natural signal that pollen and glucose are intact; sit the jar in 40–45°C water and stir, never microwave.' },
     { q: 'Is raw honey safe for children?', a: 'Raw honey is a delight for adults and kids over twelve months. Infants should wait because of botulism risk: no shortcuts there.' },
-    { q: 'Where can I buy verified raw honey in Kampala?', a: 'Order directly from Humble Beeing for traceable batches or visit our vetted stockists in Bugolobi, Kololo, Muyenga, and Kisementi.' },
+    { q: 'Where can I ask about raw honey in Kampala?', a: 'See our current product listings and store locator, then contact us or the stockist to confirm availability.' },
   ]
 
   const faqJsonLd = {
@@ -27,7 +27,7 @@ export default function RawHoneyUgandaGuide() {
     headline: title,
     description,
     datePublished: '2025-01-12',
-    dateModified: '2025-01-12',
+    dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg',
@@ -55,10 +55,10 @@ export default function RawHoneyUgandaGuide() {
           <p>Expect a layered profile: citrus blossom from Budongo forest apiaries, deeper molasses notes from eucalyptus stands near Fort Portal, and a finish that shifts with the season. Volatile aromatics survive because we refuse to overheat the harvest. Independent sensory panels in Kampala (yes, we invite chefs with notebooks) routinely score raw batches well above commercial blends on aroma intensity and mouthfeel.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How we prove purity and safety</h2>
-          <p>Experience is useful, but lab data closes the case. Every batch is logged with hive coordinates, moisture levels (target: 17–18.5%), and pollen spectra. Spot samples go to ISO-accredited labs in Kampala to screen for antibiotics, HMF, and adulteration markers. Our team holds Level II beekeeper certifications from the Uganda National Apiculture Development Organisation, and we follow Codex Alimentarius standards because guessing is for amateurs.</p>
+          <p>A test report is useful when you read its scope. Our <Link href="/lab-tests">published UNBS reports</Link> cover one raw honey sample tested for moisture, acidity, ash, HMF, coliforms, and yeast and moulds. They do not contain antibiotic or adulteration results and cannot establish the status of every harvest.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Where should you buy raw honey in Kampala?</h2>
-          <p>Traceability matters. Order directly from Humble Beeing for same-week harvests labelled with beekeeper names. Prefer retail? You’ll find our jars at Good Glass Bugolobi, Endiro Coffee Kololo, La Patisserie in Muyenga, and curated grocers in Kisementi. Ask for the batch card; if a seller can’t point to harvest month and moisture readings, walk away gracefully.</p>
+          <p>Traceability matters. Browse our <Link href="/products">listed products</Link> and <Link href="/store-locator">stockists</Link>, then confirm stock and any lot-specific documentation before ordering.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How to store raw honey in our climate</h2>
           <p>Kampala humidity can stage a coup against even the best honey. Keep jars sealed, off the sunny windowsill, and comfortably at room temperature. If crystals appear (and they will), rest the jar in a 40–45°C water bath and stir every few minutes. Anything hotter risks nuking the enzymes you were so careful to buy in the first place.</p>

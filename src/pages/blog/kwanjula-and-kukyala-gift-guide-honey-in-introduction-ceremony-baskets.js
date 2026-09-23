@@ -12,12 +12,12 @@ export default function KwanjulaKukyalaGiftGuide() {
     { q: 'Is honey a traditional kwanjula gift?', a: 'Yes. Honey has long featured in Buganda introduction ceremonies as a symbol of sweetness, abundance, and a harmonious home. A well-presented jar of pure Ugandan honey sits naturally alongside gomesi fabric, matooke, and other customary gifts.' },
     { q: 'How many gifts should we prepare for a kukyala visit?', a: 'Kukyala is intentionally intimate, so a modest, thoughtful selection matters more than volume. Most families carry a small set of quality items (a luxury honey and candle hamper, fruit, sugar, and drinks) agreed in advance with the bride’s family.' },
     { q: 'Can Humble Beeing prepare ceremony gift baskets?', a: 'Yes. We build custom kwanjula and kukyala hampers with raw honey, infused honeys, and beeswax candles, wrapped in recycled paper and delivered anywhere in Kampala. Contact us with your date and budget.' },
-    { q: 'What makes a gift basket feel luxurious rather than generic?', a: 'Provenance and presentation. Single-origin Ugandan honey with lab-tested purity, hand-poured beeswax candles, and artisan packaging tell the in-laws you chose with care, not off a supermarket shelf.' },
+    { q: 'What makes a gift basket feel personal?', a: 'Choose flavours the recipient will enjoy, ask about the honey’s origin, and present the jars and candles with care.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2026-07-07', dateModified: '2026-07-07',
+    datePublished: '2026-07-07', dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -32,7 +32,7 @@ export default function KwanjulaKukyalaGiftGuide() {
           <p>Kukyala is the quiet first visit: the groom’s family meeting the bride’s family informally, often around a shared meal. Kwanjula is the formal introduction ceremony that follows, with its processions, spokespeople, and carefully negotiated gift lists. The gifting logic differs: kukyala calls for a few genuinely thoughtful items; kwanjula calls for generosity, order, and respect for what the bride’s family has asked for. In both cases, the gifts speak before you do.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Why honey has always belonged in the basket</h2>
-          <p>Across Buganda and much of Uganda, honey is shorthand for sweetness in the home: it appears in wedding blessings, in ekyogero herbal baths for newborns, and on the gift lists elders quietly approve of. A jar of pure raw Ugandan honey carries meaning that imported chocolate simply doesn’t: it is of this land, harvested by Ugandan beekeepers, and it keeps for years, like a good marriage is supposed to. When the jar is single-origin, lab-tested, and beautifully wrapped, it also signals that the groom’s side did not cut corners.</p>
+          <p>A jar of Ugandan honey can be a thoughtful addition to an introduction ceremony basket. Choose a flavour the family will enjoy and ask about its harvest origin. The presentation should fit the family’s requested gift list and customs.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Building an introduction ceremony hamper that impresses the bako</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
@@ -43,7 +43,7 @@ export default function KwanjulaKukyalaGiftGuide() {
           </ul>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Ordering ceremony gifts in Kampala without the stress</h2>
-          <p>Introduction ceremonies run on tight timelines, so order hampers at least two weeks ahead. We prepare kwanjula and kukyala gift sets to your budget, deliver across Kampala, and can scale from a single presentation basket to gifts for the full delegation. Every jar is traceable and comes with the lab certificate to prove its purity; see <Link href="/lab-tests">our lab tests</Link> for what that means in practice.</p>
+          <p>Contact us early with your date, budget, and desired quantities so we can confirm the available options. Our <Link href="/lab-tests">published lab reports</Link> cover one raw honey sample and do not accompany or prove the purity of every jar.</p>
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />

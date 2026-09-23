@@ -9,7 +9,7 @@ export default function PremiumHoneyUganda() {
   const title = 'What Makes Premium Ugandan Honey Worth the Splurge?'
   const description = 'From remote forest apiaries to chef tastings, here is how Humble Beeing justifies the price tag on truly premium Ugandan honey.'
   const faqs = [
-    { q: 'Why does premium honey command a higher price?', a: 'Remote forage zones, cold extraction, third-party testing, and artisan bottling add cost while protecting flavour and authenticity.' },
+    { q: 'Why does premium honey command a higher price?', a: 'Origin, handling, jar size, and distribution can affect price. Ask which claims and tests apply to the jar you are considering.' },
     { q: 'Is premium honey always raw?', a: 'Yes. Heat-treated honey can’t carry the aromatic complexity or enzyme activity that defines premium status.' },
     { q: 'How do I pick the right varietal?', a: 'Tell us the menu. We match floral profiles to tea, cheeses, pastry, or bar programs based on sensory notes from each batch.' },
   ]
@@ -17,7 +17,7 @@ export default function PremiumHoneyUganda() {
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-15', dateModified: '2025-01-15',
+    datePublished: '2025-01-15', dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -35,7 +35,7 @@ export default function PremiumHoneyUganda() {
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Quality checks that justify the price</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
-            <li style={{ marginBottom: '10px' }}><b>Lab analytics:</b> adulteration screens, diastase, HMF, and residue tests catch anything that shouldn’t be in your jar.</li>
+            <li style={{ marginBottom: '10px' }}><b>Lab evidence:</b> check the parameters and sample number before applying a report to a product. Our <Link href="/lab-tests">published reports</Link> cover one sample and do not include adulteration or residue tests.</li>
             <li style={{ marginBottom: '10px' }}><b>Sensory panels:</b> chefs and sommeliers taste blind, scoring aroma, texture, and finish before any jar earns the premium label.</li>
             <li style={{ marginBottom: '10px' }}><b>Batch traceability:</b> QR-coded labels link to harvest location, beekeeper, and suggested pairings.</li>
             <li style={{ marginBottom: '10px' }}><b>Packaging discipline:</b> UV-protective glass, tamper seals, and batch cards keep quality intact long after dispatch.</li>

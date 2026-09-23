@@ -17,7 +17,7 @@ export default function SingleOriginUgandanHoney() {
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2026-07-07', dateModified: '2026-07-07',
+    datePublished: '2026-07-07', dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -35,14 +35,14 @@ export default function SingleOriginUgandanHoney() {
           <p>The shea belt stretching across northern Uganda and West Nile is the country’s most celebrated honey landscape. When the shea trees blossom, hives fill with a creamy, pale honey carrying soft caramel and butter notes: shea blossom honey. It crystallizes naturally into a fine, spoonable texture, which is a mark of raw, unheated handling rather than a flaw. The same trees that give Uganda its shea butter give this honey its character, and low pesticide use across the parkland keeps it remarkably clean.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Coffee blossom, pine, and the flavours in between</h2>
-          <p>When coffee gardens flower, bees produce a honey with gentle jasmine-like aromatics and a bright, clean sweetness: coffee blossom honey is fleeting because the bloom lasts only days. Pine-influenced harvests bring resinous depth, while open savannah gives bold, dark wildflower honey with mineral length. Our infused range (orange peel, lemon, rosemary, vanilla bean) starts from these single-origin bases, which is why the infusions taste layered rather than flat. Explore the current harvests at <a href="https://shop.humble-beeing.com" target="_blank" rel="noopener noreferrer">shop.humble-beeing.com</a>.</p>
+          <p>Floral source and season can influence a honey’s aroma and colour. Explore the origins and tasting notes for our <Link href="/products">listed honeys</Link>, and ask us which harvests are currently available.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How to choose (and serve) a single-origin jar</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
             <li style={{ marginBottom: '8px' }}><strong>For tea and coffee:</strong> shea blossom: its subtlety sweetens without stealing the cup.</li>
             <li style={{ marginBottom: '8px' }}><strong>For cheese boards and baking:</strong> dark wildflower: bold enough to stand up to blue cheese and brown butter.</li>
             <li style={{ marginBottom: '8px' }}><strong>For gifts:</strong> a flight of two or three origins tells a better story than one large jar; see our <Link href="/blog/ugandan-gift-ideas-honey-and-candle-gift-sets">gift set guide</Link>.</li>
-            <li style={{ marginBottom: '8px' }}><strong>For provenance sticklers:</strong> every Humble Beeing jar is batch-coded to its apiary and bloom cycle, with <Link href="/lab-tests">lab certificates</Link> available on request.</li>
+            <li style={{ marginBottom: '8px' }}><strong>For provenance questions:</strong> ask about the harvest information for the jar you plan to buy; our <Link href="/lab-tests">published reports</Link> apply to one 2025 sample.</li>
           </ul>
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>

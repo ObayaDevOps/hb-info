@@ -1,8 +1,6 @@
 // Single source of truth for the product range — used by /products, /products/[slug],
-// sitemap.xml, and llms.txt. Prices are the suggested retail prices (UGX) from the
-// June 2026 range sheet.
-
-export const SHOP_URL = 'https://shop.humble-beeing.com'
+// sitemap.xml. Prices are the suggested retail prices (UGX) from the
+// June 2026 range sheet; confirm them before publishing a new range.
 
 const RAW_FAQS = [
   {
@@ -11,11 +9,11 @@ const RAW_FAQS = [
   },
   {
     q: 'My honey has crystallised. Has it gone bad?',
-    a: 'No, crystallisation is completely natural and is actually a good sign that your honey is pure and raw. To return it to liquid, stand the jar in warm water (around 40°C, never boiling) for a few minutes. Avoid the microwave, which destroys the live enzymes.',
+    a: 'Crystallisation is a natural change in honey, though it cannot by itself establish purity. To return it to liquid, stand the sealed jar in warm, not boiling, water and stir gently.',
   },
   {
     q: 'How do I know your honey is genuinely pure?',
-    a: 'Every batch carries a unique Harvest Number with full records traceable to the farmer who harvested it, and is lab-tested for HMF with results that exceed EU export standards. An EU report found roughly half of supermarket honey is suspected of adulteration with rice syrup; traceability is how we prove ours is not.',
+    a: 'Ask us for the origin and records linked to your jar’s Harvest Number. The UNBS reports on our Lab Tests page cover one raw honey sample and show the parameters tested; they are not an adulteration test or proof for every batch.',
   },
   {
     q: 'What does "single-origin" mean?',
@@ -23,14 +21,14 @@ const RAW_FAQS = [
   },
   {
     q: 'How should I store honey in Kampala’s heat?',
-    a: 'Keep the jar tightly sealed in a cool, shaded cupboard away from the cooker and direct sunlight, and always use a dry spoon. Stored this way, raw honey essentially never expires.',
+    a: 'Keep the jar tightly sealed in a cool, shaded cupboard away from the cooker and direct sunlight, and always use a dry spoon. Follow any best-before date on the jar.',
   },
 ]
 
 const INFUSED_FAQS = [
   {
     q: 'Is infused honey still raw?',
-    a: 'Yes. We age whole, real ingredients directly in raw cold-pressed honey; flavour is added without moisture, so there is no fermentation and no need for heating. Every infused jar keeps the live enzymes of the raw honey it started as.',
+    a: 'Our infusions start with raw honey and whole ingredients. Keep the jar sealed and follow its label for storage and best-before guidance.',
   },
   ...RAW_FAQS,
 ]
@@ -483,7 +481,7 @@ export const PRODUCTS = [
     size: '220g · ~60 hour burn',
     image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg',
     imageAlt: 'Humble Beeing lemongrass and ginger natural beeswax candle in a frosted glass jar with bamboo lid',
-    tagline: 'Hand-poured pure beeswax from our own hives, naturally air-purifying with a 60-hour burn.',
+    tagline: 'Hand-poured beeswax candle with lemongrass and ginger fragrance.',
     tastingNotes: ['Lemongrass & lime zest', 'Spiced ginger heart', 'Warm cedar base'],
     origin: {
       region: 'Hand-poured in Kampala',
@@ -497,23 +495,23 @@ export const PRODUCTS = [
     process: [
       { title: 'Wax from our own harvests', text: 'Beeswax caps from the same West Nile hives that give us our honey: fully traceable.' },
       { title: 'Filtered & hand-poured', text: 'Filtered through organic cotton to keep the natural golden sheen, then poured in small batches in Kampala.' },
-      { title: 'Clean, slow burn', text: 'Pure beeswax burns longer and cleaner than paraffin, around 60 hours per candle.' },
+      { title: 'Candle care', text: 'Trim the wick before lighting and follow the instructions on the candle label.' },
     ],
     tryItWith: [
       { title: 'Evening wind-down', text: 'Light it half an hour before bed with your phone in another room: the ginger-cedar base was made for it.' },
-      { title: 'Yoga & meditation', text: 'A naturally purifying flame for your practice, no synthetic fragrance headache after.' },
+      { title: 'Yoga & meditation', text: 'Use the scent and warm light to set the mood for a quiet practice.' },
       { title: 'Dinner on the veranda', text: 'Beeswax flames burn bright and steady outdoors, and the citrus top notes keep the evening fresh.' },
       { title: 'Paired with our honey', text: 'A candle and a jar of infused honey is our most-given gift combination.' },
     ],
     healthBenefits: [
-      { title: 'Naturally air-purifying', text: 'Burning beeswax releases negative ions that can help reduce dust and allergens in indoor air.' },
-      { title: 'No paraffin, no soot', text: 'Paraffin is a petroleum by-product; pure beeswax burns clean, without the black smoke and petrochemical residue.' },
-      { title: 'Longer burn', text: 'Beeswax burns slower and hotter than soy or paraffin, around 60 hours from one 220g candle.' },
+      { title: 'Hand-poured in Kampala', text: 'Made in small batches for a warm, scented setting.' },
+      { title: 'Lemongrass and ginger', text: 'Citrus and spice notes suit an evening at home.' },
+      { title: 'Burn care', text: 'Trim the wick and follow the candle label for safe use and expected burn time.' },
     ],
     faqs: [
       {
         q: 'Why beeswax instead of soy or paraffin?',
-        a: 'Paraffin is a petroleum by-product and can release soot and toxins as it burns; soy is cleaner but burns fast and is usually imported. Pure beeswax burns longer, brighter, and cleaner, releases negative ions that can help purify indoor air, and ours is a natural by-product of our own honey harvests.',
+        a: 'Beeswax is a material produced by bees and gives the candle its character. Soot and burn time depend on the full candle design and how it is used; follow the label and ask us for the ingredients of a specific candle.',
       },
       {
         q: 'How do I get the longest burn from my candle?',
@@ -551,7 +549,7 @@ export const PRODUCTS = [
     process: [
       { title: 'Wax from our own harvests', text: 'Beeswax caps from the same West Nile hives that give us our honey: fully traceable.' },
       { title: 'Filtered & hand-poured', text: 'Filtered through organic cotton to keep the natural golden sheen, then poured in small batches in Kampala.' },
-      { title: 'Clean, slow burn', text: 'Pure beeswax burns longer and cleaner than paraffin, around 60 hours per candle.' },
+      { title: 'Candle care', text: 'Trim the wick before lighting and follow the instructions on the candle label.' },
     ],
     tryItWith: [
       { title: 'Bedtime ritual', text: 'Lavender and chamomile are the classic wind-down pairing: light it an hour before sleep and let the room settle.' },
@@ -560,14 +558,14 @@ export const PRODUCTS = [
       { title: 'Paired with our honey', text: 'A candle and a jar of infused honey is our most-given gift combination.' },
     ],
     healthBenefits: [
-      { title: 'Naturally air-purifying', text: 'Burning beeswax releases negative ions that can help reduce dust and allergens in indoor air.' },
-      { title: 'No paraffin, no soot', text: 'Paraffin is a petroleum by-product; pure beeswax burns clean, without the black smoke and petrochemical residue.' },
-      { title: 'Longer burn', text: 'Beeswax burns slower and hotter than soy or paraffin, around 60 hours from one candle.' },
+      { title: 'Hand-poured in Kampala', text: 'Made in small batches for a warm, scented setting.' },
+      { title: 'Lavender, chamomile and vanilla', text: 'Soft floral and vanilla notes suit a quiet evening.' },
+      { title: 'Burn care', text: 'Trim the wick and follow the candle label for safe use and expected burn time.' },
     ],
     faqs: [
       {
         q: 'Why beeswax instead of soy or paraffin?',
-        a: 'Paraffin is a petroleum by-product and can release soot and toxins as it burns; soy is cleaner but burns fast and is usually imported. Pure beeswax burns longer, brighter, and cleaner, releases negative ions that can help purify indoor air, and ours is a natural by-product of our own honey harvests.',
+        a: 'Beeswax is a material produced by bees and gives the candle its character. Soot and burn time depend on the full candle design and how it is used; follow the label and ask us for the ingredients of a specific candle.',
       },
       {
         q: 'How do I get the longest burn from my candle?',
@@ -677,7 +675,7 @@ export const PRODUCTS = [
       },
       {
         q: 'Do you deliver gift sets in Kampala?',
-        a: 'Yes, order through shop.humble-beeing.com for delivery within Kampala, or contact us for bulk and corporate gifting.',
+        a: 'Ask us about availability and delivery through the contact page or by WhatsApp. For bulk and corporate gifting, send us your requirements for a quote.',
       },
     ],
     related: ['vanilla-bean-infused-honey', 'beeswax-candle', 'yumbe-shea-blossom-honey'],
@@ -689,7 +687,7 @@ export const PRODUCT_SLUGS = PRODUCTS.map((p) => p.slug)
 export const PRODUCT_CATEGORIES = [
   { key: 'raw', label: 'Raw Single-Origin Honey', navLabel: 'Raw Honey', blurb: 'Harvested and bottled by region, never blended. Each jar tastes uniquely of its location, like wine.' },
   { key: 'infused', label: 'Infused Raw Honey', navLabel: 'Infused Honey', blurb: 'Whole, real ingredients aged in raw honey. Flavour added without moisture: no fermentation, no heat, still 100% raw.' },
-  { key: 'candles', label: 'Beeswax Candles', navLabel: 'Beeswax Candles', blurb: 'Hand-poured in Kampala from the wax of our own harvests. Naturally air-purifying, no paraffin.' },
+  { key: 'candles', label: 'Beeswax Candles', navLabel: 'Beeswax Candles', blurb: 'Hand-poured in Kampala with floral and citrus fragrances.' },
   { key: 'cosmetics', label: 'Beeswax Cosmetics', navLabel: 'Beeswax Cosmetics', blurb: 'Simple, natural beeswax skincare from the same traceable hives.' },
   { key: 'gifts', label: 'Gift Sets', navLabel: 'Gifts', blurb: 'Curated flights of our honeys in handmade recycled-paper packaging by Kampala artisans.' },
 ]

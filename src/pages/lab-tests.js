@@ -6,23 +6,22 @@ const hanken = 'var(--font-hanken)'
 
 const labReports = [
   {
-    title: 'Lab Certificate: Moisture & HMF',
-    subtitle: 'Batch HB-2025-01 · SGS Kampala · June 2025',
+    title: 'UNBS chemistry test report',
+    subtitle: 'Sample L/5087/2025MC · Report FA/2025/10664 · 3 October 2025',
     downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/0beee6c148ffc7f7843e84ddbc820d1c7436c3e2.pdf',
     metrics: [
       { label: 'Moisture', value: '17%' },
-      { label: 'HMF', value: '21 mg/kg' },
-      { label: 'Diastase', value: '14 DN' },
+      { label: 'HMF', value: '8 mg/kg' },
+      { label: 'Acidity', value: '22 meq/kg' },
     ],
   },
   {
-    title: 'Lab Certificate: Residue & Adulteration',
-    subtitle: 'Batch HB-2025-01 · ISO 17025 Partner Lab · June 2025',
+    title: 'UNBS microbiology test report',
+    subtitle: 'Sample L/5087/2025MC · Report ML/2025/06446 · 2 October 2025',
     downloadUrl: 'https://cdn.sanity.io/files/wf5e366r/production/4caa04aabdd97d93eae66ca925a50c3c1916a700.pdf',
     metrics: [
-      { label: 'Pesticide Residue', value: 'Not detected' },
-      { label: 'Antibiotics', value: 'Not detected' },
-      { label: 'Adulteration', value: 'Negative' },
+      { label: 'Coliforms', value: '<10 cfu/g' },
+      { label: 'Yeast and moulds', value: '<10 cfu/g' },
     ],
   },
 ];
@@ -31,19 +30,19 @@ export default function LabTestsPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Lab-Tested Pure Honey: Batch Quality Certificates"
-        description="Independent lab certificates proving our honey is 100% pure raw Ugandan honey: moisture, HMF, residue, and adulteration checks for every batch."
+        title="UNBS Honey Lab Test Reports"
+        description="Read the UNBS chemistry and microbiology reports for a Humble Beeing raw honey sample tested in October 2025, including moisture, HMF, coliforms, and yeast and moulds."
       />
 
       <HeroSection
-        title="Lab Test Certificates"
-        subtitle="Independent QA documentation for every harvest batch."
+        title="Honey Lab Test Reports"
+        subtitle="Original UNBS reports for a tested Humble Beeing raw honey sample."
         bgImage={'https://cdn.sanity.io/images/wf5e366r/production/291f49cddd44907c1c209a4b77b446bf521d47b7-5184x3456.jpg'}
         overlay
         py={{ base: 16, md: 24 }}
       >
         <p className="rt" style={{ marginTop: '16px', maxWidth: '42rem', color: 'white', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
-          Review moisture, HMF, residue, and adulteration reports that keep our honey certified and export ready.
+          Review the results and methods reported by the Uganda National Bureau of Standards.
         </p>
       </HeroSection>
 
@@ -62,15 +61,16 @@ export default function LabTestsPage() {
         }}
       >
         <div className="rmb" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', '--mb': '40px', '--mb-md': '64px' }}>
-          <h1
+          <h2
             className="rt"
             style={{ '--fs': '1.5rem', '--lh': '2rem', '--fs-md': '2.25rem', '--lh-md': '2.75rem', '--ls-md': '-0.025em', fontWeight: 600, fontFamily: hanken }}
           >
-            Lab Test Certificates
-          </h1>
+            Published reports
+          </h2>
           <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem', maxWidth: '48rem' }}>
-            Every harvest batch is verified in ISO-accredited laboratories. Download the original A4 certificates below to review
-            moisture readings, HMF values, residue panels, and adulteration results.
+            These two reports cover the same raw honey sample, L/5087/2025MC. The chemistry report records moisture, acidity, ash, and HMF;
+            the microbiology report records coliforms and yeast and moulds. The results apply to this sample only. The reports do not test
+            pesticide residues, antibiotics, adulteration, or every harvest batch.
           </p>
         </div>
 
@@ -143,7 +143,7 @@ export default function LabTestsPage() {
                   color: 'white',
                 }}
               >
-                View Full Certificate
+                View Original Report
               </a>
             </div>
           ))}

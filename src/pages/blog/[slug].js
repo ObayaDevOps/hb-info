@@ -45,6 +45,7 @@ export default function BlogPostPage() {
       <Head>
         <title>{pageTitle} | Humble Beeing</title>
         <meta name="description" content="Blog article from Humble Beeing." />
+        <meta name="robots" content="noindex,follow" />
       </Head>
 
       {/* Hero */}

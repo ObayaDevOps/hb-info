@@ -6,17 +6,17 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function BeeswaxCandlesUgandaGuide() {
-  const title = 'Are Beeswax Candles in Uganda Really Cleaner Than Paraffin Pillars?'
-  const description = 'A chandler’s handbook on why locally rendered beeswax burns cleaner, how we test every batch, and the best way to style and care for candles in Kampala homes.'
+  const title = 'How to Use and Care for Beeswax Candles in Uganda'
+  const description = 'Practical guidance on choosing, burning, storing, and caring for beeswax candles in Kampala homes.'
   const faqs = [
-    { q: 'What makes Humble Beeing beeswax different from hobbyist wax?', a: 'We render cappings and comb at low heat, filter three times, and lab-test for residues so the final wax stays golden and food-grade.' },
+    { q: 'What should I ask about a beeswax candle?', a: 'Ask about its wax blend, fragrance, wick, burn instructions, and any testing that supports specific performance claims.' },
     { q: 'How do I stop tunnelling in thick candles?', a: 'Give the candle a full-width melt pool during the first burn (typically one hour per inch of diameter) and keep the wick trimmed to 5 mm.' },
     { q: 'Do beeswax candles work in Kampala’s humidity?', a: 'Yes. Store them upright, away from direct sun, and they hold shape even during rainy-season humidity spikes.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-22', dateModified: '2025-01-22',
+    datePublished: '2025-01-22', dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -27,11 +27,11 @@ export default function BeeswaxCandlesUgandaGuide() {
       <HeroSection title={title} subtitle="Hands-on advice from the chandler’s bench to your dinner table" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
-          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Why beeswax earns its clean reputation</h2>
-          <p>We harvest wax cappings alongside honey in Hoima, then render them at a patient 65°C in small, food-grade kettles. That low-temperature process preserves the delicate honey aroma and keeps colour a luminous gold. Compared to paraffin, which is essentially refined petroleum, our beeswax produces negligible soot, neutralises airborne pollutants, and holds shape in Kampala without weeping. You feel the difference the moment you light a taper: steady flame, warm glow, zero smoke alarm theatrics.</p>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Choosing a candle</h2>
+          <p>Beeswax candles vary by wax blend, fragrance, wick, and container. Read the product label and burn instructions for the candle you choose. A broad claim that a candle removes pollutants or produces no soot needs specific evidence; these are not shown by our published honey test reports.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Crafting candles with traceable wax</h2>
-          <p>Each batch is poured in Kampala by our chandler team trained under the British Candlemakers Federation curriculum. We calibrate cotton wicks to match pillar diameter, weigh every pour to the gram, and cure candles for 48 hours before packaging. Batches are logged with hive origin, rendering date, and lab results; you can request the documentation because transparency is part of the ambiance.</p>
+          <p>Humble Beeing lists hand-poured beeswax candles in its <Link href="/products">product range</Link>. If you need a particular wax composition, fragrance, or batch detail, ask us before ordering. The reports on our lab page concern honey, not candle wax.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Setting the stage: styling and burn tips</h2>
           <p>For a centrepiece, group odd-numbered candles at differing heights and anchor them in heat-safe holders. On humid evenings, place candles at least 50 cm away from open windows to avoid dancing flames. First burn: commit to one hour per inch of diameter so the melt pool reaches the edges. Subsequent burns only need 30–45 minutes to stay tunnel-free. Snuff, don’t blow, if you want to preserve the sculptural finish.</p>

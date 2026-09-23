@@ -6,18 +6,18 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function HowWeTestHoneyUganda() {
-  const title = 'How Do We Prove Ugandan Honey Is Pure Before It Reaches Your Table?'
-  const description = 'Step-by-step quality control from hive to accredited lab, including sampling, chain of custody, and analytics, that keeps Humble Beeing honey honest.'
+  const title = 'What Our Published Honey Lab Reports Show'
+  const description = 'Read the scope and results of the published UNBS chemistry and microbiology reports for one Humble Beeing raw honey sample.'
   const faqs = [
-    { q: 'Which purity tests do you run on every batch?', a: 'Baseline panels cover moisture, electrical conductivity, diastase activity, HMF, and LC-IRMS adulteration screens. We add pesticide or antibiotic checks when apiary conditions demand it.' },
-    { q: 'Do you share laboratory certificates?', a: 'We provide summaries to home customers and full certificates to wholesale partners and regulators under NDA.' },
-    { q: 'Who handles the laboratory work?', a: 'ISO/IEC 17025 accredited labs in Kampala and Nairobi run the heavy analyses; we handle field testing with calibrated refractometers and spectrophotometers.' },
+    { q: 'Which tests are shown in the published reports?', a: 'The UNBS chemistry report lists moisture, acidity, ash, and HMF. The microbiology report lists coliforms and yeast and moulds. Both cover sample L/5087/2025MC.' },
+    { q: 'Do these reports cover every batch or test adulteration?', a: 'No. The reports apply to one sample and do not contain adulteration, pesticide, antibiotic, or diastase results.' },
+    { q: 'Can I read the original reports?', a: 'Yes. Both original UNBS PDFs are linked on the Lab Tests page.' },
   ]
 
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-16', dateModified: '2025-01-16',
+    datePublished: '2025-01-16', dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/7bf19649189ce81bb0b684bfaffa856300fc1583-2268x4032.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -27,25 +27,21 @@ export default function HowWeTestHoneyUganda() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: 'var(--font-hanken)' }}>
       <SEO title={title} description={description} jsonLd={[blogJsonLd, faqJsonLd, crumbs]} />
-      <HeroSection title={title} subtitle="Transparency, traceability, and rigorous quality checks" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
+      <HeroSection title={title} subtitle="Read the test results and their scope" bgImage={'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg'} overlay py={{ base: 16, md: 24 }} />
       <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
-          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 1: disciplined harvesting</h2>
-          <p>Every apiary visit is logged: GPS coordinates, dominant nectar flow, weather notes. Frames are removed at 80% capping, uncapped with food-grade knives, and spun once. We filter through stainless mesh at ambient temperature so enzymes and pollen remain intact. Storage drums are sanitised between batches because a trusted product starts with neurotic cleanliness.</p>
+          <p><time dateTime="2026-09-23">Updated 23 September 2026</time></p>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>What was sampled</h2>
+          <p>The two published Uganda National Bureau of Standards reports concern the same raw honey sample, L/5087/2025MC. The client named on both is HB Fine Honey Suppliers Limited. The reports describe one 350 g jar and do not identify every product or harvest batch sold by Humble Beeing.</p>
 
-          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 2: field testing and chain of custody</h2>
-          <p>Before leaving Hoima or Kibaale, we record moisture readings using calibrated Atago refractometers. Anything above 18.5% is set aside for additional ripening. Samples are sealed in tamper-evident vials, labelled with QR-coded batch IDs, and transported to Kampala in insulated crates. The chain-of-custody paperwork isn’t glamorous, but it ensures nobody can sneak dilution into the journey.</p>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>What the chemistry report measured</h2>
+          <p>UNBS report FA/2025/10664 records moisture at 17%, acidity at 22 milliequivalents per kilogram, ash at 0.3%, and HMF at 8 mg/kg. The report marks these tested parameters as passing the listed Uganda Standard limits. It states that the results apply only to the sample received.</p>
 
-          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 3: accredited laboratory analytics</h2>
-          <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
-            <li style={{ marginBottom: '10px' }}><b>LC-IRMS adulteration screening:</b> confirms sugars originate from nectar, not imported syrups.</li>
-            <li style={{ marginBottom: '10px' }}><b>Diastase activity and HMF:</b> reveal whether heat ever mistreated the batch.</li>
-            <li style={{ marginBottom: '10px' }}><b>Electrical conductivity and pollen microscopy:</b> double-check floral origin against field notes.</li>
-            <li style={{ marginBottom: '10px' }}><b>Targeted residue tests:</b> pesticides, antibiotics, or heavy metals when apiary neighbours spray or medicate.</li>
-          </ul>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>What the microbiology report measured</h2>
+          <p>UNBS report ML/2025/06446 records coliforms and yeast and moulds at less than 10 cfu/g each. It marks the tested parameters as passing. The chemistry and microbiology reports refer to each other for the complete results for this sample.</p>
 
-          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Step 4: reporting back to you</h2>
-          <p>We compile results into batch cards with harvest region, moisture, diastase, flavour descriptors, and best-use suggestions. Wholesale buyers receive the full certificates and auditors are welcome to review five years of archived data. Home subscribers get a succinct summary and direct access to our quality team, because transparency should be as accessible as your breakfast toast.</p>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>What remains untested in these PDFs</h2>
+          <p>Neither report includes a sugar-profile adulteration screen, diastase result, pesticide or antibiotic residue panel, or evidence about other batches. See the <Link href="/lab-tests">original reports</Link> and ask us for documentation that applies to a particular order.</p>
 
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>

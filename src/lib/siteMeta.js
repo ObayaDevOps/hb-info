@@ -1,4 +1,11 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://humble-beeing.com'
+// The apex domain redirects to www. Keep every public search signal on the
+// final destination, including pages rendered without a site URL environment variable.
+export const SITE_URL = 'https://www.humble-beeing.com'
+
+export function canonicalUrl(path = '/') {
+  const pathname = new URL(path, SITE_URL).pathname
+  return `${SITE_URL}${pathname}`
+}
 
 export const SITE_NAME = 'Humble Beeing'
 
@@ -19,7 +26,7 @@ export const localBusinessJsonLd = {
   url: SITE_URL,
   logo: LOGO_URL,
   image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg',
-  email: 'hi@humble-beeing.com',
+  email: 'obaya@humble-beeing.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '2nd Floor, Tools and Machinery Building, Kabalagala',
@@ -69,9 +76,9 @@ export const STATIC_ROUTES = [
 export const BLOG_POSTS = [
   {
     slug: 'best-honey-in-kampala-buyers-guide-2025',
-    title: 'Which Honey in Kampala Should You Trust in 2025?',
+    title: 'How to Choose Honey in Kampala',
     category: 'beekeeping',
-    snippet: 'Compare Kampala’s most trusted African luxury honey jars with traceable honey Uganda data, tasting notes, and buyer red flags for 2025.',
+    snippet: 'Use harvest details, tasting notes, and published test reports to assess honey sold in Kampala.',
   },
   {
     slug: 'where-to-buy-honey-in-kampala-stockists-and-delivery',
@@ -99,9 +106,9 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'how-we-test-honey-purity-in-uganda-lab-and-field',
-    title: 'How Do We Prove Ugandan Honey Is Pure Before It Reaches Your Table?',
+    title: 'What Our Published Honey Lab Reports Show',
     category: 'sustainability',
-    snippet: 'Follow our lab and field protocols for certifying traceable honey Uganda batches, from moisture readings to beekeeper audits.',
+    snippet: 'Read the scope and results of UNBS chemistry and microbiology reports for one Humble Beeing raw honey sample.',
   },
   {
     slug: 'organic-honey-in-uganda-what-it-really-means',
@@ -129,9 +136,9 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'beeswax-candles-uganda-clean-burn-guide',
-    title: 'Are Beeswax Candles in Uganda Really Cleaner Than Paraffin Pillars?',
+    title: 'How to Use and Care for Beeswax Candles in Uganda',
     category: 'candles',
-    snippet: 'See why sustainable beeswax candles purify indoor air, burn longer, and complement African luxury honey rituals at home.',
+    snippet: 'Learn how to choose, burn, and store beeswax candles in a Kampala home.',
   },
   {
     slug: 'scented-candles-uganda-fragrance-guide-and-room-pairings',
@@ -153,9 +160,9 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'real-vs-fake-honey-uganda-how-to-know-yours-is-pure',
-    title: 'Real vs Fake Honey in Uganda: 5 Ways to Know Your Honey Is Pure',
+    title: 'Real vs Fake Honey in Uganda: What Can You Actually Check?',
     category: 'sustainability',
-    snippet: 'Adulterated honey is common in Uganda. Learn five practical checks, from crystallization myths to lab tests, to be sure your honey is pure and raw.',
+    snippet: 'Learn what labels and sample-specific reports can show, and why kitchen tests cannot prove honey purity.',
   },
 ]
 

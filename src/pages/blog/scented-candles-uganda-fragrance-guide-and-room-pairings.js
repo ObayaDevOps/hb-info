@@ -11,12 +11,12 @@ export default function ScentedCandlesUgandaGuide() {
   const faqs = [
     { q: 'Which scents suit living rooms best?', a: 'Layered woods, amber, and a whisper of citrus keep communal spaces warm without overwhelming conversation.' },
     { q: 'How long should one burn a scented candle?', a: 'Aim for 2–3 hours per session to set an even melt pool, and trim the wick to 5 mm before each light.' },
-    { q: 'Are scented candles safe for homes with kids or pets?', a: 'Place candles out of reach, ventilate after burning, and stick to phthalate-free fragrances like ours to keep indoor air considerate.' },
+    { q: 'How should I use candles around kids or pets?', a: 'Keep lit candles out of reach, on a stable heat-resistant surface, and never leave them unattended. Ask about the ingredients in a specific candle if you have a sensitivity concern.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-23', dateModified: '2025-01-23',
+    datePublished: '2025-01-23', dateModified: '2026-09-23',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -28,7 +28,7 @@ export default function ScentedCandlesUgandaGuide() {
       <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>The fragrance wardrobe we rely on</h2>
-          <p>Every candle begins with beeswax from our own hives blended with coconut and soy for a clean burn. Fragrance houses in Grasse and Nairobi customise notes to withstand Kampala’s humidity, so your living room doesn’t end up smelling like a melted bouquet. Each blend is IFRA-compliant and phthalate-free because safety is part of the ambience.</p>
+          <p>Choose a fragrance according to the room and your preferences, then check the candle label for its wax and fragrance ingredients. Our <Link href="/products">product pages</Link> describe the current candles; contact us if you need more detail about a particular blend.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Room-by-room recommendations</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
@@ -40,7 +40,7 @@ export default function ScentedCandlesUgandaGuide() {
           </ul>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Burning like a pro</h2>
-          <p>Trim the wick to 5 mm, burn 2–3 hours for an even melt pool, and use a snuffer to protect the wick for next time. Rotate candles weekly so your nose doesn’t get bored, and store spares upright, away from Kampala’s afternoon sun. We test every batch for cold and hot throw, so the scent you love in-store is the scent you’ll enjoy at home.</p>
+          <p>Trim the wick to 5 mm, follow the candle’s burn instructions, and use a snuffer if you prefer. Store spares upright and away from direct afternoon sun. Ask about a specific fragrance before ordering; scent strength varies by candle and setting.</p>
 
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
