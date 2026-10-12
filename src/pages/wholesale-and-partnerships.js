@@ -82,41 +82,77 @@ const tileStyle = {
 
 const SEGMENTS = [
   {
-    title: 'Chefs & restaurants',
-    desc: 'Bulk raw honey in kitchen-friendly formats for menus and pairings.',
+    title: 'Chefs, restaurants & hotels',
+    desc: 'For menus and breakfast tables that deserve a distinctly Ugandan story, with high-quality, locally sourced honey and infused pairings chosen for your dishes.',
   },
   {
     title: 'Retail & specialty stores',
-    desc: 'Retail-ready single-origin and infused jars; ask us which test documentation applies to your order.',
+    desc: 'For stores that curate for quality and want jars with a clear Ugandan origin story customers can discover and share.',
   },
   {
     title: 'Exporters',
-    desc: 'Traceable Ugandan honey and beeswax for export sourcing partnerships.',
+    desc: 'For buyers who care where every batch comes from and want a lasting sourcing partnership for traceable Ugandan honey and beeswax.',
   },
   {
     title: 'Cosmetics companies',
-    desc: 'Beeswax supply for skincare, balms, and other personal care products.',
+    desc: 'For formulators selective about every ingredient, seeking traceable Ugandan beeswax for skincare, balms, and other personal care products.',
   },
   {
     title: 'Events & weddings',
-    desc: 'Custom-labelled favors and gifts branded for your day.',
+    desc: 'For hosts who want guests to leave with a memorable taste of Uganda through thoughtful, custom-labelled honey favors.',
   },
   {
     title: 'Corporate gifting',
-    desc: 'Gift hampers and co-branded sets for teams, clients, and partners.',
+    desc: 'For teams seeking gifts that carry more meaning: Ugandan honey, custom branding, and a story worth sharing.',
   },
   {
     title: 'NGOs & development orgs',
-    desc: 'Impact sourcing with full traceability to smallholder beekeepers.',
+    desc: 'For organizations connecting responsible sourcing with long-term market access for smallholder beekeepers.',
   },
 ]
 
 const RANGE = [
   { title: 'Single-origin honey', desc: 'Raw, unblended honey traceable to one forest region.' },
   { title: 'Infused honeys', desc: 'Small-batch infusions from our Kampala kitchen.' },
+  { title: 'Breakfast & brunch displays', desc: 'Curated honey displays for high-end breakfasts and brunches, pairing Ugandan flavours with the stories of the beekeepers and regions behind each harvest.' },
   { title: 'Bulk beeswax', desc: 'Beeswax for candles, balms, and other formulations; ask us about volumes and formats.' },
   { title: 'Luxury gift hampers', desc: 'Curated boxes, ready to brand for your organization.' },
   { title: 'Beeswax candles', desc: 'Hand-poured from the same hives as our honey.' },
+]
+
+const TESTIMONIALS = [
+  {
+    quote: [
+      "We've stocked Humble Beeing at every brunch at Latitude 0° for three years now. What sold me was watching a guest from Geneva ask the waiter where she could buy a jar to take home.",
+      "We're a Ugandan hotel hosting international guests, and we want the products on our tables to reflect that. Humble Beeing has become part of our local story, and it represents the country we're showing off.",
+    ],
+    name: 'Sven SC.',
+    role: 'Latitude 0° Hotel · General Manager',
+    logo: '/images/testimonials/latitude-0-hotel.png',
+  },
+  {
+    quote: [
+      'We collaborated with Humble Beeing for our Japanese Noodle Festival — a mazemen cold noodle bowl finished with their garlic-infused honey. It worked beautifully to round out the umami with a touch of sweetness.',
+      'As a restaurant owner in Kampala, I want to build dishes around local Ugandan ingredients and tell a story. Humble Beeing is a local producer that holds themselves up to a high standard.',
+    ],
+    name: 'Hanif R.',
+    role: 'Yujo Izakaya · Owner',
+    logo: '/images/testimonials/yujo-izakaya.png',
+  },
+  {
+    quote: [
+      "I wanted to take a moment to express our delight with Humble Beeing's performance at the Embassy. The feedback has been generally positive, particularly for your Vanilla flavour, which is currently our most popular alongside Chilli and Shea Blossom.",
+    ],
+    name: 'Albert N.',
+    role: 'Coffee at Last · Owner & GM · US Embassy Kampala',
+    logo: '/images/testimonials/coffee-at-last.png',
+  },
+  {
+    quote: ['You have a ready market in Washington DC if and when you decide to open shop there.'],
+    name: 'US Diplomat',
+    role: 'US Embassy Kampala',
+    logo: '/images/testimonials/us-embassy.png',
+  },
 ]
 
 export default function WholesalePartnershipsPage({ whatsappNumber }) {
@@ -194,6 +230,7 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
                 and beeswax to corporate gift hampers and branded gift sets, we tailor supply
                 to your needs.
               </p>
+              <a href="#contact-us" className="btn-dark" style={{ ...pillBtn, alignSelf: 'flex-start' }}>Request a quote</a>
             </div>
             <img
               src="https://cdn.sanity.io/images/wf5e366r/production/02ba87ce8d01924bdc2efb2f0783ed412df06753-903x1200.png"
@@ -206,6 +243,13 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
           {/* Who we work with */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <h2 className="rt" style={sectionHeadingVars}>Who we work with</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '1rem', lineHeight: '1.5rem' }}>
+              <p style={{ fontWeight: 600 }}>You'll probably enjoy working with us if...</p>
+              <ul style={{ listStyle: 'disc', paddingLeft: '20px' }}>
+                <li>You're deeply invested in ingredient quality and particular about where ingredients come from.</li>
+                <li>You value long-term partnerships built on shared standards.</li>
+              </ul>
+            </div>
             <div className="rgtc" style={{ display: 'grid', gap: '16px', '--gtc': '1fr', '--gtc-sm': 'repeat(2, minmax(0, 1fr))', '--gtc-md': 'repeat(3, minmax(0, 1fr))' }}>
               {SEGMENTS.map((seg) => (
                 <div key={seg.title} style={tileStyle}>
@@ -234,8 +278,36 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
             </p>
           </div>
 
+          {/* Partner testimonials */}
+          <section aria-labelledby="partner-testimonials" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h2 id="partner-testimonials" className="rt" style={sectionHeadingVars}>What our partners say</h2>
+            <div className="rgtc" style={{ display: 'grid', gap: '16px', '--gtc': '1fr', '--gtc-md': 'repeat(2, minmax(0, 1fr))' }}>
+              {TESTIMONIALS.map((testimonial) => (
+                <StyledCard key={testimonial.name} style={{ margin: 0, borderRadius: '12px' }}>
+                  <figure style={{ display: 'flex', flexDirection: 'column', flex: 1, margin: 0, padding: '24px', gap: '20px' }}>
+                    <span aria-hidden="true" style={{ height: '24px', color: '#bd741c', fontSize: '3rem', lineHeight: '1' }}>“</span>
+                    <blockquote style={{ flex: 1, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1rem', lineHeight: '1.6' }}>
+                      {testimonial.quote.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </blockquote>
+                    <figcaption style={{ display: 'flex', alignItems: 'center', gap: '14px', borderTop: '1px solid #c5b99d', paddingTop: '16px' }}>
+                      <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '56px', height: '56px', padding: '6px', borderRadius: '50%', border: '1px solid #c5b99d', backgroundColor: '#fff' }}>
+                        <img src={testimonial.logo} alt="" width="44" height="44" loading="lazy" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'contain' }} />
+                      </span>
+                      <span style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0 }}>
+                        <strong style={{ fontSize: '0.9375rem', lineHeight: '1.25rem' }}>{testimonial.name}</strong>
+                        <span style={{ fontSize: '0.8125rem', lineHeight: '1.25rem' }}>{testimonial.role}</span>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </StyledCard>
+              ))}
+            </div>
+          </section>
+
           {/* Inquiry Form */}
-          <StyledCard style={{ width: '100%', marginLeft: 0, marginRight: 0 }}>
+          <div style={{ position: 'relative' }}>
+            <span id="contact-us" aria-hidden="true" style={{ position: 'absolute', top: '-152px', left: 0, width: '1px', height: '1px' }} />
+            <StyledCard style={{ width: '100%', marginLeft: 0, marginRight: 0 }}>
             <form onSubmit={handleSubmit} className="rp" style={{ '--p': '20px', '--p-md': '28px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px', width: '100%' }}>
                 <h2 style={cardHeading}>Request a quote</h2>
@@ -305,7 +377,8 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
                 </p>
               </div>
             </form>
-          </StyledCard>
+            </StyledCard>
+          </div>
         </div>
       </div>
     </div>
