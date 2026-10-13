@@ -6,8 +6,8 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function StoreHoneyKampala() {
-  const title = 'How Should You Store Honey in Kampala’s Heat Without Losing Its Magic?'
-  const description = 'Real-world storage tactics from Humble Beeing’s beekeepers to protect flavour, prevent fermentation, and manage crystallisation in Uganda’s humid climate.'
+  const title = 'How to Store Honey in Kampala'
+  const description = 'Practical honey storage tips for Kampala: sealed jars, a shaded cupboard and managing natural crystallisation.'
   const faqs = [
     { q: 'Does Kampala heat ruin honey?', a: 'Only if jars sit in direct sun or near stoves. Keep them between 18–25°C and aromas stay vibrant for years.' },
     { q: 'Is crystallised honey a sign of spoilage?', a: 'No. It is a badge of minimal processing. Re-liquefy slowly in a 40–45°C water bath and the crystals melt back into silk.' },
@@ -27,7 +27,7 @@ export default function StoreHoneyKampala() {
     headline: title,
     description,
     datePublished: '2025-01-14',
-    dateModified: '2025-01-14',
+    dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/1bdb425b08c28f34c4c48fc739d2dff3fd2584d4-4032x2268.jpg',

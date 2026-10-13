@@ -6,8 +6,8 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function ScentedCandlesUgandaGuide() {
-  const title = 'Which Scented Candle Should You Light for Each Room in Kampala?'
-  const description = 'Fragrance strategy, burn science, and interior styling tips from Humble Beeing’s candle studio to help you scent every space with confidence.'
+  const title = 'Scented Candles in Uganda: A Fragrance Guide'
+  const description = 'Choose scented beeswax candles for Kampala homes and gifts, with fragrance pairings and candle care guidance.'
   const faqs = [
     { q: 'Which scents suit living rooms best?', a: 'Layered woods, amber, and a whisper of citrus keep communal spaces warm without overwhelming conversation.' },
     { q: 'How long should one burn a scented candle?', a: 'Aim for 2–3 hours per session to set an even melt pool, and trim the wick to 5 mm before each light.' },
@@ -16,7 +16,7 @@ export default function ScentedCandlesUgandaGuide() {
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-23', dateModified: '2026-09-23',
+    datePublished: '2025-01-23', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/745c75b930ef6de7de4178d0bff5f5fd956c9393-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }

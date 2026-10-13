@@ -67,8 +67,8 @@ function ProductsIndexPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
-        title="Our Products: Pure Raw & Infused Ugandan Honey, Candles & Gifts"
-        description="Explore Humble Beeing's full range: raw single-origin honey from Yumbe, Nebbi, and Arua, infused raw honeys (vanilla bean, rosemary, chilli, garlic and more), beeswax candles, and gift sets. Prices, pairings, and where to buy in Kampala."
+        title="Ugandan Honey, Beeswax Candles & Gift Sets"
+        description="Shop the range of raw and infused Ugandan honey, beeswax candles and locally made gift sets. Explore prices, origins, pairings and ordering in Kampala."
         jsonLd={jsonLd}
       />
 

@@ -6,8 +6,8 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function SingleOriginUgandanHoney() {
-  const title = 'Single-Origin Ugandan Honey: West Nile, Shea Blossom & Coffee Blossom Explained'
-  const description = 'What single-origin honey means in Uganda: how West Nile shea blossom, coffee blossom, and wildflower harvests differ in taste, colour, and character, and how to choose between them.'
+  const title = 'Single-Origin Ugandan Honey: Regions & Blossoms'
+  const description = 'Explore West Nile shea blossom and other Ugandan honey origins, their tasting notes and what single-origin means.'
   const faqs = [
     { q: 'What does single-origin honey actually mean?', a: 'It means the honey in the jar comes from one region and one bloom season, never blended with harvests from elsewhere. Like single-origin coffee, it preserves the distinct flavour of a specific landscape: its terroir.' },
     { q: 'What does shea blossom honey taste like?', a: 'Shea blossom honey from Uganda’s shea belt is creamy and delicate, with soft caramel and butter notes and a gentle finish. It crystallizes naturally into a smooth, spoonable texture: a sign of raw, unheated honey.' },
@@ -17,7 +17,7 @@ export default function SingleOriginUgandanHoney() {
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2026-07-07', dateModified: '2026-09-23',
+    datePublished: '2026-07-07', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }

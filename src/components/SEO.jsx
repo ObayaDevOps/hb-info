@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { canonicalUrl } from '@/lib/siteMeta'
+import { canonicalUrl, SITE_NAME, SITE_URL } from '@/lib/siteMeta'
 
-const SITE_NAME = 'Humble Beeing'
-const DEFAULT_DESCRIPTION = 'Luxury Ugandan honey and beeswax candles from traceable, regenerative beekeeping. Available in Kampala with delivery and wholesale.'
+const DEFAULT_DESCRIPTION = 'Raw Ugandan honey, beeswax candles and gifts from Humble Beeing in Kampala. Explore sourcing details, products and wholesale honey and beeswax enquiries.'
 const DEFAULT_OG_IMAGE = 'https://cdn.sanity.io/images/wf5e366r/production/06a02c2552c748ec8e77986956481bd97bdce9f3-5184x3456.jpg'
 
 export default function SEO({
@@ -18,9 +17,20 @@ export default function SEO({
   const router = useRouter()
   const computedCanonical = canonicalUrl(canonical || router?.asPath || router?.pathname || '/')
   const pageTitle = title ? `${title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`}` : SITE_NAME
+  const schemas = (jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []).map((schema) => {
+    if (schema['@type'] !== 'BlogPosting') return schema
+    return {
+      ...schema,
+      '@id': `${computedCanonical}#article`,
+      url: computedCanonical,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': computedCanonical },
+      author: { ...schema.author, '@id': `${SITE_URL}/#store`, url: `${SITE_URL}/our-story` },
+      publisher: { ...schema.publisher, '@id': `${SITE_URL}/#store` },
+    }
+  })
 
   const og = {
-    type: 'website',
+    type: schemas.some((schema) => schema['@type'] === 'BlogPosting') ? 'article' : 'website',
     site_name: SITE_NAME,
     title: pageTitle,
     description,
@@ -61,7 +71,7 @@ export default function SEO({
 
       {/* JSON-LD */}
       {jsonLd && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script key="page-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas).replace(/</g, '\\u003c') }} />
       )}
     </Head>
   )

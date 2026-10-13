@@ -6,8 +6,8 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function PremiumHoneyUganda() {
-  const title = 'What Makes Premium Ugandan Honey Worth the Splurge?'
-  const description = 'From remote forest apiaries to chef tastings, here is how Humble Beeing justifies the price tag on truly premium Ugandan honey.'
+  const title = 'Premium Ugandan Honey: Origin, Flavour & Value'
+  const description = 'Explore the origins, handling and tasting notes that distinguish premium Ugandan honey, and what to ask before buying.'
   const faqs = [
     { q: 'Why does premium honey command a higher price?', a: 'Origin, handling, jar size, and distribution can affect price. Ask which claims and tests apply to the jar you are considering.' },
     { q: 'Is premium honey always raw?', a: 'Yes. Heat-treated honey can’t carry the aromatic complexity or enzyme activity that defines premium status.' },
@@ -17,7 +17,7 @@ export default function PremiumHoneyUganda() {
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-15', dateModified: '2026-09-23',
+    datePublished: '2025-01-15', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/e6e3c7e35d213f7c070ee6d25c2364ee1eb1b954-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }

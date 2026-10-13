@@ -3,6 +3,7 @@ import { GiBeehive } from 'react-icons/gi'
 import { TbShirt } from 'react-icons/tb'
 import { motion } from 'framer-motion'
 import { toaster } from '@/lib/toaster'
+import { BRAND_STATEMENT } from '@/lib/siteMeta'
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -126,9 +127,7 @@ const Footer = () => {
               transition={{ ...fadeUp.transition, delay: 0.15 }}
               style={{ fontSize: '0.875rem', lineHeight: '1.375rem', maxWidth: '28rem', opacity: 0.9 }}
             >
-              Humble Beeing is a Kampala-based Ugandan producer of pure raw honey, infused honeys,
-              hand-poured beeswax candles, and luxury gift hampers: traceable and
-              crafted with smallholder beekeepers.
+              {BRAND_STATEMENT}
             </motion.p>
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>

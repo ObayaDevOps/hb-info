@@ -12,7 +12,7 @@ export const SITE_NAME = 'Humble Beeing'
 // Definitional entity statement — reused in schema, page copy, and llms.txt so
 // search engines and AI assistants get one consistent description of the brand.
 export const BRAND_STATEMENT =
-  'Humble Beeing is a Kampala-based Ugandan producer of pure raw honey, infused honeys, hand-poured beeswax candles, and luxury gift hampers, made with smallholder farmers through traceable, regenerative beekeeping.'
+  'Humble Beeing is a Kampala-based Ugandan producer of raw honey, infused honeys, beeswax candles, and gifts, working with smallholder beekeepers and offering wholesale honey and beeswax.'
 
 export const LOGO_URL =
   'https://cdn.sanity.io/images/wf5e366r/production/4a9d5b493b1b3fd3057b1b880bf136491f396a57-1019x593.png'
@@ -22,6 +22,7 @@ export const localBusinessJsonLd = {
   '@type': 'Store',
   '@id': `${SITE_URL}/#store`,
   name: SITE_NAME,
+  legalName: 'HB Fine Honey Suppliers Limited',
   description: BRAND_STATEMENT,
   url: SITE_URL,
   logo: LOGO_URL,
@@ -82,27 +83,27 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'where-to-buy-honey-in-kampala-stockists-and-delivery',
-    title: 'Where Can You Buy Trustworthy Honey in Kampala Today?',
+    title: 'Where to Buy Honey in Kampala: Stockists & Orders',
     category: 'beekeeping',
-    snippet: 'Get the freshest African luxury honey and sustainable beeswax candles delivered in Kampala with this stockist map and delivery checklist.',
+    snippet: 'Find Kampala honey stockists, explore the current range and confirm availability, collection or delivery before ordering.',
   },
   {
     slug: 'raw-honey-uganda-benefits-and-buying-guide',
-    title: 'Why Do Serious Food Lovers in Uganda Seek Out Raw Honey Instead of the Squeeze Bottle?',
+    title: 'Raw Honey in Uganda: A Buyer’s Guide',
     category: 'beekeeping',
-    snippet: 'Explore why chefs prefer raw African luxury honey for flavor, nutrition, and traceable honey Uganda sourcing straight from the apiary.',
+    snippet: 'Compare raw Ugandan honey by harvest origin, handling, flavour and the scope of available test reports.',
   },
   {
     slug: 'how-to-store-honey-in-kampala-heat-and-humidity-tips',
-    title: 'How Should You Store Honey in Kampala’s Heat Without Losing Its Magic?',
+    title: 'How to Store Honey in Kampala',
     category: 'beekeeping',
-    snippet: 'Learn pro tips for keeping African luxury honey silky even in Kampala heat with airtight jars, shade placement, and traceable honey Uganda freshness cues.',
+    snippet: 'Practical honey storage tips for Kampala: sealed jars, a shaded cupboard and managing natural crystallisation.',
   },
   {
     slug: 'premium-honey-uganda-what-makes-it-worth-it',
-    title: 'What Makes Premium Ugandan Honey Worth the Splurge?',
+    title: 'Premium Ugandan Honey: Origin, Flavour & Value',
     category: 'beekeeping',
-    snippet: 'Understand the craftsmanship, terroir, and lab testing that turn traceable honey Uganda harvests into premium African luxury honey.',
+    snippet: 'Explore the origins, handling and tasting notes that distinguish premium Ugandan honey, and what to ask before buying.',
   },
   {
     slug: 'how-we-test-honey-purity-in-uganda-lab-and-field',
@@ -112,27 +113,27 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'organic-honey-in-uganda-what-it-really-means',
-    title: 'Organic Honey in Uganda: What It Really Means',
+    title: 'Organic Honey & Beeswax in Uganda: A Buyer’s Guide',
     category: 'sustainability',
-    snippet: 'Decode organic standards, forage zones, and regenerative practices behind truly traceable honey Uganda labels.',
+    snippet: 'Understand organic honey and beeswax claims, raw honey, certification scope and what the published UNBS reports establish.',
   },
   {
     slug: 'specialist-honey-for-chefs-in-kampala-pairings-and-uses',
-    title: 'Which Specialist Ugandan Honey Elevates Restaurant Menus in Kampala?',
+    title: 'Ugandan Honey for Chefs, Restaurants & Hotels',
     category: 'beekeeping',
-    snippet: 'Discover chef-approved pairings that spotlight African luxury honey infusions and traceable honey Uganda provenance on fine-dining menus.',
+    snippet: 'Explore Ugandan honey pairings for restaurant menus and hotel breakfasts, with sourcing questions for wholesale buyers.',
   },
   {
     slug: 'wholesale-honey-kampala-suppliers-guide',
-    title: 'Where Can Kampala Businesses Source Reliable Wholesale Honey?',
+    title: 'Buying Wholesale Honey in Kampala: Supplier Guide',
     category: 'wholesale',
-    snippet: 'Navigate Kampala’s wholesale scene with supplier vetting tips, MOQ insights, and traceable honey Uganda certifications for retailers.',
+    snippet: 'Compare wholesale honey suppliers by origin records, available formats, minimum orders, lead times and relevant test documentation.',
   },
   {
     slug: 'ugandan-gift-ideas-honey-and-candle-gift-sets',
-    title: 'What Are the Best Ugandan Honey and Candle Gifts for People Who Have Everything?',
+    title: 'Ugandan Gifts: Honey, Candles & Corporate Hampers',
     category: 'gifts',
-    snippet: 'Build unforgettable hampers that pair African luxury honey flights with sustainable beeswax candles for elevated Ugandan gifting.',
+    snippet: 'Explore locally made honey gifts and beeswax candles for clients, weddings and personal occasions, with corporate gifting enquiries in Kampala.',
   },
   {
     slug: 'beeswax-candles-uganda-clean-burn-guide',
@@ -142,21 +143,21 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'scented-candles-uganda-fragrance-guide-and-room-pairings',
-    title: 'Which Scented Candle Should You Light for Each Room in Kampala?',
+    title: 'Scented Candles in Uganda: A Fragrance Guide',
     category: 'candles',
-    snippet: 'Match sustainable beeswax candles to each room with fragrance layering tips inspired by African luxury honey terroirs.',
+    snippet: 'Choose scented beeswax candles for Kampala homes and gifts, with fragrance pairings and candle care guidance.',
   },
   {
     slug: 'kwanjula-and-kukyala-gift-guide-honey-in-introduction-ceremony-baskets',
-    title: 'Kwanjula & Kukyala Gift Guide: Why Honey Belongs in Every Introduction Ceremony Basket',
+    title: 'Kwanjula & Kukyala Gifts: A Honey Gift Guide',
     category: 'gifts',
-    snippet: 'Plan kwanjula and kukyala gifts with confidence: what to carry, how to present it, and why pure Ugandan honey has always belonged in the basket.',
+    snippet: 'Ideas for honey gifts in Ugandan introduction ceremony baskets, with presentation tips and locally made gift sets.',
   },
   {
     slug: 'single-origin-ugandan-honey-west-nile-shea-and-coffee-blossom',
-    title: 'Single-Origin Ugandan Honey: West Nile, Shea Blossom & Coffee Blossom Explained',
+    title: 'Single-Origin Ugandan Honey: Regions & Blossoms',
     category: 'beekeeping',
-    snippet: 'Taste your way across Uganda’s honey regions (West Nile shea blossom, coffee blossom, and wildflower harvests) and learn what single-origin really means.',
+    snippet: 'Explore West Nile shea blossom and other Ugandan honey origins, their tasting notes and what single-origin means.',
   },
   {
     slug: 'real-vs-fake-honey-uganda-how-to-know-yours-is-pure',

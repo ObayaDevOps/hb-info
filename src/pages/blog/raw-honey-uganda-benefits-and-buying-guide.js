@@ -6,8 +6,8 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function RawHoneyUgandaGuide() {
-  const title = 'Why Do Serious Food Lovers in Uganda Seek Out Raw Honey Instead of the Squeeze Bottle?'
-  const description = 'A guide to raw honey handling, harvest origin, and the scope of published UNBS honey test reports in Uganda.'
+  const title = 'Raw Honey in Uganda: A Buyer’s Guide'
+  const description = 'Compare raw Ugandan honey by harvest origin, handling, flavour and the scope of available test reports.'
   const faqs = [
     { q: 'How can I assess a raw honey claim?', a: 'Ask the producer how the honey was extracted and heated, where it was harvested, and what documentation applies to the jar. A lab report supports only its listed tests and sample.' },
     { q: 'Why does my raw honey crystallise so quickly?', a: 'Crystallisation is a natural signal that pollen and glucose are intact; sit the jar in 40–45°C water and stir, never microwave.' },
@@ -27,7 +27,7 @@ export default function RawHoneyUgandaGuide() {
     headline: title,
     description,
     datePublished: '2025-01-12',
-    dateModified: '2026-09-23',
+    dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' },
     publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/fe1376a20f4c8693c806a9308a0c2d5bdd66271a-5184x3456.jpg',

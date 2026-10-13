@@ -1,5 +1,6 @@
 // Switch homepage to Humble Beeing layout — un-Chakra'd: semantic HTML + inline styles.
 import SEO from '@/components/SEO';
+import { SITE_URL } from '@/lib/siteMeta';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -113,8 +114,8 @@ export default function HBHome() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Pure Raw Honey from Uganda: Luxury Gifts & Beeswax Candles"
-        description="Humble Beeing makes raw Ugandan honey, infused honeys, beeswax candles, and gift hampers in Kampala, with sourcing details and published UNBS test reports."
+        title="Raw Ugandan Honey, Beeswax & Gifts"
+        description="Discover raw Ugandan honey, beeswax candles and gifts in Kampala. Sourced with smallholder beekeepers, with wholesale honey and beeswax enquiries welcome."
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
@@ -123,12 +124,12 @@ export default function HBHome() {
             '@type': 'ListItem',
             position: i + 1,
             item: {
-              '@type': 'Product',
+              '@type': 'CollectionPage',
               name: c.name,
               description: c.description,
               image: c.image,
-              url: c.href,
-              brand: { '@type': 'Brand', name: 'Humble Beeing' },
+              url: `${SITE_URL}${c.href}`,
+              publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#store`, name: 'Humble Beeing' },
             },
           })),
         }}
@@ -141,7 +142,7 @@ export default function HBHome() {
           <>
             {[
               'Highest Quality Raw African Honey',
-              'Traceable & Pesticide-free',
+              'Traceable Ugandan Harvests',
               'Single Origin & Small Batch',
               '100% Ugandan Owned',
               'Eco-Friendly & Recyclable Packaging',
@@ -459,7 +460,7 @@ export default function HBHome() {
             >
               Gourmet Raw Ugandan Honey
             </motion.h3>
-            {['Traceable.', 'Pesticide Free.', 'Single-Origin.', 'Ethically Sourced.'].map((line, i) => (
+            {['Traceable.', 'Small-Batch.', 'Single-Origin.', 'Ethically Sourced.'].map((line, i) => (
               <motion.h2
                 key={line}
                 className="rt"
@@ -503,7 +504,7 @@ export default function HBHome() {
             >
               Our Mission & Vision
             </motion.h3>
-            {['2,000 farmers.', '400 tons of Organic Honey.', 'Certified luxury.'].map((line, i) => (
+            {['Our ambition.', '2,000 farmers.', 'Organic certification.'].map((line, i) => (
               <motion.h2
                 key={line}
                 className="rt"
@@ -629,14 +630,14 @@ export default function HBHome() {
             >
               Our Guarantee
             </motion.h2>
-            <motion.h1
+            <motion.h2
               className="rt"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.2 }}
               style={{ '--fs': '1.875rem', '--lh': '2.375rem', '--fs-md': '3.75rem', '--lh-md': '4.5rem', '--ls-md': '-0.025em', maxWidth: '56rem', textAlign: 'center', fontWeight: 600, fontFamily: hanken }}
             >
-              Only the very best Grade-A honeycomb from pesticide-free areas makes it into our jars and our farmers are given a fair price
-            </motion.h1>
+              We select fully capped honeycomb from our Ugandan sourcing partners and pay our farmers a fair price
+            </motion.h2>
             <motion.h2
               className="rt"
               {...fadeUp}

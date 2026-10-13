@@ -15,6 +15,7 @@ function App({ Component, pageProps }) {
     >
       <Head>
         <script
+          key="business-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />

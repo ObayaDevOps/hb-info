@@ -6,17 +6,19 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function OrganicHoneyUganda() {
-  const title = 'Organic Honey in Uganda: What It Really Means'
-  const description = 'Understand “organic” for honey in Uganda: certifications, practical limitations, and responsible beekeeping practices you can trust.'
+  const title = 'Organic Honey & Beeswax in Uganda: A Buyer’s Guide'
+  const description = 'Understand organic honey and beeswax claims, raw honey, certification scope and what the published UNBS reports establish.'
   const faqs = [
     { q: 'Is Humble Beeing honey certified organic?', a: 'The published UNBS reports are sample test reports, not organic certification. Ask us for current certification documentation before relying on an organic claim.' },
+    { q: 'Is raw honey the same as organic honey?', a: 'No. Raw describes how honey is handled; organic is a certification claim about production and handling. Check the evidence for each separately.' },
+    { q: 'What should I ask an organic beeswax supplier?', a: 'Ask for the current certificate, the products and operator it covers, and records identifying the wax lot. Confirm handling, format and suitability for your intended application.' },
     { q: 'Can a lab report prove organic certification?', a: 'No. Certification and laboratory tests answer different questions. Check the certifier, scope, and validity dates of an organic certificate.' },
     { q: 'How can I buy responsibly made honey?', a: 'Choose transparent producers with traceability, testing, and clear handling standards.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-18', dateModified: '2026-09-23',
+    datePublished: '2025-01-18', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/3049c86f8b48da4c3f32c4673e5bd000217e3c4e-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -40,8 +42,8 @@ export default function OrganicHoneyUganda() {
             <li style={{ marginBottom: '10px' }}><b>Handling:</b> how is honey extracted, stored, and kept separate from other lots?</li>
           </ul>
 
-          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How to fact-check “organic” claims</h2>
-          <p>Ask to see the certificate itself, then check whether its product scope matches the jar you are buying. A test report can provide additional evidence for its listed parameters, but does not substitute for certification. Read our <Link href="/lab-tests">published sample reports</Link> for an example of that distinction.</p>
+          <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Buying organic beeswax</h2>
+          <p>For organic beeswax, check that the certificate covers the wax and supplier involved, rather than assuming honey certification also covers every wax product. Confirm origin, lot records and how the wax is cleaned or refined. For candles or cosmetics, discuss the specification your application needs. Ask about our <Link href="/wholesale-and-partnerships">wholesale beeswax</Link> and available documentation; the published honey sample reports do not certify beeswax.</p>
 
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>

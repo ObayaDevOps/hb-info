@@ -1,4 +1,5 @@
 import SEO from '@/components/SEO'
+import Link from 'next/link'
 import { CircleCheck } from 'lucide-react'
 
 import HeroSection from '@/components/sections/HeroSection'
@@ -49,8 +50,8 @@ function OurProcessPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
-        title="How We Harvest Pure Raw Honey in Uganda: Our Process"
-        description="From hive to jar: how Humble Beeing harvests and processes raw Ugandan honey and beeswax with smallholder farmers."
+        title="Traceable Ugandan Honey: Sourcing & Processing"
+        description="Explore how Humble Beeing sources honey with Ugandan smallholder beekeepers, handles honey and beeswax, and connects buyers with harvest records."
       />
 
       <HeroSection
@@ -81,7 +82,7 @@ function OurProcessPage() {
         }}
       >
         <div style={{ ...col, paddingBottom: '48px' }}>
-          <h1 style={headingLg}>Purposeful Sourcing</h1>
+          <h2 style={headingLg}>Sourcing With Smallholder Beekeepers</h2>
           <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
             We partner with smallholder beekeepers across Uganda, purchasing directly at fair, transparent rates that sustain
             their craft. Farmers receive training, equipment, and a guaranteed market so every harvest is handled with pride.
@@ -89,7 +90,8 @@ function OurProcessPage() {
           <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
             Our field team visits each cooperative throughout the season to monitor hive health, flowering cycles, and post-
             harvest handling. This close collaboration keeps terroir intact and ensures every jar tells the story of the
-            beekeeper who raised it.
+            beekeeper who raised it. Ask about the records linked to your jar’s Harvest Number,
+            or explore <Link href="/wholesale-and-partnerships">wholesale honey and beeswax sourcing</Link>.
           </p>
         </div>
 
@@ -106,7 +108,7 @@ function OurProcessPage() {
             {
               title: 'Slow Extraction',
               description:
-                'Our Kampala hub uses gentle, centrifugal extraction and gravity settling, letting the floral character of each harvest come through.',
+                'Honey is extracted and settled in small batches at our Kampala hub. Ask which extraction and filtering methods apply to your chosen harvest.',
               image:
                 '/images/our-process/pouring-honey.jpg',
               alt: 'Pure raw Ugandan honey being poured after extraction',
@@ -122,10 +124,10 @@ function OurProcessPage() {
             {
               title: 'Quality Assurance',
               description:
-                'Each batch is tested for moisture, pollen diversity, and sensory notes. Only lots that meet our premium benchmarks are bottled.',
+                <>Our <Link href="/lab-tests">published UNBS reports</Link> document chemistry and microbiology results for one honey sample. Ask which records apply to your order.</>,
               image:
                 '/images/our-process/infused-honeys.jpg',
-              alt: 'Jars of infused raw honey awaiting lab purity testing',
+              alt: 'Jars of Humble Beeing infused Ugandan honey',
             },
           ].map((item) => (
             <div key={item.title} style={{ ...col, gap: '12px', minWidth: 0 }}>
@@ -170,17 +172,17 @@ function OurProcessPage() {
         </div>
 
         <div style={{ paddingBottom: '48px' }}>
-          <h2 style={{ ...headingLg, marginBottom: '24px' }}>Health Benefits That Stay Intact</h2>
+          <h2 style={{ ...headingLg, marginBottom: '24px' }}>Honey & Beeswax With Character</h2>
           <div className="rfd" style={{ display: 'flex', alignItems: 'stretch', gap: '8px', '--fd': 'column', '--fd-md': 'row' }}>
             <div style={{ ...col, flex: 1 }}>
               <p className="rt" style={{ '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
-                Raw honey and beeswax deliver more than sweetness. Our low-intervention process preserves antioxidants, natural
-                sugars, propolis, and micronutrients that support immunity and soothe digestion.
+                Our raw honey range celebrates the flavour, colour and texture of Ugandan harvests. Beeswax from our
+                sourcing partners becomes candles and balms, with product details available in our range.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '8px' }}>
                 {[
-                  'Naturally antibacterial and antimicrobial, ideal for throat and skincare rituals.',
-                  'Rich in amino acids and pollen that support everyday energy and recovery.',
+                  'Single-origin honey with tasting notes shaped by region and season.',
+                  'Raw and infused honey for cooking, tasting and thoughtful gifts.',
                   'Our beeswax is used in hand-poured candles made in Kampala.',
                 ].map((point) => (
                   <div key={point} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>

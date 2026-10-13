@@ -6,17 +6,19 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function WholesaleHoneyKampalaGuide() {
-  const title = 'Where Can Kampala Businesses Source Reliable Wholesale Honey?'
-  const description = 'Questions Kampala businesses should ask about wholesale honey formats, pricing, delivery, and sample-specific test documentation.'
+  const title = 'Buying Wholesale Honey in Kampala: Supplier Guide'
+  const description = 'Compare wholesale honey suppliers by origin records, available formats, minimum orders, lead times and relevant test documentation.'
   const faqs = [
     { q: 'What is the minimum order quantity?', a: 'Ask for a quote for your required format and volume; minimum quantities depend on the product and current supply.' },
     { q: 'What test documentation is available?', a: 'Our public UNBS reports cover one raw honey sample. Ask which reports, if any, apply to the lot in your proposed order.' },
+    { q: 'Can overseas buyers enquire about Ugandan honey and beeswax?', a: 'Yes. Share your destination, intended use, volume and required documentation. Supply, shipping and any destination-specific requirements need to be confirmed for each enquiry.' },
+    { q: 'Do you supply wholesale beeswax?', a: 'We welcome beeswax enquiries for candle making, balms and other formulations. Ask about available formats, quantities, handling and documentation for your application.' },
     { q: 'Can you hold safety stock?', a: 'Discuss your forecast and delivery needs with us before relying on a reserved quantity.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-20', dateModified: '2026-09-23',
+    datePublished: '2025-01-20', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/b1b8152aeed20473991a459a0f062eb50aa4d810-125x125.png', mainEntityOfPage: { '@type': 'WebPage' },
   }

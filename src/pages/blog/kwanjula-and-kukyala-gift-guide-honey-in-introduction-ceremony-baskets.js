@@ -6,8 +6,8 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function KwanjulaKukyalaGiftGuide() {
-  const title = 'Kwanjula & Kukyala Gift Guide: Why Honey Belongs in Every Introduction Ceremony Basket'
-  const description = 'Planning kwanjula or kukyala gifts in Uganda? A practical guide to what to carry, how to present it beautifully, and why pure raw honey has always had a place in the basket.'
+  const title = 'Kwanjula & Kukyala Gifts: A Honey Gift Guide'
+  const description = 'Ideas for honey gifts in Ugandan introduction ceremony baskets, with presentation tips and locally made gift sets.'
   const faqs = [
     { q: 'Is honey a traditional kwanjula gift?', a: 'Yes. Honey has long featured in Buganda introduction ceremonies as a symbol of sweetness, abundance, and a harmonious home. A well-presented jar of pure Ugandan honey sits naturally alongside gomesi fabric, matooke, and other customary gifts.' },
     { q: 'How many gifts should we prepare for a kukyala visit?', a: 'Kukyala is intentionally intimate, so a modest, thoughtful selection matters more than volume. Most families carry a small set of quality items (a luxury honey and candle hamper, fruit, sugar, and drinks) agreed in advance with the bride’s family.' },
@@ -17,7 +17,7 @@ export default function KwanjulaKukyalaGiftGuide() {
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2026-07-07', dateModified: '2026-09-23',
+    datePublished: '2026-07-07', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/1d022d7ffe1a49451ded511330df3d8d69c5c21e-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }

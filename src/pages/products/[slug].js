@@ -94,6 +94,13 @@ function ProductPage({ product, whatsappNumber, hasRecipes }) {
   const imageUrl = product.image.startsWith('http') ? product.image : `${SITE_URL}${product.image}`
   const related = (product.related || []).map(getProduct).filter(Boolean)
   const isHoney = product.category === 'raw' || product.category === 'infused'
+  const searchDescriptions = {
+    raw: `${product.name}: single-origin raw Ugandan honey from ${product.origin.region}. ${formatUGX(product.price)} per ${product.size}. Explore origin and sourcing details.`,
+    infused: `${product.name} from Uganda. ${formatUGX(product.price)} per ${product.size}. Explore ingredients, food pairings and ordering in Kampala.`,
+    candles: `${product.name}, hand-poured in Kampala, Uganda. ${formatUGX(product.price)} per ${product.size}. Explore fragrance notes, candle care and gifts.`,
+    cosmetics: `${product.name} made in Kampala with beeswax, shea butter and coconut oil. ${formatUGX(product.price)} per ${product.size}. See ingredients and ordering details.`,
+    gifts: `Ugandan honey gift set: ${product.size} in handmade packaging. ${formatUGX(product.price)}. For personal gifts, kwanjula and corporate gifting in Kampala.`,
+  }
 
   const jsonLd = [
     {
@@ -133,7 +140,7 @@ function ProductPage({ product, whatsappNumber, hasRecipes }) {
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
         title={product.name}
-        description={`${product.tagline} ${formatUGX(product.price)} per ${product.size}. ${product.categoryLabel} from Humble Beeing, Kampala: pure, raw, traceable Ugandan honey.`}
+        description={searchDescriptions[product.category] || product.tagline}
         openGraph={{ type: 'website', image: imageUrl }}
         jsonLd={jsonLd}
       />

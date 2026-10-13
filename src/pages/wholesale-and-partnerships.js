@@ -115,8 +115,8 @@ const RANGE = [
   { title: 'Single-origin honey', desc: 'Raw, unblended honey traceable to one forest region.' },
   { title: 'Infused honeys', desc: 'Small-batch infusions from our Kampala kitchen.' },
   { title: 'Breakfast & brunch displays', desc: 'Curated honey displays for high-end breakfasts and brunches, pairing Ugandan flavours with the stories of the beekeepers and regions behind each harvest.' },
-  { title: 'Bulk beeswax', desc: 'Beeswax for candles, balms, and other formulations; ask us about volumes and formats.' },
-  { title: 'Luxury gift hampers', desc: 'Curated boxes, ready to brand for your organization.' },
+  { title: 'Bulk beeswax', desc: 'Wholesale Ugandan beeswax for candle making, balms and cosmetics. Ask about formats, quantities, handling and documentation for your intended use.' },
+  { title: 'Corporate gift hampers', desc: 'Ugandan honey and candle gifts for clients, teams and events. Ask about custom branding, quantities and delivery timelines in Kampala.' },
   { title: 'Beeswax candles', desc: 'Hand-poured from the same hives as our honey.' },
 ]
 
@@ -189,8 +189,8 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh', fontFamily: hanken }}>
       <SEO
-        title="Wholesale Honey & Beeswax Supplier in Uganda | Partnerships"
-        description="Traceable Ugandan honey and beeswax for chefs, retailers, exporters, and cosmetics companies, plus corporate gift hampers and branded gift sets."
+        title="Wholesale Honey & Beeswax Uganda"
+        description="Source bulk raw honey and beeswax from Uganda for hotels, retailers and makers. Ask about harvest records, available formats and corporate gifts in Kampala."
       />
       {/* Hero */}
       <HeroSection
@@ -225,10 +225,10 @@ export default function WholesalePartnershipsPage({ whatsappNumber }) {
           <div className="rgtc" style={{ display: 'grid', gap: '24px', alignItems: 'center', '--gtc': '1fr', '--gtc-md': 'minmax(0, 3fr) minmax(0, 2fr)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1.25rem', '--lh-md': '1.875rem' }}>
-                As a bulk honey and beeswax supplier in Kampala, we work with chefs, hotels,
-                retailers, exporters, cosmetics companies, and NGOs. From traceable raw honey
-                and beeswax to corporate gift hampers and branded gift sets, we tailor supply
-                to your needs.
+                We supply wholesale raw honey and beeswax from Uganda to chefs, hotels, retailers
+                and makers. Explore our <Link href="/our-process">sourcing and handling</Link>,
+                review the <Link href="/lab-tests">published sample test reports</Link>,
+                and ask which harvest records, formats and quantities are available for your order.
               </p>
               <a href="#contact-us" className="btn-dark" style={{ ...pillBtn, alignSelf: 'flex-start' }}>Request a quote</a>
             </div>

@@ -23,7 +23,7 @@ export default function BlogPage() {
   return (
     <div style={{ backgroundColor: '#FFF2D7', color: '#000819', minHeight: '100vh' }}>
       <SEO
-        title="Blog"
+        title="Honey, Beeswax & Ugandan Gifting Guides"
         description="Beekeeping knowledge, buyer guides, Kampala stockists, candle care, gifting ideas, and sustainability insights."
         jsonLd={{
           '@context': 'https://schema.org',
@@ -59,7 +59,7 @@ export default function BlogPage() {
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
-          <h1
+          <h2
             style={{
               fontSize: '1.875rem',
               lineHeight: '2.375rem',
@@ -68,7 +68,7 @@ export default function BlogPage() {
             }}
           >
             Blog Articles
-          </h1>
+          </h2>
           <p className="rt" style={{ color: '#000819', '--fs': '1.125rem', '--lh': '1.75rem', '--fs-md': '1rem', '--lh-md': '1.5rem' }}>Read stories from our beekeepers, explore pairings, and dive into sustainability insights.</p>
 
           {/* Category Filter (UI only) */}

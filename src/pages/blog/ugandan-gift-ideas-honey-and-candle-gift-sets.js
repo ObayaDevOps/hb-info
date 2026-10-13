@@ -6,17 +6,17 @@ import { breadcrumbJsonLd } from '@/lib/siteMeta'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function UgandanGiftIdeas() {
-  const title = 'What Are the Best Ugandan Honey and Candle Gifts for People Who Have Everything?'
-  const description = 'Gift sets curated by Humble Beeing’s team, packed with raw honey, beeswax candles, and local craftsmanship, for personal, corporate, and destination gifting.'
+  const title = 'Ugandan Gifts: Honey, Candles & Corporate Hampers'
+  const description = 'Explore locally made honey gifts and beeswax candles for clients, weddings and personal occasions, with corporate gifting enquiries in Kampala.'
   const faqs = [
-    { q: 'Do you offer corporate gifting?', a: 'Yes. We design branded sleeves, tasting cards, and delivery logistics for teams from 10 to 500 recipients.' },
-    { q: 'Can I personalise a gift?', a: 'We add handwritten notes, engraved lids, and custom scent blends with two weeks’ lead time.' },
-    { q: 'Do you deliver in Kampala?', a: 'Same-day delivery is available within central Kampala; next-day for Entebbe and Mukono. International shipping is fulfilled via partner couriers.' },
+    { q: 'Do you offer corporate gifting?', a: 'Yes. Ask about corporate gift hampers and branded honey gift sets. Share your quantity, budget, destination and event date so we can confirm available options.' },
+    { q: 'Can I personalise a gift?', a: 'Ask which branding and presentation options are available for your order. Confirm minimum quantities, artwork requirements and lead time in your quote.' },
+    { q: 'Do you deliver in Kampala?', a: 'Contact us with your location and required date to confirm delivery availability and cost. Overseas orders require a separate enquiry.' },
   ]
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   const blogJsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
-    datePublished: '2025-01-21', dateModified: '2025-01-21',
+    datePublished: '2025-01-21', dateModified: '2026-10-13',
     author: { '@type': 'Organization', name: 'Humble Beeing' }, publisher: { '@type': 'Organization', name: 'Humble Beeing' },
     image: 'https://cdn.sanity.io/images/wf5e366r/production/b7984b21e4eca856f7f7563aa2af6a89be4b5402-5184x3456.jpg', mainEntityOfPage: { '@type': 'WebPage' },
   }
@@ -28,24 +28,24 @@ export default function UgandanGiftIdeas() {
       <div className="rpx rpy rbr subpage-article" style={{ position: 'relative', maxWidth: '72rem', width: '100%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#FFF2D7', '--px': '48px', '--px-md': '80px', '--py': '48px', '--py-md': '80px', '--br': '0px', '--br-lg': '2rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>How we curate each gift</h2>
-          <p>Every set begins with small-batch honey from Hoima or Fort Portal, poured into UV-protective glass and paired with beeswax candles rolled and poured in Kampala. We add locally woven baskets, hand-printed cards, and sustainable cushioning so the unboxing feels as intentional as the contents. Your gift is assembled by the same team that supplies luxury hotels, which means alignment on quality and timing.</p>
+          <p>Our <Link href="/products/taster-gift-set">Honey Taster Gift Set</Link> brings together four 30g jars in handmade recycled-paper packaging crafted by local artisans. Pair honey with <Link href="/products#candles">beeswax candles made in Kampala</Link> for a distinctly Ugandan gift. Confirm the current selection and packaging options before ordering.</p>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Signature combinations</h2>
           <ul style={{ paddingLeft: '24px', listStyleType: 'disc' }}>
-            <li style={{ marginBottom: '10px' }}><b>Honey Flight Trio:</b> Pine, shea, and coffee blossom minis with tasting cards comparing flavour notes.</li>
-            <li style={{ marginBottom: '10px' }}><b>Candle & Honey Duet:</b> 300 g raw honey plus a beeswax pillar scented with lemongrass or amber: ideal for housewarmings.</li>
-            <li style={{ marginBottom: '10px' }}><b>Chef’s Hamper:</b> Premium eucalyptus honey, spiced nuts, and pairing suggestions for cheese boards.</li>
-            <li style={{ marginBottom: '10px' }}><b>Corporate Suite:</b> Custom-branded sleeves, handwritten cards, and delivery routing managed by our logistics team.</li>
+            <li style={{ marginBottom: '10px' }}><b>Honey Taster Gift Set:</b> Four mini jars for discovering raw and infused honey flavours.</li>
+            <li style={{ marginBottom: '10px' }}><b>Candle & Honey Duet:</b> Choose a jar from the current honey range and a scented beeswax candle for a housewarming gift.</li>
+            <li style={{ marginBottom: '10px' }}><b>Chef’s Hamper:</b> Select shea blossom or infused honey with pairing ideas for cheese, marinades and desserts.</li>
+            <li style={{ marginBottom: '10px' }}><b>Corporate Suite:</b> Ask about branded gift sets for client appreciation, employee gifts and events.</li>
           </ul>
 
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>Occasions we handle often</h2>
-          <p>From executive welcome hampers to wedding favours and destination event amenities, we manage fulfilment timelines, storage, and delivery so you can focus on relationships instead of ribbon lengths. International guests? We provide travel-safe packaging and documentation for carry-on allowances.</p>
+          <p>Honey and candle gifts suit client appreciation, host gifts, weddings and <Link href="/blog/kwanjula-and-kukyala-gift-guide-honey-in-introduction-ceremony-baskets">kwanjula and kukyala baskets</Link>. For corporate gifting in Kampala, confirm quantities, presentation and delivery dates before placing your order.</p>
 
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
           <h2 style={{ fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, fontFamily: 'var(--font-hanken)' }}>FAQs</h2>
           <FaqAccordion items={faqs} />
           <hr style={{ borderTop: '1px solid #000819', width: '100%' }} />
-          <p>Brief us on your gifting project through <Link href="/contact-and-connect">Contact & Connect</Link>: we’ll share mood boards, pricing, and timelines within 24 hours.</p>
+          <p>Brief us on your gifting project through <Link href="/wholesale-and-partnerships">Wholesale & Partnerships</Link> to request current options, pricing and timelines.</p>
         </div>
       </div>
     </div>
